@@ -1,21 +1,25 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import { BrowserRouter as Router } from "react-router-dom"
+import { Header, Footer } from "dicty-components-header-footer"
+import { Navbar } from "dicty-components-navbar"
+import { FooterLinks } from "./constants/Footer"
+import { NavbarLinks } from "./constants/Navbar"
+import Routes from "./Routes"
+import { headerItems, generateLinks } from "./utils/headerItems"
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+const App = () => {
+  return (
+    <div>
+      <Router>
+        <Header items={headerItems}>
+          {headerItems => headerItems.map(generateLinks)}
+        </Header>
+      </Router>
+      <Navbar items={NavbarLinks} />
+      <Routes />
+      <Footer items={FooterLinks} />
+    </div>
+  )
 }
 
-export default App;
+export default App
