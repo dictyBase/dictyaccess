@@ -2,7 +2,17 @@
   "name": "dictyaccess",
   "version": "0.1.0",
   "private": true,
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --no-semi --trailing-comma all --jsx-bracket-same-line true --write",
+      "git add"
+    ]
+  },
   "dependencies": {
+    "dicty-components-header-footer":
+      "github:dictyBase/dicty-components-header-footer",
+    "dicty-components-navbar": "github:dictyBase/dicty-components-navbar",
+    "material-ui": "^1.0.0-beta.41",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-scripts": "1.1.4"
@@ -11,6 +21,15 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "flow": "flow",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build"
+  },
+  "devDependencies": {
+    "flow-bin": "^0.69.0",
+    "lint-staged": "^7.0.4",
+    "prettier": "^1.11.1",
+    "react-styleguidist": "^7.0.5"
   }
 }
