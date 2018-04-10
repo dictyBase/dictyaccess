@@ -7,6 +7,7 @@ import {
   Redirect
 } from "react-router-dom"
 import Dashboard from "app/layout/Dashboard"
+import PageNotFound from "features/PageNotFound"
 
 const Routes = () => {
   return (
@@ -18,6 +19,7 @@ const Routes = () => {
           component={Dashboard => <Redirect to="/dashboard" />}
         />
         <Route path="/dashboard" component={Dashboard} />
+        <Route path="*" component={PageNotFound} />
       </Switch>
     </Router>
   )
