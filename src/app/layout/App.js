@@ -16,7 +16,8 @@ const styles = {
     marginLeft: "auto",
     paddingRight: "10px",
     paddingLeft: "10px",
-    paddingBottom: "10px"
+    paddingBottom: "10px",
+    backgroundColor: "rgb(117, 117, 117)"
   }
 }
 
@@ -49,6 +50,7 @@ class App extends Component {
         <Navbar items={NavbarLinks} />
         <div style={styles.container}>
           <Topbar handleSideBar={this.handleSideBar} />
+          <br />
           <Sidebar sideBarOpen={this.props.sideBarOpen} />
           <Routes />
         </div>

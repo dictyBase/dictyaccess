@@ -5,19 +5,19 @@ import Table, {
   TableHead,
   TableRow
 } from "material-ui/Table"
+import Paper from "material-ui/Paper"
 import Typography from "material-ui/Typography"
 import data from "common/data/data"
 
 const LatestGenes = props => {
   return (
-    <div>
+    <Paper>
       <Typography variant="title">Latest Genes</Typography>
       <Table>
         <TableHead>
           <TableRow>
             <TableCell>Strain Descriptor</TableCell>
             <TableCell>Strain Names</TableCell>
-            <TableCell>Systematic Name</TableCell>
             <TableCell>Strain ID</TableCell>
           </TableRow>
         </TableHead>
@@ -26,13 +26,12 @@ const LatestGenes = props => {
             <TableRow key={item.id}>
               <TableCell>{item.descriptor}</TableCell>
               <TableCell>{item.names}</TableCell>
-              <TableCell>{item.systemic}</TableCell>
               <TableCell>{item.id}</TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
-    </div>
+    </Paper>
   )
 }
 
