@@ -17,7 +17,8 @@ const styles = {
     paddingRight: "10px",
     paddingLeft: "10px",
     paddingBottom: "10px",
-    backgroundColor: "rgb(117, 117, 117)"
+    backgroundColor: "rgb(117, 117, 117)",
+    height: "100vh"
   }
 }
 

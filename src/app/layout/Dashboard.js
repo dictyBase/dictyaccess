@@ -26,13 +26,13 @@ const Dashboard = () => {
           value="12"
         />
       </Grid>
-      <Grid item xs={0} lg={4}>
+      <Grid item xs={12} sm={4} lg={4}>
         <Orders data={data.charts.orders} />
       </Grid>
-      <Grid item xs={12} lg={4}>
+      <Grid item xs={12} sm={4} lg={4}>
         <LatestGenes />
       </Grid>
-      <Grid item xs={12} lg={4}>
+      <Grid item xs={12} sm={4} lg={4}>
         <MostUsedGenes />
       </Grid>
     </Grid>

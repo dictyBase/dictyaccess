@@ -8,11 +8,14 @@ import Table, {
 import Typography from "material-ui/Typography"
 import Paper from "material-ui/Paper"
 import data from "common/data/data"
+import { tableStyles } from "./TableStyles"
 
 const MostUsedGenes = props => {
   return (
     <Paper>
-      <Typography variant="title">Most Used Genes</Typography>
+      <Typography variant="title" style={tableStyles.header}>
+        Most Used Genes
+      </Typography>
       <Table>
         <TableHead>
           <TableRow>

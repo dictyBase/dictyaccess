@@ -34,14 +34,10 @@ const Orders = props => {
 
   return (
     <Paper style={styles.paper}>
-      <div style={{ ...styles.header }}>Number of Orders</div>
+      <div style={styles.header}>Number of Orders</div>
       <div style={styles.div}>
         <ResponsiveContainer>
-          <LineChart
-            width={730}
-            height={250}
-            data={props.data}
-            margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+          <LineChart width={730} height={250} data={props.data}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
             <YAxis />
