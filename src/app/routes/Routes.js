@@ -6,7 +6,7 @@ import {
   Switch,
   Redirect
 } from "react-router-dom"
-import Dashboard from "./components/Dashboard"
+import Dashboard from "app/layout/Dashboard"
 
 const Routes = () => {
   return (
