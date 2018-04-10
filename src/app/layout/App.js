@@ -8,9 +8,17 @@ import { FooterLinks } from "common/constants/Footer"
 import { NavbarLinks } from "common/constants/Navbar"
 import Routes from "app/routes/Routes"
 import { headerItems, generateLinks } from "common/utils/headerItems"
-// import withWidth, { LARGE, SMALL } from "material-ui/utils/withWidth"
-import { MuiThemeProvider } from "material-ui/styles"
-import theme from "app/styles/Theme"
+
+const styles = {
+  container: {
+    fontFamily: "roboto",
+    marginRight: "auto",
+    marginLeft: "auto",
+    paddingRight: "10px",
+    paddingLeft: "10px",
+    paddingBottom: "10px"
+  }
+}
 
 class App extends Component {
   state = {
@@ -39,13 +47,11 @@ class App extends Component {
           </Header>
         </Router>
         <Navbar items={NavbarLinks} />
-        <MuiThemeProvider theme={theme}>
-          <div>
-            <Topbar handleSideBar={this.handleSideBar} />
-            <Sidebar sideBarOpen={this.props.sideBarOpen} />
-            <Routes />
-          </div>
-        </MuiThemeProvider>
+        <div style={styles.container}>
+          <Topbar handleSideBar={this.handleSideBar} />
+          <Sidebar sideBarOpen={this.props.sideBarOpen} />
+          <Routes />
+        </div>
         <Footer items={FooterLinks} />
       </div>
     )

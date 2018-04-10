@@ -8,10 +8,10 @@ import Table, {
 import Typography from "material-ui/Typography"
 import data from "common/data/data"
 
-const LatestGenes = props => {
+const MostUsedGenes = props => {
   return (
     <div>
-      <Typography variant="title">Latest Genes</Typography>
+      <Typography variant="title">Most Used Genes</Typography>
       <Table>
         <TableHead>
           <TableRow>
@@ -22,7 +22,7 @@ const LatestGenes = props => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {data.tables.latestGenes.map(item => (
+          {data.tables.mostUsedGenes.map(item => (
             <TableRow key={item.id}>
               <TableCell>{item.descriptor}</TableCell>
               <TableCell>{item.names}</TableCell>
@@ -36,4 +36,4 @@ const LatestGenes = props => {
   )
 }
 
-export default LatestGenes
+export default MostUsedGenes
