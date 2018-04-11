@@ -1,3 +1,9 @@
+import React from "react"
+import ExpandMore from "@material-ui/icons/ExpandMore"
+import ExpandLess from "@material-ui/icons/ExpandLess"
+import ChevronRight from "@material-ui/icons/ChevronRight"
+import ChevronLeft from "@material-ui/icons/ChevronLeft"
+
 const data = {
   menus: [
     { text: "Dicty Stock Center", icon: "", link: "/dashboard" },
@@ -70,6 +76,32 @@ const data = {
       { pv: 14 },
       { pv: 33 },
       { pv: 8 }
+    ],
+    browsers: [
+      {
+        name: "Chrome",
+        value: 800,
+        color: "rgb(0, 172, 193)",
+        icon: <ExpandMore />
+      },
+      {
+        name: "Firefox",
+        value: 300,
+        color: "rgb(216, 27, 96)",
+        icon: <ChevronRight />
+      },
+      {
+        name: "Safari",
+        value: 300,
+        color: "rgb(142, 36, 170)",
+        icon: <ExpandLess />
+      },
+      {
+        name: "Edge",
+        value: 100,
+        color: "#f48fb1",
+        icon: <ChevronLeft />
+      }
     ]
   }
 }
