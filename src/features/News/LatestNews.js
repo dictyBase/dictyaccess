@@ -3,13 +3,13 @@ import React from "react"
 import { withStyles } from "material-ui/styles"
 import Paper from "material-ui/Paper"
 import Typography from "material-ui/Typography"
-import { newsStyles as styles } from "./NewsStyles"
+import { newsStyles, PaperStyle } from "./NewsStyles"
 
 const LatestNews = props => {
   const { classes } = props
 
   return (
-    <Paper className={classes.paper}>
+    <PaperStyle>
       <Typography variant="title" className={classes.header}>
         Latest Dicty News
       </Typography>
@@ -19,8 +19,8 @@ const LatestNews = props => {
           <p>{item.content}</p>
         </div>
       ))}
-    </Paper>
+    </PaperStyle>
   )
 }
 
-export default withStyles(styles)(LatestNews)
+export default withStyles(newsStyles)(LatestNews)

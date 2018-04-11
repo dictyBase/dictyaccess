@@ -1,4 +1,6 @@
 // @flow
+import styled from "styled-components"
+import Paper from "material-ui/Paper"
 
 export const newsStyles = theme => ({
   paper: {
@@ -14,3 +16,7 @@ export const newsStyles = theme => ({
     paddingLeft: "5px"
   }
 })
+
+export const PaperStyle = styled(Paper)`
+  height: 100%;
+`
