@@ -5,13 +5,15 @@ import Typography from "material-ui/Typography"
 import IconButton from "material-ui/IconButton"
 import MenuIcon from "@material-ui/icons/Menu"
 
-const Topbar = () => {
+const Topbar = props => {
   return (
     <div>
-      <br />
-      <AppBar position="static">
+      <AppBar position="static" style={{ ...props.styles }}>
         <Toolbar>
-          <IconButton color="inherit" aria-label="Menu">
+          <IconButton
+            color="inherit"
+            aria-label="Menu"
+            onClick={props.handleSideBar}>
             <MenuIcon />
           </IconButton>
           <Typography variant="title" color="inherit">

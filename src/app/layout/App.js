@@ -8,18 +8,7 @@ import { FooterLinks } from "common/constants/Footer"
 import { NavbarLinks } from "common/constants/Navbar"
 import Routes from "app/routes/Routes"
 import { headerItems, generateLinks } from "common/utils/headerItems"
-
-const styles = {
-  container: {
-    fontFamily: "roboto",
-    marginRight: "auto",
-    marginLeft: "auto",
-    paddingRight: "10px",
-    paddingLeft: "10px",
-    paddingBottom: "10px",
-    backgroundColor: "#E1E2E1"
-  }
-}
+import withWidth, { LARGE, SMALL } from "material-ui/utils/withWidth"
 
 class App extends Component {
   state = {
@@ -27,11 +16,11 @@ class App extends Component {
   }
 
   // look into changing this
-  // componentWillReceiveProps(nextProps) {
-  //   if (this.props.width !== nextProps.width) {
-  //     this.setState({ sideBarOpen: nextProps.width === LARGE })
-  //   }
-  // }
+  componentWillReceiveProps(nextProps) {
+    if (this.props.width !== nextProps.width) {
+      this.setState({ sideBarOpen: nextProps.width === LARGE })
+    }
+  }
 
   handleSideBar = () => {
     this.setState({
@@ -40,6 +29,28 @@ class App extends Component {
   }
 
   render() {
+    const drawerWidth = 240
+    const { sideBarOpen } = this.props
+
+    const styles = {
+      container: {
+        fontFamily: "roboto",
+        marginRight: "auto",
+        marginLeft: "auto",
+        paddingRight: "10px",
+        paddingLeft: "10px",
+        paddingBottom: "10px",
+        backgroundColor: "#E1E2E1"
+      },
+      topbar: {
+        drawerWidth: sideBarOpen ? drawerWidth : 0
+      },
+      dashboard: {
+        marginBottom: "10px",
+        drawerWidth: sideBarOpen && this.props.width !== SMALL ? drawerWidth : 0
+      }
+    }
+
     return (
       <div>
         <Router>
@@ -49,9 +60,9 @@ class App extends Component {
         </Router>
         <Navbar items={NavbarLinks} />
         <div style={styles.container}>
-          <Topbar handleSideBar={this.handleSideBar} />
-          <br />
-          <Sidebar sideBarOpen={this.props.sideBarOpen} />
+          <Topbar handleSideBar={this.handleSideBar} styles={styles.topbar} />
+          <Sidebar sideBarOpen={sideBarOpen} />
+          <div style={styles.dashboard}>{this.props.children}</div>
           <Routes />
         </div>
         <Footer items={FooterLinks} />
@@ -60,4 +71,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default withWidth()(App)
