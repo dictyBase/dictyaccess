@@ -1,6 +1,6 @@
 // @flow
 
-export const newsStyles = {
+export const newsStyles = theme => ({
   paper: {
     height: "100%"
   },
@@ -13,4 +13,4 @@ export const newsStyles = {
   items: {
     paddingLeft: "5px"
   }
-}
+})

@@ -1,17 +1,20 @@
 // @flow
 import React from "react"
+import { withStyles } from "material-ui/styles"
 import Paper from "material-ui/Paper"
 import Typography from "material-ui/Typography"
-import { newsStyles } from "./NewsStyles"
+import { newsStyles as styles } from "./NewsStyles"
 
 const LatestNews = props => {
+  const { classes } = props
+
   return (
-    <Paper style={newsStyles.paper}>
-      <Typography variant="title" style={newsStyles.header}>
+    <Paper className={classes.paper}>
+      <Typography variant="title" className={classes.header}>
         Latest Dicty News
       </Typography>
       {props.data.map(item => (
-        <div style={newsStyles.items}>
+        <div className={classes.items} key={item.content}>
           <h4>{item.date}</h4>
           <p>{item.content}</p>
         </div>
@@ -20,4 +23,4 @@ const LatestNews = props => {
   )
 }
 
-export default LatestNews
+export default withStyles(styles)(LatestNews)
