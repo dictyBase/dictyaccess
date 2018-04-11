@@ -83,7 +83,7 @@ const data = {
         name: "Chrome",
         value: 800,
         color: "rgb(0, 172, 193)",
-        icon: <ExpandMore />
+        icon: <ExpandLess />
       },
       {
         name: "Firefox",
@@ -95,7 +95,7 @@ const data = {
         name: "Safari",
         value: 300,
         color: "rgb(142, 36, 170)",
-        icon: <ExpandLess />
+        icon: <ExpandMore />
       },
       {
         name: "Edge",

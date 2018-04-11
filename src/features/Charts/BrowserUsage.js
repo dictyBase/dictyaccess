@@ -2,6 +2,7 @@
 import React from "react"
 import Grid from "material-ui/Grid"
 import List, { ListItem, ListItemIcon, ListItemText } from "material-ui/List"
+import Avatar from "material-ui/Avatar"
 import { ResponsiveContainer, PieChart, Pie, Cell } from "recharts"
 import {
   PaperStyle,
@@ -43,7 +44,9 @@ const BrowserUsage = (props: Props) => {
             <List>
               {props.data.map(item => (
                 <ListItem key={item.name}>
-                  <ListItemIcon>{item.icon}</ListItemIcon>
+                  <ListItemIcon style={{ backgroundColor: item.color }}>
+                    <Avatar>{item.icon}</Avatar>
+                  </ListItemIcon>
                   <ListItemText>{item.name}</ListItemText>
                 </ListItem>
               ))}
