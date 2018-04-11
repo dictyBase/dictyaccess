@@ -6,6 +6,7 @@
 [libs]
 flow-typed
 
-[options]
-
 [lints]
+
+[options]
+module.system.node.resolve_dirname=./src

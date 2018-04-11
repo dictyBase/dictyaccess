@@ -1,3 +1,4 @@
+// @flow
 import React from "react"
 import Drawer from "material-ui/Drawer"
 import List, { ListItem, ListItemIcon, ListItemText } from "material-ui/List"
@@ -6,9 +7,13 @@ import DraftsIcon from "@material-ui/icons/Drafts"
 
 // currently overlaps dashboard, need to resize
 
-const Sidebar = ({ sideBarOpen }) => {
+type Props = {
+  sideBarOpen: boolean
+}
+
+const Sidebar = (props: Props) => {
   return (
-    <Drawer variant="temporary" open={sideBarOpen}>
+    <Drawer variant="temporary" open={props.sideBarOpen}>
       DictyAccess
       <List>
         <ListItem button>

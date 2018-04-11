@@ -1,9 +1,8 @@
-import Typography from "material-ui/Typography"
-import { white } from "material-ui/colors"
+// @flow
 
 const chartStyles = {
   paper: {
-    backgroundColor: white,
+    backgroundColor: "#fff",
     height: "100%"
   },
   div: {
@@ -12,8 +11,7 @@ const chartStyles = {
   },
   header: {
     fontSize: 24,
-    fontWeight: Typography.fontWeightLight,
-    color: white,
+    color: "#000",
     backgroundColor: "#e3f2fd",
     padding: 10
   },

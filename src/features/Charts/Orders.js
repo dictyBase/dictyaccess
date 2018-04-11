@@ -1,3 +1,4 @@
+// @flow
 import React from "react"
 import Paper from "material-ui/Paper"
 import {
@@ -12,7 +13,12 @@ import {
 } from "recharts"
 import chartStyles from "./ChartStyles"
 
-const Orders = props => {
+type Props = {
+  /** Data object for chart */
+  data: Object
+}
+
+const Orders = (props: Props) => {
   return (
     <Paper style={chartStyles.paper}>
       <div style={chartStyles.header}>Number of Orders</div>

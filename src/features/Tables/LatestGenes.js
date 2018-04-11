@@ -1,3 +1,4 @@
+// @flow
 import React from "react"
 import Table, {
   TableBody,
@@ -10,7 +11,12 @@ import Typography from "material-ui/Typography"
 import data from "common/data/data"
 import { tableStyles } from "./TableStyles"
 
-const LatestGenes = props => {
+type Props = {
+  /** The data to pass into this table */
+  data: Object
+}
+
+const LatestGenes = (props: Props) => {
   return (
     <Paper>
       <Typography variant="title" style={tableStyles.header}>
