@@ -1,6 +1,5 @@
 // @flow
 import React from "react"
-import Paper from "material-ui/Paper"
 import {
   LineChart,
   Line,
@@ -11,7 +10,7 @@ import {
   Tooltip,
   Legend
 } from "recharts"
-import chartStyles from "./ChartStyles"
+import { PaperStyle, HeaderStyle, ChartWrapper } from "./ChartStyles"
 
 type Props = {
   /** Data object for chart */
@@ -20,9 +19,9 @@ type Props = {
 
 const Orders = (props: Props) => {
   return (
-    <Paper style={chartStyles.paper}>
-      <div style={chartStyles.header}>Number of Orders</div>
-      <div style={chartStyles.div}>
+    <PaperStyle>
+      <HeaderStyle variant="title">Number of Orders</HeaderStyle>
+      <ChartWrapper>
         <ResponsiveContainer>
           <LineChart width={730} height={250} data={props.data}>
             <CartesianGrid strokeDasharray="3 3" />
@@ -34,8 +33,8 @@ const Orders = (props: Props) => {
             <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
           </LineChart>
         </ResponsiveContainer>
-      </div>
-    </Paper>
+      </ChartWrapper>
+    </PaperStyle>
   )
 }
 

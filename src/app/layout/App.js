@@ -9,6 +9,7 @@ import { NavbarLinks } from "common/constants/Navbar"
 import Routes from "app/routes/Routes"
 import { headerItems, generateLinks } from "common/utils/headerItems"
 import withWidth, { LARGE, SMALL } from "material-ui/utils/withWidth"
+import { Container } from "./AppStyles"
 
 class App extends Component {
   state = {
@@ -33,15 +34,6 @@ class App extends Component {
     const { sideBarOpen } = this.props
 
     const styles = {
-      container: {
-        fontFamily: "roboto",
-        marginRight: "auto",
-        marginLeft: "auto",
-        paddingRight: "10px",
-        paddingLeft: "10px",
-        paddingBottom: "10px",
-        backgroundColor: "#E1E2E1"
-      },
       topbar: {
         drawerWidth: sideBarOpen ? drawerWidth : 0,
         marginTop: "5px"
@@ -60,12 +52,12 @@ class App extends Component {
           </Header>
         </Router>
         <Navbar items={NavbarLinks} />
-        <div style={styles.container}>
+        <Container>
           <Topbar handleSideBar={this.handleSideBar} styles={styles.topbar} />
           <Sidebar sideBarOpen={sideBarOpen} />
           <div style={styles.dashboard}>{this.props.children}</div>
           <Routes />
-        </div>
+        </Container>
         <Footer items={FooterLinks} />
       </div>
     )

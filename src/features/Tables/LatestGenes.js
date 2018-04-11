@@ -7,9 +7,8 @@ import Table, {
   TableRow
 } from "material-ui/Table"
 import Paper from "material-ui/Paper"
-import Typography from "material-ui/Typography"
 import data from "common/data/data"
-import { tableStyles } from "./TableStyles"
+import { HeaderStyle } from "./TableStyles"
 
 type Props = {
   /** The data to pass into this table */
@@ -19,9 +18,7 @@ type Props = {
 const LatestGenes = (props: Props) => {
   return (
     <Paper>
-      <Typography variant="title" style={tableStyles.header}>
-        Latest Genes
-      </Typography>
+      <HeaderStyle variant="title">Latest Genes</HeaderStyle>
       <Table>
         <TableHead>
           <TableRow>

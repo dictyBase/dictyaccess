@@ -1,10 +1,14 @@
 // @flow
 import React from "react"
 import Grid from "material-ui/Grid"
-import Paper from "material-ui/Paper"
 import List, { ListItem, ListItemIcon, ListItemText } from "material-ui/List"
 import { ResponsiveContainer, PieChart, Pie, Cell } from "recharts"
-import chartStyles from "./ChartStyles"
+import {
+  PaperStyle,
+  HeaderStyle,
+  ChartWrapper,
+  LegendStyle
+} from "./ChartStyles"
 
 type Props = {
   /** Data object for pie chart */
@@ -13,11 +17,11 @@ type Props = {
 
 const BrowserUsage = (props: Props) => {
   return (
-    <Paper style={chartStyles.paper}>
-      <div style={chartStyles.header}>Browser Usage</div>
+    <PaperStyle>
+      <HeaderStyle variant="title">Browser Usage</HeaderStyle>
       <Grid container>
         <Grid item xs={12} sm={8} md={8} lg={8}>
-          <div style={chartStyles.div}>
+          <ChartWrapper>
             <ResponsiveContainer>
               <PieChart>
                 <Pie
@@ -32,10 +36,10 @@ const BrowserUsage = (props: Props) => {
                 </Pie>
               </PieChart>
             </ResponsiveContainer>
-          </div>
+          </ChartWrapper>
         </Grid>
         <Grid item xs={12} sm={4} md={4} lg={4}>
-          <div style={chartStyles.legend}>
+          <LegendStyle>
             <List>
               {props.data.map(item => (
                 <ListItem key={item.name}>
@@ -44,10 +48,10 @@ const BrowserUsage = (props: Props) => {
                 </ListItem>
               ))}
             </List>
-          </div>
+          </LegendStyle>
         </Grid>
       </Grid>
-    </Paper>
+    </PaperStyle>
   )
 }
 

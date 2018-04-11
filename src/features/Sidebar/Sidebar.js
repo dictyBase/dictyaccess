@@ -8,6 +8,7 @@ import DraftsIcon from "@material-ui/icons/Drafts"
 // currently overlaps dashboard, need to resize
 
 type Props = {
+  /** Boolean for whether the sidebar is open or not */
   sideBarOpen: boolean
 }
 

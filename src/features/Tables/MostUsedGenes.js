@@ -6,10 +6,9 @@ import Table, {
   TableHead,
   TableRow
 } from "material-ui/Table"
-import Typography from "material-ui/Typography"
 import Paper from "material-ui/Paper"
 import data from "common/data/data"
-import { tableStyles } from "./TableStyles"
+import { HeaderStyle } from "./TableStyles"
 
 type Props = {
   /** The data to pass into this table */
@@ -19,9 +18,7 @@ type Props = {
 const MostUsedGenes = (props: Props) => {
   return (
     <Paper>
-      <Typography variant="title" style={tableStyles.header}>
-        Most Used Genes
-      </Typography>
+      <HeaderStyle variant="title">Most Used Genes</HeaderStyle>
       <Table>
         <TableHead>
           <TableRow>

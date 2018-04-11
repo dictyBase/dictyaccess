@@ -1,24 +1,26 @@
 // @flow
+import styled from "styled-components"
+import Paper from "material-ui/Paper"
+import Typography from "material-ui/Typography"
 
-const chartStyles = {
-  paper: {
-    backgroundColor: "#fff",
-    height: "100%"
-  },
-  div: {
-    height: 250,
-    padding: "5px 15px 0 15px"
-  },
-  header: {
-    fontSize: 24,
-    color: "#000",
-    backgroundColor: "#e3f2fd",
-    padding: 10
-  },
-  legend: {
-    paddingTop: 20,
-    marginRight: 20
-  }
-}
+export const PaperStyle = styled(Paper)`
+  background-color: #fff;
+  height: 100%;
+`
 
-export default chartStyles
+export const ChartWrapper = styled.div`
+  height: 250px;
+  padding: 5px 15px 0px 15px;
+`
+
+export const HeaderStyle = styled(Typography)`
+  font-size: 24px;
+  color: #000;
+  background-color: #e3f2fd;
+  padding: 10px;
+`
+
+export const LegendStyle = styled.div`
+  padding-top: 20px;
+  margin-right: 20px;
+`

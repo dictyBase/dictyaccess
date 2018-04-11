@@ -1,7 +1,13 @@
 // @flow
 import React from "react"
 import Paper from "material-ui/Paper"
-import { grey } from "material-ui/colors"
+import {
+  IconSpanStyle,
+  // IconContainer,
+  ContentStyle,
+  TextSpanStyle,
+  NumberSpanStyle
+} from "./InfoBoxStyles"
 
 type Props = {
   /** The color of the icon container */
@@ -14,48 +20,28 @@ type Props = {
   Icon: string
 }
 
-const InfoBox = (props: Props) => {
-  const { color, title, value, Icon } = props
-
-  const styles = {
-    content: {
-      padding: "5px 10px",
-      marginLeft: 90,
-      height: 80
-    },
-    number: {
-      display: "block",
-      fontSize: 18,
-      color: grey[800]
-    },
-    text: {
-      fontSize: 20,
-      color: grey[800]
-    },
-    iconSpan: {
-      float: "left",
-      height: 90,
-      width: 90,
-      textAlign: "center",
-      backgroundColor: color
-    },
-    icon: {
-      height: 48,
-      width: 48,
-      marginTop: 20,
-      maxWidth: "100%"
-    }
+const styles = {
+  icon: {
+    height: 48,
+    width: 48,
+    marginTop: 20,
+    maxWidth: "100%"
   }
+}
+
+const InfoBox = (props: Props) => {
+  const { title, value, Icon } = props
+
   return (
     <Paper>
-      <span style={styles.iconSpan}>
+      <IconSpanStyle>
         <Icon color="inherit" style={styles.icon} />
-      </span>
+      </IconSpanStyle>
 
-      <div style={styles.content}>
-        <span style={styles.text}>{title}</span>
-        <span style={styles.number}>{value}</span>
-      </div>
+      <ContentStyle>
+        <TextSpanStyle>{title}</TextSpanStyle>
+        <NumberSpanStyle>{value}</NumberSpanStyle>
+      </ContentStyle>
     </Paper>
   )
 }

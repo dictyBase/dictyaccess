@@ -1,10 +1,10 @@
 // @flow
+import styled from "styled-components"
+import Typography from "material-ui/Typography"
 
-export const tableStyles = {
-  header: {
-    fontSize: 24,
-    color: "#000",
-    backgroundColor: "#e3f2fd",
-    padding: 10
-  }
-}
+export const HeaderStyle = styled(Typography)`
+  font-size: 24px;
+  color: #000;
+  background-color: #e3f2fd;
+  padding: 10px;
+`

@@ -7,7 +7,7 @@ type Props = {
   data: Object
 }
 
-const LatestNews = props => {
+const LatestNews = (props: Props) => {
   return (
     <PaperStyle>
       <HeaderStyle variant="title">Latest Dicty News</HeaderStyle>
