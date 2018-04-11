@@ -45,7 +45,7 @@ const Dashboard = () => {
         <BrowserUsage data={data.charts.browsers} />
       </Grid>
       <Grid item xs={12} sm={4} lg={4}>
-        <LatestNews />
+        <LatestNews data={data.news} />
       </Grid>
     </Grid>
   )

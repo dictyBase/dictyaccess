@@ -104,7 +104,19 @@ const data = {
         icon: <ChevronLeft />
       }
     ]
-  }
+  },
+  news: [
+    {
+      date: "February 13, 2018",
+      content:
+        "After Northwestern moved our servers from one campus to the other recently our Blast from the Front - and all Gene Pages, as well as the Genome Browser (including snapshot on gene page) are down. We and Northwestern IT staff are working on the problem. Meanwhile for Blast use the Genome Server, the Blast server which is available from the other genome sites we house. Thanks for your patience!"
+    },
+    {
+      date: "February 07, 2018",
+      content:
+        "Dicty in the News: New evidence using Dictyostelium discoideum suggests a role for curcumin and related compounds in the treatment of cancer and Alzheimer's disease. Reported in Medical Xpress with comments from Professor Robin SB Williams."
+    }
+  ]
 }
 
 export default data
