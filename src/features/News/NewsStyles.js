@@ -1,22 +1,19 @@
 // @flow
 import styled from "styled-components"
 import Paper from "material-ui/Paper"
-
-export const newsStyles = theme => ({
-  paper: {
-    height: "100%"
-  },
-  header: {
-    fontSize: 24,
-    color: "#000",
-    backgroundColor: "#e3f2fd",
-    padding: 10
-  },
-  items: {
-    paddingLeft: "5px"
-  }
-})
+import Typography from "material-ui/Typography"
 
 export const PaperStyle = styled(Paper)`
   height: 100%;
+`
+
+export const HeaderStyle = styled(Typography)`
+  font-size: 24px;
+  color: #000;
+  background-color: #e3f2fd;
+  padding: 10px;
+`
+
+export const ItemStyle = styled.div`
+  padding-left: 5px;
 `
