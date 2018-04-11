@@ -41,9 +41,9 @@ const data = {
     ],
     mostUsedGenes: [
       {
-        descriptor: "acaA-",
-        names: "aca-, acaA-(r)",
-        id: "DBS0252577"
+        descriptor: "sada2332-",
+        names: "kjsjks4",
+        id: "DBS02350146"
       },
       {
         descriptor: "dfbcdsaB4-",
@@ -56,14 +56,14 @@ const data = {
         id: "DBS038350146"
       },
       {
+        descriptor: "acaA-",
+        names: "aca-, acaA-(r)",
+        id: "DBS0252577"
+      },
+      {
         descriptor: "sdasda33-",
         names: "jfgkhjs3",
         id: "DBS03350146"
-      },
-      {
-        descriptor: "sada2332-",
-        names: "kjsjks4",
-        id: "DBS02350146"
       }
     ]
   },

@@ -5,6 +5,8 @@ import LatestGenes from "features/Tables/LatestGenes"
 import MostUsedGenes from "features/Tables/MostUsedGenes"
 import Orders from "features/Charts/Orders"
 import BrowserUsage from "features/Charts/BrowserUsage"
+import LatestTweets from "features/SocialMedia/LatestTweets"
+import LatestNews from "features/News/LatestNews"
 import Poll from "@material-ui/icons/Poll"
 import Public from "@material-ui/icons/Public"
 import Whatshot from "@material-ui/icons/Whatshot"
@@ -40,10 +42,10 @@ const Dashboard = () => {
         <BrowserUsage data={data.charts.browsers} />
       </Grid>
       <Grid item xs={12} sm={4} lg={4}>
-        <LatestGenes />
+        <LatestTweets />
       </Grid>
       <Grid item xs={12} sm={4} lg={4}>
-        <MostUsedGenes />
+        <LatestNews />
       </Grid>
     </Grid>
   )
