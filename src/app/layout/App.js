@@ -43,7 +43,8 @@ class App extends Component {
         backgroundColor: "#E1E2E1"
       },
       topbar: {
-        drawerWidth: sideBarOpen ? drawerWidth : 0
+        drawerWidth: sideBarOpen ? drawerWidth : 0,
+        marginTop: "5px"
       },
       dashboard: {
         marginBottom: "10px",

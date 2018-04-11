@@ -7,7 +7,9 @@ import IconButton from "material-ui/IconButton"
 import MenuIcon from "@material-ui/icons/Menu"
 
 type Props = {
+  /** List of CSS styles */
   styles: Object,
+  /** Toggles whether sidebar is shown */
   handleSideBar: Function
 }
 

@@ -1,5 +1,5 @@
 // @flow
-import React, { Component } from "react"
+import React from "react"
 import Paper from "material-ui/Paper"
 import { grey } from "material-ui/colors"
 
@@ -49,7 +49,7 @@ const InfoBox = (props: Props) => {
   return (
     <Paper>
       <span style={styles.iconSpan}>
-        <Icon color="#fff" style={styles.icon} />
+        <Icon color="inherit" style={styles.icon} />
       </span>
 
       <div style={styles.content}>
