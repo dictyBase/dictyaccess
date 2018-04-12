@@ -70,13 +70,13 @@ const data = {
   },
   charts: {
     orders: [
-      { orders: 20 },
-      { orders: 25 },
-      { orders: 11 },
-      { orders: 22 },
-      { orders: 14 },
-      { orders: 9 },
-      { orders: 33 }
+      { month: "January", orders: 20 },
+      { month: "February", orders: 25 },
+      { month: "March", orders: 11 },
+      { month: "April", orders: 22 },
+      { month: "May", orders: 14 },
+      { month: "June", orders: 9 },
+      { month: "July", orders: 33 }
     ],
     browsers: [
       {

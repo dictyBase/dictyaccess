@@ -25,7 +25,7 @@ const Orders = (props: Props) => {
         <ResponsiveContainer>
           <LineChart width={730} height={250} data={props.data}>
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
+            <XAxis dataKey="month" />
             <YAxis />
             <Tooltip />
             <Legend />
