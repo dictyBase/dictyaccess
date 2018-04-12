@@ -21,7 +21,7 @@ const BrowserUsage = (props: Props) => {
     <PaperStyle>
       <HeaderStyle variant="title">Browser Usage</HeaderStyle>
       <Grid container>
-        <Grid item xs={12} sm={8} md={8} lg={8}>
+        <Grid item xs={12} sm={7} md={7} lg={7}>
           <ChartWrapper>
             <ResponsiveContainer>
               <PieChart>
@@ -39,7 +39,7 @@ const BrowserUsage = (props: Props) => {
             </ResponsiveContainer>
           </ChartWrapper>
         </Grid>
-        <Grid item xs={12} sm={4} md={4} lg={4}>
+        <Grid item xs={12} sm={5} md={5} lg={5}>
           <LegendStyle>
             <List>
               {props.data.map(item => (

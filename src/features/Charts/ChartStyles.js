@@ -17,7 +17,7 @@ export const ChartWrapper = styled.div`
 export const HeaderStyle = styled(Typography)`
   font-size: 24px;
   color: #000;
-  background-color: #e3f2fd;
+  background-color: rgb(251, 140, 0);
   padding: 10px;
 `
 

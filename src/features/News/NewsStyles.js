@@ -10,7 +10,7 @@ export const PaperStyle = styled(Paper)`
 export const HeaderStyle = styled(Typography)`
   font-size: 24px;
   color: #000;
-  background-color: #e3f2fd;
+  background-color: rgb(142, 36, 170);
   padding: 10px;
 `
 

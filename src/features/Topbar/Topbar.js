@@ -24,7 +24,8 @@ const styles = theme => ({
     transition: theme.transitions.create(["margin", "width"], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen
-    })
+    }),
+    backgroundColor: "#4f5aae"
   },
   appBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,

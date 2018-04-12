@@ -7,7 +7,7 @@ export const IconSpanStyle = styled.span`
   height: 90px;
   width: 90px;
   text-align: center;
-  background-color: #4db6ac; /* make this a passed prop */
+  background-color: #000c51; /* make this a passed prop */
 `
 
 // fix this to resize icon properly

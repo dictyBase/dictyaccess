@@ -3,8 +3,9 @@ import React from "react"
 import { withStyles } from "material-ui/styles"
 import Drawer from "material-ui/Drawer"
 import List, { ListItem, ListItemIcon, ListItemText } from "material-ui/List"
-import InboxIcon from "@material-ui/icons/Inbox"
-import DraftsIcon from "@material-ui/icons/Drafts"
+import TrendingUpIcon from "@material-ui/icons/TrendingUp"
+import FingerprintIcon from "@material-ui/icons/Fingerprint"
+import WorkIcon from "@material-ui/icons/Work"
 import IconButton from "material-ui/IconButton"
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft"
 import { drawerWidth } from "common/constants/Styling"
@@ -43,19 +44,19 @@ const Sidebar = props => {
       <List>
         <ListItem button>
           <ListItemIcon>
-            <InboxIcon />
+            <TrendingUpIcon />
           </ListItemIcon>
           <ListItemText primary="Dicty Stock Center" />
         </ListItem>
         <ListItem button>
           <ListItemIcon>
-            <DraftsIcon />
+            <FingerprintIcon />
           </ListItemIcon>
           <ListItemText primary="Genomepage" />
         </ListItem>
         <ListItem button>
           <ListItemIcon>
-            <DraftsIcon />
+            <WorkIcon />
           </ListItemIcon>
           <ListItemText primary="Dicty Frontpage" />
         </ListItem>

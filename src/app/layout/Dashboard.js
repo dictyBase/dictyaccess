@@ -29,22 +29,22 @@ const Dashboard = () => {
           value="12"
         />
       </Grid>
-      <Grid item xs={12} sm={4} lg={4}>
-        <Orders data={data.charts.orders} />
-      </Grid>
-      <Grid item xs={12} sm={4} lg={4}>
+      <Grid item xs={12} sm={6} lg={6}>
         <LatestGenes />
       </Grid>
-      <Grid item xs={12} sm={4} lg={4}>
+      <Grid item xs={12} sm={6} lg={6}>
         <MostUsedGenes />
       </Grid>
-      <Grid item xs={12} sm={4} lg={4}>
-        <LatestNews data={data.news} />
+      <Grid item xs={12} sm={6} lg={6}>
+        <Orders data={data.charts.orders} />
       </Grid>
-      <Grid item xs={12} sm={4} lg={4}>
+      <Grid item xs={12} sm={6} lg={6}>
         <BrowserUsage data={data.charts.browsers} />
       </Grid>
-      <Grid item xs={12} sm={4} lg={4}>
+      <Grid item xs={12} sm={6} lg={6}>
+        <LatestNews data={data.news} />
+      </Grid>
+      <Grid item xs={12} sm={6} lg={6}>
         <LatestTweets />
       </Grid>
     </Grid>

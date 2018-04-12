@@ -25,7 +25,8 @@ const styles = {
     height: 48,
     width: 48,
     marginTop: 20,
-    maxWidth: "100%"
+    maxWidth: "100%",
+    color: "white"
   }
 }
 
