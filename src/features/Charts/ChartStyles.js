@@ -11,7 +11,7 @@ export const PaperStyle = styled(Paper)`
 
 export const ChartWrapper = styled.div`
   height: 250px;
-  padding: 5px 15px 0px 15px;
+  padding: 10px 15px 0px 0px;
 `
 
 export const HeaderStyle = styled(Typography)`

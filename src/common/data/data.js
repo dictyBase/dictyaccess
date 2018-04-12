@@ -70,24 +70,24 @@ const data = {
   },
   charts: {
     orders: [
-      { pv: 20 },
-      { pv: 25 },
-      { pv: 11 },
-      { pv: 22 },
-      { pv: 14 },
-      { pv: 33 },
-      { pv: 8 }
+      { orders: 20 },
+      { orders: 25 },
+      { orders: 11 },
+      { orders: 22 },
+      { orders: 14 },
+      { orders: 9 },
+      { orders: 33 }
     ],
     browsers: [
       {
         name: "Chrome",
-        value: 800,
+        value: 700,
         color: "rgb(0, 172, 193)",
         icon: <ExpandLess />
       },
       {
         name: "Firefox",
-        value: 300,
+        value: 400,
         color: "rgb(216, 27, 96)",
         icon: <ChevronRight />
       },

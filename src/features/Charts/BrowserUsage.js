@@ -1,9 +1,10 @@
 // @flow
 import React from "react"
+import { ResponsiveContainer, PieChart, Pie, Cell } from "recharts"
 import Grid from "material-ui/Grid"
 import List, { ListItem, ListItemIcon, ListItemText } from "material-ui/List"
 import Avatar from "material-ui/Avatar"
-import { ResponsiveContainer, PieChart, Pie, Cell } from "recharts"
+import { renderCustomizedLabel } from "common/utils/renderCustomizedLabel"
 import {
   PaperStyle,
   HeaderStyle,
@@ -26,8 +27,11 @@ const BrowserUsage = (props: Props) => {
             <ResponsiveContainer>
               <PieChart>
                 <Pie
-                  innerRadius={70}
-                  outerRadius={110}
+                  cx="50%"
+                  cy="50%"
+                  outerRadius={80}
+                  label={renderCustomizedLabel}
+                  labelLine={false}
                   data={props.data}
                   dataKey="value"
                   fill="#8884d8">
