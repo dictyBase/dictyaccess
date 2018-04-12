@@ -4,7 +4,9 @@ import Grid from "material-ui/Grid"
 import InfoBox from "common/components/InfoBox"
 import StrainsList from "features/Tables/StrainsList"
 import PlasmidsList from "features/Tables/PlasmidsList"
-import LatestStrains from "features/Tables/LatestStrains"
+import LatestAnnotations from "features/Tables/LatestAnnotations"
+import LatestStrains from "features/Lists/LatestStrains"
+import LatestPlasmids from "features/Lists/LatestPlasmids"
 import Poll from "@material-ui/icons/Poll"
 import Public from "@material-ui/icons/Public"
 import Whatshot from "@material-ui/icons/Whatshot"
@@ -33,9 +35,15 @@ const DscDashboard = () => {
       <Grid item xs={12} sm={6} lg={6}>
         <PlasmidsList data={data.tables.mostUsedGenes} />
       </Grid>
-      <Grid item xs={12} sm={6} lg={6}>
+      <Grid item xs={12} sm={3} lg={3}>
         <LatestStrains data={data.tables.latestGenes} />
       </Grid>
+      <Grid item xs={12} sm={3} lg={3}>
+        <LatestPlasmids data={data.tables.latestGenes} />
+      </Grid>
+      {/* <Grid item xs={12} sm={6} lg={6}>
+        <LatestAnnotations data={data.annotations} />
+      </Grid> */}
     </Grid>
   )
 }

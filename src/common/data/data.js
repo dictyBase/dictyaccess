@@ -6,11 +6,6 @@ import ChevronRight from "@material-ui/icons/ChevronRight"
 import ChevronLeft from "@material-ui/icons/ChevronLeft"
 
 const data = {
-  menus: [
-    { text: "Dicty Stock Center", icon: "", link: "/dashboard" },
-    { text: "Genomepage", icon: "", link: "/genomepage" },
-    { text: "Dicty Frontpage", icon: "", link: "/frontpage" }
-  ],
   tables: {
     latestGenes: [
       {
@@ -116,7 +111,11 @@ const data = {
       content:
         "Dicty in the News: New evidence using Dictyostelium discoideum suggests a role for curcumin and related compounds in the treatment of cancer and Alzheimer's disease. Reported in Medical Xpress with comments from Professor Robin SB Williams."
     }
-  ]
+  ],
+  annotations: {
+    genes: ["abprtA", "trgrB1", "tgrC1", "tacA"],
+    papers: ["25609090", "25546705", "25540127", "25596489"]
+  }
 }
 
 export default data
