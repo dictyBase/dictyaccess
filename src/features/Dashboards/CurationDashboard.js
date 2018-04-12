@@ -13,7 +13,7 @@ import Public from "@material-ui/icons/Public"
 import Whatshot from "@material-ui/icons/Whatshot"
 import data from "common/data/data"
 
-const DictybaseDashboard = () => {
+const CurationDashboard = () => {
   return (
     <Grid container spacing={16}>
       <Grid item xs={12} sm={4} lg={4}>
@@ -52,4 +52,4 @@ const DictybaseDashboard = () => {
   )
 }
 
-export default DictybaseDashboard
+export default CurationDashboard

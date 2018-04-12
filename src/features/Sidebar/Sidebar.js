@@ -8,6 +8,7 @@ import TrendingUpIcon from "@material-ui/icons/TrendingUp"
 import FingerprintIcon from "@material-ui/icons/Fingerprint"
 import WorkIcon from "@material-ui/icons/Work"
 import DataUsageIcon from "@material-ui/icons/DataUsage"
+import { StyledLink } from "./SidebarStyles"
 import { drawerWidth } from "common/constants/Styling"
 
 const styles = theme => ({
@@ -63,25 +64,33 @@ const Sidebar = (props: Props) => {
           <ListItemIcon>
             <TrendingUpIcon />
           </ListItemIcon>
-          <ListItemText primary="Dicty Stock Center" />
+          <StyledLink to="/dashboard/dicty-stock-center">
+            <ListItemText primary="Dicty Stock Center" />
+          </StyledLink>
         </ListItem>
         <ListItem button>
           <ListItemIcon>
             <FingerprintIcon />
           </ListItemIcon>
-          <ListItemText primary="Genomes" />
+          <StyledLink to="/dashboard/genomes">
+            <ListItemText primary="Genomes" />
+          </StyledLink>
         </ListItem>
         <ListItem button>
           <ListItemIcon>
             <WorkIcon />
           </ListItemIcon>
-          <ListItemText primary="Curation" />
+          <StyledLink to="/dashboard/curation">
+            <ListItemText primary="Curation" />
+          </StyledLink>
         </ListItem>
         <ListItem button>
           <ListItemIcon>
             <DataUsageIcon />
           </ListItemIcon>
-          <ListItemText primary="Analytics" />
+          <StyledLink to="/dashboard/analytics">
+            <ListItemText primary="Analytics" />
+          </StyledLink>
         </ListItem>
       </List>
     </Drawer>

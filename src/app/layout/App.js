@@ -40,23 +40,23 @@ const styles = theme => ({
 const App = props => {
   const { classes } = props
   return (
-    <div className={classes.root}>
-      <Router>
+    <Router>
+      <div className={classes.root}>
         <Header items={headerItems}>
           {headerItems => headerItems.map(generateLinks)}
         </Header>
-      </Router>
-      <Navbar items={NavbarLinks} />
-      <div className={classes.appFrame}>
-        <Breadcrumbs />
-        <Sidebar />
-        <main className={classes.content}>
-          <div className={classes.drawerHeader} />
-          <Routes />
-        </main>
+        <Navbar items={NavbarLinks} />
+        <div className={classes.appFrame}>
+          <Breadcrumbs />
+          <Sidebar />
+          <main className={classes.content}>
+            <div className={classes.drawerHeader} />
+            <Routes />
+          </main>
+        </div>
+        <Footer items={FooterLinks} />
       </div>
-      <Footer items={FooterLinks} />
-    </div>
+    </Router>
   )
 }
 

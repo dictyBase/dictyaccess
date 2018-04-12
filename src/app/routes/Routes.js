@@ -1,34 +1,27 @@
 // @flow
 import React from "react"
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect
-} from "react-router-dom"
+import { Route, Switch, Redirect } from "react-router-dom"
 import DscDashboard from "features/Dashboards/DscDashboard"
-import DictybaseDashboard from "features/Dashboards/DictybaseDashboard"
-import GenomepageDashboard from "features/Dashboards/GenomepageDashboard"
+import GenomeDashboard from "features/Dashboards/GenomeDashboard"
+import CurationDashboard from "features/Dashboards/CurationDashboard"
+import AnalyticsDashboard from "features/Dashboards/AnalyticsDashboard"
 import PageNotFound from "features/PageNotFound"
 
 const Routes = () => {
   return (
-    <Router>
-      <Switch>
-        <Route
-          exact
-          path="/"
-          component={DscDashboard => <Redirect to="/dashboard" />}
-        />
-        <Route path="/dashboard" component={DscDashboard} />
-        <Route path="/dashboard/genomepage" component={GenomepageDashboard} />
-        <Route
-          path="/dashboard/dictyfrontpage"
-          component={DictybaseDashboard}
-        />
-        <Route path="*" component={PageNotFound} />
-      </Switch>
-    </Router>
+    <Switch>
+      <Route
+        exact
+        path="/"
+        component={DscDashboard => <Redirect to="/dashboard" />}
+      />
+      <Route path="/dashboard" component={DscDashboard} />
+      <Route path="/dashboard/dicty-stock-center" component={DscDashboard} />
+      <Route path="/dashboard/genomes" component={GenomeDashboard} />
+      <Route path="/dashboard/curation" component={CurationDashboard} />
+      <Route path="/dashboard/analytics" component={AnalyticsDashboard} />
+      <Route path="*" component={PageNotFound} />
+    </Switch>
   )
 }
 
