@@ -39,13 +39,13 @@ const Dashboard = () => {
         <MostUsedGenes />
       </Grid>
       <Grid item xs={12} sm={4} lg={4}>
-        <LatestTweets />
+        <LatestNews data={data.news} />
       </Grid>
       <Grid item xs={12} sm={4} lg={4}>
         <BrowserUsage data={data.charts.browsers} />
       </Grid>
       <Grid item xs={12} sm={4} lg={4}>
-        <LatestNews data={data.news} />
+        <LatestTweets />
       </Grid>
     </Grid>
   )
