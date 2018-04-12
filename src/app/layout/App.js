@@ -52,7 +52,7 @@ const styles = theme => ({
 
 class App extends Component {
   state = {
-    open: false
+    open: true
   }
 
   handleDrawerOpen = () => {
@@ -75,7 +75,7 @@ class App extends Component {
         </Router>
         <Navbar items={NavbarLinks} />
         <div className={classes.appFrame}>
-          <Topbar open={open} handleDrawerOpen={this.handleDrawerOpen} />
+          {/* <Topbar open={open} handleDrawerOpen={this.handleDrawerOpen} /> */}
           <Sidebar open={open} handleDrawerClose={this.handleDrawerClose} />
           <main
             className={classNames(classes.content, {

@@ -3,9 +3,11 @@ import React from "react"
 import { withStyles } from "material-ui/styles"
 import Drawer from "material-ui/Drawer"
 import List, { ListItem, ListItemIcon, ListItemText } from "material-ui/List"
+import Typography from "material-ui/Typography"
 import TrendingUpIcon from "@material-ui/icons/TrendingUp"
 import FingerprintIcon from "@material-ui/icons/Fingerprint"
 import WorkIcon from "@material-ui/icons/Work"
+import DataUsageIcon from "@material-ui/icons/DataUsage"
 import IconButton from "material-ui/IconButton"
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft"
 import { drawerWidth } from "common/constants/Styling"
@@ -19,7 +21,7 @@ const styles = theme => ({
   drawerHeader: {
     display: "flex",
     alignItems: "center",
-    justifyContent: "flex-end",
+    justifyContent: "flex-start",
     padding: "0 8px",
     backgroundColor: "#4f5aae",
     ...theme.mixins.toolbar
@@ -53,9 +55,12 @@ const Sidebar = (props: Props) => {
         paper: classes.drawerPaper
       }}>
       <div className={classes.drawerHeader}>
-        <IconButton className={classes.icon} onClick={handleDrawerClose}>
+        <Typography variant="title" color="inherit" noWrap>
+          DictyAccess
+        </Typography>
+        {/* <IconButton className={classes.icon} onClick={handleDrawerClose}>
           <ChevronLeftIcon />
-        </IconButton>
+        </IconButton> */}
       </div>
       <List className={classes.list}>
         <ListItem button>
@@ -68,13 +73,19 @@ const Sidebar = (props: Props) => {
           <ListItemIcon>
             <FingerprintIcon />
           </ListItemIcon>
-          <ListItemText primary="Genomepage" />
+          <ListItemText primary="Genomes" />
         </ListItem>
         <ListItem button>
           <ListItemIcon>
             <WorkIcon />
           </ListItemIcon>
-          <ListItemText primary="Dicty Frontpage" />
+          <ListItemText primary="Curation" />
+        </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <DataUsageIcon />
+          </ListItemIcon>
+          <ListItemText primary="Analytics" />
         </ListItem>
       </List>
     </Drawer>
