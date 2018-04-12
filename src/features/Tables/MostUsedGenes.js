@@ -7,12 +7,11 @@ import Table, {
   TableRow
 } from "material-ui/Table"
 import Paper from "material-ui/Paper"
-import data from "common/data/data"
 import { HeaderStyle } from "./TableStyles"
 
 type Props = {
   /** The data to pass into this table */
-  data: Object
+  data: Array<Object>
 }
 
 const MostUsedGenes = (props: Props) => {
@@ -28,7 +27,7 @@ const MostUsedGenes = (props: Props) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {data.tables.mostUsedGenes.map(item => (
+          {props.data.map(item => (
             <TableRow key={item.id}>
               <TableCell>{item.descriptor}</TableCell>
               <TableCell>{item.names}</TableCell>

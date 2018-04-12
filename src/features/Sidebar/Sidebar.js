@@ -33,13 +33,21 @@ const styles = theme => ({
   }
 })
 
-const Sidebar = props => {
+type Props = {
+  /** Material-UI property for customizing CSS */
+  classes: Object,
+  /** Boolean representing whether the left drawer is open or not */
+  open: boolean,
+  /** Handler to close the left drawer */
+  handleDrawerClose: Function
+}
+
+const Sidebar = (props: Props) => {
   const { classes, open, handleDrawerClose } = props
 
   return (
     <Drawer
       variant="persistent"
-      anchor="left"
       open={open}
       classes={{
         paper: classes.drawerPaper

@@ -13,8 +13,8 @@ import {
 import { PaperStyle, HeaderStyle, ChartWrapper } from "./ChartStyles"
 
 type Props = {
-  /** Data object for chart */
-  data: Object
+  /** Data array for chart */
+  data: Array<Object>
 }
 
 const Orders = (props: Props) => {

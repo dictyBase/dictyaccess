@@ -4,7 +4,7 @@ import { PaperStyle, HeaderStyle, ItemStyle } from "./NewsStyles"
 
 type Props = {
   /** The news data to be displayed */
-  data: Object
+  data: Array<Object>
 }
 
 const LatestNews = (props: Props) => {

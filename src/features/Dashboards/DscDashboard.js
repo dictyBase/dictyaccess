@@ -1,3 +1,4 @@
+// @flow
 import React from "react"
 import Grid from "material-ui/Grid"
 import InfoBox from "common/components/InfoBox"
@@ -30,10 +31,10 @@ const DscDashboard = () => {
         />
       </Grid>
       <Grid item xs={12} sm={6} lg={6}>
-        <LatestGenes />
+        <LatestGenes data={data.tables.latestGenes} />
       </Grid>
       <Grid item xs={12} sm={6} lg={6}>
-        <MostUsedGenes />
+        <MostUsedGenes data={data.tables.mostUsedGenes} />
       </Grid>
       <Grid item xs={12} sm={6} lg={6}>
         <Orders data={data.charts.orders} />

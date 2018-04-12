@@ -13,8 +13,8 @@ import {
 } from "./ChartStyles"
 
 type Props = {
-  /** Data object for pie chart */
-  data: Object
+  /** Data array for pie chart */
+  data: Array<Object>
 }
 
 const BrowserUsage = (props: Props) => {
