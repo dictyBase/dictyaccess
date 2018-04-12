@@ -2,10 +2,9 @@
 import React from "react"
 import Grid from "material-ui/Grid"
 import InfoBox from "common/components/InfoBox"
-import LatestGenes from "features/Tables/LatestGenes"
-import MostUsedGenes from "features/Tables/MostUsedGenes"
-import LatestTweets from "features/SocialMedia/LatestTweets"
-import LatestNews from "features/News/LatestNews"
+import StrainsList from "features/Tables/StrainsList"
+import PlasmidsList from "features/Tables/PlasmidsList"
+import LatestStrains from "features/Tables/LatestStrains"
 import Poll from "@material-ui/icons/Poll"
 import Public from "@material-ui/icons/Public"
 import Whatshot from "@material-ui/icons/Whatshot"
@@ -14,13 +13,13 @@ import data from "common/data/data"
 const DscDashboard = () => {
   return (
     <Grid container spacing={16}>
-      <Grid item xs={12} sm={4} lg={4}>
+      <Grid item xs={12} sm={7} lg={3}>
         <InfoBox Icon={Poll} color="#90caf9" title="Strains" value="1927" />
       </Grid>
-      <Grid item xs={12} sm={4} lg={4}>
+      <Grid item xs={12} sm={7} lg={3}>
         <InfoBox Icon={Public} color="#b2fef7" title="Plasmids" value="882" />
       </Grid>
-      <Grid item xs={12} sm={4} lg={4}>
+      <Grid item xs={12} sm={7} lg={3}>
         <InfoBox
           Icon={Whatshot}
           color="#ffcccb"
@@ -29,16 +28,13 @@ const DscDashboard = () => {
         />
       </Grid>
       <Grid item xs={12} sm={6} lg={6}>
-        <LatestGenes data={data.tables.latestGenes} />
+        <StrainsList data={data.tables.latestGenes} />
       </Grid>
       <Grid item xs={12} sm={6} lg={6}>
-        <MostUsedGenes data={data.tables.mostUsedGenes} />
+        <PlasmidsList data={data.tables.mostUsedGenes} />
       </Grid>
       <Grid item xs={12} sm={6} lg={6}>
-        <LatestNews data={data.news} />
-      </Grid>
-      <Grid item xs={12} sm={6} lg={6}>
-        <LatestTweets />
+        <LatestStrains data={data.tables.latestGenes} />
       </Grid>
     </Grid>
   )
