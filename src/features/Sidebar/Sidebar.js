@@ -21,7 +21,15 @@ const styles = theme => ({
     alignItems: "center",
     justifyContent: "flex-end",
     padding: "0 8px",
+    backgroundColor: "#4f5aae",
     ...theme.mixins.toolbar
+  },
+  icon: {
+    color: "#fff"
+  },
+  list: {
+    backgroundColor: "#eceff1",
+    height: "100%"
   }
 })
 
@@ -37,11 +45,11 @@ const Sidebar = props => {
         paper: classes.drawerPaper
       }}>
       <div className={classes.drawerHeader}>
-        <IconButton onClick={handleDrawerClose}>
+        <IconButton className={classes.icon} onClick={handleDrawerClose}>
           <ChevronLeftIcon />
         </IconButton>
       </div>
-      <List>
+      <List className={classes.list}>
         <ListItem button>
           <ListItemIcon>
             <TrendingUpIcon />
