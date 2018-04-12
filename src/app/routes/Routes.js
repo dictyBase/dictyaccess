@@ -15,11 +15,15 @@ const Routes = () => {
         path="/"
         component={DscDashboard => <Redirect to="/dashboard" />}
       />
-      <Route path="/dashboard" component={DscDashboard} />
-      <Route path="/dashboard/dicty-stock-center" component={DscDashboard} />
-      <Route path="/dashboard/genomes" component={GenomeDashboard} />
-      <Route path="/dashboard/curation" component={CurationDashboard} />
-      <Route path="/dashboard/analytics" component={AnalyticsDashboard} />
+      <Route exact path="/dashboard" component={DscDashboard} />
+      <Route
+        exact
+        path="/dashboard/dicty-stock-center"
+        component={DscDashboard}
+      />
+      <Route exact path="/dashboard/genomes" component={GenomeDashboard} />
+      <Route exact path="/dashboard/curation" component={CurationDashboard} />
+      <Route exact path="/dashboard/analytics" component={AnalyticsDashboard} />
       <Route path="*" component={PageNotFound} />
     </Switch>
   )
