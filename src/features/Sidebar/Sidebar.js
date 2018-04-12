@@ -8,8 +8,6 @@ import TrendingUpIcon from "@material-ui/icons/TrendingUp"
 import FingerprintIcon from "@material-ui/icons/Fingerprint"
 import WorkIcon from "@material-ui/icons/Work"
 import DataUsageIcon from "@material-ui/icons/DataUsage"
-import IconButton from "material-ui/IconButton"
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft"
 import { drawerWidth } from "common/constants/Styling"
 
 const styles = theme => ({
@@ -21,9 +19,10 @@ const styles = theme => ({
   drawerHeader: {
     display: "flex",
     alignItems: "center",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     padding: "0 8px",
     backgroundColor: "#4f5aae",
+    color: "#fff",
     ...theme.mixins.toolbar
   },
   icon: {
@@ -45,22 +44,19 @@ type Props = {
 }
 
 const Sidebar = (props: Props) => {
-  const { classes, open, handleDrawerClose } = props
+  const { classes, open } = props
 
   return (
     <Drawer
       variant="persistent"
-      open={open}
+      open="true"
       classes={{
         paper: classes.drawerPaper
       }}>
       <div className={classes.drawerHeader}>
-        <Typography variant="title" color="inherit" noWrap>
+        <Typography variant="title" color="inherit">
           DictyAccess
         </Typography>
-        {/* <IconButton className={classes.icon} onClick={handleDrawerClose}>
-          <ChevronLeftIcon />
-        </IconButton> */}
       </div>
       <List className={classes.list}>
         <ListItem button>
