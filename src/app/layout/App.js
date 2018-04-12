@@ -1,67 +1,94 @@
 import React, { Component } from "react"
 import { BrowserRouter as Router } from "react-router-dom"
+import classNames from "classnames"
 import { Header, Footer } from "dicty-components-header-footer"
 import { Navbar } from "dicty-components-navbar"
-import { Topbar } from "features"
-import { Sidebar } from "features"
+import Routes from "app/routes/Routes"
 import { FooterLinks } from "common/constants/Footer"
 import { NavbarLinks } from "common/constants/Navbar"
-import Routes from "app/routes/Routes"
 import { headerItems, generateLinks } from "common/utils/headerItems"
-import withWidth, { LARGE, SMALL } from "material-ui/utils/withWidth"
-import { Container } from "./AppStyles"
+import { withStyles } from "material-ui/styles"
+import { drawerWidth } from "common/constants/Styling"
+import Topbar from "features/Topbar/Topbar"
+import Sidebar from "features/Sidebar/Sidebar"
+
+const styles = theme => ({
+  root: {
+    flexGrow: 1
+  },
+  appFrame: {
+    height: "100%",
+    zIndex: 1,
+    overflow: "hidden",
+    position: "relative",
+    display: "flex",
+    width: "100%"
+  },
+  drawerHeader: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "flex-end",
+    padding: "0 8px",
+    ...theme.mixins.toolbar
+  },
+  content: {
+    flexGrow: 1,
+    backgroundColor: theme.palette.background.default,
+    padding: theme.spacing.unit * 3,
+    transition: theme.transitions.create("margin", {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen
+    }),
+    marginLeft: -drawerWidth
+  },
+  contentShift: {
+    transition: theme.transitions.create("margin", {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen
+    }),
+    marginLeft: 0
+  }
+})
 
 class App extends Component {
   state = {
-    sideBarOpen: true
+    open: false
   }
 
-  // look into changing this
-  componentWillReceiveProps(nextProps) {
-    if (this.props.width !== nextProps.width) {
-      this.setState({ sideBarOpen: nextProps.width === LARGE })
-    }
+  handleDrawerOpen = () => {
+    this.setState({ open: true })
   }
 
-  handleSideBar = () => {
-    this.setState({
-      sideBarOpen: !this.state.sideBarOpen
-    })
+  handleDrawerClose = () => {
+    this.setState({ open: false })
   }
 
   render() {
-    const drawerWidth = 240
-    const { sideBarOpen } = this.props
-
-    const styles = {
-      topbar: {
-        drawerWidth: sideBarOpen ? drawerWidth : 0,
-        marginTop: "5px"
-      },
-      dashboard: {
-        marginBottom: "10px",
-        drawerWidth: sideBarOpen && this.props.width !== SMALL ? drawerWidth : 0
-      }
-    }
-
+    const { classes } = this.props
+    const { open } = this.state
     return (
-      <div>
+      <div className={classes.root}>
         <Router>
           <Header items={headerItems}>
             {headerItems => headerItems.map(generateLinks)}
           </Header>
         </Router>
         <Navbar items={NavbarLinks} />
-        <Container>
-          <Topbar handleSideBar={this.handleSideBar} styles={styles.topbar} />
-          <Sidebar sideBarOpen={sideBarOpen} />
-          <div style={styles.dashboard}>{this.props.children}</div>
-          <Routes />
-        </Container>
+        <div className={classes.appFrame}>
+          <Topbar open={open} handleDrawerOpen={this.handleDrawerOpen} />
+          <Sidebar open={open} handleDrawerClose={this.handleDrawerClose} />
+          <main
+            className={classNames(classes.content, {
+              [classes.contentShift]: open
+            })}>
+            <div className={classes.drawerHeader} />
+            <Routes />
+          </main>
+        </div>
         <Footer items={FooterLinks} />
       </div>
     )
   }
 }
 
-export default withWidth()(App)
+export default withStyles(styles)(App)
