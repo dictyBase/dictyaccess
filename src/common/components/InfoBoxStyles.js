@@ -31,6 +31,8 @@ export const TextSpanStyle = styled.span`
 
 export const NumberSpanStyle = styled.span`
   display: block;
-  font-size: 18px;
+  font-size: 2em;
+  font-weight: 300;
+  line-height: 1.8em;
   color: #424242;
 `

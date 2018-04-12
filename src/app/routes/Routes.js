@@ -6,7 +6,9 @@ import {
   Switch,
   Redirect
 } from "react-router-dom"
-import Dashboard from "app/layout/Dashboard"
+import DscDashboard from "features/Dashboards/DscDashboard"
+import DictybaseDashboard from "features/Dashboards/DictybaseDashboard"
+import GenomepageDashboard from "features/Dashboards/GenomepageDashboard"
 import PageNotFound from "features/PageNotFound"
 
 const Routes = () => {
@@ -16,9 +18,14 @@ const Routes = () => {
         <Route
           exact
           path="/"
-          component={Dashboard => <Redirect to="/dashboard" />}
+          component={DscDashboard => <Redirect to="/dashboard" />}
         />
-        <Route path="/dashboard" component={Dashboard} />
+        <Route path="/dashboard" component={DscDashboard} />
+        <Route path="/dashboard/genomepage" component={GenomepageDashboard} />
+        <Route
+          path="/dashboard/dictyfrontpage"
+          component={DictybaseDashboard}
+        />
         <Route path="*" component={PageNotFound} />
       </Switch>
     </Router>
