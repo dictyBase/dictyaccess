@@ -14,7 +14,6 @@ const LatestTweets = () => {
           username: "dictybase",
           height: "400"
         }}
-        onLoad={() => console.log("Timeline is loaded!")}
       />
     </div>
   )
