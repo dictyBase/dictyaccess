@@ -1,6 +1,6 @@
 // @flow
 import React from "react"
-import List, { ListItem, ListItemIcon, ListItemText } from "material-ui/List"
+import List, { ListItem, ListItemText } from "material-ui/List"
 import Paper from "material-ui/Paper"
 import { HeaderStyle } from "./ListStyles"
 

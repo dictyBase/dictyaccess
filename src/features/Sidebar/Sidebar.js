@@ -58,14 +58,6 @@ const Sidebar = (props: Props) => {
       <List className={classes.list}>
         <ListItem button>
           <ListItemIcon>
-            <TrendingUpIcon />
-          </ListItemIcon>
-          <StyledLink to="/dashboard/dicty-stock-center">
-            <ListItemText primary="Dicty Stock Center" />
-          </StyledLink>
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
             <FingerprintIcon />
           </ListItemIcon>
           <StyledLink to="/dashboard/genomes">
@@ -86,6 +78,14 @@ const Sidebar = (props: Props) => {
           </ListItemIcon>
           <StyledLink to="/dashboard/analytics">
             <ListItemText primary="Analytics" />
+          </StyledLink>
+        </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <TrendingUpIcon />
+          </ListItemIcon>
+          <StyledLink to="/dashboard/dicty-stock-center">
+            <ListItemText primary="Dicty Stock Center" />
           </StyledLink>
         </ListItem>
       </List>

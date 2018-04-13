@@ -13,17 +13,16 @@ const Routes = () => {
       <Route
         exact
         path="/"
-        component={DscDashboard => <Redirect to="/dashboard" />}
+        component={GenomeDashboard => <Redirect to="/dashboard/genomes" />}
       />
-      <Route exact path="/dashboard" component={DscDashboard} />
+      <Route exact path="/dashboard/genomes" component={GenomeDashboard} />
+      <Route exact path="/dashboard/curation" component={CurationDashboard} />
+      <Route exact path="/dashboard/analytics" component={AnalyticsDashboard} />
       <Route
         exact
         path="/dashboard/dicty-stock-center"
         component={DscDashboard}
       />
-      <Route exact path="/dashboard/genomes" component={GenomeDashboard} />
-      <Route exact path="/dashboard/curation" component={CurationDashboard} />
-      <Route exact path="/dashboard/analytics" component={AnalyticsDashboard} />
       <Route path="*" component={PageNotFound} />
     </Switch>
   )
