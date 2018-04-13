@@ -1,9 +1,11 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import "./index.css"
 import App from "app/layout/App"
 import registerServiceWorker from "./registerServiceWorker"
 import "typeface-roboto"
+import "app/layout/AppStyles"
+
+// imports for JSS injection
 import JssProvider from "react-jss/lib/JssProvider"
 import { create } from "jss"
 import preset from "jss-preset-default"

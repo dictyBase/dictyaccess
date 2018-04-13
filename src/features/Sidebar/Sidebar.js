@@ -2,35 +2,24 @@
 import React from "react"
 import { withStyles } from "material-ui/styles"
 import Drawer from "material-ui/Drawer"
-import List, { ListItem, ListItemIcon, ListItemText } from "material-ui/List"
+import { ListItem, ListItemIcon, ListItemText } from "material-ui/List"
 import Typography from "material-ui/Typography"
 import TrendingUpIcon from "@material-ui/icons/TrendingUp"
 import FingerprintIcon from "@material-ui/icons/Fingerprint"
 import WorkIcon from "@material-ui/icons/Work"
 import DataUsageIcon from "@material-ui/icons/DataUsage"
-import { StyledLink } from "./SidebarStyles"
+import {
+  StyledLink,
+  ListStyle,
+  // DrawerPaperStyle,
+  DrawerHeaderStyle
+} from "./SidebarStyles"
 import { drawerWidth } from "common/constants/Styling"
 
 const styles = theme => ({
   drawerPaper: {
     position: "relative",
     width: drawerWidth,
-    height: "100%"
-  },
-  drawerHeader: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    padding: "0 8px",
-    backgroundColor: "#4f5aae",
-    color: "#fff",
-    ...theme.mixins.toolbar
-  },
-  icon: {
-    color: "#fff"
-  },
-  list: {
-    backgroundColor: "#eceff1",
     height: "100%"
   }
 })
@@ -50,12 +39,12 @@ const Sidebar = (props: Props) => {
       classes={{
         paper: classes.drawerPaper
       }}>
-      <div className={classes.drawerHeader}>
+      <DrawerHeaderStyle>
         <Typography variant="title" color="inherit">
           DictyAccess
         </Typography>
-      </div>
-      <List className={classes.list}>
+      </DrawerHeaderStyle>
+      <ListStyle>
         <ListItem button>
           <ListItemIcon>
             <FingerprintIcon />
@@ -88,7 +77,7 @@ const Sidebar = (props: Props) => {
             <ListItemText primary="Dicty Stock Center" />
           </StyledLink>
         </ListItem>
-      </List>
+      </ListStyle>
     </Drawer>
   )
 }
