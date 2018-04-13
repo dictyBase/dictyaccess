@@ -61,6 +61,50 @@ const data = {
         names: "jfgkhjs3",
         id: "DBS03350146"
       }
+    ],
+    genesList: [
+      {
+        name: "DPU_G0051064",
+        id: "DPU_G0051064"
+      },
+      {
+        name: "DPU_G0051065",
+        id: "DPU_G0051065"
+      },
+      {
+        name: "DPU_G0051066",
+        id: "DPU_G0051066"
+      },
+      {
+        name: "DPU_G0051067",
+        id: "DPU_G0051067"
+      },
+      {
+        name: "DPU_G0051068",
+        id: "DPU_G0051068"
+      }
+    ],
+    proteinsList: [
+      {
+        id: "DPU1258995",
+        length: "70 aa"
+      },
+      {
+        id: "DPU1258996",
+        length: "70 aa"
+      },
+      {
+        id: "DPU1258997",
+        length: "70 aa"
+      },
+      {
+        id: "DPU1258998",
+        length: "70 aa"
+      },
+      {
+        id: "DPU1258999",
+        length: "70 aa"
+      }
     ]
   },
   charts: {
@@ -97,6 +141,24 @@ const data = {
         value: 100,
         color: "#f48fb1",
         icon: <ChevronLeft />
+      }
+    ],
+    genomeCounts: [
+      {
+        name: "supercontig",
+        count: 838
+      },
+      {
+        name: "EST",
+        count: 36096
+      },
+      {
+        name: "gene",
+        count: 12410
+      },
+      {
+        name: "polypeptide",
+        count: 12410
       }
     ]
   },

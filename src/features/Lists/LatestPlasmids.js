@@ -15,8 +15,8 @@ const LatestPlasmids = (props: Props) => {
       <HeaderStyle variant="title">Latest Plasmids</HeaderStyle>
       <List>
         {props.data.map(item => (
-          <ListItem>
-            <ListItemText key={item.id} primary={item.id} />
+          <ListItem key={item.id}>
+            <ListItemText primary={item.id} />
           </ListItem>
         ))}
       </List>

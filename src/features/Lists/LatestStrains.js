@@ -15,7 +15,7 @@ const LatestStrains = (props: Props) => {
       <HeaderStyle variant="title">Latest Strains</HeaderStyle>
       <List>
         {props.data.map(item => (
-          <ListItem>
+          <ListItem key={item.id}>
             <ListItemText key={item.id} primary={item.id} />
           </ListItem>
         ))}
