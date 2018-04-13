@@ -11,7 +11,7 @@ import { HeaderStyle } from "./TableStyles"
 
 type Props = {
   /** The data to pass into this table */
-  data: Array<Object>
+  data: Object
 }
 
 const LatestAnnotations = (props: Props) => {
