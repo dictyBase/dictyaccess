@@ -2,6 +2,7 @@
 import React from "react"
 import Grid from "material-ui/Grid"
 import InfoBox from "common/components/InfoBox"
+import Orders from "features/Charts/Orders"
 import StrainsList from "features/Tables/StrainsList"
 import PlasmidsList from "features/Tables/PlasmidsList"
 // import LatestAnnotations from "features/Tables/LatestAnnotations"
@@ -40,6 +41,9 @@ const DscDashboard = () => {
       </Grid>
       <Grid item xs={12} sm={3} lg={3}>
         <LatestPlasmids data={data.tables.latestGenes} />
+      </Grid>
+      <Grid item xs={12} sm={6} lg={6}>
+        <Orders data={data.charts.orders} />
       </Grid>
       {/* <Grid item xs={12} sm={6} lg={6}>
         <LatestAnnotations data={data.annotations} />
