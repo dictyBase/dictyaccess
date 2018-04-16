@@ -13,7 +13,7 @@ import {
   ListStyle,
   // DrawerPaperStyle,
   DrawerHeaderStyle
-} from "./SidebarStyles"
+} from "app/layout/SidebarStyles"
 
 const styles = theme => ({
   drawerPaper: {
