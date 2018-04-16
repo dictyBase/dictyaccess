@@ -10,7 +10,7 @@ import { NavbarLinks } from "common/constants/Navbar"
 import { headerItems, generateLinks } from "common/utils/headerItems"
 import { Container, MainContentStyle } from "./AppStyles"
 
-const App = props => {
+const App = () => {
   return (
     <Router>
       <div>

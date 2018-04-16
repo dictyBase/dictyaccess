@@ -14,18 +14,22 @@ import { PaperStyle, HeaderStyle, ChartWrapper } from "./ChartStyles"
 
 type Props = {
   /** Data array for chart */
-  data: Array<Object>
+  data: Array<Object>,
+  /** The Material-UI color palette selected */
+  color: Object
 }
 
 const GenomeCounts = (props: Props) => {
-  const { data } = props
-
   return (
     <PaperStyle>
-      <HeaderStyle variant="title">Number of Genomes</HeaderStyle>
+      <HeaderStyle
+        style={{ backgroundColor: props.color[700] }}
+        variant="title">
+        Number of Genomes
+      </HeaderStyle>
       <ChartWrapper>
         <ResponsiveContainer>
-          <BarChart width={730} height={250} data={data}>
+          <BarChart width={730} height={250} data={props.data}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
             <YAxis />

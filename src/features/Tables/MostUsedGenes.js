@@ -11,13 +11,19 @@ import { HeaderStyle } from "./TableStyles"
 
 type Props = {
   /** The data to pass into this table */
-  data: Array<Object>
+  data: Array<Object>,
+  /** The Material-UI color palette selected */
+  color: Object
 }
 
 const MostUsedGenes = (props: Props) => {
   return (
     <Paper>
-      <HeaderStyle variant="title">Most Used Genes</HeaderStyle>
+      <HeaderStyle
+        style={{ backgroundColor: props.color[600] }}
+        variant="title">
+        Most Used Genes
+      </HeaderStyle>
       <Table>
         <TableHead>
           <TableRow>

@@ -6,21 +6,22 @@ import GenesList from "features/Tables/GenesList"
 import ProteinsList from "features/Tables/ProteinsList"
 import GenomeCounts from "features/Charts/GenomeCounts"
 import data from "common/data/data"
+import orange from "material-ui/colors/orange"
 
 const GenomeDashboard = () => {
   return (
     <Grid container spacing={16}>
       <Grid item xs={12} sm={6} lg={6}>
-        <MostUsedGenes data={data.tables.mostUsedGenes} />
+        <MostUsedGenes data={data.tables.mostUsedGenes} color={orange} />
       </Grid>
       <Grid item xs={12} sm={6} lg={6}>
-        <GenomeCounts data={data.charts.genomeCounts} />
+        <GenomeCounts data={data.charts.genomeCounts} color={orange} />
       </Grid>
       <Grid item xs={12} sm={6} lg={6}>
-        <GenesList data={data.tables.genesList} />
+        <GenesList data={data.tables.genesList} color={orange} />
       </Grid>
       <Grid item xs={12} sm={6} lg={6}>
-        <ProteinsList data={data.tables.proteinsList} />
+        <ProteinsList data={data.tables.proteinsList} color={orange} />
       </Grid>
     </Grid>
   )
