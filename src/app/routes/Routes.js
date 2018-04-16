@@ -1,10 +1,10 @@
 // @flow
 import React from "react"
 import { Route, Switch, Redirect } from "react-router-dom"
-import DscDashboard from "features/Dashboards/DscDashboard"
-import GenomeDashboard from "features/Dashboards/GenomeDashboard"
-import CurationDashboard from "features/Dashboards/CurationDashboard"
-import AnalyticsDashboard from "features/Dashboards/AnalyticsDashboard"
+import DscDashboard from "features/StockCenter/DscDashboard"
+import GenomeDashboard from "features/Genomes/GenomeDashboard"
+import CurationDashboard from "features/Curation/CurationDashboard"
+import AnalyticsDashboard from "features/Analytics/AnalyticsDashboard"
 import PageNotFound from "features/PageNotFound"
 
 const Routes = () => {

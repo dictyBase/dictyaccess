@@ -10,7 +10,11 @@ import {
   Tooltip,
   Legend
 } from "recharts"
-import { PaperStyle, HeaderStyle, ChartWrapper } from "./ChartStyles"
+import {
+  PaperStyle,
+  HeaderStyle,
+  ChartWrapper
+} from "common/styles/ChartStyles"
 
 type Props = {
   /** Data array for chart */

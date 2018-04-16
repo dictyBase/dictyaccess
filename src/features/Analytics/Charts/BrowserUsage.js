@@ -10,7 +10,7 @@ import {
   HeaderStyle,
   ChartWrapper,
   LegendStyle
-} from "./ChartStyles"
+} from "common/styles/ChartStyles"
 
 type Props = {
   /** Data array for pie chart */

@@ -1,6 +1,6 @@
 // @flow
 import React from "react"
-import { PaperStyle, HeaderStyle, ItemStyle } from "./NewsStyles"
+import { PaperStyle, HeaderStyle, ItemStyle } from "common/styles/NewsStyles"
 
 type Props = {
   /** The news data to be displayed */

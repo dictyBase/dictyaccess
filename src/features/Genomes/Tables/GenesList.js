@@ -7,7 +7,7 @@ import Table, {
   TableRow
 } from "material-ui/Table"
 import Paper from "material-ui/Paper"
-import { HeaderStyle } from "./TableStyles"
+import { HeaderStyle } from "common/styles/TableStyles"
 
 type Props = {
   /** The data to pass into this table */
@@ -16,27 +16,25 @@ type Props = {
   color: Object
 }
 
-const MostUsedGenes = (props: Props) => {
+const GenesList = (props: Props) => {
   return (
     <Paper>
       <HeaderStyle
-        style={{ backgroundColor: props.color[600] }}
+        style={{ backgroundColor: props.color[800] }}
         variant="title">
-        Most Used Genes
+        List of Genes
       </HeaderStyle>
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>Strain Descriptor</TableCell>
-            <TableCell>Strain Names</TableCell>
-            <TableCell>Strain ID</TableCell>
+            <TableCell>Gene Name</TableCell>
+            <TableCell>Gene ID</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {props.data.map(item => (
             <TableRow key={item.id}>
-              <TableCell>{item.descriptor}</TableCell>
-              <TableCell>{item.names}</TableCell>
+              <TableCell>{item.name}</TableCell>
               <TableCell>{item.id}</TableCell>
             </TableRow>
           ))}
@@ -46,4 +44,4 @@ const MostUsedGenes = (props: Props) => {
   )
 }
 
-export default MostUsedGenes
+export default GenesList

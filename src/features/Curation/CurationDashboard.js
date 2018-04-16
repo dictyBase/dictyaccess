@@ -1,8 +1,8 @@
 // @flow
 import React from "react"
 import Grid from "material-ui/Grid"
-import CuratedPapers from "features/Charts/CuratedPapers"
-// import LatestNews from "features/News/LatestNews"
+import CuratedPapers from "features/Curation/Charts/CuratedPapers"
+// import LatestNews from "features/Curation/News/LatestNews"
 import data from "common/data/data"
 
 const CurationDashboard = () => {

@@ -1,7 +1,7 @@
 // @flow
 import React from "react"
 import Grid from "material-ui/Grid"
-import BrowserUsage from "features/Charts/BrowserUsage"
+import BrowserUsage from "features/Analytics/Charts/BrowserUsage"
 import data from "common/data/data"
 
 const AnalyticsDashboard = () => {

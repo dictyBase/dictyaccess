@@ -1,10 +1,10 @@
 // @flow
 import React from "react"
 import Grid from "material-ui/Grid"
-import MostUsedGenes from "features/Tables/MostUsedGenes"
-import GenesList from "features/Tables/GenesList"
-import ProteinsList from "features/Tables/ProteinsList"
-import GenomeCounts from "features/Charts/GenomeCounts"
+import MostUsedGenes from "features/Genomes/Tables/MostUsedGenes"
+import GenesList from "features/Genomes/Tables/GenesList"
+import ProteinsList from "features/Genomes/Tables/ProteinsList"
+import GenomeCounts from "features/Genomes/Charts/GenomeCounts"
 import data from "common/data/data"
 import orange from "material-ui/colors/orange"
 

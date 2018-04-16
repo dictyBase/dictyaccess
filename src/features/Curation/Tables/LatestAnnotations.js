@@ -7,7 +7,7 @@ import Table, {
   TableRow
 } from "material-ui/Table"
 import Paper from "material-ui/Paper"
-import { HeaderStyle } from "./TableStyles"
+import { HeaderStyle } from "common/styles/TableStyles"
 
 type Props = {
   /** The data to pass into this table */
