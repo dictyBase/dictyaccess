@@ -16,6 +16,10 @@ type Props = {
   color: Object
 }
 
+/**
+ * This is a table that provides a full list of proteins.
+ */
+
 const ProteinsList = (props: Props) => {
   return (
     <Paper>

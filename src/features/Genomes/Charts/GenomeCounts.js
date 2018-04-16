@@ -23,6 +23,10 @@ type Props = {
   color: Object
 }
 
+/**
+ * This is a bar chart that shows the number of genomes by type.
+ */
+
 const GenomeCounts = (props: Props) => {
   return (
     <PaperStyle>

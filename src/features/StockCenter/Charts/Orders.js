@@ -23,6 +23,10 @@ type Props = {
   color: Object
 }
 
+/**
+ * This is a chart that shows the number of Stock Center orders by month.
+ */
+
 const Orders = (props: Props) => {
   return (
     <PaperStyle>

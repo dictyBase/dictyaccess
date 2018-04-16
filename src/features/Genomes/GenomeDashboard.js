@@ -8,6 +8,10 @@ import GenomeCounts from "features/Genomes/Charts/GenomeCounts"
 import data from "common/data/data"
 import orange from "material-ui/colors/orange"
 
+/**
+ * This is the layout component for the Genomes dashboard.
+ */
+
 const GenomeDashboard = () => {
   return (
     <Grid container spacing={16}>

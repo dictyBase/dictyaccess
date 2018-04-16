@@ -16,6 +16,10 @@ type Props = {
   color: Object
 }
 
+/**
+ * This is a table that shows all available strains.
+ */
+
 const StrainsList = (props: Props) => {
   return (
     <Paper>

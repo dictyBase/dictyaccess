@@ -19,6 +19,10 @@ type Props = {
   color: Object
 }
 
+/**
+ * This is a Browser Usage chart that showcases what browsers are used by Stock Center visitors.
+ */
+
 const BrowserUsage = (props: Props) => {
   return (
     <PaperStyle>

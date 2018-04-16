@@ -11,6 +11,10 @@ type Props = {
   color: Object
 }
 
+/**
+ * This is a list of the latest strains.
+ */
+
 const LatestStrains = (props: Props) => {
   return (
     <Paper>

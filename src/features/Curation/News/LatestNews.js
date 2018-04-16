@@ -7,6 +7,10 @@ type Props = {
   data: Array<Object>
 }
 
+/**
+ * This displays the latest Dicty news.
+ */
+
 const LatestNews = (props: Props) => {
   return (
     <PaperStyle>

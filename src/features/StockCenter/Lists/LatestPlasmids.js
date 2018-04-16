@@ -11,6 +11,10 @@ type Props = {
   color: Object
 }
 
+/**
+ * This is a list of the latest plasmids.
+ */
+
 const LatestPlasmids = (props: Props) => {
   return (
     <Paper>

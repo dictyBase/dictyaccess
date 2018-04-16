@@ -1,14 +1,11 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import Paper from "material-ui/Paper"
 import Button from "material-ui/Button"
-import styled from "styled-components"
+import { PaperStyle } from "common/styles/PageStyles"
 
-const PaperStyle = styled(Paper)`
-  text-align: center;
-  height: 400px;
-  padding-top: 50px;
-`
+/**
+ * This is a generic error page for broken routes.
+ */
 
 const PageNotFound = () => {
   return (

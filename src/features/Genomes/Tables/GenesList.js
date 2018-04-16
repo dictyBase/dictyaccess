@@ -16,6 +16,10 @@ type Props = {
   color: Object
 }
 
+/**
+ * This is a table that shows a list of genes.
+ */
+
 const GenesList = (props: Props) => {
   return (
     <Paper>

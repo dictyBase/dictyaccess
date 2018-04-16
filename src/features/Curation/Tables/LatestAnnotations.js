@@ -14,6 +14,10 @@ type Props = {
   data: Object
 }
 
+/**
+ * This shows the most recent annotations for genes and papers.
+ */
+
 const LatestAnnotations = (props: Props) => {
   return (
     <Paper>

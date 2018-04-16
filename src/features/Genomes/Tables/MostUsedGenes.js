@@ -16,6 +16,10 @@ type Props = {
   color: Object
 }
 
+/**
+ * This is a table that shows the most used genes.
+ */
+
 const MostUsedGenes = (props: Props) => {
   return (
     <Paper>

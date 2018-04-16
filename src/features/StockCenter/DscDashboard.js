@@ -14,6 +14,10 @@ import Whatshot from "@material-ui/icons/Whatshot"
 import deepPurple from "material-ui/colors/deepPurple"
 import data from "common/data/data"
 
+/**
+ * This is the layout component for the Stock Center dashboard.
+ */
+
 const DscDashboard = () => {
   return (
     <Grid container spacing={16}>

@@ -28,6 +28,10 @@ type Props = {
   classes: Object
 }
 
+/**
+ * This is the Sidebar component. Right now it is a Material-UI Drawer component that is permanently attached to the left side of the page, but responsiveness will be added soon.
+ */
+
 const Sidebar = (props: Props) => {
   const { classes } = props
 

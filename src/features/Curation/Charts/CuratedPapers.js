@@ -23,6 +23,10 @@ type Props = {
   color: Object
 }
 
+/**
+ * This is a bar chart that shows the number of curated papers by month.
+ */
+
 const CuratedPapers = (props: Props) => {
   return (
     <PaperStyle>

@@ -6,6 +6,10 @@ import CuratedPapers from "features/Curation/Charts/CuratedPapers"
 import red from "material-ui/colors/red"
 import data from "common/data/data"
 
+/**
+ * This is the layout component for the Curation dashboard.
+ */
+
 const CurationDashboard = () => {
   return (
     <Grid container spacing={16}>

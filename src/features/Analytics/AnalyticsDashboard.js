@@ -5,6 +5,10 @@ import BrowserUsage from "features/Analytics/Charts/BrowserUsage"
 import blue from "material-ui/colors/blue"
 import data from "common/data/data"
 
+/**
+ * This is the layout component for the Analytics dashboard.
+ */
+
 const AnalyticsDashboard = () => {
   return (
     <Grid container spacing={16}>
