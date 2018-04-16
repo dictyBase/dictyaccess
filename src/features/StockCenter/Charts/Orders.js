@@ -18,13 +18,17 @@ import {
 
 type Props = {
   /** Data array for chart */
-  data: Array<Object>
+  data: Array<Object>,
+  /** The Material-UI color palette selected */
+  color: Object
 }
 
 const Orders = (props: Props) => {
   return (
     <PaperStyle>
-      <HeaderStyle variant="title">Number of Orders</HeaderStyle>
+      <HeaderStyle style={{ backgroundColor: props.color }} variant="title">
+        Number of Orders
+      </HeaderStyle>
       <ChartWrapper>
         <ResponsiveContainer>
           <LineChart width={730} height={250} data={props.data}>

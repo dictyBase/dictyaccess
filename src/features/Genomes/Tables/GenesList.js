@@ -19,9 +19,7 @@ type Props = {
 const GenesList = (props: Props) => {
   return (
     <Paper>
-      <HeaderStyle
-        style={{ backgroundColor: props.color[800] }}
-        variant="title">
+      <HeaderStyle style={{ backgroundColor: props.color }} variant="title">
         List of Genes
       </HeaderStyle>
       <Table>

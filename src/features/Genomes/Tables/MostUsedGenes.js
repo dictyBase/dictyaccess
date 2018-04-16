@@ -19,9 +19,7 @@ type Props = {
 const MostUsedGenes = (props: Props) => {
   return (
     <Paper>
-      <HeaderStyle
-        style={{ backgroundColor: props.color[600] }}
-        variant="title">
+      <HeaderStyle style={{ backgroundColor: props.color }} variant="title">
         Most Used Genes
       </HeaderStyle>
       <Table>

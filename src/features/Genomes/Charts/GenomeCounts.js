@@ -26,9 +26,7 @@ type Props = {
 const GenomeCounts = (props: Props) => {
   return (
     <PaperStyle>
-      <HeaderStyle
-        style={{ backgroundColor: props.color[700] }}
-        variant="title">
+      <HeaderStyle style={{ backgroundColor: props.color }} variant="title">
         Number of Genomes
       </HeaderStyle>
       <ChartWrapper>

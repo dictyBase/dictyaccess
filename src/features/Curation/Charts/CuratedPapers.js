@@ -18,24 +18,26 @@ import {
 
 type Props = {
   /** Data array for chart */
-  data: Array<Object>
+  data: Array<Object>,
+  /** The Material-UI color palette selected */
+  color: Object
 }
 
 const CuratedPapers = (props: Props) => {
-  const { data } = props
-
   return (
     <PaperStyle>
-      <HeaderStyle variant="title">Number of Curated Papers</HeaderStyle>
+      <HeaderStyle style={{ backgroundColor: props.color }} variant="title">
+        Number of Curated Papers
+      </HeaderStyle>
       <ChartWrapper>
         <ResponsiveContainer>
-          <BarChart width={730} height={250} data={data}>
+          <BarChart width={730} height={250} data={props.data}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="month" />
             <YAxis />
             <Tooltip />
             <Legend />
-            <Bar dataKey="orders" fill="#8884d8" />
+            <Bar dataKey="orders" fill="#E57373" />
           </BarChart>
         </ResponsiveContainer>
       </ChartWrapper>

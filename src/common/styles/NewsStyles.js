@@ -8,9 +8,8 @@ export const PaperStyle = styled(Paper)`
 `
 
 export const HeaderStyle = styled(Typography)`
-  font-size: 24px;
+  font-size: 20px;
   color: #fff;
-  background-image: linear-gradient(60deg, #66bb6a, #43a047);
   padding: 10px;
 `
 

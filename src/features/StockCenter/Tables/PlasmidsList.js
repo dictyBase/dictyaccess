@@ -11,13 +11,17 @@ import { HeaderStyle } from "common/styles/TableStyles"
 
 type Props = {
   /** The data to pass into this table */
-  data: Array<Object>
+  data: Array<Object>,
+  /** The Material-UI color palette selected */
+  color: Object
 }
 
 const PlasmidsList = (props: Props) => {
   return (
     <Paper>
-      <HeaderStyle variant="title">List of Plasmids</HeaderStyle>
+      <HeaderStyle style={{ backgroundColor: props.color }} variant="title">
+        List of Plasmids
+      </HeaderStyle>
       <Table>
         <TableHead>
           <TableRow>

@@ -11,6 +11,7 @@ import LatestPlasmids from "features/StockCenter/Lists/LatestPlasmids"
 import Poll from "@material-ui/icons/Poll"
 import Public from "@material-ui/icons/Public"
 import Whatshot from "@material-ui/icons/Whatshot"
+import deepPurple from "material-ui/colors/deepPurple"
 import data from "common/data/data"
 
 const DscDashboard = () => {
@@ -31,19 +32,25 @@ const DscDashboard = () => {
         />
       </Grid>
       <Grid item xs={12} sm={6} lg={6}>
-        <StrainsList data={data.tables.latestGenes} />
+        <StrainsList data={data.tables.latestGenes} color={deepPurple[700]} />
       </Grid>
       <Grid item xs={12} sm={6} lg={6}>
-        <PlasmidsList data={data.tables.mostUsedGenes} />
+        <PlasmidsList
+          data={data.tables.mostUsedGenes}
+          color={deepPurple[500]}
+        />
       </Grid>
       <Grid item xs={12} sm={3} lg={3}>
-        <LatestStrains data={data.tables.latestGenes} />
+        <LatestStrains data={data.tables.latestGenes} color={deepPurple[400]} />
       </Grid>
       <Grid item xs={12} sm={3} lg={3}>
-        <LatestPlasmids data={data.tables.latestGenes} />
+        <LatestPlasmids
+          data={data.tables.latestGenes}
+          color={deepPurple[600]}
+        />
       </Grid>
       <Grid item xs={12} sm={6} lg={6}>
-        <Orders data={data.charts.orders} />
+        <Orders data={data.charts.orders} color={deepPurple[300]} />
       </Grid>
       {/* <Grid item xs={12} sm={6} lg={6}>
         <LatestAnnotations data={data.annotations} />

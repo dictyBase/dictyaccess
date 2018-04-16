@@ -14,13 +14,17 @@ import {
 
 type Props = {
   /** Data array for pie chart */
-  data: Array<Object>
+  data: Array<Object>,
+  /** The Material-UI color palette selected */
+  color: Object
 }
 
 const BrowserUsage = (props: Props) => {
   return (
     <PaperStyle>
-      <HeaderStyle variant="title">Browser Usage</HeaderStyle>
+      <HeaderStyle style={{ backgroundColor: props.color }} variant="title">
+        Browser Usage
+      </HeaderStyle>
       <Grid container>
         <Grid item xs={12} sm={7} md={7} lg={7}>
           <ChartWrapper>
