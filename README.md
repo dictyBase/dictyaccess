@@ -12,6 +12,6 @@
 
 ## DictyAccess
 
-This is the DictyAccess data visualization dashboard application. It has four different dashboards -- Genomes, Curation, Analytics and Dicty Stock Center. It is built with React and it uses Material-UI as a CSS framework (with Styled Components overrides when necessary).
+This is the DictyAccess data visualization dashboard application. It has four different dashboards -- Genomes, Curation, Analytics and Dicty Stock Center. It is built with React and it uses [Material-UI](https://material-ui-next.com/) as a CSS framework (with [Styled Components](https://www.styled-components.com/) overrides when necessary).
 
 For more detailed documentation, run `npm run styleguide` which will start up a readable styleguide in the browser (locally at http://localhost:6060/). This will provide descriptions of each component, as well as details about the props that they accept.
