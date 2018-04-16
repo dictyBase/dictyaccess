@@ -18,10 +18,6 @@ export const Container = styled.div`
   width: 100%;
 `
 
-export const BreadcrumbSpacing = styled.div`
-  min-height: 48px;
-`
-
 export const MainContentStyle = styled.main`
   flex-grow: 1;
   background-color: #ced4da;

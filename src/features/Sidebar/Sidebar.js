@@ -14,12 +14,11 @@ import {
   // DrawerPaperStyle,
   DrawerHeaderStyle
 } from "./SidebarStyles"
-import { drawerWidth } from "common/constants/Styling"
 
 const styles = theme => ({
   drawerPaper: {
     position: "relative",
-    width: drawerWidth,
+    width: "240px",
     height: "100%"
   }
 })

@@ -8,7 +8,7 @@ import Routes from "app/routes/Routes"
 import { FooterLinks } from "common/constants/Footer"
 import { NavbarLinks } from "common/constants/Navbar"
 import { headerItems, generateLinks } from "common/utils/headerItems"
-import { Container, BreadcrumbSpacing, MainContentStyle } from "./AppStyles"
+import { Container, MainContentStyle } from "./AppStyles"
 
 const App = props => {
   return (
@@ -19,10 +19,8 @@ const App = props => {
         </Header>
         <Navbar items={NavbarLinks} />
         <Container>
-          <Breadcrumbs />
           <Sidebar />
           <MainContentStyle>
-            <BreadcrumbSpacing />
             <Routes />
           </MainContentStyle>
         </Container>
