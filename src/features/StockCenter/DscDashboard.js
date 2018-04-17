@@ -5,7 +5,6 @@ import InfoBox from "common/components/InfoBox"
 import Orders from "features/StockCenter/Charts/Orders"
 import StrainsList from "features/StockCenter/Tables/StrainsList"
 import PlasmidsList from "features/StockCenter/Tables/PlasmidsList"
-// import LatestAnnotations from "features/Tables/LatestAnnotations"
 import LatestStrains from "features/StockCenter/Lists/LatestStrains"
 import LatestPlasmids from "features/StockCenter/Lists/LatestPlasmids"
 import Poll from "@material-ui/icons/Poll"
@@ -56,9 +55,6 @@ const DscDashboard = () => {
       <Grid item xs={12} sm={6} md={6} lg={6}>
         <Orders data={data.charts.orders} color={deepPurple[300]} />
       </Grid>
-      {/* <Grid item xs={12} sm={6} lg={6}>
-        <LatestAnnotations data={data.annotations} />
-      </Grid> */}
     </Grid>
   )
 }
