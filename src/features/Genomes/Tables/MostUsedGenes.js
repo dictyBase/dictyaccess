@@ -1,11 +1,6 @@
 // @flow
 import React from "react"
-import Table, {
-  TableBody,
-  TableCell,
-  TableHead,
-  TableRow
-} from "material-ui/Table"
+import { TableBody, TableCell, TableHead, TableRow } from "material-ui/Table"
 import Paper from "material-ui/Paper"
 import { HeaderStyle, ResponsiveTable } from "common/styles/TableStyles"
 
