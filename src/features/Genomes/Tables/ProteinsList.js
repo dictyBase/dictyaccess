@@ -7,7 +7,7 @@ import Table, {
   TableRow
 } from "material-ui/Table"
 import Paper from "material-ui/Paper"
-import { HeaderStyle } from "common/styles/TableStyles"
+import { HeaderStyle, ResponsiveTable } from "common/styles/TableStyles"
 
 type Props = {
   /** The data to pass into this table */
@@ -26,7 +26,7 @@ const ProteinsList = (props: Props) => {
       <HeaderStyle style={{ backgroundColor: props.color }} variant="title">
         List of Proteins
       </HeaderStyle>
-      <Table>
+      <ResponsiveTable>
         <TableHead>
           <TableRow>
             <TableCell>Protein ID</TableCell>
@@ -41,7 +41,7 @@ const ProteinsList = (props: Props) => {
             </TableRow>
           ))}
         </TableBody>
-      </Table>
+      </ResponsiveTable>
     </Paper>
   )
 }

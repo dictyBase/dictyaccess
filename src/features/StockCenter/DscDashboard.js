@@ -21,13 +21,13 @@ import data from "common/data/data"
 const DscDashboard = () => {
   return (
     <Grid container spacing={16}>
-      <Grid item xs={12} sm={7} lg={3}>
+      <Grid item xs={12} sm={4} lg={3}>
         <InfoBox Icon={Poll} color="#90caf9" title="Strains" value="1927" />
       </Grid>
-      <Grid item xs={12} sm={7} lg={3}>
+      <Grid item xs={12} sm={4} lg={3}>
         <InfoBox Icon={Public} color="#b2fef7" title="Plasmids" value="882" />
       </Grid>
-      <Grid item xs={12} sm={7} lg={3}>
+      <Grid item xs={12} sm={4} lg={3}>
         <InfoBox
           Icon={Whatshot}
           color="#ffcccb"
