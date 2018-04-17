@@ -34,7 +34,7 @@ const PapersByYear = (props: Props) => {
         Number of Papers Published By Year
       </HeaderStyle>
       <ChartWrapper>
-        <ResponsiveContainer>
+        <ResponsiveContainer width="100%">
           <BarChart width={730} height={250} data={props.data}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="year" />

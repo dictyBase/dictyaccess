@@ -21,13 +21,13 @@ import data from "common/data/data"
 const DscDashboard = () => {
   return (
     <Grid container spacing={16}>
-      <Grid item xs={12} sm={4} lg={3}>
+      <Grid item xs={12} sm={6} lg={3}>
         <InfoBox Icon={Poll} color="#90caf9" title="Strains" value="1927" />
       </Grid>
-      <Grid item xs={12} sm={4} lg={3}>
+      <Grid item xs={12} sm={6} lg={3}>
         <InfoBox Icon={Public} color="#b2fef7" title="Plasmids" value="882" />
       </Grid>
-      <Grid item xs={12} sm={4} lg={3}>
+      <Grid item xs={12} sm={6} lg={3}>
         <InfoBox
           Icon={Whatshot}
           color="#ffcccb"
@@ -35,25 +35,25 @@ const DscDashboard = () => {
           value="12"
         />
       </Grid>
-      <Grid item xs={12} sm={6} lg={6}>
+      <Grid item xs={12} sm={12} md={6} lg={6}>
         <StrainsList data={data.tables.latestGenes} color={deepPurple[700]} />
       </Grid>
-      <Grid item xs={12} sm={6} lg={6}>
+      <Grid item xs={12} sm={12} md={6} lg={6}>
         <PlasmidsList
           data={data.tables.mostUsedGenes}
           color={deepPurple[500]}
         />
       </Grid>
-      <Grid item xs={12} sm={3} lg={3}>
+      <Grid item xs={12} sm={6} md={3} lg={3}>
         <LatestStrains data={data.tables.latestGenes} color={deepPurple[400]} />
       </Grid>
-      <Grid item xs={12} sm={3} lg={3}>
+      <Grid item xs={12} sm={6} md={3} lg={3}>
         <LatestPlasmids
           data={data.tables.latestGenes}
           color={deepPurple[600]}
         />
       </Grid>
-      <Grid item xs={12} sm={6} lg={6}>
+      <Grid item xs={12} sm={6} md={6} lg={6}>
         <Orders data={data.charts.orders} color={deepPurple[300]} />
       </Grid>
       {/* <Grid item xs={12} sm={6} lg={6}>

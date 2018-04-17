@@ -15,8 +15,11 @@ import data from "common/data/data"
 const CurationDashboard = () => {
   return (
     <Grid container spacing={16}>
-      <Grid item xs={12} sm={12} lg={12}>
+      <Grid item xs={12} sm={6} lg={6}>
         <CuratedPapers data={data.charts.orders} color={red[600]} />
+      </Grid>
+      <Grid item xs={12} sm={6} lg={6}>
+        <PapersByYear data={data.charts.papersByYear} color={red[700]} />
       </Grid>
       <Grid item xs={12} sm={8} lg={8}>
         <LatestNews data={data.news} color={red[900]} />
@@ -26,9 +29,6 @@ const CurationDashboard = () => {
           data={data.annotations.papers}
           color={red[800]}
         />
-      </Grid>
-      <Grid item xs={12} sm={12} lg={12}>
-        <PapersByYear data={data.charts.papersByYear} color={red[700]} />
       </Grid>
     </Grid>
   )

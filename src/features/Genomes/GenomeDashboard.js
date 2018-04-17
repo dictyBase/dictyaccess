@@ -23,13 +23,13 @@ const GenomeDashboard = () => {
         <GenomeCounts data={data.charts.genomeCounts} color={orange[700]} />
       </Grid>
       <Grid item xs={12} sm={6} lg={6}>
+        <GeneFeatures data={data.charts.geneFeatures} color={orange[900]} />
+      </Grid>
+      <Grid item xs={12} sm={3} lg={3}>
         <GenesList data={data.tables.genesList} color={orange[800]} />
       </Grid>
-      <Grid item xs={12} sm={6} lg={6}>
+      <Grid item xs={12} sm={3} lg={3}>
         <ProteinsList data={data.tables.proteinsList} color={orange[400]} />
-      </Grid>
-      <Grid item xs={12} sm={12} lg={12}>
-        <GeneFeatures data={data.charts.geneFeatures} color={orange[900]} />
       </Grid>
     </Grid>
   )
