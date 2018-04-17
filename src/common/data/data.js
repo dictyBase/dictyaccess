@@ -160,6 +160,54 @@ const data = {
         name: "polypeptide",
         count: 12410
       }
+    ],
+    geneFeatures: [
+      {
+        name: "Phenotypes",
+        count: 499
+      },
+      {
+        name: "RNA Expressions",
+        count: 401
+      },
+      {
+        name: "Alternative Transcripts",
+        count: 347
+      },
+      {
+        name: "Orthologs",
+        count: 288
+      }
+    ],
+    papersByYear: [
+      { year: 1990, count: 19 },
+      { year: 1991, count: 22 },
+      { year: 1992, count: 31 },
+      { year: 1993, count: 25 },
+      { year: 1994, count: 15 },
+      { year: 1995, count: 22 },
+      { year: 1996, count: 30 },
+      { year: 1997, count: 19 },
+      { year: 1998, count: 29 },
+      { year: 1999, count: 22 },
+      { year: 2000, count: 23 },
+      { year: 2001, count: 44 },
+      { year: 2002, count: 38 },
+      { year: 2003, count: 35 },
+      { year: 2004, count: 14 },
+      { year: 2005, count: 43 },
+      { year: 2006, count: 20 },
+      { year: 2007, count: 21 },
+      { year: 2008, count: 18 },
+      { year: 2009, count: 37 },
+      { year: 2010, count: 42 },
+      { year: 2011, count: 34 },
+      { year: 2012, count: 33 },
+      { year: 2013, count: 29 },
+      { year: 2014, count: 25 },
+      { year: 2015, count: 26 },
+      { year: 2016, count: 19 },
+      { year: 2017, count: 26 }
     ]
   },
   news: [
@@ -176,7 +224,14 @@ const data = {
   ],
   annotations: {
     genes: ["abprtA", "trgrB1", "tgrC1", "tacA"],
-    papers: ["25609090", "25546705", "25540127", "25596489"]
+    papers: [
+      "25609090",
+      "25546705",
+      "25540127",
+      "25596489",
+      "25552382",
+      "25312441"
+    ]
   }
 }
 

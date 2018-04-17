@@ -15,4 +15,5 @@ export const HeaderStyle = styled(Typography)`
 
 export const ItemStyle = styled.div`
   padding-left: 5px;
+  padding-right: 5px;
 `

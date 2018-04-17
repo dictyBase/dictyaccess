@@ -4,7 +4,9 @@ import { PaperStyle, HeaderStyle, ItemStyle } from "common/styles/NewsStyles"
 
 type Props = {
   /** The news data to be displayed */
-  data: Array<Object>
+  data: Array<Object>,
+  /** The Material-UI color palette selected */
+  color: Object
 }
 
 /**
@@ -14,7 +16,9 @@ type Props = {
 const LatestNews = (props: Props) => {
   return (
     <PaperStyle>
-      <HeaderStyle variant="title">Latest Dicty News</HeaderStyle>
+      <HeaderStyle style={{ backgroundColor: props.color }} variant="title">
+        Latest Dicty News
+      </HeaderStyle>
       {props.data.map(item => (
         <ItemStyle key={item.content}>
           <h4>{item.date}</h4>
