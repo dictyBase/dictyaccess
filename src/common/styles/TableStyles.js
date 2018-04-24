@@ -13,4 +13,5 @@ export const ResponsiveTable = styled(Table)`
   display: block;
   width: 100%;
   overflow-x: auto;
+  border-radius: 4px;
 `

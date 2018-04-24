@@ -9,7 +9,7 @@ import red from "material-ui/colors/red"
 import data from "common/data/data"
 
 /**
- * This is the layout component for the Curation dashboard.
+ * This is the layout component for the Curation dashboard. It uses Material-UI's grid system for width and responsiveness.
  */
 
 const CurationDashboard = () => {

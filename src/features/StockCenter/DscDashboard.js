@@ -10,11 +10,12 @@ import LatestPlasmids from "features/StockCenter/Lists/LatestPlasmids"
 import Poll from "@material-ui/icons/Poll"
 import Public from "@material-ui/icons/Public"
 import Whatshot from "@material-ui/icons/Whatshot"
+import LibraryBooks from "@material-ui/icons/LibraryBooks"
 import deepPurple from "material-ui/colors/deepPurple"
 import data from "common/data/data"
 
 /**
- * This is the layout component for the Stock Center dashboard.
+ * This is the layout component for the Stock Center dashboard. It uses Material-UI's grid system for width and responsiveness.
  */
 
 const DscDashboard = () => {
@@ -45,6 +46,15 @@ const DscDashboard = () => {
           textBackgroundColor={deepPurple[50]}
           title="Antibodies"
           value="12"
+        />
+      </Grid>
+      <Grid item xs={12} sm={6} lg={3}>
+        <InfoBox
+          Icon={LibraryBooks}
+          iconBackgroundColor={deepPurple[900]}
+          textBackgroundColor={deepPurple[50]}
+          title="Genomic Libraries"
+          value="1"
         />
       </Grid>
       <Grid item xs={12} sm={12} md={6} lg={6}>

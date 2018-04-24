@@ -10,7 +10,7 @@ import data from "common/data/data"
 import orange from "material-ui/colors/orange"
 
 /**
- * This is the layout component for the Genomes dashboard.
+ * This is the layout component for the Genomes dashboard. It uses Material-UI's grid system for width and responsiveness.
  */
 
 const GenomeDashboard = () => {

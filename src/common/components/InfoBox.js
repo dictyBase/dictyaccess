@@ -6,7 +6,8 @@ import {
   // IconContainer,
   ContentStyle,
   TextSpanStyle,
-  NumberSpanStyle
+  NumberSpanStyle,
+  PaperStyle
 } from "./InfoBoxStyles"
 
 type Props = {
@@ -36,7 +37,7 @@ const InfoBox = (props: Props) => {
   const { title, value, Icon, iconBackgroundColor, textBackgroundColor } = props
 
   return (
-    <Paper>
+    <PaperStyle>
       <IconSpanStyle bgColor={iconBackgroundColor}>
         <Icon color="inherit" style={styles.icon} />
       </IconSpanStyle>
@@ -45,7 +46,7 @@ const InfoBox = (props: Props) => {
         <TextSpanStyle>{title}</TextSpanStyle>
         <NumberSpanStyle>{value}</NumberSpanStyle>
       </ContentStyle>
-    </Paper>
+    </PaperStyle>
   )
 }
 

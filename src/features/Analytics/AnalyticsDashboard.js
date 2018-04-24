@@ -6,7 +6,7 @@ import blue from "material-ui/colors/blue"
 import data from "common/data/data"
 
 /**
- * This is the layout component for the Analytics dashboard.
+ * This is the layout component for the Analytics dashboard. It uses Material-UI's grid system for width and responsiveness.
  */
 
 const AnalyticsDashboard = () => {

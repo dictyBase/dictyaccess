@@ -1,6 +1,11 @@
 // @flow
 import styled from "styled-components"
 import Icon from "material-ui/Icon"
+import Paper from "material-ui/Paper"
+
+export const PaperStyle = styled(Paper)`
+  border-radius: 4px;
+`
 
 export const IconSpanStyle = styled.span.attrs({
   // accept bgColor prop or default to specific color
@@ -10,6 +15,7 @@ export const IconSpanStyle = styled.span.attrs({
   height: 90px;
   width: 90px;
   text-align: center;
+  border-radius: 4px;
   background-color: ${props => props.backgroundColor};
 `
 
@@ -28,6 +34,7 @@ export const ContentStyle = styled.div.attrs({
   padding: 5px 10px;
   margin-left: 90px;
   height: 80px;
+  border-radius: 4px;
   background-color: ${props => props.backgroundColor};
 `
 
