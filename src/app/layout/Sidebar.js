@@ -52,32 +52,56 @@ const Sidebar = (props: Props) => {
           <ListItemIcon>
             <FingerprintIcon />
           </ListItemIcon>
-          <StyledLink to="/dashboard/genomes">
-            <ListItemText primary="Genomes" />
+          <StyledLink
+            to="/dashboard/genomes"
+            activeStyle={{
+              fontWeight: "bold",
+              fontFamily: "Roboto",
+              color: "rgb(230, 81, 0)"
+            }}>
+            Genomes
           </StyledLink>
         </ListItem>
         <ListItem button>
           <ListItemIcon>
             <WorkIcon />
           </ListItemIcon>
-          <StyledLink to="/dashboard/curation">
-            <ListItemText primary="Curation" />
+          <StyledLink
+            to="/dashboard/curation"
+            activeStyle={{
+              fontWeight: "bold",
+              fontFamily: "Roboto",
+              color: "rgb(183, 28, 28)"
+            }}>
+            Curation
           </StyledLink>
         </ListItem>
         <ListItem button>
           <ListItemIcon>
             <DataUsageIcon />
           </ListItemIcon>
-          <StyledLink to="/dashboard/analytics">
-            <ListItemText primary="Analytics" />
+          <StyledLink
+            to="/dashboard/analytics"
+            activeStyle={{
+              fontWeight: "bold",
+              fontFamily: "Roboto",
+              color: "rgb(30, 136, 229)"
+            }}>
+            Analytics
           </StyledLink>
         </ListItem>
         <ListItem button>
           <ListItemIcon>
             <TrendingUpIcon />
           </ListItemIcon>
-          <StyledLink to="/dashboard/dicty-stock-center">
-            <ListItemText primary="Dicty Stock Center" />
+          <StyledLink
+            to="/dashboard/dicty-stock-center"
+            activeStyle={{
+              fontWeight: "bold",
+              fontFamily: "Roboto",
+              color: "#4f5aae"
+            }}>
+            Dicty Stock Center
           </StyledLink>
         </ListItem>
       </ListStyle>
