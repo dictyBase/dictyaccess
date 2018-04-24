@@ -17,7 +17,9 @@ type Props = {
   /** The material-ui icon */
   Icon: string,
   /** The background color of the icon container. Can be passed as string or Material-UI object (i.e. deepPurple[300]) */
-  bgColor: string | Object
+  iconBackgroundColor?: string | Object,
+  /** The background color of the text area in the info box. Can be passed as string or Material-UI object (i.e. deepPurple[300]) */
+  textBackgroundColor?: string | Object
 }
 
 const styles = {
@@ -31,15 +33,15 @@ const styles = {
 }
 
 const InfoBox = (props: Props) => {
-  const { title, value, Icon, bgColor } = props
+  const { title, value, Icon, iconBackgroundColor, textBackgroundColor } = props
 
   return (
     <Paper>
-      <IconSpanStyle bgColor={bgColor}>
+      <IconSpanStyle bgColor={iconBackgroundColor}>
         <Icon color="inherit" style={styles.icon} />
       </IconSpanStyle>
 
-      <ContentStyle>
+      <ContentStyle bgColor={textBackgroundColor}>
         <TextSpanStyle>{title}</TextSpanStyle>
         <NumberSpanStyle>{value}</NumberSpanStyle>
       </ContentStyle>

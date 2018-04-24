@@ -21,10 +21,14 @@ export const IconContainer = styled(Icon)`
   max-width: 100%;
 `
 
-export const ContentStyle = styled.div`
+export const ContentStyle = styled.div.attrs({
+  // accept bgColor prop or default to specific color
+  backgroundColor: props => props.bgColor || "#fff"
+})`
   padding: 5px 10px;
   margin-left: 90px;
   height: 80px;
+  background-color: ${props => props.backgroundColor};
 `
 
 export const TextSpanStyle = styled.span`

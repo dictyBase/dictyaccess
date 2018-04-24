@@ -23,7 +23,8 @@ const DscDashboard = () => {
       <Grid item xs={12} sm={6} lg={3}>
         <InfoBox
           Icon={Poll}
-          bgColor={deepPurple[300]}
+          iconBackgroundColor={deepPurple[900]}
+          textBackgroundColor={deepPurple[50]}
           title="Strains"
           value="1927"
         />
@@ -31,7 +32,8 @@ const DscDashboard = () => {
       <Grid item xs={12} sm={6} lg={3}>
         <InfoBox
           Icon={Public}
-          bgColor={deepPurple[100]}
+          iconBackgroundColor={deepPurple[900]}
+          textBackgroundColor={deepPurple[50]}
           title="Plasmids"
           value="882"
         />
@@ -39,7 +41,8 @@ const DscDashboard = () => {
       <Grid item xs={12} sm={6} lg={3}>
         <InfoBox
           Icon={Whatshot}
-          bgColor={deepPurple[200]}
+          iconBackgroundColor={deepPurple[900]}
+          textBackgroundColor={deepPurple[50]}
           title="Antibodies"
           value="12"
         />
