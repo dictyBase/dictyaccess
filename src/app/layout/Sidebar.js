@@ -2,7 +2,7 @@
 import React from "react"
 import { withStyles } from "material-ui/styles"
 import Drawer from "material-ui/Drawer"
-import { ListItem, ListItemIcon, ListItemText } from "material-ui/List"
+import { ListItem, ListItemIcon } from "material-ui/List"
 import Typography from "material-ui/Typography"
 import TrendingUpIcon from "@material-ui/icons/TrendingUp"
 import FingerprintIcon from "@material-ui/icons/Fingerprint"
@@ -57,7 +57,7 @@ const Sidebar = (props: Props) => {
             activeStyle={{
               fontWeight: "bold",
               fontFamily: "Roboto",
-              color: "rgb(230, 81, 0)"
+              color: "rgb(251, 140, 0)"
             }}>
             Genomes
           </StyledLink>

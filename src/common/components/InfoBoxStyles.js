@@ -3,39 +3,29 @@ import styled from "styled-components"
 import Icon from "material-ui/Icon"
 import Paper from "material-ui/Paper"
 
+// create unique variables to prevent console warnings from React
+const getIconBackgroundColor = props => props.bgColor || "#311b92"
+const getTextBackgroundColor = props => props.bgColor || "#fff"
+
 export const PaperStyle = styled(Paper)`
   border-radius: 4px;
 `
 
-export const IconSpanStyle = styled.span.attrs({
-  // accept bgColor prop or default to specific color
-  backgroundColor: props => props.bgColor || "#311b92"
-})`
+export const IconSpanStyle = styled.span`
   float: left;
   height: 90px;
   width: 90px;
   text-align: center;
   border-radius: 4px;
-  background-color: ${props => props.backgroundColor};
+  background-color: ${getIconBackgroundColor};
 `
 
-// fix this to resize icon properly
-export const IconContainer = styled(Icon)`
-  height: 48px;
-  width: 48px;
-  margin-top: 20px;
-  max-width: 100%;
-`
-
-export const ContentStyle = styled.div.attrs({
-  // accept bgColor prop or default to specific color
-  backgroundColor: props => props.bgColor || "#fff"
-})`
+export const ContentStyle = styled.div`
   padding: 5px 10px;
   margin-left: 90px;
   height: 80px;
   border-radius: 4px;
-  background-color: ${props => props.backgroundColor};
+  background-color: ${getTextBackgroundColor};
 `
 
 export const TextSpanStyle = styled.span`

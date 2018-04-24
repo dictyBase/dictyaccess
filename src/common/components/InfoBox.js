@@ -1,9 +1,7 @@
 // @flow
 import React from "react"
-import Paper from "material-ui/Paper"
 import {
   IconSpanStyle,
-  // IconContainer,
   ContentStyle,
   TextSpanStyle,
   NumberSpanStyle,
