@@ -21,15 +21,25 @@ const DscDashboard = () => {
   return (
     <Grid container spacing={16}>
       <Grid item xs={12} sm={6} lg={3}>
-        <InfoBox Icon={Poll} color="#90caf9" title="Strains" value="1927" />
+        <InfoBox
+          Icon={Poll}
+          bgColor={deepPurple[300]}
+          title="Strains"
+          value="1927"
+        />
       </Grid>
       <Grid item xs={12} sm={6} lg={3}>
-        <InfoBox Icon={Public} color="#b2fef7" title="Plasmids" value="882" />
+        <InfoBox
+          Icon={Public}
+          bgColor={deepPurple[100]}
+          title="Plasmids"
+          value="882"
+        />
       </Grid>
       <Grid item xs={12} sm={6} lg={3}>
         <InfoBox
           Icon={Whatshot}
-          color="#ffcccb"
+          bgColor={deepPurple[200]}
           title="Antibodies"
           value="12"
         />

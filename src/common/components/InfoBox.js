@@ -17,7 +17,9 @@ type Props = {
   /** The value to display (i.e. a number) */
   value: string,
   /** The material-ui icon */
-  Icon: string
+  Icon: string,
+  /** The background color of the icon container */
+  bgColor: string
 }
 
 const styles = {
@@ -31,11 +33,11 @@ const styles = {
 }
 
 const InfoBox = (props: Props) => {
-  const { title, value, Icon } = props
+  const { title, value, Icon, bgColor } = props
 
   return (
     <Paper>
-      <IconSpanStyle>
+      <IconSpanStyle bgColor={bgColor}>
         <Icon color="inherit" style={styles.icon} />
       </IconSpanStyle>
 

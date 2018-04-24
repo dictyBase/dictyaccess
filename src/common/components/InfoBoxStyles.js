@@ -2,12 +2,15 @@
 import styled from "styled-components"
 import Icon from "material-ui/Icon"
 
-export const IconSpanStyle = styled.span`
+export const IconSpanStyle = styled.span.attrs({
+  // accept bgColor prop or default to specific color
+  backgroundColor: props => props.bgColor || "#311b92"
+})`
   float: left;
   height: 90px;
   width: 90px;
   text-align: center;
-  background-color: #311b92; /* make this a passed prop */
+  background-color: ${props => props.backgroundColor};
 `
 
 // fix this to resize icon properly
