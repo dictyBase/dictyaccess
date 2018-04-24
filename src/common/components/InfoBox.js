@@ -10,16 +10,14 @@ import {
 } from "./InfoBoxStyles"
 
 type Props = {
-  /** The color of the icon container */
-  color: string,
   /** The title of the info box (i.e. Strains) */
   title: string,
   /** The value to display (i.e. a number) */
   value: string,
   /** The material-ui icon */
   Icon: string,
-  /** The background color of the icon container */
-  bgColor: string
+  /** The background color of the icon container. Can be passed as string or Material-UI object (i.e. deepPurple[300]) */
+  bgColor: string | Object
 }
 
 const styles = {
