@@ -46,7 +46,7 @@ const layouts = {
 }
 
 /**
- * This is the draggable layout component for the Curation dashboard. It uses React-Grid-Layout for responsiveness and draggability.
+ * This is the draggable layout component for the Stock Center dashboard. It uses React-Grid-Layout for responsiveness and draggability.
  */
 
 const DscDraggableDashboard = () => {
