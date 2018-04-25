@@ -1,6 +1,5 @@
 // @flow
 import styled from "styled-components"
-import Icon from "material-ui/Icon"
 import Paper from "material-ui/Paper"
 
 // create unique variables to prevent console warnings from React
