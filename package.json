@@ -23,8 +23,8 @@
     "dicty-components-header-footer": "github:dictyBase/dicty-components-header-footer",
     "dicty-components-navbar": "github:dictyBase/dicty-components-navbar",
     "material-ui": "^1.0.0-beta.41",
-    "react": "^15.6.2",
-    "react-dom": "^15.6.2",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
     "react-fontawesome": "^1.6.1",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
@@ -37,6 +37,6 @@
     "lint-staged": "^7.0.4",
     "prettier": "^1.11.1",
     "react-styleguidist": "^7.0.5",
-    "react-test-renderer": "^15.6.2"
+    "react-test-renderer": "^16.3.2"
   }
 }

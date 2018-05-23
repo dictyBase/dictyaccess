@@ -3,6 +3,7 @@ import { withStyles } from "material-ui/styles"
 import AppBar from "material-ui/AppBar"
 import Tabs, { Tab } from "material-ui/Tabs"
 import Typography from "material-ui/Typography"
+import Demo from "features/BirdsEye/Circos/Demo"
 
 const TabContainer = props => {
   return (
@@ -40,7 +41,11 @@ class SimpleTabs extends Component {
             <Tab label="Comparative" />
           </Tabs>
         </AppBar>
-        {value === 0 && <TabContainer>Global</TabContainer>}
+        {value === 0 && (
+          <TabContainer>
+            <Demo />
+          </TabContainer>
+        )}
         {value === 1 && <TabContainer>Comparative</TabContainer>}
       </div>
     )
