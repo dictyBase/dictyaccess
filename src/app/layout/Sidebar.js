@@ -4,10 +4,13 @@ import { withStyles } from "material-ui/styles"
 import Drawer from "material-ui/Drawer"
 import { ListItem, ListItemIcon } from "material-ui/List"
 import Typography from "material-ui/Typography"
+// import icons
 import TrendingUpIcon from "@material-ui/icons/TrendingUp"
 import FingerprintIcon from "@material-ui/icons/Fingerprint"
-import WorkIcon from "@material-ui/icons/Work"
-import DataUsageIcon from "@material-ui/icons/DataUsage"
+import InsertChartIcon from "@material-ui/icons/InsertChart"
+import GpsFixedIcon from "@material-ui/icons/GpsFixed"
+import PieChartIcon from "@material-ui/icons/PieChart"
+import FormatAlignJustifyIcon from "@material-ui/icons/FormatAlignJustify"
 import {
   StyledLink,
   ListStyle,
@@ -47,10 +50,24 @@ const Sidebar = (props: Props) => {
           DictyAccess
         </Typography>
       </DrawerHeaderStyle>
+      <ListItem button>
+        <ListItemIcon>
+          <GpsFixedIcon />
+        </ListItemIcon>
+        <StyledLink
+          to="/dashboard/birdseye"
+          activeStyle={{
+            fontWeight: "bold",
+            fontFamily: "Roboto",
+            color: "rgb(183, 28, 28)"
+          }}>
+          Bird's Eye
+        </StyledLink>
+      </ListItem>
       <ListStyle>
         <ListItem button>
           <ListItemIcon>
-            <FingerprintIcon />
+            <InsertChartIcon />
           </ListItemIcon>
           <StyledLink
             to="/dashboard/genomes"
@@ -59,10 +76,10 @@ const Sidebar = (props: Props) => {
               fontFamily: "Roboto",
               color: "rgb(251, 140, 0)"
             }}>
-            Genomes
+            Genome Stats
           </StyledLink>
         </ListItem>
-        <ListItem button>
+        {/* <ListItem button>
           <ListItemIcon>
             <WorkIcon />
           </ListItemIcon>
@@ -75,10 +92,38 @@ const Sidebar = (props: Props) => {
             }}>
             Curation
           </StyledLink>
+        </ListItem> */}
+        <ListItem button>
+          <ListItemIcon>
+            <FingerprintIcon />
+          </ListItemIcon>
+          <StyledLink
+            to="/dashboard/curation"
+            activeStyle={{
+              fontWeight: "bold",
+              fontFamily: "Roboto",
+              color: "rgb(183, 28, 28)"
+            }}>
+            Ontology
+          </StyledLink>
         </ListItem>
         <ListItem button>
           <ListItemIcon>
-            <DataUsageIcon />
+            <FormatAlignJustifyIcon />
+          </ListItemIcon>
+          <StyledLink
+            to="/dashboard/phylogeny"
+            activeStyle={{
+              fontWeight: "bold",
+              fontFamily: "Roboto",
+              color: "rgb(183, 28, 28)"
+            }}>
+            Phylogeny
+          </StyledLink>
+        </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <PieChartIcon />
           </ListItemIcon>
           <StyledLink
             to="/dashboard/analytics"
