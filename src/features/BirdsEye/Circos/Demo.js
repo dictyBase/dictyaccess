@@ -3,54 +3,24 @@ import Circos from "circos"
 import LegendBox from "common/components/LegendBox"
 import ImageHorizontalGrid from "common/components/ImageHorizontalGrid"
 import { tileData } from "common/data/circosImageData"
+import GRCh37 from "common/data/circos/GRCh37.json"
+import cytobands from "common/data/circos/cytobands.json"
+import segdup from "common/data/circos/segdup.json"
 
-let configuration = {
-  innerRadius: 250,
-  outerRadius: 300,
-  cornerRadius: 10,
-  gap: 0.04, // in radian
-  labels: {
-    display: true,
-    position: "center",
-    size: "14px",
-    color: "#000000",
-    radialOffset: 20
-  },
-  ticks: {
-    display: true,
-    color: "grey",
-    spacing: 10000000,
-    labels: true,
-    labelSpacing: 10,
-    labelSuffix: "Mb",
-    labelDenominator: 1000000,
-    labelDisplay0: true,
-    labelSize: "10px",
-    labelColor: "#000000",
-    labelFont: "default",
-    majorSpacing: 5,
-    size: {
-      minor: 2,
-      major: 5
-    }
-  },
-  events: {}
+let gieStainColor = {
+  gpos100: "rgb(0,0,0)",
+  gpos: "rgb(0,0,0)",
+  gpos75: "rgb(130,130,130)",
+  gpos66: "rgb(160,160,160)",
+  gpos50: "rgb(200,200,200)",
+  gpos33: "rgb(210,210,210)",
+  gpos25: "rgb(200,200,200)",
+  gvar: "rgb(220,220,220)",
+  gneg: "rgb(255,255,255)",
+  acen: "rgb(217,47,39)",
+  stalk: "rgb(100,127,164)",
+  select: "rgb(135,177,255)"
 }
-
-const data = [
-  { len: 31, color: "#8dd3c7", label: "January", id: "january" },
-  { len: 28, color: "#ffffb3", label: "February", id: "february" },
-  { len: 31, color: "#bebada", label: "March", id: "march" },
-  { len: 30, color: "#fb8072", label: "April", id: "april" },
-  { len: 31, color: "#80b1d3", label: "May", id: "may" },
-  { len: 30, color: "#fdb462", label: "June", id: "june" },
-  { len: 31, color: "#b3de69", label: "July", id: "july" },
-  { len: 31, color: "#fccde5", label: "August", id: "august" },
-  { len: 30, color: "#d9d9d9", label: "September", id: "september" },
-  { len: 31, color: "#bc80bd", label: "October", id: "october" },
-  { len: 30, color: "#ccebc5", label: "November", id: "november" },
-  { len: 31, color: "#ffed6f", label: "December", id: "december" }
-]
 
 const description =
   "Out-to inside tracks are: 1st=  +strand  genes;  light  blue:  chromosome;  3rd: -strand genes;   black:   RNAseq   tracks   0,   8,   and   24   hours development,     respectively;     inner     track     represents extracellular     localization.     Note     the     developmental regulation of the gene encoding colossin A, highlightedingreen;  a  large,  (predicted)  glycosylated  surface  protein that   might   be   involved   in   cell-cell   adhesion   during development –functional predictions gleanedhere, but not yet experimentally shown."
@@ -61,12 +31,88 @@ class Demo extends Component {
     this.circosRef = React.createRef()
   }
   componentDidMount() {
+    let cytobandsData = cytobands
+      .filter(function(d) {
+        return d.chrom === "chr9"
+      })
+      .map(function(d) {
+        return {
+          block_id: d.chrom,
+          start: parseInt(d.chromStart),
+          end: parseInt(d.chromEnd),
+          gieStain: d.gieStain
+        }
+      })
+    let start = 39000000
+    let length = 8000000
+    let segdupData = segdup
+      .filter(function(d) {
+        return d.chr === "chr9" && d.start >= start && d.end <= start + length
+      })
+      .filter(function(d) {
+        return d.end - d.start > 30000
+      })
+      .map(function(d) {
+        d.block_id = d.chr
+        d.start -= start
+        d.end -= start
+        return d
+      })
     let myCircos = new Circos({
       width: 800,
       height: 800,
       container: this.circosRef.current
     })
-    myCircos.layout(data, configuration)
+    myCircos.layout(
+      [
+        {
+          id: "chr9",
+          len: length,
+          label: "chr9",
+          color: "#FFCC00"
+        }
+      ],
+      {
+        innerRadius: 350,
+        outerRadius: 370,
+        labels: {
+          display: true
+        },
+        ticks: { display: true, labels: false, spacing: 10000 }
+      }
+    )
+    myCircos.highlight("cytobands", cytobandsData, {
+      innerRadius: 350,
+      outerRadius: 370,
+      opacity: 0.8,
+      color: d => {
+        return gieStainColor[d.gieStain]
+      }
+    })
+    myCircos.stack("stack", segdupData, {
+      innerRadius: 0.7,
+      outerRadius: 1,
+      thickness: 4,
+      margin: 0.01 * length,
+      direction: "out",
+      strokeWidth: 0,
+      color: d => {
+        if (d.end - d.start > 150000) {
+          return "red"
+        } else if (d.end - d.start > 120000) {
+          return "#333"
+        } else if (d.end - d.start > 90000) {
+          return "#666"
+        } else if (d.end - d.start > 60000) {
+          return "#999"
+        } else if (d.end - d.start > 30000) {
+          return "#BBB"
+        }
+      },
+      tooltipContent: function(d) {
+        return `${d.block_id}:${d.start}-${d.end}`
+      }
+    })
     myCircos.render()
   }
   render() {

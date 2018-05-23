@@ -5,7 +5,6 @@ import Tabs from "@material-ui/core/Tabs"
 import Tab from "@material-ui/core/Tab"
 import Typography from "@material-ui/core/Typography"
 import Demo from "features/BirdsEye/Circos/Demo"
-import StackDemo from "features/BirdsEye/Circos/StackDemo"
 import ImageGridDisplay from "common/components/ImageGridDisplay"
 
 const TabContainer = props => {
