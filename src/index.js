@@ -9,7 +9,7 @@ import "app/layout/AppStyles"
 import JssProvider from "react-jss/lib/JssProvider"
 import { create } from "jss"
 import preset from "jss-preset-default"
-import { createGenerateClassName } from "material-ui/styles"
+import { createGenerateClassName } from "@material-ui/core/styles"
 
 const generateClassName = createGenerateClassName()
 const jss = create(preset())

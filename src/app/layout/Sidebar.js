@@ -1,9 +1,10 @@
 // @flow
 import React from "react"
-import { withStyles } from "material-ui/styles"
-import Drawer from "material-ui/Drawer"
-import { ListItem, ListItemIcon } from "material-ui/List"
-import Typography from "material-ui/Typography"
+import { withStyles } from "@material-ui/core/styles"
+import Drawer from "@material-ui/core/Drawer"
+import ListItem from "@material-ui/core/ListItem"
+import ListItemIcon from "@material-ui/core/ListItemIcon"
+import Typography from "@material-ui/core/Typography"
 // import icons
 import TrendingUpIcon from "@material-ui/icons/TrendingUp"
 import FingerprintIcon from "@material-ui/icons/Fingerprint"

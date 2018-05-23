@@ -1,9 +1,12 @@
 // @flow
 import React from "react"
 import { ResponsiveContainer, PieChart, Pie, Cell } from "recharts"
-import Grid from "material-ui/Grid"
-import List, { ListItem, ListItemIcon, ListItemText } from "material-ui/List"
-import Avatar from "material-ui/Avatar"
+import Grid from "@material-ui/core/Grid"
+import List from "@material-ui/core/List"
+import ListItem from "@material-ui/core/ListItem"
+import ListItemText from "@material-ui/core/ListItemText"
+import ListItemIcon from "@material-ui/core/ListItemIcon"
+import Avatar from "@material-ui/core/Avatar"
 import { renderCustomizedLabel } from "common/utils/renderCustomizedLabel"
 import {
   PaperStyle,

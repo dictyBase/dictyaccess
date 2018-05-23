@@ -1,6 +1,6 @@
 // @flow
 import styled from "styled-components"
-import Paper from "material-ui/Paper"
+import Paper from "@material-ui/core/Paper"
 
 // create unique variables to prevent console warnings from React
 const getIconBackgroundColor = props => props.bgColor || "#311b92"

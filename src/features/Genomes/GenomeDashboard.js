@@ -1,13 +1,13 @@
 // @flow
 import React from "react"
-import Grid from "material-ui/Grid"
+import Grid from "@material-ui/core/Grid"
 import MostUsedGenes from "features/Genomes/Tables/MostUsedGenes"
 import GenesList from "features/Genomes/Tables/GenesList"
 import ProteinsList from "features/Genomes/Tables/ProteinsList"
 import GenomeCounts from "features/Genomes/Charts/GenomeCounts"
 import GeneFeatures from "features/Genomes/Charts/GeneFeatures"
 import data from "common/data/data"
-import orange from "material-ui/colors/orange"
+import orange from "@material-ui/core/colors/orange"
 
 /**
  * This is the layout component for the Genomes dashboard. It uses Material-UI's grid system for width and responsiveness.

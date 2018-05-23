@@ -1,11 +1,11 @@
 // @flow
 import React from "react"
-import Grid from "material-ui/Grid"
+import Grid from "@material-ui/core/Grid"
 import CuratedPapers from "features/Curation/Charts/CuratedPapers"
 import PapersByYear from "features/Curation/Charts/PapersByYear"
 import LatestNews from "features/Curation/News/LatestNews"
 import LatestPaperAnnotations from "features/Curation/Lists/LatestPaperAnnotations"
-import red from "material-ui/colors/red"
+import red from "@material-ui/core/colors/red"
 import data from "common/data/data"
 
 /**

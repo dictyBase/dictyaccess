@@ -1,8 +1,8 @@
 // @flow
 import React from "react"
-import Grid from "material-ui/Grid"
+import Grid from "@material-ui/core/Grid"
 import BrowserUsage from "features/Analytics/Charts/BrowserUsage"
-import blue from "material-ui/colors/blue"
+import blue from "@material-ui/core/colors/blue"
 import data from "common/data/data"
 
 /**

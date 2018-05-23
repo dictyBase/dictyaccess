@@ -1,8 +1,8 @@
 // @flow
 import styled from "styled-components"
-import Paper from "material-ui/Paper"
-import Typography from "material-ui/Typography"
-import { ListItem } from "material-ui/List"
+import Paper from "@material-ui/core/Paper"
+import Typography from "@material-ui/core/Typography"
+import ListItem from "@material-ui/core/ListItem"
 
 export const PaperStyle = styled(Paper)`
   background-color: #fff;

@@ -1,7 +1,7 @@
 // @flow
 import styled from "styled-components"
-import Typography from "material-ui/Typography"
-import Table from "material-ui/Table"
+import Typography from "@material-ui/core/Typography"
+import Table from "@material-ui/core/Table"
 
 export const HeaderStyle = styled(Typography)`
   font-size: 20px;

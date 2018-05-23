@@ -1,6 +1,6 @@
 // @flow
 import React from "react"
-import Grid from "material-ui/Grid"
+import Grid from "@material-ui/core/Grid"
 import InfoBox from "common/components/InfoBox"
 import Orders from "features/StockCenter/Charts/Orders"
 import StrainsList from "features/StockCenter/Tables/StrainsList"
@@ -11,7 +11,7 @@ import Poll from "@material-ui/icons/Poll"
 import Public from "@material-ui/icons/Public"
 import Whatshot from "@material-ui/icons/Whatshot"
 import LibraryBooks from "@material-ui/icons/LibraryBooks"
-import deepPurple from "material-ui/colors/deepPurple"
+import deepPurple from "@material-ui/core/colors/deepPurple"
 import data from "common/data/data"
 
 /**

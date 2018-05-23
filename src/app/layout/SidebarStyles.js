@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { NavLink } from "react-router-dom"
-import List from "material-ui/List"
+import List from "@material-ui/core/List"
 // import Paper from "material-ui/Paper"
 
 export const StyledLink = styled(NavLink)`
