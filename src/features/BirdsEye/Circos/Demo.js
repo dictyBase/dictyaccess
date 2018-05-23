@@ -1,6 +1,8 @@
 import React, { Component } from "react"
 import Circos from "circos"
 import LegendBox from "common/components/LegendBox"
+import ImageHorizontalGrid from "common/components/ImageHorizontalGrid"
+import { tileData } from "common/data/circosImageData"
 
 let configuration = {
   innerRadius: 250,
@@ -72,6 +74,7 @@ class Demo extends Component {
       <center>
         <div ref={this.circosRef} />
         <LegendBox description={description} />
+        <ImageHorizontalGrid tileData={tileData} />
       </center>
     )
   }

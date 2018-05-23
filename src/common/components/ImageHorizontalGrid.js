@@ -3,9 +3,6 @@ import { withStyles } from "@material-ui/core/styles"
 import GridList from "@material-ui/core/GridList"
 import GridListTile from "@material-ui/core/GridListTile"
 import GridListTileBar from "@material-ui/core/GridListTileBar"
-import IconButton from "@material-ui/core/IconButton"
-import InfoIcon from "@material-ui/icons/Info"
-import { tileData } from "common/data/circosImageData"
 
 const styles = theme => ({
   root: {
@@ -13,33 +10,38 @@ const styles = theme => ({
     flexWrap: "wrap",
     justifyContent: "space-around",
     overflow: "hidden",
-    backgroundColor: theme.palette.background.paper
+    backgroundColor: theme.palette.background.paper,
+    marginBottom: "5px"
   },
   gridList: {
-    width: 600,
-    height: 450
+    flexWrap: "nowrap",
+    // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
+    transform: "translateZ(0)"
   },
-  icon: {
-    color: "rgba(255, 255, 255, 0.54)"
+  title: {
+    color: theme.palette.primary.light
+  },
+  titleBar: {
+    background:
+      "linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)"
   }
 })
 
-const ImageGridDisplay = props => {
-  const { classes } = props
+const ImageHorizontalGrid = props => {
+  const { classes, tileData } = props
 
   return (
     <div className={classes.root}>
-      <GridList cellHeight={180} className={classes.gridList}>
+      <GridList className={classes.gridList} cols={2.5}>
         {tileData.map(tile => (
           <GridListTile key={tile.img}>
             <img src={tile.img} alt={tile.title} />
             <GridListTileBar
               title={tile.title}
-              actionIcon={
-                <IconButton className={classes.icon}>
-                  <InfoIcon />
-                </IconButton>
-              }
+              classes={{
+                root: classes.titleBar,
+                title: classes.title
+              }}
             />
           </GridListTile>
         ))}
@@ -48,4 +50,4 @@ const ImageGridDisplay = props => {
   )
 }
 
-export default withStyles(styles)(ImageGridDisplay)
+export default withStyles(styles)(ImageHorizontalGrid)

@@ -5,7 +5,8 @@ const styles = {
   paper: {
     width: "50%",
     textAlign: "center",
-    padding: "5px"
+    padding: "5px",
+    marginBottom: "10px"
   }
 }
 
