@@ -8,6 +8,11 @@
       "git add"
     ]
   },
+  "husky": {
+    "hooks": {
+      "precommit": "npm test"
+    }
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -15,7 +20,8 @@
     "eject": "react-scripts eject",
     "flow": "flow",
     "styleguide": "styleguidist server",
-    "styleguide:build": "styleguidist build"
+    "styleguide:build": "styleguidist build",
+    "precommit": "lint-staged"
   },
   "dependencies": {
     "@material-ui/core": "^1.0.0",
@@ -33,7 +39,8 @@
     "typeface-roboto": "0.0.54"
   },
   "devDependencies": {
-    "flow-bin": "^0.70.0",
+    "flow-bin": "^0.72.0",
+    "husky": "^0.14.3",
     "lint-staged": "^7.0.4",
     "prettier": "^1.11.1",
     "react-styleguidist": "^7.0.5",
