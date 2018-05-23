@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import Circos from "circos"
+import LegendBox from "common/components/LegendBox"
 
 let configuration = {
   innerRadius: 250,
@@ -49,6 +50,9 @@ const data = [
   { len: 31, color: "#ffed6f", label: "December", id: "december" }
 ]
 
+const description =
+  "Out-to inside tracks are: 1st=  +strand  genes;  light  blue:  chromosome;  3rd: -strand genes;   black:   RNAseq   tracks   0,   8,   and   24   hours development,     respectively;     inner     track     represents extracellular     localization.     Note     the     developmental regulation of the gene encoding colossin A, highlightedingreen;  a  large,  (predicted)  glycosylated  surface  protein that   might   be   involved   in   cell-cell   adhesion   during development –functional predictions gleanedhere, but not yet experimentally shown."
+
 class Demo extends Component {
   constructor(props) {
     super(props)
@@ -67,6 +71,7 @@ class Demo extends Component {
     return (
       <center>
         <div ref={this.circosRef} />
+        <LegendBox description={description} />
       </center>
     )
   }
