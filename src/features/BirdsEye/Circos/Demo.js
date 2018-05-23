@@ -2,8 +2,9 @@ import React, { Component } from "react"
 import Circos from "circos"
 import LegendBox from "common/components/LegendBox"
 import ImageHorizontalGrid from "common/components/ImageHorizontalGrid"
+import Dropdown from "common/components/Dropdown"
 import { tileData } from "common/data/circosImageData"
-import GRCh37 from "common/data/circos/GRCh37.json"
+// import GRCh37 from "common/data/circos/GRCh37.json"
 import cytobands from "common/data/circos/cytobands.json"
 import segdup from "common/data/circos/segdup.json"
 
@@ -22,8 +23,7 @@ let gieStainColor = {
   select: "rgb(135,177,255)"
 }
 
-const description =
-  "Out-to inside tracks are: 1st=  +strand  genes;  light  blue:  chromosome;  3rd: -strand genes;   black:   RNAseq   tracks   0,   8,   and   24   hours development,     respectively;     inner     track     represents extracellular     localization.     Note     the     developmental regulation of the gene encoding colossin A, highlightedingreen;  a  large,  (predicted)  glycosylated  surface  protein that   might   be   involved   in   cell-cell   adhesion   during development –functional predictions gleanedhere, but not yet experimentally shown."
+const description = "This is a placeholder description."
 
 class Demo extends Component {
   constructor(props) {
@@ -38,8 +38,8 @@ class Demo extends Component {
       .map(function(d) {
         return {
           block_id: d.chrom,
-          start: parseInt(d.chromStart),
-          end: parseInt(d.chromEnd),
+          start: parseInt(d.chromStart, 10),
+          end: parseInt(d.chromEnd, 10),
           gieStain: d.gieStain
         }
       })
@@ -118,6 +118,7 @@ class Demo extends Component {
   render() {
     return (
       <center>
+        <Dropdown />
         <div ref={this.circosRef} />
         <LegendBox description={description} />
         <ImageHorizontalGrid tileData={tileData} />

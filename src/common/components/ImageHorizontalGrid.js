@@ -19,7 +19,7 @@ const styles = theme => ({
     transform: "translateZ(0)"
   },
   title: {
-    color: theme.palette.primary.light
+    color: theme.palette.primary
   },
   titleBar: {
     background:

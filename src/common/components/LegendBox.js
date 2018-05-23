@@ -3,7 +3,7 @@ import Paper from "@material-ui/core/Paper"
 
 const styles = {
   paper: {
-    width: "50%",
+    width: "40%",
     textAlign: "center",
     padding: "5px",
     marginBottom: "10px"
