@@ -69,7 +69,7 @@ class Demo extends Component {
           id: "chr9",
           len: length,
           label: "chr9",
-          color: "#FFCC00"
+          color: "#00b8d4"
         }
       ],
       {
@@ -98,15 +98,15 @@ class Demo extends Component {
       strokeWidth: 0,
       color: d => {
         if (d.end - d.start > 150000) {
-          return "red"
+          return "#006064"
         } else if (d.end - d.start > 120000) {
-          return "#333"
+          return "#00acc1"
         } else if (d.end - d.start > 90000) {
-          return "#666"
+          return "#00838f"
         } else if (d.end - d.start > 60000) {
-          return "#999"
+          return "#0097a7"
         } else if (d.end - d.start > 30000) {
-          return "#BBB"
+          return "#00acc1"
         }
       },
       tooltipContent: function(d) {
