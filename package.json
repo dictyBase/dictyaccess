@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@material-ui/icons": "^1.0.0-beta.42",
+    "circos": "^2.1.0",
     "dicty-components-header-footer": "github:dictyBase/dicty-components-header-footer",
     "dicty-components-navbar": "github:dictyBase/dicty-components-navbar",
     "material-ui": "^1.0.0-beta.41",
