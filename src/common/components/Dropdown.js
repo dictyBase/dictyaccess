@@ -8,20 +8,20 @@ const styles = theme => ({
   root: {
     display: "flex",
     flexWrap: "wrap",
-    justifyContent: "center"
+    justifyContent: "center",
   },
   formControl: {
     margin: theme.spacing.unit,
-    minWidth: 150
+    minWidth: 150,
   },
   selectEmpty: {
-    marginTop: theme.spacing.unit * 2
-  }
+    marginTop: theme.spacing.unit * 2,
+  },
 })
 
 class Dropdown extends Component {
   state = {
-    data: ""
+    data: "",
   }
 
   handleChange = name => event => {
@@ -29,26 +29,21 @@ class Dropdown extends Component {
   }
 
   render() {
-    const { classes } = this.props
+    const { classes, dropDownData } = this.props
 
     return (
       <div className={classes.root}>
         <FormControl className={classes.formControl}>
-          <InputLabel htmlFor="data-top-display">Chromosomes</InputLabel>
           <Select
             native
             value={this.state.data}
             onChange={this.handleChange("data")}
             inputProps={{
-              id: "data-top-display"
+              id: "data-top-display",
             }}>
-            <option value="" />
-            <option value={10}>Chr 1</option>
-            <option value={20}>Chr 2</option>
-            <option value={30}>Chr 3</option>
-            <option value={30}>Chr 4</option>
-            <option value={30}>Chr 5</option>
-            <option value={30}>Chr 6</option>
+            {dropDownData.map(item => {
+              return <option value={item.name}>{item.name}</option>
+            })}
           </Select>
         </FormControl>
       </div>

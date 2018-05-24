@@ -3,6 +3,7 @@ import { withStyles } from "@material-ui/core/styles"
 import GridList from "@material-ui/core/GridList"
 import GridListTile from "@material-ui/core/GridListTile"
 import GridListTileBar from "@material-ui/core/GridListTileBar"
+import Dropdown from "common/components/Dropdown"
 
 const styles = theme => ({
   root: {
@@ -18,11 +19,24 @@ const styles = theme => ({
   },
 })
 
+const dropDownData = [
+  {
+    name: "Gene Models",
+  },
+  {
+    name: "Expressions",
+  },
+  {
+    name: "GWDI Mutants",
+  },
+]
+
 const ImageGridDisplay = props => {
   const { classes, tileData } = props
 
   return (
     <div className={classes.root}>
+      <Dropdown dropDownData={dropDownData} />
       <GridList cellHeight={240} cols={4} className={classes.gridList}>
         {tileData.map(tile => (
           <GridListTile key={tile.img}>

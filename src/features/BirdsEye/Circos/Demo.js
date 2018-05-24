@@ -20,8 +20,29 @@ let gieStainColor = {
   gneg: "rgb(255,255,255)",
   acen: "rgb(217,47,39)",
   stalk: "rgb(100,127,164)",
-  select: "rgb(135,177,255)"
+  select: "rgb(135,177,255)",
 }
+
+const dropDownData = [
+  {
+    name: "Chr 1",
+  },
+  {
+    name: "Chr 2",
+  },
+  {
+    name: "Chr 3",
+  },
+  {
+    name: "Chr 4",
+  },
+  {
+    name: "Chr 5",
+  },
+  {
+    name: "Chr 6",
+  },
+]
 
 const description = "This is a placeholder description."
 
@@ -40,7 +61,7 @@ class Demo extends Component {
           block_id: d.chrom,
           start: parseInt(d.chromStart, 10),
           end: parseInt(d.chromEnd, 10),
-          gieStain: d.gieStain
+          gieStain: d.gieStain,
         }
       })
     let start = 39000000
@@ -61,7 +82,7 @@ class Demo extends Component {
     let myCircos = new Circos({
       width: 800,
       height: 800,
-      container: this.circosRef.current
+      container: this.circosRef.current,
     })
     myCircos.layout(
       [
@@ -69,17 +90,17 @@ class Demo extends Component {
           id: "chr9",
           len: length,
           label: "chr9",
-          color: "#00b8d4"
-        }
+          color: "#00b8d4",
+        },
       ],
       {
         innerRadius: 350,
         outerRadius: 370,
         labels: {
-          display: true
+          display: true,
         },
-        ticks: { display: true, labels: false, spacing: 10000 }
-      }
+        ticks: { display: true, labels: false, spacing: 10000 },
+      },
     )
     myCircos.highlight("cytobands", cytobandsData, {
       innerRadius: 350,
@@ -87,7 +108,7 @@ class Demo extends Component {
       opacity: 0.8,
       color: d => {
         return gieStainColor[d.gieStain]
-      }
+      },
     })
     myCircos.stack("stack", segdupData, {
       innerRadius: 0.7,
@@ -111,14 +132,14 @@ class Demo extends Component {
       },
       tooltipContent: function(d) {
         return `${d.block_id}:${d.start}-${d.end}`
-      }
+      },
     })
     myCircos.render()
   }
   render() {
     return (
       <center>
-        <Dropdown />
+        <Dropdown dropDownData={dropDownData} />
         <div ref={this.circosRef} />
         <LegendBox description={description} />
         <ImageHorizontalGrid tileData={tileData} />
