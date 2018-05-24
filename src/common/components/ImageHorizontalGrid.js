@@ -11,20 +11,20 @@ const styles = theme => ({
     justifyContent: "space-around",
     overflow: "hidden",
     backgroundColor: theme.palette.background.paper,
-    marginBottom: "5px"
+    marginBottom: "5px",
   },
   gridList: {
     flexWrap: "nowrap",
     // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
-    transform: "translateZ(0)"
+    transform: "translateZ(0)",
   },
   title: {
-    color: theme.palette.primary
+    color: theme.palette.primary,
   },
   titleBar: {
     background:
-      "linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)"
-  }
+      "linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)",
+  },
 })
 
 const ImageHorizontalGrid = props => {
@@ -32,7 +32,7 @@ const ImageHorizontalGrid = props => {
 
   return (
     <div className={classes.root}>
-      <GridList className={classes.gridList} cols={3}>
+      <GridList className={classes.gridList} cols={6}>
         {tileData.map(tile => (
           <GridListTile key={tile.img}>
             <img src={tile.img} alt={tile.title} />
@@ -40,7 +40,7 @@ const ImageHorizontalGrid = props => {
               title={tile.title}
               classes={{
                 root: classes.titleBar,
-                title: classes.title
+                title: classes.title,
               }}
             />
           </GridListTile>

@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import Circos from "circos"
+import Grid from "@material-ui/core/Grid"
 import LegendBox from "common/components/LegendBox"
 import ImageHorizontalGrid from "common/components/ImageHorizontalGrid"
 import Dropdown from "common/components/Dropdown"
@@ -52,6 +53,7 @@ class Demo extends Component {
     this.circosRef = React.createRef()
   }
   componentDidMount() {
+    // all the fun circos content
     let cytobandsData = cytobands
       .filter(function(d) {
         return d.chrom === "chr9"
@@ -138,12 +140,20 @@ class Demo extends Component {
   }
   render() {
     return (
-      <center>
-        <Dropdown dropDownData={dropDownData} />
-        <div ref={this.circosRef} />
-        <LegendBox description={description} />
-        <ImageHorizontalGrid tileData={tileData} />
-      </center>
+      <Grid container spacing={16}>
+        <Grid item xs={12}>
+          <Dropdown dropDownData={dropDownData} />
+        </Grid>
+        <Grid item xs={4}>
+          <LegendBox description={description} />
+        </Grid>
+        <Grid item xs={8}>
+          <div ref={this.circosRef} />
+        </Grid>
+        <Grid item xs={12}>
+          <ImageHorizontalGrid tileData={tileData} />
+        </Grid>
+      </Grid>
     )
   }
 }

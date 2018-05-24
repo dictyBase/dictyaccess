@@ -19,13 +19,13 @@ const TabContainer = props => {
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    backgroundColor: theme.palette.background.paper
-  }
+    backgroundColor: theme.palette.background.paper,
+  },
 })
 
 class SimpleTabs extends Component {
   state = {
-    value: 0
+    value: 0,
   }
 
   handleChange = (event, value) => {
@@ -46,12 +46,12 @@ class SimpleTabs extends Component {
         </AppBar>
         {value === 0 && (
           <TabContainer>
-            <ImageGridDisplay tileData={tileData} />
+            <Demo />
           </TabContainer>
         )}
         {value === 1 && (
           <TabContainer>
-            <Demo />
+            <ImageGridDisplay tileData={tileData} />
           </TabContainer>
         )}
       </div>
