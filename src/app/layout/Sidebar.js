@@ -16,20 +16,20 @@ import {
   StyledLink,
   ListStyle,
   // DrawerPaperStyle,
-  DrawerHeaderStyle
+  DrawerHeaderStyle,
 } from "app/layout/SidebarStyles"
 
 const styles = theme => ({
   drawerPaper: {
     position: "relative",
     width: "240px",
-    height: "100%"
-  }
+    height: "100%",
+  },
 })
 
 type Props = {
   /** Material-UI property for customizing CSS */
-  classes: Object
+  classes: Object,
 }
 
 /**
@@ -44,7 +44,7 @@ const Sidebar = (props: Props) => {
       variant="persistent"
       open
       classes={{
-        paper: classes.drawerPaper
+        paper: classes.drawerPaper,
       }}>
       <DrawerHeaderStyle>
         <Typography variant="title" color="inherit">
@@ -60,7 +60,7 @@ const Sidebar = (props: Props) => {
           activeStyle={{
             fontWeight: "bold",
             fontFamily: "Roboto",
-            color: "rgb(183, 28, 28)"
+            color: "rgb(183, 28, 28)",
           }}>
           Bird's Eye
         </StyledLink>
@@ -75,25 +75,11 @@ const Sidebar = (props: Props) => {
             activeStyle={{
               fontWeight: "bold",
               fontFamily: "Roboto",
-              color: "rgb(251, 140, 0)"
+              color: "rgb(251, 140, 0)",
             }}>
             Genome Stats
           </StyledLink>
         </ListItem>
-        {/* <ListItem button>
-          <ListItemIcon>
-            <WorkIcon />
-          </ListItemIcon>
-          <StyledLink
-            to="/dashboard/curation"
-            activeStyle={{
-              fontWeight: "bold",
-              fontFamily: "Roboto",
-              color: "rgb(183, 28, 28)"
-            }}>
-            Curation
-          </StyledLink>
-        </ListItem> */}
         <ListItem button>
           <ListItemIcon>
             <FingerprintIcon />
@@ -103,9 +89,9 @@ const Sidebar = (props: Props) => {
             activeStyle={{
               fontWeight: "bold",
               fontFamily: "Roboto",
-              color: "rgb(183, 28, 28)"
+              color: "rgb(183, 28, 28)",
             }}>
-            Ontology
+            Annotations
           </StyledLink>
         </ListItem>
         <ListItem button>
@@ -117,7 +103,7 @@ const Sidebar = (props: Props) => {
             activeStyle={{
               fontWeight: "bold",
               fontFamily: "Roboto",
-              color: "rgb(183, 28, 28)"
+              color: "rgb(183, 28, 28)",
             }}>
             Phylogeny
           </StyledLink>
@@ -131,7 +117,7 @@ const Sidebar = (props: Props) => {
             activeStyle={{
               fontWeight: "bold",
               fontFamily: "Roboto",
-              color: "rgb(30, 136, 229)"
+              color: "rgb(30, 136, 229)",
             }}>
             Analytics
           </StyledLink>
@@ -145,7 +131,7 @@ const Sidebar = (props: Props) => {
             activeStyle={{
               fontWeight: "bold",
               fontFamily: "Roboto",
-              color: "#4f5aae"
+              color: "#4f5aae",
             }}>
             Dicty Stock Center
           </StyledLink>

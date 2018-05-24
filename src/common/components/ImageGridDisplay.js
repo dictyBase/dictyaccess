@@ -10,12 +10,12 @@ const styles = theme => ({
     flexWrap: "wrap",
     justifyContent: "space-around",
     overflow: "hidden",
-    backgroundColor: theme.palette.background.paper
+    backgroundColor: theme.palette.background.paper,
   },
   gridList: {
-    width: 600,
-    height: 600
-  }
+    width: "90%",
+    height: "100%",
+  },
 })
 
 const ImageGridDisplay = props => {
@@ -23,7 +23,13 @@ const ImageGridDisplay = props => {
 
   return (
     <div className={classes.root}>
-      <GridList cellHeight={180} className={classes.gridList}>
+      <GridList cellHeight={240} cols={4} className={classes.gridList}>
+        {tileData.map(tile => (
+          <GridListTile key={tile.img}>
+            <img src={tile.img} alt={tile.title} />
+            <GridListTileBar title={tile.title} />
+          </GridListTile>
+        ))}
         {tileData.map(tile => (
           <GridListTile key={tile.img}>
             <img src={tile.img} alt={tile.title} />
