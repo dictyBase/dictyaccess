@@ -33,8 +33,8 @@ const ImageHorizontalGrid = props => {
   return (
     <div className={classes.root}>
       <GridList className={classes.gridList} cols={6}>
-        {tileData.map(tile => (
-          <GridListTile key={tile.img}>
+        {tileData.map((tile, i) => (
+          <GridListTile key={i}>
             <img src={tile.img} alt={tile.title} />
             <GridListTileBar
               title={tile.title}

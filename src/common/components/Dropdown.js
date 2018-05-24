@@ -40,8 +40,12 @@ class Dropdown extends Component {
             inputProps={{
               id: "data-top-display",
             }}>
-            {dropDownData.map(item => {
-              return <option value={item.name}>{item.name}</option>
+            {dropDownData.map((item, i) => {
+              return (
+                <option value={item.name} key={i}>
+                  {item.name}
+                </option>
+              )
             })}
           </Select>
         </FormControl>
