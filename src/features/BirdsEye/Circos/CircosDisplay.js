@@ -23,7 +23,7 @@ const styles = theme => ({
   },
 })
 
-class BirdsEyeDashboard extends Component {
+class CircosDisplay extends Component {
   state = {
     value: 0,
   }
@@ -33,6 +33,7 @@ class BirdsEyeDashboard extends Component {
   }
 
   handleClick = component => {
+    // change to component
     this.props.history.push("/dashboard/birdseye/demo")
   }
 
@@ -58,7 +59,7 @@ class BirdsEyeDashboard extends Component {
         )}
         {value === 1 && (
           <TabContainer>
-            <Demo />
+            <div>Work in progress</div>
           </TabContainer>
         )}
       </div>
@@ -66,4 +67,4 @@ class BirdsEyeDashboard extends Component {
   }
 }
 
-export default withStyles(styles)(BirdsEyeDashboard)
+export default withStyles(styles)(CircosDisplay)
