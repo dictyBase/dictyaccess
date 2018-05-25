@@ -54,7 +54,7 @@ class Demo extends Component {
     this.circosRef = React.createRef()
   }
   componentDidMount() {
-    // all the fun circos content
+    // all the fun circos content goes in this lifecycle
     let cytobandsData = cytobands
       .filter(function(d) {
         return d.chrom === "chr9"
