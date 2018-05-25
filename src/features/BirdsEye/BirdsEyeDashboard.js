@@ -4,7 +4,6 @@ import AppBar from "@material-ui/core/AppBar"
 import Tabs from "@material-ui/core/Tabs"
 import Tab from "@material-ui/core/Tab"
 import Typography from "@material-ui/core/Typography"
-import GeneModels from "features/BirdsEye/DataSets/GeneModels"
 import DataSetDisplay from "features/BirdsEye/Global/DataSets/DataSetDisplay"
 
 const TabContainer = props => {

@@ -31,8 +31,7 @@ class CircosDisplay extends Component {
   }
 
   handleClick = component => {
-    // change to component
-    this.props.history.push("/dashboard/birdseye/demo")
+    this.props.history.push(`/dashboard/birdseye/genemodels/${component}`)
   }
 
   render() {

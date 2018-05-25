@@ -1,6 +1,5 @@
 import React from "react"
 import { withStyles } from "@material-ui/core/styles"
-import Grid from "@material-ui/core/Grid"
 import GridList from "@material-ui/core/GridList"
 import GridListTile from "@material-ui/core/GridListTile"
 import GridListTileBar from "@material-ui/core/GridListTileBar"
@@ -24,13 +23,9 @@ const ImageGridDisplay = props => {
 
   return (
     <div className={classes.root}>
-      <GridList
-        cellHeight={240}
-        cols={4}
-        className={classes.gridList}
-        onClick={handleClick}>
+      <GridList cellHeight={240} cols={4} className={classes.gridList}>
         {tileData.map((tile, i) => (
-          <GridListTile key={i}>
+          <GridListTile key={i} onClick={() => handleClick(tile.component)}>
             <img src={tile.img} alt={tile.title} />
             <GridListTileBar title={tile.title} />
           </GridListTile>
