@@ -7,6 +7,7 @@ import CurationDashboard from "features/Curation/CurationDashboard"
 import AnalyticsDashboard from "features/Analytics/AnalyticsDashboard"
 import BirdsEyeDashboard from "features/BirdsEye/BirdsEyeDashboard"
 import CircosDisplay from "features/BirdsEye/Circos/CircosDisplay"
+import DataSetDisplay from "features/BirdsEye/Global/DataSets/DataSetDisplay"
 import PageNotFound from "features/PageNotFound"
 
 const Routes = () => {
@@ -18,7 +19,16 @@ const Routes = () => {
         component={GenomeDashboard => <Redirect to="/dashboard/genomes" />}
       />
       <Route exact path="/dashboard/birdseye" component={BirdsEyeDashboard} />
-      <Route exact path="/dashboard/birdseye/:id" component={CircosDisplay} />
+      <Route
+        exact
+        path="/dashboard/birdseye/:dataset"
+        component={DataSetDisplay}
+      />
+      <Route
+        exact
+        path="/dashboard/birdseye/:dataset/:id"
+        component={CircosDisplay}
+      />
       <Route exact path="/dashboard/genomes" component={GenomeDashboard} />
       <Route exact path="/dashboard/curation" component={CurationDashboard} />
       <Route exact path="/dashboard/analytics" component={AnalyticsDashboard} />

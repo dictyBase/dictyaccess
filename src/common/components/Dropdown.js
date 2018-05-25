@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import { Redirect } from "react-router-dom"
 import { withStyles } from "@material-ui/core/styles"
 import FormControl from "@material-ui/core/FormControl"
 import Select from "@material-ui/core/Select"
@@ -21,15 +22,26 @@ const styles = theme => ({
 class Dropdown extends Component {
   state = {
     data: "",
+    redirect: false,
+    route: "",
   }
 
   handleChange = name => event => {
-    this.setState({ [name]: event.target.value })
+    const routeValue = event.target.value
+    const routeString = routeValue.toString()
+    this.setState({
+      [name]: routeValue,
+      redirect: true,
+      route: `${routeString}`,
+    })
   }
 
   render() {
     const { classes, dropDownData } = this.props
 
+    if (this.state.redirect === true) {
+      return <Redirect to={this.state.route} />
+    }
     return (
       <div className={classes.root}>
         <FormControl className={classes.formControl}>
@@ -42,7 +54,7 @@ class Dropdown extends Component {
             }}>
             {dropDownData.map((item, i) => {
               return (
-                <option value={item.name} key={i}>
+                <option value={item.route} key={i}>
                   {item.name}
                 </option>
               )

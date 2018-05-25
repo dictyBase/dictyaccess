@@ -4,9 +4,8 @@ import AppBar from "@material-ui/core/AppBar"
 import Tabs from "@material-ui/core/Tabs"
 import Tab from "@material-ui/core/Tab"
 import Typography from "@material-ui/core/Typography"
-import Demo from "features/BirdsEye/Circos/Demo"
-import ImageGridDisplay from "common/components/ImageGridDisplay"
-import { tileData } from "common/data/circosImageData"
+import GeneModels from "features/BirdsEye/DataSets/GeneModels"
+import DataSetDisplay from "features/BirdsEye/Global/DataSets/DataSetDisplay"
 
 const TabContainer = props => {
   return (
@@ -32,10 +31,6 @@ class BirdsEyeDashboard extends Component {
     this.setState({ value })
   }
 
-  handleClick = component => {
-    this.props.history.push("/dashboard/birdseye/demo")
-  }
-
   render() {
     const { classes } = this.props
     const { value } = this.state
@@ -50,15 +45,12 @@ class BirdsEyeDashboard extends Component {
         </AppBar>
         {value === 0 && (
           <TabContainer>
-            <ImageGridDisplay
-              tileData={tileData}
-              handleClick={this.handleClick}
-            />
+            <DataSetDisplay />
           </TabContainer>
         )}
         {value === 1 && (
           <TabContainer>
-            <Demo />
+            <center>Work in progress</center>
           </TabContainer>
         )}
       </div>
