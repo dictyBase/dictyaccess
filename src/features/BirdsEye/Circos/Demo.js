@@ -140,15 +140,14 @@ class Demo extends Component {
     myCircos.render()
   }
   handleClick = component => {
-    this.props.history.push("/dashboard/birdseye")
+    this.props.history.push("/dashboard/birdseye/demo")
   }
   render() {
     return (
       <Grid container spacing={16}>
-        <Grid item xs={12}>
-          <Dropdown dropDownData={dropDownData} />
-        </Grid>
         <Grid item xs={4}>
+          <Dropdown dropDownData={dropDownData} />
+          <br />
           <LegendBox description={description} />
         </Grid>
         <Grid item xs={8}>

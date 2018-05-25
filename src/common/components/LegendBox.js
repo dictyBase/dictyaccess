@@ -11,12 +11,12 @@ const styles = {
 
 const LegendBox = props => {
   return (
-    <div>
-      <Paper style={styles.paper}>
+    <Paper style={styles.paper}>
+      <center>
         <h1>Legend</h1>
         {props.description}
-      </Paper>
-    </div>
+      </center>
+    </Paper>
   )
 }
 

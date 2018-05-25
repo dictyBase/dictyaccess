@@ -5,8 +5,6 @@ import Tabs from "@material-ui/core/Tabs"
 import Tab from "@material-ui/core/Tab"
 import Typography from "@material-ui/core/Typography"
 import Demo from "features/BirdsEye/Circos/Demo"
-import ImageGridDisplay from "common/components/ImageGridDisplay"
-import { tileData } from "common/data/circosImageData"
 
 const TabContainer = props => {
   return (
@@ -51,15 +49,12 @@ class CircosDisplay extends Component {
         </AppBar>
         {value === 0 && (
           <TabContainer>
-            <ImageGridDisplay
-              tileData={tileData}
-              handleClick={this.handleClick}
-            />
+            <Demo handleClick={this.handleClick} />
           </TabContainer>
         )}
         {value === 1 && (
           <TabContainer>
-            <div>Work in progress</div>
+            <center>Work in progress</center>
           </TabContainer>
         )}
       </div>
