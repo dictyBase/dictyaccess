@@ -28,13 +28,12 @@ const styles = theme => ({
 })
 
 const ImageHorizontalGrid = props => {
-  const { classes, tileData } = props
-
+  const { classes, tileData, handleClick } = props
   return (
     <div className={classes.root}>
       <GridList className={classes.gridList} cols={6}>
         {tileData.map((tile, i) => (
-          <GridListTile key={i}>
+          <GridListTile key={i} onClick={handleClick}>
             <img src={tile.img} alt={tile.title} />
             <GridListTileBar
               title={tile.title}
@@ -44,6 +43,7 @@ const ImageHorizontalGrid = props => {
               }}
             />
           </GridListTile>
+          // {this.state.showComponent ? }
         ))}
       </GridList>
     </div>

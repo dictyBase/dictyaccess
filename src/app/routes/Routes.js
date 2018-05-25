@@ -6,6 +6,7 @@ import GenomeDashboard from "features/Genomes/GenomeDashboard"
 import CurationDashboard from "features/Curation/CurationDashboard"
 import AnalyticsDashboard from "features/Analytics/AnalyticsDashboard"
 import BirdsEyeDashboard from "features/BirdsEye/BirdsEyeDashboard"
+import Demo from "features/BirdsEye/Circos/Demo"
 import PageNotFound from "features/PageNotFound"
 
 const Routes = () => {
@@ -17,6 +18,7 @@ const Routes = () => {
         component={GenomeDashboard => <Redirect to="/dashboard/genomes" />}
       />
       <Route exact path="/dashboard/birdseye" component={BirdsEyeDashboard} />
+      <Route exact path="/dashboard/birdseye/demo" component={Demo} />
       <Route exact path="/dashboard/genomes" component={GenomeDashboard} />
       <Route exact path="/dashboard/curation" component={CurationDashboard} />
       <Route exact path="/dashboard/analytics" component={AnalyticsDashboard} />

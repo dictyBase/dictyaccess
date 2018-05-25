@@ -1,5 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom"
+import { BrowserRouter } from "react-router-dom"
 import App from "app/layout/App"
 import registerServiceWorker from "./registerServiceWorker"
 import "typeface-roboto"
@@ -18,8 +19,10 @@ jss.options.insertionPoint = document.getElementById("jss-insertion-point")
 
 ReactDOM.render(
   <JssProvider jss={jss} generateClassName={generateClassName}>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </JssProvider>,
-  document.getElementById("root")
+  document.getElementById("root"),
 )
 registerServiceWorker()

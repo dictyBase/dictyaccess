@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import Circos from "circos"
+import { withRouter } from "react-router-dom"
 import Grid from "@material-ui/core/Grid"
 import LegendBox from "common/components/LegendBox"
 import ImageHorizontalGrid from "common/components/ImageHorizontalGrid"
@@ -138,7 +139,11 @@ class Demo extends Component {
     })
     myCircos.render()
   }
+  handleClick = component => {
+    this.props.history.push("/dashboard/birdseye/demo")
+  }
   render() {
+    console.log(this.props.history)
     return (
       <Grid container spacing={16}>
         <Grid item xs={12}>
@@ -151,11 +156,14 @@ class Demo extends Component {
           <div ref={this.circosRef} />
         </Grid>
         <Grid item xs={12}>
-          <ImageHorizontalGrid tileData={tileData} />
+          <ImageHorizontalGrid
+            tileData={tileData}
+            handleClick={this.handleClick}
+          />
         </Grid>
       </Grid>
     )
   }
 }
 
-export default Demo
+export default withRouter(Demo)

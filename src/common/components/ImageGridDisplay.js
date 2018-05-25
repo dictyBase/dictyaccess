@@ -32,12 +32,16 @@ const dropDownData = [
 ]
 
 const ImageGridDisplay = props => {
-  const { classes, tileData } = props
+  const { classes, tileData, handleClick } = props
 
   return (
     <div className={classes.root}>
       <Dropdown dropDownData={dropDownData} />
-      <GridList cellHeight={240} cols={4} className={classes.gridList}>
+      <GridList
+        cellHeight={240}
+        cols={4}
+        className={classes.gridList}
+        onClick={handleClick}>
         {tileData.map(tile => (
           <GridListTile key={tile.img}>
             <img src={tile.img} alt={tile.title} />

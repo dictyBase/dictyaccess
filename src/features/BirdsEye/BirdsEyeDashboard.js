@@ -32,6 +32,10 @@ class SimpleTabs extends Component {
     this.setState({ value })
   }
 
+  handleClick = component => {
+    this.props.history.push("/dashboard/birdseye/demo")
+  }
+
   render() {
     const { classes } = this.props
     const { value } = this.state
@@ -51,7 +55,10 @@ class SimpleTabs extends Component {
         )}
         {value === 1 && (
           <TabContainer>
-            <ImageGridDisplay tileData={tileData} />
+            <ImageGridDisplay
+              tileData={tileData}
+              handleClick={this.handleClick}
+            />
           </TabContainer>
         )}
       </div>
