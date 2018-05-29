@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from "react"
 import { withRouter } from "react-router-dom"
 import Grid from "@material-ui/core/Grid"
@@ -6,7 +7,16 @@ import { imageData } from "common/data/circosImageData"
 import Dropdown from "common/components/Dropdown"
 import { dropDownData } from "features/BirdsEye/Global/DataSets/DataSetDropdownMenu"
 
-class DataSetDisplay extends Component {
+type Props = {
+  /** React Router history */
+  history: Object,
+  /** React Router match object */
+  match: Object,
+}
+
+type State = {}
+
+class DataSetDisplay extends Component<Props, State> {
   handleClick = component => {
     const { history, match } = this.props
     history.push(`/dashboard/birdseye/${match.params.dataset}/${component}`)

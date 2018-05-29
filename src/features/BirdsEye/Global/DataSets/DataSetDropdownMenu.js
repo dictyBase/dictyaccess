@@ -1,3 +1,4 @@
+// @flow
 export const dropDownData = [
   {
     name: "Gene Models",

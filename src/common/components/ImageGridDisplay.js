@@ -1,3 +1,4 @@
+// @flow
 import React from "react"
 import { withStyles } from "@material-ui/core/styles"
 import GridList from "@material-ui/core/GridList"
@@ -18,7 +19,16 @@ const styles = theme => ({
   },
 })
 
-const ImageGridDisplay = props => {
+type Props = {
+  /** Material-UI classes */
+  classes: Object,
+  /** Array of objects with image data information */
+  imageData: Array<Object>,
+  /** Click handler that accepts component as parameter */
+  handleClick: Function,
+}
+
+const ImageGridDisplay = (props: Props) => {
   const { classes, imageData, handleClick } = props
 
   return (

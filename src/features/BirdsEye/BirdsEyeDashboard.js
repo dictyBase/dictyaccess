@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from "react"
 import { withStyles } from "@material-ui/core/styles"
 import AppBar from "@material-ui/core/AppBar"
@@ -6,7 +7,11 @@ import Tab from "@material-ui/core/Tab"
 import Typography from "@material-ui/core/Typography"
 import DataSetDisplay from "features/BirdsEye/Global/DataSets/DataSetDisplay"
 
-const TabContainer = props => {
+type tabProps = {
+  children: any,
+}
+
+const TabContainer = (props: tabProps) => {
   return (
     <Typography component="div" style={{ padding: 8 * 3 }}>
       {props.children}
@@ -21,7 +26,17 @@ const styles = theme => ({
   },
 })
 
-class BirdsEyeDashboard extends Component {
+type Props = {
+  /** Material-UI classes */
+  classes: Object,
+}
+
+type State = {
+  /** Value representing the two tabs. Starts at 0. */
+  value: number,
+}
+
+class BirdsEyeDashboard extends Component<Props, State> {
   state = {
     value: 0,
   }

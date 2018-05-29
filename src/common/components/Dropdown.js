@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from "react"
 import { Redirect } from "react-router-dom"
 import { withStyles } from "@material-ui/core/styles"
@@ -16,7 +17,20 @@ const styles = theme => ({
   },
 })
 
-class Dropdown extends Component {
+type Props = {
+  /** Material-UI styling */
+  classes: Object,
+  /** Array of objects with names and routes (data for dropdown menu) */
+  dropDownData: Array<Object>,
+}
+
+type State = {
+  data: string,
+  redirect: boolean,
+  route: string,
+}
+
+class Dropdown extends Component<Props, State> {
   state = {
     data: "",
     redirect: false,
