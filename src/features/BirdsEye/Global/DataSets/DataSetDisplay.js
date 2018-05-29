@@ -8,7 +8,8 @@ import { dropDownData } from "features/BirdsEye/Global/DataSets/DataSetDropdownM
 
 class DataSetDisplay extends Component {
   handleClick = component => {
-    this.props.history.push(`/dashboard/birdseye/genemodels/${component}`)
+    const { history, match } = this.props
+    history.push(`/dashboard/birdseye/${match.params.dataset}/${component}`)
   }
 
   render() {

@@ -14,9 +14,6 @@ const styles = theme => ({
     margin: theme.spacing.unit,
     minWidth: 150,
   },
-  selectEmpty: {
-    marginTop: theme.spacing.unit * 2,
-  },
 })
 
 class Dropdown extends Component {
@@ -40,6 +37,7 @@ class Dropdown extends Component {
     const { classes, dropDownData } = this.props
 
     if (this.state.redirect === true) {
+      // need to have the redirect maintain the dropdown menu with appropriate selection highlighted
       return <Redirect to={this.state.route} />
     }
     return (
