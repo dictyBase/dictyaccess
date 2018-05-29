@@ -36,10 +36,10 @@ class Dropdown extends Component {
   render() {
     const { classes, dropDownData } = this.props
 
-    if (this.state.redirect === true) {
-      // need to have the redirect maintain the dropdown menu with appropriate selection highlighted
-      return <Redirect to={this.state.route} />
-    }
+    // if (this.state.redirect === true) {
+    // need to have the redirect maintain the dropdown menu with appropriate selection highlighted
+    //   return <Redirect to={this.state.route} />
+    // }
     return (
       <div className={classes.root}>
         <FormControl className={classes.formControl}>

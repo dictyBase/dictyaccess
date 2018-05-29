@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { withRouter } from "react-router-dom"
 import Grid from "@material-ui/core/Grid"
 import ImageGridDisplay from "common/components/ImageGridDisplay"
-import { tileData } from "common/data/circosImageData"
+import { imageData } from "common/data/circosImageData"
 import Dropdown from "common/components/Dropdown"
 import { dropDownData } from "features/BirdsEye/Global/DataSets/DataSetDropdownMenu"
 
@@ -20,7 +20,7 @@ class DataSetDisplay extends Component {
         </Grid>
         <Grid item xs={10}>
           <ImageGridDisplay
-            tileData={tileData}
+            imageData={imageData}
             handleClick={this.handleClick}
           />
         </Grid>

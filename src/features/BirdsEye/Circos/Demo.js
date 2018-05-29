@@ -5,7 +5,7 @@ import Grid from "@material-ui/core/Grid"
 import LegendBox from "common/components/LegendBox"
 import ImageHorizontalGrid from "common/components/ImageHorizontalGrid"
 import Dropdown from "common/components/Dropdown"
-import { tileData } from "common/data/circosImageData"
+import { imageData } from "common/data/circosImageData"
 // import GRCh37 from "common/data/circos/GRCh37.json"
 import cytobands from "common/data/circos/cytobands.json"
 import segdup from "common/data/circos/segdup.json"
@@ -140,7 +140,8 @@ class Demo extends Component {
     myCircos.render()
   }
   handleClick = component => {
-    this.props.history.push("/dashboard/birdseye/demo")
+    const { history, match } = this.props
+    history.push(`/dashboard/birdseye/${match.params.dataset}/${component}`)
   }
   render() {
     return (
@@ -155,7 +156,7 @@ class Demo extends Component {
         </Grid>
         <Grid item xs={12}>
           <ImageHorizontalGrid
-            tileData={tileData}
+            imageData={imageData}
             handleClick={this.handleClick}
           />
         </Grid>

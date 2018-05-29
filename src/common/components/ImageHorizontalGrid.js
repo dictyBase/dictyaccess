@@ -15,7 +15,7 @@ const styles = theme => ({
   },
   gridList: {
     flexWrap: "nowrap",
-    // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
+    // Promote the list into its own layer on Chrome. This costs memory but helps keeping high FPS.
     transform: "translateZ(0)",
   },
   title: {
@@ -28,12 +28,12 @@ const styles = theme => ({
 })
 
 const ImageHorizontalGrid = props => {
-  const { classes, tileData, handleClick } = props
+  const { classes, imageData, handleClick } = props
   return (
     <div className={classes.root}>
       <GridList className={classes.gridList} cols={6}>
-        {tileData.map((tile, i) => (
-          <GridListTile key={i} onClick={handleClick}>
+        {imageData.map((tile, i) => (
+          <GridListTile key={i} onClick={() => handleClick(tile.component)}>
             <img src={tile.img} alt={tile.title} />
             <GridListTileBar
               title={tile.title}
@@ -43,7 +43,6 @@ const ImageHorizontalGrid = props => {
               }}
             />
           </GridListTile>
-          // {this.state.showComponent ? }
         ))}
       </GridList>
     </div>

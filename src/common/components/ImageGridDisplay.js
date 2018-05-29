@@ -19,18 +19,18 @@ const styles = theme => ({
 })
 
 const ImageGridDisplay = props => {
-  const { classes, tileData, handleClick } = props
+  const { classes, imageData, handleClick } = props
 
   return (
     <div className={classes.root}>
       <GridList cellHeight={240} cols={4} className={classes.gridList}>
-        {tileData.map((tile, i) => (
+        {imageData.map((tile, i) => (
           <GridListTile key={i} onClick={() => handleClick(tile.component)}>
             <img src={tile.img} alt={tile.title} />
             <GridListTileBar title={tile.title} />
           </GridListTile>
         ))}
-        {tileData.map((tile, i) => (
+        {imageData.map((tile, i) => (
           <GridListTile key={i}>
             <img src={tile.img} alt={tile.title} />
             <GridListTileBar title={tile.title} />

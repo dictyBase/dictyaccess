@@ -1,6 +1,6 @@
 import circos from "common/assets/circos-images/circos.png"
 
-export const tileData = [
+export const imageData = [
   {
     img: circos,
     title: "Chromosome 1",
