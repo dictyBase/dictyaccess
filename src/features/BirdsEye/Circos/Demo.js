@@ -49,10 +49,6 @@ const dropDownData = [
 const description = "This is a placeholder description."
 
 class Demo extends Component {
-  constructor(props) {
-    super(props)
-    this.circosRef = React.createRef()
-  }
   componentDidMount() {
     // all the fun circos content goes in this lifecycle
     let cytobandsData = cytobands
@@ -85,7 +81,7 @@ class Demo extends Component {
     let myCircos = new Circos({
       width: 800,
       height: 800,
-      container: this.circosRef.current,
+      container: "#scatter",
     })
     myCircos.layout(
       [
@@ -152,13 +148,16 @@ class Demo extends Component {
           <LegendBox description={description} />
         </Grid>
         <Grid item xs={8}>
-          <div ref={this.circosRef} />
+          <svg id="scatter" width={800} height={800} />
         </Grid>
         <Grid item xs={12}>
-          <ImageHorizontalGrid
+          {/* <ImageHorizontalGrid
             imageData={imageData}
             handleClick={this.handleClick}
-          />
+          /> */}
+          <svg width={200} height={200}>
+            <use href="#scatter" />
+          </svg>
         </Grid>
       </Grid>
     )
