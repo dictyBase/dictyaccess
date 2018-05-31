@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import Circos from "circos"
 import { withRouter } from "react-router-dom"
+import { ReactSVGPanZoom } from "react-svg-pan-zoom"
 import Grid from "@material-ui/core/Grid"
 import LegendBox from "common/components/LegendBox"
 import ImageHorizontalGrid from "common/components/ImageHorizontalGrid"
@@ -148,16 +149,26 @@ class Demo extends Component {
           <LegendBox description={description} />
         </Grid>
         <Grid item xs={8}>
-          <svg id="scatter" width={800} height={800} />
+          <ReactSVGPanZoom
+            width={800}
+            height={800}
+            onClick={event =>
+              console.log(event.x, event.y, event.originalEvent)
+            }>
+            <svg width={800} height={800}>
+              <g id="scatter" />
+            </svg>
+          </ReactSVGPanZoom>
         </Grid>
         <Grid item xs={12}>
-          {/* <ImageHorizontalGrid
+          <ImageHorizontalGrid
             imageData={imageData}
             handleClick={this.handleClick}
-          /> */}
-          <svg width={200} height={200}>
+          />
+          {/* use viewport, not the use element */}
+          {/* <svg width={200} height={200}>
             <use href="#scatter" />
-          </svg>
+          </svg> */}
         </Grid>
       </Grid>
     )

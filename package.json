@@ -26,7 +26,7 @@
   "dependencies": {
     "@material-ui/core": "^1.0.0",
     "@material-ui/icons": "^1.0.0",
-    "circos": "https://github.com/wildlifehexagon/circosJS/tarball/master",
+    "circos": "https://github.com/dictybase-playground/circosJS/tarball/master",
     "dicty-components-header-footer": "github:dictyBase/dicty-components-header-footer",
     "dicty-components-navbar": "github:dictyBase/dicty-components-navbar",
     "react": "^16.3.2",
@@ -34,6 +34,7 @@
     "react-fontawesome": "^1.6.1",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
+    "react-svg-pan-zoom": "^2.16.1",
     "recharts": "^1.0.0-beta.10",
     "styled-components": "^2.4.0",
     "typeface-roboto": "0.0.54"
