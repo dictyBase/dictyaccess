@@ -3,7 +3,10 @@ import Circos from "circos"
 import { withRouter } from "react-router-dom"
 import { ReactSVGPanZoom } from "react-svg-pan-zoom"
 import Grid from "@material-ui/core/Grid"
-import LegendBox from "common/components/LegendBox"
+import LegendBox from "../../../common/components/Legend/LegendBox"
+import LegendHeader from "../../../common/components/Legend/LegendHeader"
+import LegendBody from "../../../common/components/Legend/LegendBody"
+
 import ImageHorizontalGrid from "common/components/ImageHorizontalGrid"
 import Dropdown from "common/components/Dropdown"
 import { imageData } from "common/data/circosImageData"
@@ -46,8 +49,6 @@ const dropDownData = [
     name: "Chr 6",
   },
 ]
-
-const description = "This is a placeholder description."
 
 class Demo extends Component {
   componentDidMount() {
@@ -143,10 +144,13 @@ class Demo extends Component {
   render() {
     return (
       <Grid container spacing={16}>
-        <Grid item xs={4}>
+        <Grid item xs={2}>
           <Dropdown dropDownData={dropDownData} />
           <br />
-          <LegendBox description={description} />
+          <LegendBox>
+            <LegendHeader color="info" />
+            <LegendBody>Insert the content of the legend here</LegendBody>
+          </LegendBox>
         </Grid>
         <Grid item xs={8}>
           <ReactSVGPanZoom
