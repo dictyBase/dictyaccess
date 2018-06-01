@@ -6,6 +6,7 @@ import Grid from "@material-ui/core/Grid"
 import LegendBox from "../../../common/components/Legend/LegendBox"
 import LegendHeader from "../../../common/components/Legend/LegendHeader"
 import LegendBody from "../../../common/components/Legend/LegendBody"
+import ImageVerticalGrid from "../../../common/components/ImageVerticalGrid"
 
 import ImageHorizontalGrid from "common/components/ImageHorizontalGrid"
 import Dropdown from "common/components/Dropdown"
@@ -81,8 +82,8 @@ class Demo extends Component {
         return d
       })
     let myCircos = new Circos({
-      width: 800,
-      height: 800,
+      width: 750,
+      height: 750,
       container: "#scatter",
     })
     myCircos.layout(
@@ -143,38 +144,44 @@ class Demo extends Component {
   }
   render() {
     return (
-      <Grid container spacing={16}>
-        <Grid item xs={2}>
-          <Dropdown dropDownData={dropDownData} />
-          <br />
-          <LegendBox>
-            <LegendHeader color="info" />
-            <LegendBody>Insert the content of the legend here</LegendBody>
-          </LegendBox>
+      <div>
+        <Grid container spacing={8}>
+          <Grid item xs={2}>
+            <Dropdown dropDownData={dropDownData} />
+            <br />
+            <LegendBox>
+              <LegendHeader color="info" />
+              <LegendBody>Insert the content of the legend here</LegendBody>
+            </LegendBox>
+          </Grid>
         </Grid>
-        <Grid item xs={8}>
-          <ReactSVGPanZoom
-            width={800}
-            height={800}
-            onClick={event =>
-              console.log(event.x, event.y, event.originalEvent)
-            }>
-            <svg width={800} height={800}>
-              <g id="scatter" />
-            </svg>
-          </ReactSVGPanZoom>
-        </Grid>
-        <Grid item xs={12}>
-          <ImageHorizontalGrid
-            imageData={imageData}
-            handleClick={this.handleClick}
-          />
-          {/* use viewport, not the use element */}
-          {/* <svg width={200} height={200}>
+        <Grid container spacing={16}>
+          <Grid item xs={8}>
+            <center>
+              <ReactSVGPanZoom
+                width={750}
+                height={750}
+                onClick={event =>
+                  console.log(event.x, event.y, event.originalEvent)
+                }>
+                <svg width={750} height={750}>
+                  <g id="scatter" />
+                </svg>
+              </ReactSVGPanZoom>
+            </center>
+          </Grid>
+          <Grid item xs={4}>
+            <ImageVerticalGrid
+              imageData={imageData}
+              handleClick={this.handleClick}
+            />
+            {/* use viewport, not the use element */}
+            {/* <svg width={200} height={200}>
             <use href="#scatter" />
           </svg> */}
+          </Grid>
         </Grid>
-      </Grid>
+      </div>
     )
   }
 }
