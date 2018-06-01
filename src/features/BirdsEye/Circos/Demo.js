@@ -149,10 +149,6 @@ class Demo extends Component {
           <Grid item xs={2}>
             <Dropdown dropDownData={dropDownData} />
             <br />
-            <LegendBox>
-              <LegendHeader color="info" />
-              <LegendBody>Insert the content of the legend here</LegendBody>
-            </LegendBox>
           </Grid>
         </Grid>
         <Grid container spacing={16}>
@@ -171,6 +167,15 @@ class Demo extends Component {
             </center>
           </Grid>
           <Grid item xs={4}>
+            <LegendBox>
+              <LegendHeader color="info" />
+              <LegendBody>
+                Insert the content of the legend here. TODO: Adjust the height
+                of the list of chromosomes below according to the height of the
+                legend body (longer legend => shorter chromosome list & more
+                scrolling) instead of having hard-coded height
+              </LegendBody>
+            </LegendBox>
             <ImageVerticalGrid
               imageData={imageData}
               handleClick={this.handleClick}

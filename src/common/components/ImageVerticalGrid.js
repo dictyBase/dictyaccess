@@ -6,7 +6,7 @@ import GridListTileBar from "@material-ui/core/GridListTileBar"
 import ListSubheader from "@material-ui/core/ListSubheader"
 import IconButton from "@material-ui/core/IconButton"
 import InfoIcon from "@material-ui/icons/Info"
-import ViewModuleIcon from "@material-ui/icons/ViewModule"
+import Typography from "@material-ui/core/Typography"
 
 const styles = theme => ({
   root: {
@@ -38,8 +38,8 @@ const styles = theme => ({
     backgroundColor: theme.palette.background.paper,
   },
   gridList: {
-    width: 200,
-    height: 750,
+    width: "100%",
+    height: 480,
   },
   icon: {
     color: "rgba(255, 255, 255, 0.54)",
@@ -53,7 +53,7 @@ const ImageVerticalGrid = props => {
       <GridList
         cellHeight={200}
         cellWidth={200}
-        cols={1}
+        cols={2}
         className={classes.gridList}>
         <GridListTile
           key="Subheader"
@@ -61,7 +61,17 @@ const ImageVerticalGrid = props => {
           style={{ height: "auto" }}
           className={classes.headerBar}>
           <ListSubheader className={classes.headerBarTitle} component="div">
-            <div>Chromosomes</div>
+            <Typography
+              variant="headline"
+              gutterBottom
+              style={{
+                color: "white",
+                fontSize: 20,
+                paddingTop: 10,
+                textAlign: "center",
+              }}>
+              Other Chromosomes
+            </Typography>{" "}
           </ListSubheader>
         </GridListTile>
         {imageData.map((tile, i) => (
