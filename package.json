@@ -2,6 +2,9 @@
   "name": "dictyaccess",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "10.4.0"
+  },
   "lint-staged": {
     "*.{js,jsx,json,css}": [
       "prettier --no-semi --trailing-comma all --jsx-bracket-same-line true --write",
