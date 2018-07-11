@@ -27,17 +27,17 @@
     "precommit": "lint-staged"
   },
   "dependencies": {
-    "@material-ui/core": "^1.0.0",
-    "@material-ui/icons": "^1.0.0",
+    "@material-ui/core": "^1.3.1",
+    "@material-ui/icons": "^1.1.0",
     "circos": "^2.1.0",
     "dicty-components-header-footer": "github:dictyBase/dicty-components-header-footer#v5.1.0",
     "dicty-components-navbar": "github:dictyBase/dicty-components-navbar#v0.2.0",
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
     "react-fontawesome": "^1.6.1",
-    "react-router-dom": "^4.2.2",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
-    "recharts": "^1.0.0-beta.10",
+    "recharts": "^1.0.1",
     "styled-components": "^2.4.0",
     "typeface-roboto": "0.0.54"
   },
