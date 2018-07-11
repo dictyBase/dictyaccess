@@ -30,7 +30,7 @@
     "@material-ui/core": "^1.3.1",
     "@material-ui/icons": "^1.1.0",
     "circos": "^2.1.0",
-    "dicty-components-header-footer": "github:dictyBase/dicty-components-header-footer#v5.1.0",
+    "dicty-components-header-footer": "github:dictyBase/dicty-components-header-footer#v6.1.0",
     "dicty-components-navbar": "github:dictyBase/dicty-components-navbar#v0.2.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
