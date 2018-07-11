@@ -7,6 +7,10 @@ import CurationDashboard from "features/Curation/CurationDashboard"
 import AnalyticsDashboard from "features/Analytics/AnalyticsDashboard"
 import BirdsEyeDashboard from "features/BirdsEye/BirdsEyeDashboard"
 import CircosDisplay from "features/BirdsEye/Circos/CircosDisplay"
+import Login from "features/Authentication/Login"
+import OauthCallback from "features/Authentication/OauthCallback"
+import AuthLoader from "features/Authentication/AuthLoader"
+import Logout from "features/Authentication/Logout"
 import PageNotFound from "features/PageNotFound"
 
 const Routes = () => {
@@ -15,33 +19,23 @@ const Routes = () => {
       <Route
         exact
         path="/"
-        component={GenomeDashboard => <Redirect to="/dashboard/genomes" />}
+        component={GenomeDashboard => <Redirect to="/genomes" />}
       />
       <Route
         exact
-        path="/dashboard/birdseye"
-        component={BirdsEyeDashboard => (
-          <Redirect to="/dashboard/birdseye/genemodels" />
-        )}
+        path="/birdseye"
+        component={BirdsEyeDashboard => <Redirect to="/birdseye/genemodels" />}
       />
-      <Route
-        exact
-        path="/dashboard/birdseye/:dataset"
-        component={BirdsEyeDashboard}
-      />
-      <Route
-        exact
-        path="/dashboard/birdseye/:dataset/:id"
-        component={CircosDisplay}
-      />
-      <Route exact path="/dashboard/genomes" component={GenomeDashboard} />
-      <Route exact path="/dashboard/curation" component={CurationDashboard} />
-      <Route exact path="/dashboard/analytics" component={AnalyticsDashboard} />
-      <Route
-        exact
-        path="/dashboard/dicty-stock-center"
-        component={DscDashboard}
-      />
+      <Route exact path="/birdseye/:dataset" component={BirdsEyeDashboard} />
+      <Route exact path="/birdseye/:dataset/:id" component={CircosDisplay} />
+      <Route exact path="/genomes" component={GenomeDashboard} />
+      <Route exact path="/curation" component={CurationDashboard} />
+      <Route exact path="/analytics" component={AnalyticsDashboard} />
+      <Route exact path="/dicty-stock-center" component={DscDashboard} />
+      <Route exact path="/login" component={Login} />
+      <Route exact path="/:provider/callback" component={OauthCallback} />
+      <Route exact path="/load/auth" component={AuthLoader} />
+      <Route exact path="/logout" component={Logout} />
       <Route path="*" component={PageNotFound} />
     </Switch>
   )
