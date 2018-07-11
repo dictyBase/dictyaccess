@@ -19,7 +19,7 @@ type State = {}
 class DataSetDisplay extends Component<Props, State> {
   handleClick = component => {
     const { history, match } = this.props
-    history.push(`/dashboard/birdseye/${match.params.dataset}/${component}`)
+    history.push(`/birdseye/${match.params.dataset}/${component}`)
   }
 
   render() {

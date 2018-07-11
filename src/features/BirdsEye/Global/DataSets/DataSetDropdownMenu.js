@@ -2,14 +2,14 @@
 export const dropDownData = [
   {
     name: "Gene Models",
-    route: "/dashboard/birdseye/genemodels",
+    route: "/birdseye/genemodels",
   },
   {
     name: "Expressions",
-    route: "/dashboard/birdseye/expressions",
+    route: "/birdseye/expressions",
   },
   {
     name: "GWDI Mutants",
-    route: "/dashboard/birdseye/gwdimutants",
+    route: "/birdseye/gwdimutants",
   },
 ]

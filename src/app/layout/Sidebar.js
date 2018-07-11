@@ -56,7 +56,7 @@ const Sidebar = (props: Props) => {
           <GpsFixedIcon />
         </ListItemIcon>
         <StyledLink
-          to="/dashboard/birdseye"
+          to="/birdseye"
           activeStyle={{
             fontWeight: "bold",
             fontFamily: "Roboto",
@@ -71,7 +71,7 @@ const Sidebar = (props: Props) => {
             <InsertChartIcon />
           </ListItemIcon>
           <StyledLink
-            to="/dashboard/genomes"
+            to="/genomes"
             activeStyle={{
               fontWeight: "bold",
               fontFamily: "Roboto",
@@ -85,7 +85,7 @@ const Sidebar = (props: Props) => {
             <FingerprintIcon />
           </ListItemIcon>
           <StyledLink
-            to="/dashboard/curation"
+            to="/curation"
             activeStyle={{
               fontWeight: "bold",
               fontFamily: "Roboto",
@@ -99,7 +99,7 @@ const Sidebar = (props: Props) => {
             <FormatAlignJustifyIcon />
           </ListItemIcon>
           <StyledLink
-            to="/dashboard/phylogeny"
+            to="/phylogeny"
             activeStyle={{
               fontWeight: "bold",
               fontFamily: "Roboto",
@@ -113,7 +113,7 @@ const Sidebar = (props: Props) => {
             <PieChartIcon />
           </ListItemIcon>
           <StyledLink
-            to="/dashboard/analytics"
+            to="/analytics"
             activeStyle={{
               fontWeight: "bold",
               fontFamily: "Roboto",
@@ -127,7 +127,7 @@ const Sidebar = (props: Props) => {
             <TrendingUpIcon />
           </ListItemIcon>
           <StyledLink
-            to="/dashboard/dicty-stock-center"
+            to="/dicty-stock-center"
             activeStyle={{
               fontWeight: "bold",
               fontFamily: "Roboto",

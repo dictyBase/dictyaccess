@@ -141,7 +141,7 @@ class Demo extends Component {
   }
   handleClick = component => {
     const { history, match } = this.props
-    history.push(`/dashboard/birdseye/${match.params.dataset}/${component}`)
+    history.push(`/birdseye/${match.params.dataset}/${component}`)
   }
   render() {
     return (
