@@ -26,7 +26,7 @@ ARG client_keys
 ENV CLIENT_KEYS ${client_keys:-https://raw.githubusercontent.com/dictybase-playground/client-keys/master/clientConfig.js}
 
 # Create app directory
-RUN mkdir -p /usr/src/app/src/utils
+RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 # copy only necessary files
@@ -43,7 +43,7 @@ ADD src src
 ADD public public
 
 # overwrite the client key file
-ADD $CLIENT_KEYS /usr/src/app/src/utils/clientConfig.js
+ADD $CLIENT_KEYS /usr/src/app/src/common/utils/clientConfig.js
 
 # Use same node path
 ENV NODE_PATH src
