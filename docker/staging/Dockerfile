@@ -26,7 +26,7 @@ ARG client_keys
 ENV CLIENT_KEYS ${client_keys:-https://raw.githubusercontent.com/dictybase-playground/client-keys/master/clientConfig.js}
 
 # Create app directory
-RUN mkdir -p /usr/src/app
+RUN mkdir -p /usr/src/app/src/utils
 WORKDIR /usr/src/app
 
 # copy only necessary files
