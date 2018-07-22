@@ -25,9 +25,11 @@ const store = configureStore()
 ReactDOM.render(
   <JssProvider jss={jss} generateClassName={generateClassName}>
     <Provider store={store}>
-      <ConnectedRouter history={history}>
-        <App />
-      </ConnectedRouter>
+      <div>
+        <ConnectedRouter history={history}>
+          <App />
+        </ConnectedRouter>
+      </div>
     </Provider>
   </JssProvider>,
   document.getElementById("root"),

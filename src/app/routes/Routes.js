@@ -19,7 +19,7 @@ const Routes = () => {
       <Route
         exact
         path="/"
-        component={GenomeDashboard => <Redirect to="/genomes" />}
+        component={BirdsEyeDashboard => <Redirect to="/birdseye/genemodels" />}
       />
       <Route
         exact
