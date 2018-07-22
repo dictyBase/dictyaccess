@@ -3,7 +3,7 @@ import { types } from "common/constants/Types"
 import querystring from "querystring"
 import oauthConfig from "common/utils/oauthConfig"
 import { oauthEndpointResource } from "common/utils/fetchResources"
-import { push } from "react-router-redux"
+import { push } from "connected-react-router"
 
 const { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT_SUCCESS } = types
 
