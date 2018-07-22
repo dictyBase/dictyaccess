@@ -3,14 +3,14 @@
 # Declare variables to be passed into your templates.
 replicaCount: 1
 image:
-  repository: dictybase-playground/dictyaccess
+  repository: dictybase/dictyaccess
   tag: 0.1.0
   pullPolicy: IfNotPresent
 
 service:
   name: dictyaccess
   type: NodePort
-  port: 9598
+  port: 9595
 
 #resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
