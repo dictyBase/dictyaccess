@@ -2,6 +2,7 @@ import React from "react"
 import ReactDOM from "react-dom"
 import { Provider } from "react-redux"
 import { ConnectedRouter } from "connected-react-router"
+import { hydrateStore } from "dicty-components-redux"
 import history from "common/utils/routerHistory"
 import App from "app/layout/App"
 import configureStore from "app/store/configureStore"
@@ -20,7 +21,10 @@ const jss = create(preset())
 // We define a custom insertion point JSS will look for injecting the styles in the DOM.
 jss.options.insertionPoint = document.getElementById("jss-insertion-point")
 
-const store = configureStore()
+// load state from localStorage(if any) to set the initial state for the store
+const initialState = hydrateStore({ key: "auth", namespace: "auth" })
+
+const store = configureStore(initialState)
 
 const setGoogleAnalytics = async (location, action) => {
   try {
