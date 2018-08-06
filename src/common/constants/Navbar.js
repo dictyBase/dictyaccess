@@ -1,4 +1,3 @@
-// @flow
 export const NavbarLinks = [
   {
     dropdown: true,
@@ -6,9 +5,9 @@ export const NavbarLinks = [
     items: [
       {
         name: "Genomes Home",
-        href: "/genomes"
-      }
-    ]
+        href: "/genomes",
+      },
+    ],
   },
   {
     dropdown: true,
@@ -16,13 +15,13 @@ export const NavbarLinks = [
     items: [
       {
         name: "Tools Home",
-        href: "/tools"
+        href: "/tools",
       },
       {
         name: "New Genome Browser",
-        href: "/tools/jbrowse"
-      }
-    ]
+        href: "/tools/jbrowse",
+      },
+    ],
   },
   {
     dropdown: true,
@@ -30,37 +29,37 @@ export const NavbarLinks = [
     items: [
       {
         name: "Explore Home",
-        href: "/explore"
+        href: "/explore",
       },
       {
         name: "Dicty Art",
-        href: "/explore/art"
+        href: "/explore/art",
       },
       {
         name: "Gallery",
-        href: "/explore/gallery"
+        href: "/explore/gallery",
       },
       {
         name: "Genome Resources",
-        href: "/explore/resources"
+        href: "/explore/resources",
       },
       {
         name: "Genome Statistics",
-        href: "/explore/statistics"
+        href: "/explore/statistics",
       },
       {
         name: "Learn About Dicty",
-        href: "/explore/learn"
+        href: "/explore/learn",
       },
       {
         name: "Teaching Protocols",
-        href: "/explore/teach"
+        href: "/explore/teach",
       },
       {
         name: "Useful Links",
-        href: "/explore/links"
-      }
-    ]
+        href: "/explore/links",
+      },
+    ],
   },
   {
     dropdown: true,
@@ -68,39 +67,33 @@ export const NavbarLinks = [
     items: [
       {
         name: "Research Home",
-        href: "/research"
+        href: "/research",
       },
       {
         name: "Anatomy Ontology",
-        href: "/research/ontology"
+        href: "/research/ontology",
       },
       {
         name: "Codon Bias Table",
-        href: "/research/codon"
+        href: "/research/codon",
       },
       {
         name: "Nomenclature Guidelines",
-        href: "/research/nomenclature"
+        href: "/research/nomenclature",
       },
       {
         name: "Phenotyping",
-        href: "/research/phenotyping"
+        href: "/research/phenotyping",
       },
       {
         name: "Techniques",
-        href: "/research/techniques"
-      }
-    ]
+        href: "/research/techniques",
+      },
+    ],
   },
   {
-    dropdown: true,
     title: "Dicty Stock Center",
-    items: [
-      {
-        name: "Stock Center Home",
-        href: "/stockcenter"
-      }
-    ]
+    href: "/stockcenter",
   },
   {
     dropdown: true,
@@ -108,36 +101,36 @@ export const NavbarLinks = [
     items: [
       {
         name: "Community Home",
-        href: "/community"
+        href: "/community",
       },
       {
         name: "Cite Us",
-        href: "/citation"
+        href: "/citation",
       },
       {
         name: "Dicty Annual Conferences",
-        href: "/community/conference"
+        href: "/community/conference",
       },
       {
         name: "Dicty Email Forum",
-        href: "/community/listserv"
+        href: "/community/listserv",
       },
       {
         name: "Dicty Labs",
-        href: "/community/labs"
+        href: "/community/labs",
       },
       {
         name: "History",
-        href: "/community/history"
+        href: "/community/history",
       },
       {
         name: "Jobs",
-        href: "/community/jobs"
+        href: "/community/jobs",
       },
       {
         name: "Upcoming Meetings",
-        href: "/community/meetings"
-      }
-    ]
-  }
+        href: "/community/meetings",
+      },
+    ],
+  },
 ]
