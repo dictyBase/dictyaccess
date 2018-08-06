@@ -42,6 +42,7 @@
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
+    "react-svg-pan-zoom": "^2.16.1",
     "recharts": "^1.1.0",
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0",
