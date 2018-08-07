@@ -5,7 +5,7 @@ import AppBar from "@material-ui/core/AppBar"
 import Tabs from "@material-ui/core/Tabs"
 import Tab from "@material-ui/core/Tab"
 import Typography from "@material-ui/core/Typography"
-import Demo from "features/BirdsEye/Circos/Demo"
+import CircosGraph from "features/BirdsEye/Circos/CircosGraph"
 
 type tabProps = {
   children: any,
@@ -67,7 +67,7 @@ class CircosDisplay extends Component<Props, State> {
         </AppBar>
         {value === 0 && (
           <TabContainer>
-            <Demo handleClick={this.handleClick} />
+            <CircosGraph handleClick={this.handleClick} />
           </TabContainer>
         )}
         {value === 1 && (
