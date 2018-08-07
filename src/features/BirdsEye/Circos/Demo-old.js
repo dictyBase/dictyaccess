@@ -102,14 +102,14 @@ class Demo extends Component {
         ticks: { display: true, labels: false, spacing: 10000 },
       },
     )
-    myCircos.highlight("cytobands", cytobandsData, {
-      innerRadius: 350,
-      outerRadius: 370,
-      opacity: 0.8,
-      color: d => {
-        return gieStainColor[d.gieStain]
-      },
-    })
+    // myCircos.highlight("cytobands", cytobandsData, {
+    //   innerRadius: 350,
+    //   outerRadius: 370,
+    //   opacity: 0.8,
+    //   color: d => {
+    //     return gieStainColor[d.gieStain]
+    //   },
+    // })
     myCircos.stack("stack", segdupData, {
       innerRadius: 0.7,
       outerRadius: 1,
@@ -134,6 +134,7 @@ class Demo extends Component {
         return `${d.block_id}:${d.start}-${d.end}`
       },
     })
+    console.log(segdupData)
     myCircos.render()
   }
   handleClick = component => {
