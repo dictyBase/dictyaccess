@@ -1,32 +1,70 @@
-[
-  {
-    "chr": "chr1",
-    "start": 1,
-    "end": 8467571,
-    "id": "DDB0166986"
-  },
-  {
-    "chr": "chr2",
-    "start": 1,
-    "end": 6358352,
-    "id": "DDB0203883"
-  },
-  {
-    "chr": "chr3",
-    "start": 1,
-    "end": 5430575,
-    "id": "DDB0185230"
-  },
-  {
-    "chr": "chr4",
-    "start": 1,
-    "end": 5062323,
-    "id": "DDB0187328"
-  },
-  {
-    "chr": "chr5",
-    "start": 1,
-    "end": 3595301,
-    "id": "DDB0183747"
-  }
-]
+{
+  "data": [
+    {
+      "type": "chromosomes",
+      "id": "DDB0232428",
+      "attributes": {
+        "name": "chr1",
+        "start": 1,
+        "end": 8467571,
+        "length": 8467570,
+        "id": "DDB0232428"
+      }
+    },
+    {
+      "type": "chromosomes",
+      "id": "DDB0232429",
+      "attributes": {
+        "name": "chr2",
+        "start": 1,
+        "end": 6358352,
+        "length": 6358351,
+        "id": "DDB0232429"
+      }
+    },
+    {
+      "type": "chromosomes",
+      "id": "DDB0232428",
+      "attributes": {
+        "name": "chr3",
+        "start": 1,
+        "end": 5430575,
+        "length": 5430574,
+        "id": "DDB0232428"
+      }
+    },
+    {
+      "type": "chromosomes",
+      "id": "DDB0232428",
+      "attributes": {
+        "name": "chr4",
+        "start": 1,
+        "end": 5062323,
+        "length": 5062322,
+        "id": "DDB0232428"
+      }
+    },
+    {
+      "type": "chromosomes",
+      "id": "DDB0232428",
+      "attributes": {
+        "name": "chr5",
+        "start": 1,
+        "end": 3595301,
+        "length": 3595300,
+        "id": "DDB0232428"
+      }
+    },
+    {
+      "type": "chromosomes",
+      "id": "DDB0232428",
+      "attributes": {
+        "name": "chr6",
+        "start": 1,
+        "end": 3602379,
+        "length": 3602378,
+        "id": "DDB0232428"
+      }
+    }
+  ]
+}
