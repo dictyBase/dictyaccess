@@ -78,41 +78,43 @@ class CircosGraph extends Component {
           id: chromosomes.data[0].attributes.id,
           len: chromosomes.data[0].attributes.length,
           label: chromosomes.data[0].attributes.name,
-          color: "#244928",
+          color: "#85a9e5",
         },
       ],
       {
-        innerRadius: 330,
-        outerRadius: 350,
+        innerRadius: 290,
+        outerRadius: 310,
         labels: {
           display: true,
         },
-        ticks: { display: false, labels: false, spacing: 10000 },
+        ticks: { display: true, labels: false, spacing: 10000 },
       },
     )
     myCircos.stack("negative-strands", negStrand, {
-      innerRadius: 280,
-      outerRadius: 320,
-      thickness: 4,
-      margin: 1,
-      direction: "center",
-      strokeWidth: 0,
-      color: "#fd6a62",
-      tooltipContent: d => {
-        return `${d.block_id}:${d.start}-${d.end}`
-      },
-    })
-    myCircos.stack("positive-strands", posStrand, {
-      innerRadius: 351,
-      outerRadius: 370,
-      thickness: 4,
-      margin: 1,
+      innerRadius: 250,
+      outerRadius: 290,
+      thickness: 10,
+      margin: 0.01 * chromosomes.data[0].attributes.length,
       direction: "out",
       strokeWidth: 0,
-      color: "#fd6a62",
+      color: "blue",
       tooltipContent: d => {
         return `${d.block_id}:${d.start}-${d.end}`
       },
+      logScale: true,
+    })
+    myCircos.stack("positive-strands", posStrand, {
+      innerRadius: 315,
+      outerRadius: 350,
+      thickness: 10,
+      margin: 0.01 * chromosomes.data[0].attributes.length,
+      direction: "out",
+      strokeWidth: 0,
+      color: "red",
+      tooltipContent: d => {
+        return `${d.block_id}:${d.start}-${d.end}`
+      },
+      logScale: true,
     })
     myCircos.render()
   }
