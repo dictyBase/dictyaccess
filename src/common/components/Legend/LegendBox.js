@@ -1,8 +1,7 @@
 import React from "react"
 import classNames from "classnames"
-import PropTypes from "prop-types"
 import { withStyles } from "@material-ui/core/styles"
-import { legendStyle } from "../../styles/legendStyles"
+import { legendStyle } from "common/styles/legendStyles"
 
 const LegendBox = props => {
   const { classes, className, children, plain, carousel, ...rest } = props
@@ -17,13 +16,6 @@ const LegendBox = props => {
       {children}
     </div>
   )
-}
-
-LegendBox.propTypes = {
-  classes: PropTypes.object.isRequired,
-  className: PropTypes.string,
-  plain: PropTypes.bool,
-  carousel: PropTypes.bool,
 }
 
 export default withStyles(legendStyle)(LegendBox)

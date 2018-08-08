@@ -1,10 +1,10 @@
 import React from "react"
 import classNames from "classnames"
-import PropTypes from "prop-types"
 import { withStyles } from "@material-ui/core/styles"
-import { legendHeaderStyle } from "../../styles/legendStyles"
 import InfoIcon from "@material-ui/icons/Info"
 import Typography from "@material-ui/core/Typography"
+
+import { legendHeaderStyle } from "common/styles/legendStyles"
 
 const LegendHeader = props => {
   const { classes, className, children, color, plainCard, ...rest } = props
@@ -30,13 +30,6 @@ const LegendHeader = props => {
       </center>
     </div>
   )
-}
-
-LegendHeader.propTypes = {
-  classes: PropTypes.object.isRequired,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(["warning", "success", "danger", "info", "primary"]),
-  plainCard: PropTypes.bool,
 }
 
 export default withStyles(legendHeaderStyle)(LegendHeader)

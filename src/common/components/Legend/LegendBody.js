@@ -1,8 +1,7 @@
 import React from "react"
 import classNames from "classnames"
-import PropTypes from "prop-types"
 import { withStyles } from "@material-ui/core/styles"
-import { legendBodyStyle } from "../../styles/legendStyles"
+import { legendBodyStyle } from "common/styles/legendStyles"
 
 const LegendBody = props => {
   const { classes, className, children, ...rest } = props
@@ -15,11 +14,6 @@ const LegendBody = props => {
       {children}
     </div>
   )
-}
-
-LegendBody.propTypes = {
-  classes: PropTypes.object.isRequired,
-  className: PropTypes.string,
 }
 
 export default withStyles(legendBodyStyle)(LegendBody)

@@ -43,11 +43,7 @@ const ImageVerticalGrid = props => {
   const { classes, imageData, handleClick } = props
   return (
     <div className={classes.root}>
-      <GridList
-        cellHeight={200}
-        cellWidth={200}
-        cols={2}
-        className={classes.gridList}>
+      <GridList cellHeight={200} cols={2} className={classes.gridList}>
         <GridListTile
           key="Subheader"
           cols={2}
