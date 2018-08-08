@@ -11,50 +11,25 @@ import ImageVerticalGrid from "common/components/ImageVerticalGrid"
 import Dropdown from "common/components/Dropdown"
 
 import { imageData } from "common/data/circosImageData"
-import chromosomes from "common/data/circos/chromosomes.json"
-import { chr1 } from "./geneArrays"
-
-const posStrand = chr1.filter(item => item.attributes.strand === "+").map(d => {
-  return {
-    block_id: d.attributes.block_id,
-    end: d.attributes.end,
-    start: d.attributes.start,
-    strand: d.attributes.strand,
-  }
-})
-const negStrand = chr1.filter(item => item.attributes.strand === "-").map(d => {
-  return {
-    block_id: d.attributes.block_id,
-    end: d.attributes.end,
-    start: d.attributes.start,
-    strand: d.attributes.strand,
-  }
-})
 
 const dropDownData = [
   {
     name: "Chr 1",
-    data: chromosomes.data[0],
   },
   {
     name: "Chr 2",
-    data: chromosomes.data[1],
   },
   {
     name: "Chr 3",
-    data: chromosomes.data[2],
   },
   {
     name: "Chr 4",
-    data: chromosomes.data[3],
   },
   {
     name: "Chr 5",
-    data: chromosomes.data[4],
   },
   {
     name: "Chr 6",
-    data: chromosomes.data[5],
   },
 ]
 
@@ -62,6 +37,27 @@ const description = "This is a placeholder description."
 
 class CircosGraph extends Component {
   componentDidMount() {
+    const { data, chr } = this.props
+    const posStrand = data
+      .filter(item => item.attributes.strand === "+")
+      .map(d => {
+        return {
+          block_id: d.attributes.block_id,
+          end: d.attributes.end,
+          start: d.attributes.start,
+          strand: d.attributes.strand,
+        }
+      })
+    const negStrand = data
+      .filter(item => item.attributes.strand === "-")
+      .map(d => {
+        return {
+          block_id: d.attributes.block_id,
+          end: d.attributes.end,
+          start: d.attributes.start,
+          strand: d.attributes.strand,
+        }
+      })
     let myCircos = new Circos({
       width: 750,
       height: 750,
@@ -70,9 +66,9 @@ class CircosGraph extends Component {
     myCircos.layout(
       [
         {
-          id: chromosomes.data[0].attributes.id,
-          len: chromosomes.data[0].attributes.length,
-          label: chromosomes.data[0].attributes.name,
+          id: chr.attributes.id,
+          len: chr.attributes.length,
+          label: chr.attributes.name,
           color: "#85a9e5",
         },
       ],
@@ -89,8 +85,8 @@ class CircosGraph extends Component {
       innerRadius: 250,
       outerRadius: 290,
       thickness: 10,
-      margin: 0.01 * chromosomes.data[0].attributes.length,
-      direction: "out",
+      margin: 0.01 * chr.attributes.length,
+      direction: "in",
       strokeWidth: 0,
       color: "blue",
       tooltipContent: d => {
@@ -99,10 +95,10 @@ class CircosGraph extends Component {
       logScale: true,
     })
     myCircos.stack("positive-strands", posStrand, {
-      innerRadius: 315,
-      outerRadius: 350,
+      innerRadius: 320,
+      outerRadius: 360,
       thickness: 10,
-      margin: 0.01 * chromosomes.data[0].attributes.length,
+      margin: 0.01 * chr.attributes.length,
       direction: "out",
       strokeWidth: 0,
       color: "red",
@@ -114,7 +110,7 @@ class CircosGraph extends Component {
     myCircos.render()
   }
   handleClick = component => {
-    const { history, match } = this.props
+    const { history, match, data } = this.props
     history.push(`/birdseye/${match.params.dataset}/${component}`)
   }
   render() {

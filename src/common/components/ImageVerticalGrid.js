@@ -8,6 +8,16 @@ import IconButton from "@material-ui/core/IconButton"
 import InfoIcon from "@material-ui/icons/Info"
 import Typography from "@material-ui/core/Typography"
 
+import CircosGraph from "features/BirdsEye/Circos/CircosGraph"
+import {
+  chr1,
+  chr2,
+  chr3,
+  chr4,
+  chr5,
+  chr6,
+} from "features/BirdsEye/Circos/geneArrays"
+
 const styles = theme => ({
   root: {
     display: "flex",
@@ -37,6 +47,12 @@ const styles = theme => ({
   icon: {
     color: "rgba(255, 255, 255, 0.54)",
   },
+  subhead: {
+    color: "white",
+    fontSize: 20,
+    paddingTop: 10,
+    textAlign: "center",
+  },
 })
 
 const ImageVerticalGrid = props => {
@@ -53,12 +69,7 @@ const ImageVerticalGrid = props => {
             <Typography
               variant="headline"
               gutterBottom
-              style={{
-                color: "white",
-                fontSize: 20,
-                paddingTop: 10,
-                textAlign: "center",
-              }}>
+              className={classes.subhead}>
               Other Chromosomes
             </Typography>{" "}
           </ListSubheader>
@@ -80,6 +91,21 @@ const ImageVerticalGrid = props => {
             />
           </GridListTile>
         ))}
+        {/* <GridListTile onClick={() => handleClick("chr1")}>
+          <CircosGraph data={chr1} />
+          <GridListTileBar
+            title="Chromosome 1"
+            classes={{
+              root: classes.titleBar,
+              title: classes.title,
+            }}
+            actionIcon={
+              <IconButton className={classes.icon}>
+                <InfoIcon />
+              </IconButton>
+            }
+          />
+        </GridListTile> */}
       </GridList>
     </div>
   )

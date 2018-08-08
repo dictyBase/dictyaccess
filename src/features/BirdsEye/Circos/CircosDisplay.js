@@ -6,7 +6,10 @@ import AppBar from "@material-ui/core/AppBar"
 import Tabs from "@material-ui/core/Tabs"
 import Tab from "@material-ui/core/Tab"
 import Typography from "@material-ui/core/Typography"
+
 import CircosGraph from "features/BirdsEye/Circos/CircosGraph"
+import { chr1 } from "./geneArrays"
+import chromosomes from "common/data/circos/chromosomes.json"
 
 type tabProps = {
   children: any,
@@ -68,7 +71,11 @@ class CircosDisplay extends Component<Props, State> {
         </AppBar>
         {value === 0 && (
           <TabContainer>
-            <CircosGraph chr={match.params.id} handleClick={this.handleClick} />
+            <CircosGraph
+              chr={chromosomes.data[0]}
+              data={chr1}
+              handleClick={this.handleClick}
+            />
           </TabContainer>
         )}
         {value === 1 && (
