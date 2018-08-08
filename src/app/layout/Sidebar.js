@@ -5,13 +5,14 @@ import Drawer from "@material-ui/core/Drawer"
 import ListItem from "@material-ui/core/ListItem"
 import ListItemIcon from "@material-ui/core/ListItemIcon"
 import Typography from "@material-ui/core/Typography"
-// import icons
+
 import TrendingUpIcon from "@material-ui/icons/TrendingUp"
 import FingerprintIcon from "@material-ui/icons/Fingerprint"
 import InsertChartIcon from "@material-ui/icons/InsertChart"
 import GpsFixedIcon from "@material-ui/icons/GpsFixed"
 import PieChartIcon from "@material-ui/icons/PieChart"
 import FormatAlignJustifyIcon from "@material-ui/icons/FormatAlignJustify"
+
 import {
   StyledLink,
   ListStyle,
@@ -51,21 +52,20 @@ const Sidebar = (props: Props) => {
           DictyAccess
         </Typography>
       </DrawerHeaderStyle>
-      <ListItem button>
-        <ListItemIcon>
-          <GpsFixedIcon />
-        </ListItemIcon>
-        <StyledLink
-          to="/birdseye"
-          activeStyle={{
-            fontWeight: "bold",
-            fontFamily: "Roboto",
-            color: "rgb(183, 28, 28)",
-          }}>
-          Bird's Eye
-        </StyledLink>
-      </ListItem>
       <ListStyle>
+        <ListItem button>
+          <ListItemIcon>
+            <GpsFixedIcon />
+          </ListItemIcon>
+          <StyledLink
+            to="/birdseye"
+            activeStyle={{
+              fontWeight: "bold",
+              color: "#011f4b",
+            }}>
+            Bird's Eye
+          </StyledLink>
+        </ListItem>
         <ListItem button>
           <ListItemIcon>
             <InsertChartIcon />
@@ -74,7 +74,6 @@ const Sidebar = (props: Props) => {
             to="/genomes"
             activeStyle={{
               fontWeight: "bold",
-              fontFamily: "Roboto",
               color: "rgb(251, 140, 0)",
             }}>
             Genome Stats
@@ -88,7 +87,6 @@ const Sidebar = (props: Props) => {
             to="/curation"
             activeStyle={{
               fontWeight: "bold",
-              fontFamily: "Roboto",
               color: "rgb(183, 28, 28)",
             }}>
             Annotations
@@ -102,7 +100,6 @@ const Sidebar = (props: Props) => {
             to="/phylogeny"
             activeStyle={{
               fontWeight: "bold",
-              fontFamily: "Roboto",
               color: "rgb(183, 28, 28)",
             }}>
             Phylogeny
@@ -116,7 +113,6 @@ const Sidebar = (props: Props) => {
             to="/analytics"
             activeStyle={{
               fontWeight: "bold",
-              fontFamily: "Roboto",
               color: "rgb(30, 136, 229)",
             }}>
             Analytics
@@ -130,7 +126,6 @@ const Sidebar = (props: Props) => {
             to="/dicty-stock-center"
             activeStyle={{
               fontWeight: "bold",
-              fontFamily: "Roboto",
               color: "#4f5aae",
             }}>
             Dicty Stock Center
