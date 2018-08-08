@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 import { withStyles } from "@material-ui/core/styles"
 import GridList from "@material-ui/core/GridList"
 import GridListTile from "@material-ui/core/GridListTile"
@@ -67,7 +67,7 @@ const ImageVerticalGrid = props => {
         </GridListTile>
         {imageData.map((tile, i) => (
           // <Link to="/">
-          <GridListTile key={i}>
+          <GridListTile key={i} onClick={() => handleClick(tile.route)}>
             <img src={tile.img} alt={tile.title} />
             <GridListTileBar
               title={tile.title}
