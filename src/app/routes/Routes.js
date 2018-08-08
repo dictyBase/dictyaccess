@@ -13,6 +13,16 @@ import AuthLoader from "features/Authentication/AuthLoader"
 import Logout from "features/Authentication/Logout"
 import PageNotFound from "features/PageNotFound"
 
+import {
+  chr1,
+  chr2,
+  chr3,
+  chr4,
+  chr5,
+  chr6,
+} from "features/BirdsEye/Circos/geneArrays"
+import chromosomes from "common/data/circos/chromosomes.json"
+
 const Routes = () => {
   return (
     <Switch>
@@ -27,7 +37,36 @@ const Routes = () => {
         component={BirdsEyeDashboard => <Redirect to="/birdseye/genemodels" />}
       />
       <Route exact path="/birdseye/:dataset" component={BirdsEyeDashboard} />
-      <Route exact path="/birdseye/:dataset/:id" component={CircosDisplay} />
+      <Route
+        exact
+        path="/birdseye/:dataset/chr1"
+        render={() => <CircosDisplay data={chr1} chr={chromosomes.data[0]} />}
+      />
+      <Route
+        exact
+        path="/birdseye/:dataset/chr2"
+        render={() => <CircosDisplay data={chr2} chr={chromosomes.data[1]} />}
+      />
+      <Route
+        exact
+        path="/birdseye/:dataset/chr3"
+        render={() => <CircosDisplay data={chr3} chr={chromosomes.data[2]} />}
+      />
+      <Route
+        exact
+        path="/birdseye/:dataset/chr4"
+        render={() => <CircosDisplay data={chr4} chr={chromosomes.data[3]} />}
+      />
+      <Route
+        exact
+        path="/birdseye/:dataset/chr5"
+        render={() => <CircosDisplay data={chr5} chr={chromosomes.data[4]} />}
+      />
+      <Route
+        exact
+        path="/birdseye/:dataset/chr6"
+        render={() => <CircosDisplay data={chr6} chr={chromosomes.data[5]} />}
+      />
       <Route exact path="/genomes" component={GenomeDashboard} />
       <Route exact path="/curation" component={CurationDashboard} />
       <Route exact path="/analytics" component={AnalyticsDashboard} />

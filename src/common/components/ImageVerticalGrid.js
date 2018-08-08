@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import { withStyles } from "@material-ui/core/styles"
 import GridList from "@material-ui/core/GridList"
 import GridListTile from "@material-ui/core/GridListTile"
@@ -7,16 +8,6 @@ import ListSubheader from "@material-ui/core/ListSubheader"
 import IconButton from "@material-ui/core/IconButton"
 import InfoIcon from "@material-ui/icons/Info"
 import Typography from "@material-ui/core/Typography"
-
-// import CircosGraph from "features/BirdsEye/Circos/CircosGraph"
-// import {
-//   chr1,
-//   chr2,
-//   chr3,
-//   chr4,
-//   chr5,
-//   chr6,
-// } from "features/BirdsEye/Circos/geneArrays"
 
 const styles = theme => ({
   root: {
@@ -71,11 +62,12 @@ const ImageVerticalGrid = props => {
               gutterBottom
               className={classes.subhead}>
               Other Chromosomes
-            </Typography>{" "}
+            </Typography>
           </ListSubheader>
         </GridListTile>
         {imageData.map((tile, i) => (
-          <GridListTile key={i} onClick={() => handleClick(tile.route)}>
+          // <Link to="/">
+          <GridListTile key={i}>
             <img src={tile.img} alt={tile.title} />
             <GridListTileBar
               title={tile.title}
@@ -90,22 +82,8 @@ const ImageVerticalGrid = props => {
               }
             />
           </GridListTile>
+          // </Link>
         ))}
-        {/* <GridListTile onClick={() => handleClick("chr1")}>
-          <CircosGraph data={chr1} />
-          <GridListTileBar
-            title="Chromosome 1"
-            classes={{
-              root: classes.titleBar,
-              title: classes.title,
-            }}
-            actionIcon={
-              <IconButton className={classes.icon}>
-                <InfoIcon />
-              </IconButton>
-            }
-          />
-        </GridListTile> */}
       </GridList>
     </div>
   )

@@ -8,8 +8,8 @@ import Tab from "@material-ui/core/Tab"
 import Typography from "@material-ui/core/Typography"
 
 import CircosGraph from "features/BirdsEye/Circos/CircosGraph"
-import { chr1 } from "./geneArrays"
-import chromosomes from "common/data/circos/chromosomes.json"
+// import { chr1 } from "./geneArrays"
+// import chromosomes from "common/data/circos/chromosomes.json"
 
 type tabProps = {
   children: any,
@@ -58,7 +58,7 @@ class CircosDisplay extends Component<Props, State> {
   }
 
   render() {
-    const { classes } = this.props
+    const { classes, data, chr } = this.props
     const { value } = this.state
 
     return (
@@ -72,10 +72,10 @@ class CircosDisplay extends Component<Props, State> {
         {value === 0 && (
           <TabContainer>
             <CircosGraph
-              chr={chromosomes.data[0]}
-              data={chr1}
+              chr={chr}
+              data={data}
               handleClick={this.handleClick}
-              description="This is Chromosome 1."
+              description="This is a placeholder description."
             />
           </TabContainer>
         )}
