@@ -33,15 +33,9 @@ const ImageGridDisplay = (props: Props) => {
 
   return (
     <div className={classes.root}>
-      <GridList cellHeight={240} cols={4} className={classes.gridList}>
+      <GridList cellHeight={350} cols={3} className={classes.gridList}>
         {imageData.map((tile, i) => (
           <GridListTile key={i} onClick={() => handleClick(tile.component)}>
-            <img src={tile.img} alt={tile.title} />
-            <GridListTileBar title={tile.title} />
-          </GridListTile>
-        ))}
-        {imageData.map((tile, i) => (
-          <GridListTile key={i}>
             <img src={tile.img} alt={tile.title} />
             <GridListTileBar title={tile.title} />
           </GridListTile>
