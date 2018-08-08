@@ -69,7 +69,7 @@ class CircosGraph extends Component {
     let myCircos = new Circos({
       width: 750,
       height: 750,
-      container: "#scatter",
+      container: "#stackChart",
     })
     myCircos.layout(
       [
@@ -159,7 +159,7 @@ class CircosGraph extends Component {
                 miniaturePosition="none"
                 background="#fff">
                 <svg width={750} height={750}>
-                  <g id="scatter" />
+                  <g id="stackChart" />
                 </svg>
               </ReactSVGPanZoom>
             </center>
@@ -174,10 +174,9 @@ class CircosGraph extends Component {
               imageData={imageData}
               handleClick={this.handleClick}
             />
-            {/* use viewport, not the use element */}
-            {/* <svg width={200} height={200}>
-            <use href="#scatter" />
-          </svg> */}
+            {/* <svg viewBox="0 0 750 750" width="200" height="200">
+              <use href="#stackChart" />
+            </svg> */}
           </Grid>
         </Grid>
       </div>

@@ -64,7 +64,7 @@ const ImageVerticalGrid = props => {
           </ListSubheader>
         </GridListTile>
         {imageData.map((tile, i) => (
-          <GridListTile key={i} onClick={() => handleClick(tile.component)}>
+          <GridListTile key={i} onClick={() => handleClick(tile.route)}>
             <img src={tile.img} alt={tile.title} />
             <GridListTileBar
               title={tile.title}

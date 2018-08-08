@@ -4,31 +4,31 @@ export const imageData = [
   {
     img: circos,
     title: "Chromosome 1",
-    component: "demo",
+    route: "chr1",
   },
   {
     img: circos,
     title: "Chromosome 2",
-    component: "demo",
+    route: "chr2",
   },
   {
     img: circos,
     title: "Chromosome 3",
-    component: "demo",
+    route: "chr3",
   },
   {
     img: circos,
     title: "Chromosome 4",
-    component: "demo",
+    route: "chr4",
   },
   {
     img: circos,
     title: "Chromosome 5",
-    component: "demo",
+    route: "chr5",
   },
   {
     img: circos,
     title: "Chromosome 6",
-    component: "demo",
+    route: "chr6",
   },
 ]

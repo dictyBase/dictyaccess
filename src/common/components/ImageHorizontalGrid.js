@@ -29,11 +29,12 @@ const styles = theme => ({
 
 const ImageHorizontalGrid = props => {
   const { classes, imageData, handleClick } = props
+
   return (
     <div className={classes.root}>
       <GridList className={classes.gridList} cols={6}>
         {imageData.map((tile, i) => (
-          <GridListTile key={i} onClick={() => handleClick(tile.component)}>
+          <GridListTile key={i} onClick={() => handleClick(tile.route)}>
             <img src={tile.img} alt={tile.title} />
             <GridListTileBar
               title={tile.title}

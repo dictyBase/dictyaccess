@@ -14,9 +14,7 @@ type Props = {
   match: Object,
 }
 
-type State = {}
-
-class DataSetDisplay extends Component<Props, State> {
+class DataSetDisplay extends Component<Props> {
   handleClick = component => {
     const { history, match } = this.props
     history.push(`/birdseye/${match.params.dataset}/${component}`)
