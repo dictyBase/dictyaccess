@@ -122,7 +122,6 @@ class CircosGraph extends Component {
                 width={750}
                 height={750}
                 miniaturePosition="none"
-                toolbarPosition="none"
                 background="#fff">
                 <svg width={750} height={750}>
                   <g id="stackChart" />
