@@ -12,29 +12,24 @@ import Dropdown from "common/components/Dropdown"
 
 import { imageData } from "common/data/circosImageData"
 import chromosomes from "common/data/circos/chromosomes.json"
-import chr1genes from "common/data/circos/chr1genes.json"
-// import genes from "common/data/circos/genes.json"
+import { chr1 } from "./geneArrays"
 
-const posStrand = chr1genes.data
-  .filter(item => item.attributes.strand === "+")
-  .map(d => {
-    return {
-      block_id: "DDB0232428",
-      end: d.attributes.end,
-      start: d.attributes.start,
-      strand: d.attributes.strand,
-    }
-  })
-const negStrand = chr1genes.data
-  .filter(item => item.attributes.strand === "-")
-  .map(d => {
-    return {
-      block_id: "DDB0232428",
-      end: d.attributes.end,
-      start: d.attributes.start,
-      strand: d.attributes.strand,
-    }
-  })
+const posStrand = chr1.filter(item => item.attributes.strand === "+").map(d => {
+  return {
+    block_id: d.attributes.block_id,
+    end: d.attributes.end,
+    start: d.attributes.start,
+    strand: d.attributes.strand,
+  }
+})
+const negStrand = chr1.filter(item => item.attributes.strand === "-").map(d => {
+  return {
+    block_id: d.attributes.block_id,
+    end: d.attributes.end,
+    start: d.attributes.start,
+    strand: d.attributes.strand,
+  }
+})
 
 const dropDownData = [
   {
