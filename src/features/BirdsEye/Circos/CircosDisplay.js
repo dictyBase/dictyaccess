@@ -1,5 +1,6 @@
 // @flow
 import React, { Component } from "react"
+import { withRouter } from "react-router-dom"
 import { withStyles } from "@material-ui/core/styles"
 import AppBar from "@material-ui/core/AppBar"
 import Tabs from "@material-ui/core/Tabs"
@@ -54,7 +55,7 @@ class CircosDisplay extends Component<Props, State> {
   }
 
   render() {
-    const { classes } = this.props
+    const { classes, match } = this.props
     const { value } = this.state
 
     return (
@@ -67,7 +68,7 @@ class CircosDisplay extends Component<Props, State> {
         </AppBar>
         {value === 0 && (
           <TabContainer>
-            <CircosGraph handleClick={this.handleClick} />
+            <CircosGraph chr={match.params.id} handleClick={this.handleClick} />
           </TabContainer>
         )}
         {value === 1 && (
@@ -80,4 +81,4 @@ class CircosDisplay extends Component<Props, State> {
   }
 }
 
-export default withStyles(styles)(CircosDisplay)
+export default withStyles(styles)(withRouter(CircosDisplay))
