@@ -1,7 +1,8 @@
 import React from "react"
 import classNames from "classnames"
 import { withStyles } from "@material-ui/core/styles"
-import { legendStyle } from "common/styles/legendStyles"
+
+import { legendStyle } from "common/styles/LegendStyles"
 
 const LegendBox = props => {
   const { classes, className, children, plain, carousel, ...rest } = props
