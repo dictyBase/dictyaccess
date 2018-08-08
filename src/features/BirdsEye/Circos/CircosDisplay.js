@@ -75,6 +75,7 @@ class CircosDisplay extends Component<Props, State> {
               chr={chromosomes.data[0]}
               data={chr1}
               handleClick={this.handleClick}
+              description="This is Chromosome 1."
             />
           </TabContainer>
         )}

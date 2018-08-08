@@ -1,33 +1,38 @@
-import circos from "common/assets/circos-images/circos.png"
+import chr1 from "common/assets/circos-images/chr1.png"
+import chr2 from "common/assets/circos-images/chr2.png"
+import chr3 from "common/assets/circos-images/chr3.png"
+import chr4 from "common/assets/circos-images/chr4.png"
+import chr5 from "common/assets/circos-images/chr5.png"
+import chr6 from "common/assets/circos-images/chr6.png"
 
 export const imageData = [
   {
-    img: circos,
+    img: chr1,
     title: "Chromosome 1",
     route: "chr1",
   },
   {
-    img: circos,
+    img: chr2,
     title: "Chromosome 2",
     route: "chr2",
   },
   {
-    img: circos,
+    img: chr3,
     title: "Chromosome 3",
     route: "chr3",
   },
   {
-    img: circos,
+    img: chr4,
     title: "Chromosome 4",
     route: "chr4",
   },
   {
-    img: circos,
+    img: chr5,
     title: "Chromosome 5",
     route: "chr5",
   },
   {
-    img: circos,
+    img: chr6,
     title: "Chromosome 6",
     route: "chr6",
   },

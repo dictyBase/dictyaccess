@@ -24,46 +24,46 @@
     },
     {
       "type": "chromosomes",
-      "id": "DDB0232428",
+      "id": "DDB0232430",
       "attributes": {
         "name": "chr3",
         "start": 1,
         "end": 5430575,
         "length": 5430574,
-        "id": "DDB0232428"
+        "id": "DDB0232430"
       }
     },
     {
       "type": "chromosomes",
-      "id": "DDB0232428",
+      "id": "DDB0232431",
       "attributes": {
         "name": "chr4",
         "start": 1,
         "end": 5062323,
         "length": 5062322,
-        "id": "DDB0232428"
+        "id": "DDB0232431"
       }
     },
     {
       "type": "chromosomes",
-      "id": "DDB0232428",
+      "id": "DDB0232432",
       "attributes": {
         "name": "chr5",
         "start": 1,
         "end": 3595301,
         "length": 3595300,
-        "id": "DDB0232428"
+        "id": "DDB0232432"
       }
     },
     {
       "type": "chromosomes",
-      "id": "DDB0232428",
+      "id": "DDB0232433",
       "attributes": {
         "name": "chr6",
         "start": 1,
         "end": 3602379,
         "length": 3602378,
-        "id": "DDB0232428"
+        "id": "DDB0232433"
       }
     }
   ]

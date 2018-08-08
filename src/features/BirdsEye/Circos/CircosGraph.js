@@ -33,8 +33,6 @@ const dropDownData = [
   },
 ]
 
-const description = "This is a placeholder description."
-
 class CircosGraph extends Component {
   componentDidMount() {
     const { data, chr } = this.props
@@ -124,6 +122,7 @@ class CircosGraph extends Component {
                 width={750}
                 height={750}
                 miniaturePosition="none"
+                toolbarPosition="none"
                 background="#fff">
                 <svg width={750} height={750}>
                   <g id="stackChart" />
@@ -135,7 +134,7 @@ class CircosGraph extends Component {
             <Dropdown dropDownData={dropDownData} />
             <LegendBox>
               <LegendHeader color="info" />
-              <LegendBody>{description}</LegendBody>
+              <LegendBody>{this.props.description}</LegendBody>
             </LegendBox>
             <ImageVerticalGrid
               imageData={imageData}
