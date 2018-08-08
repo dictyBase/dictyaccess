@@ -58,7 +58,7 @@ class CircosDisplay extends Component<Props, State> {
   }
 
   render() {
-    const { classes, match } = this.props
+    const { classes } = this.props
     const { value } = this.state
 
     return (

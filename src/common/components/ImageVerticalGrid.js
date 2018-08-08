@@ -8,15 +8,15 @@ import IconButton from "@material-ui/core/IconButton"
 import InfoIcon from "@material-ui/icons/Info"
 import Typography from "@material-ui/core/Typography"
 
-import CircosGraph from "features/BirdsEye/Circos/CircosGraph"
-import {
-  chr1,
-  chr2,
-  chr3,
-  chr4,
-  chr5,
-  chr6,
-} from "features/BirdsEye/Circos/geneArrays"
+// import CircosGraph from "features/BirdsEye/Circos/CircosGraph"
+// import {
+//   chr1,
+//   chr2,
+//   chr3,
+//   chr4,
+//   chr5,
+//   chr6,
+// } from "features/BirdsEye/Circos/geneArrays"
 
 const styles = theme => ({
   root: {

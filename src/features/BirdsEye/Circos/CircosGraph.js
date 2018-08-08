@@ -108,7 +108,7 @@ class CircosGraph extends Component {
     myCircos.render()
   }
   handleClick = component => {
-    const { history, match, data } = this.props
+    const { history, match } = this.props
     history.push(`/birdseye/${match.params.dataset}/${component}`)
   }
   render() {
