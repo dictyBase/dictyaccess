@@ -85,29 +85,32 @@ class CircosGraph extends Component {
         ticks: { display: true, labels: false, spacing: 10000 },
       },
     )
-    myCircos.stack("stack", negStrand, {
-      innerRadius: 0.7,
+    myCircos.stack("negative-strands", negStrand, {
+      innerRadius: 0.8,
       outerRadius: 1,
       thickness: 4,
-      margin: 0.01 * chromosomes.data[0].attributes.length,
-      direction: "out",
+      margin: 1,
+      direction: "center",
       strokeWidth: 0,
-      color: d => {
-        if (d.end - d.start > 150000) {
-          return "#006064"
-        } else if (d.end - d.start > 120000) {
-          return "#00acc1"
-        } else if (d.end - d.start > 90000) {
-          return "#00838f"
-        } else if (d.end - d.start > 60000) {
-          return "#0097a7"
-        } else if (d.end - d.start > 30000) {
-          return "#00acc1"
-        }
-      },
+      color: "#fd6a62",
       tooltipContent: d => {
         return `${d.block_id}:${d.start}-${d.end}`
       },
+      // innerRadius: null,
+      // outerRadius: null,
+      // min: null,
+      // max: null,
+      // color: '#fd6a62',
+      // strokeColor: '#d3d3d3',
+      // strokeWidth: 1,
+      // direction: 'out',
+      // thickness: 10,
+      // radialMargin: 2,
+      // margin: 2,
+      // opacity: 1,
+      // logScale: false,
+      // tooltipContent: null,
+      // events: {}
     })
     // myCircos.stack("stack", posStrand, {
     //   innerRadius: 0.7,
@@ -140,7 +143,6 @@ class CircosGraph extends Component {
     history.push(`/birdseye/${match.params.dataset}/${component}`)
   }
   render() {
-    console.log(chromosomes)
     return (
       <Grid container spacing={16}>
         <Grid item xs={4}>
@@ -149,7 +151,11 @@ class CircosGraph extends Component {
           <LegendBox description={description} />
         </Grid>
         <Grid item xs={8}>
-          <ReactSVGPanZoom width={800} height={800}>
+          <ReactSVGPanZoom
+            width={800}
+            height={800}
+            miniaturePosition="none"
+            background="#fff">
             <svg width={800} height={800}>
               <g id="scatter" />
             </svg>
