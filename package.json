@@ -29,7 +29,7 @@
   "dependencies": {
     "@material-ui/core": "^1.4.3",
     "@material-ui/icons": "^1.1.0",
-    "circos": "^2.1.0",
+    "circos": "https://github.com/dictybase-playground/circosJS/tarball/master",
     "connected-react-router": "^4.3.0",
     "dicty-components-header-footer": "github:dictyBase/dicty-components-header-footer#v6.1.0",
     "dicty-components-login": "github:dictyBase/dicty-components-login#v1.4.0",
