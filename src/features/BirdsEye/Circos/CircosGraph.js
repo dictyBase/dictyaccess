@@ -3,23 +3,27 @@ import Circos from "circos"
 import { withRouter } from "react-router-dom"
 import { ReactSVGPanZoom } from "react-svg-pan-zoom"
 import Grid from "@material-ui/core/Grid"
-import LegendBox from "common/components/LegendBox"
-import ImageHorizontalGrid from "common/components/ImageHorizontalGrid"
+
+import LegendBox from "common/components/Legend/LegendBox"
+import LegendHeader from "common/components/Legend/LegendHeader"
+import LegendBody from "common/components/Legend/LegendBody"
+import ImageVerticalGrid from "common/components/ImageVerticalGrid"
 import Dropdown from "common/components/Dropdown"
+
 import { imageData } from "common/data/circosImageData"
 import chromosomes from "common/data/circos/chromosomes.json"
 import chr1genes from "common/data/circos/chr1genes.json"
 
-const posStrand = chr1genes.data
-  .filter(item => item.attributes.strand === "+")
-  .map(d => {
-    return {
-      block_id: "DDB0232428",
-      end: d.attributes.end,
-      start: d.attributes.start,
-      strand: d.attributes.strand,
-    }
-  })
+// const posStrand = chr1genes.data
+//   .filter(item => item.attributes.strand === "+")
+//   .map(d => {
+//     return {
+//       block_id: "DDB0232428",
+//       end: d.attributes.end,
+//       start: d.attributes.start,
+//       strand: d.attributes.strand,
+//     }
+//   })
 const negStrand = chr1genes.data
   .filter(item => item.attributes.strand === "-")
   .map(d => {
@@ -63,8 +67,8 @@ const description = "This is a placeholder description."
 class CircosGraph extends Component {
   componentDidMount() {
     let myCircos = new Circos({
-      width: 800,
-      height: 800,
+      width: 750,
+      height: 750,
       container: "#scatter",
     })
     myCircos.layout(
@@ -144,34 +148,39 @@ class CircosGraph extends Component {
   }
   render() {
     return (
-      <Grid container spacing={16}>
-        <Grid item xs={4}>
-          <Dropdown dropDownData={dropDownData} />
-          <br />
-          <LegendBox description={description} />
-        </Grid>
-        <Grid item xs={8}>
-          <ReactSVGPanZoom
-            width={800}
-            height={800}
-            miniaturePosition="none"
-            background="#fff">
-            <svg width={800} height={800}>
-              <g id="scatter" />
-            </svg>
-          </ReactSVGPanZoom>
-        </Grid>
-        <Grid item xs={12}>
-          <ImageHorizontalGrid
-            imageData={imageData}
-            handleClick={this.handleClick}
-          />
-          {/* use viewport, not the use element */}
-          {/* <svg width={200} height={200}>
+      <div>
+        <Grid container spacing={16}>
+          <Grid item xs={8}>
+            <br />
+            <center>
+              <ReactSVGPanZoom
+                width={750}
+                height={750}
+                miniaturePosition="none"
+                background="#fff">
+                <svg width={750} height={750}>
+                  <g id="scatter" />
+                </svg>
+              </ReactSVGPanZoom>
+            </center>
+          </Grid>
+          <Grid item xs={4}>
+            <Dropdown dropDownData={dropDownData} />
+            <LegendBox>
+              <LegendHeader color="info" />
+              <LegendBody>{description}</LegendBody>
+            </LegendBox>
+            <ImageVerticalGrid
+              imageData={imageData}
+              handleClick={this.handleClick}
+            />
+            {/* use viewport, not the use element */}
+            {/* <svg width={200} height={200}>
             <use href="#scatter" />
           </svg> */}
+          </Grid>
         </Grid>
-      </Grid>
+      </div>
     )
   }
 }

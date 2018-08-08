@@ -30,13 +30,6 @@ const styles = theme => ({
   titleBar: {
     backgroundColor: "rgba(1, 31, 75, 0.7)",
   },
-  root: {
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "space-around",
-    overflow: "hidden",
-    backgroundColor: theme.palette.background.paper,
-  },
   gridList: {
     width: "100%",
     height: 480,
