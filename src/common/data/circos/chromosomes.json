@@ -6,8 +6,8 @@
       "attributes": {
         "name": "chr1",
         "start": 1,
-        "end": 8467571,
-        "length": 8467570,
+        "end": 4923596,
+        "length": 4923595,
         "id": "DDB0232428"
       }
     },
@@ -17,8 +17,8 @@
       "attributes": {
         "name": "chr2",
         "start": 1,
-        "end": 6358352,
-        "length": 6358351,
+        "end": 8484197,
+        "length": 8484196,
         "id": "DDB0232429"
       }
     },
@@ -28,8 +28,8 @@
       "attributes": {
         "name": "chr3",
         "start": 1,
-        "end": 5430575,
-        "length": 5430574,
+        "end": 6357299,
+        "length": 6357298,
         "id": "DDB0232430"
       }
     },
@@ -39,8 +39,8 @@
       "attributes": {
         "name": "chr4",
         "start": 1,
-        "end": 5062323,
-        "length": 5062322,
+        "end": 5450249,
+        "length": 5450248,
         "id": "DDB0232431"
       }
     },
@@ -50,8 +50,8 @@
       "attributes": {
         "name": "chr5",
         "start": 1,
-        "end": 3595301,
-        "length": 3595300,
+        "end": 5125352,
+        "length": 5125351,
         "id": "DDB0232432"
       }
     },
