@@ -79,7 +79,13 @@ const SvgVerticalGrid = props => {
         <GridListTile>
           <Link to="/birdseye/genemodels/chr1">
             <center>
-              <MiniCircos data={chr1} chr={chromosomes.data[0]} name="chr1" />
+              <MiniCircos
+                data={chr1}
+                chr={chromosomes.data[0]}
+                name="chr1"
+                svgWidth="200"
+                svgHeight="200"
+              />
               <GridListTileBar
                 title="Chromosome 1"
                 classes={{
@@ -98,7 +104,13 @@ const SvgVerticalGrid = props => {
         <GridListTile>
           <Link to="/birdseye/genemodels/chr2">
             <center>
-              <MiniCircos data={chr2} chr={chromosomes.data[1]} name="chr2" />
+              <MiniCircos
+                data={chr2}
+                chr={chromosomes.data[1]}
+                name="chr2"
+                svgWidth="200"
+                svgHeight="200"
+              />
               <GridListTileBar
                 title="Chromosome 2"
                 classes={{
@@ -118,7 +130,13 @@ const SvgVerticalGrid = props => {
         <GridListTile>
           <Link to="/birdseye/genemodels/chr3">
             <center>
-              <MiniCircos data={chr3} chr={chromosomes.data[2]} name="chr3" />
+              <MiniCircos
+                data={chr3}
+                chr={chromosomes.data[2]}
+                name="chr3"
+                svgWidth="200"
+                svgHeight="200"
+              />
               <GridListTileBar
                 title="Chromosome 3"
                 classes={{
@@ -137,7 +155,13 @@ const SvgVerticalGrid = props => {
         <GridListTile>
           <Link to="/birdseye/genemodels/chr4">
             <center>
-              <MiniCircos data={chr4} chr={chromosomes.data[3]} name="chr4" />
+              <MiniCircos
+                data={chr4}
+                chr={chromosomes.data[3]}
+                name="chr4"
+                svgWidth="200"
+                svgHeight="200"
+              />
               <GridListTileBar
                 title="Chromosome 4"
                 classes={{
@@ -156,7 +180,13 @@ const SvgVerticalGrid = props => {
         <GridListTile>
           <Link to="/birdseye/genemodels/chr5">
             <center>
-              <MiniCircos data={chr5} chr={chromosomes.data[4]} name="chr5" />
+              <MiniCircos
+                data={chr5}
+                chr={chromosomes.data[4]}
+                name="chr5"
+                svgWidth="200"
+                svgHeight="200"
+              />
               <GridListTileBar
                 title="Chromosome 5"
                 classes={{
@@ -175,7 +205,13 @@ const SvgVerticalGrid = props => {
         <GridListTile>
           <Link to="/birdseye/genemodels/chr6">
             <center>
-              <MiniCircos data={chr6} chr={chromosomes.data[5]} name="chr6" />
+              <MiniCircos
+                data={chr6}
+                chr={chromosomes.data[5]}
+                name="chr6"
+                svgWidth="200"
+                svgHeight="200"
+              />
               <GridListTileBar
                 title="Chromosome 6"
                 classes={{

@@ -42,10 +42,6 @@ class MiniCircos extends Component {
         innerRadius: 290,
         outerRadius: 310,
         gap: 0,
-        labels: {
-          display: true,
-        },
-        ticks: { display: true, labels: false, spacing: 10000 },
       },
     )
     myCircos.stack("negative-strands", negStrand, {
@@ -77,11 +73,11 @@ class MiniCircos extends Component {
     myCircos.render()
   }
   render() {
-    const { name } = this.props
+    const { name, svgWidth, svgHeight } = this.props
     const reference = `#${name}`
     return (
       <div>
-        <svg viewBox="0 0 750 750" width="200" height="200">
+        <svg viewBox="0 0 750 750" width={svgWidth} height={svgHeight}>
           <g id={name}>
             <use href={reference} />
           </g>
