@@ -21,6 +21,14 @@ import {
   chr5,
   chr6,
 } from "features/BirdsEye/Circos/geneArrays"
+import {
+  chr1Description,
+  chr2Description,
+  chr3Description,
+  chr4Description,
+  chr5Description,
+  chr6Description,
+} from "common/constants/Descriptions"
 import chromosomes from "common/data/circos/chromosomes.json"
 
 const Routes = () => {
@@ -40,32 +48,68 @@ const Routes = () => {
       <Route
         exact
         path="/birdseye/:dataset/chr1"
-        render={() => <CircosDisplay data={chr1} chr={chromosomes.data[0]} />}
+        render={() => (
+          <CircosDisplay
+            data={chr1}
+            chr={chromosomes.data[0]}
+            description={chr1Description}
+          />
+        )}
       />
       <Route
         exact
         path="/birdseye/:dataset/chr2"
-        render={() => <CircosDisplay data={chr2} chr={chromosomes.data[1]} />}
+        render={() => (
+          <CircosDisplay
+            data={chr2}
+            chr={chromosomes.data[1]}
+            description={chr2Description}
+          />
+        )}
       />
       <Route
         exact
         path="/birdseye/:dataset/chr3"
-        render={() => <CircosDisplay data={chr3} chr={chromosomes.data[2]} />}
+        render={() => (
+          <CircosDisplay
+            data={chr3}
+            chr={chromosomes.data[2]}
+            description={chr3Description}
+          />
+        )}
       />
       <Route
         exact
         path="/birdseye/:dataset/chr4"
-        render={() => <CircosDisplay data={chr4} chr={chromosomes.data[3]} />}
+        render={() => (
+          <CircosDisplay
+            data={chr4}
+            chr={chromosomes.data[3]}
+            description={chr4Description}
+          />
+        )}
       />
       <Route
         exact
         path="/birdseye/:dataset/chr5"
-        render={() => <CircosDisplay data={chr5} chr={chromosomes.data[4]} />}
+        render={() => (
+          <CircosDisplay
+            data={chr5}
+            chr={chromosomes.data[4]}
+            description={chr5Description}
+          />
+        )}
       />
       <Route
         exact
         path="/birdseye/:dataset/chr6"
-        render={() => <CircosDisplay data={chr6} chr={chromosomes.data[5]} />}
+        render={() => (
+          <CircosDisplay
+            data={chr6}
+            chr={chromosomes.data[5]}
+            description={chr6Description}
+          />
+        )}
       />
       <Route exact path="/genomes" component={GenomeDashboard} />
       <Route exact path="/curation" component={CurationDashboard} />

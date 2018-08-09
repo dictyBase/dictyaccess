@@ -58,7 +58,7 @@ class CircosDisplay extends Component<Props, State> {
   }
 
   render() {
-    const { classes, data, chr } = this.props
+    const { classes, data, chr, description } = this.props
     const { value } = this.state
 
     return (
@@ -75,7 +75,7 @@ class CircosDisplay extends Component<Props, State> {
               chr={chr}
               data={data}
               handleClick={this.handleClick}
-              description="This is a placeholder description."
+              description={description}
             />
           </TabContainer>
         )}

@@ -1,5 +1,5 @@
 import React from "react"
-// import { Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { withStyles } from "@material-ui/core/styles"
 import GridList from "@material-ui/core/GridList"
 import GridListTile from "@material-ui/core/GridListTile"
@@ -77,95 +77,107 @@ const ImageVerticalGrid = props => {
           </ListSubheader>
         </GridListTile>
         <GridListTile>
-          <MiniCircos data={chr1} chr={chromosomes.data[0]} name="chr1" />
-          <GridListTileBar
-            title="Chromosome 1"
-            classes={{
-              root: classes.titleBar,
-              title: classes.title,
-            }}
-            actionIcon={
-              <IconButton className={classes.icon}>
-                <InfoIcon />
-              </IconButton>
-            }
-          />
+          <Link to="/birdseye/genemodels/chr1">
+            <MiniCircos data={chr1} chr={chromosomes.data[0]} name="chr1" />
+            <GridListTileBar
+              title="Chromosome 1"
+              classes={{
+                root: classes.titleBar,
+                title: classes.title,
+              }}
+              actionIcon={
+                <IconButton className={classes.icon}>
+                  <InfoIcon />
+                </IconButton>
+              }
+            />
+          </Link>
         </GridListTile>
         <GridListTile>
-          <MiniCircos data={chr2} chr={chromosomes.data[1]} name="chr2" />
-          <GridListTileBar
-            title="Chromosome 2"
-            classes={{
-              root: classes.titleBar,
-              title: classes.title,
-            }}
-            actionIcon={
-              <IconButton className={classes.icon}>
-                <InfoIcon />
-              </IconButton>
-            }
-          />
+          <Link to="/birdseye/genemodels/chr2">
+            <MiniCircos data={chr2} chr={chromosomes.data[1]} name="chr2" />
+            <GridListTileBar
+              title="Chromosome 2"
+              classes={{
+                root: classes.titleBar,
+                title: classes.title,
+              }}
+              actionIcon={
+                <IconButton className={classes.icon}>
+                  <InfoIcon />
+                </IconButton>
+              }
+            />
+          </Link>
         </GridListTile>
 
         <GridListTile>
-          <MiniCircos data={chr3} chr={chromosomes.data[2]} name="chr3" />
-          <GridListTileBar
-            title="Chromosome 3"
-            classes={{
-              root: classes.titleBar,
-              title: classes.title,
-            }}
-            actionIcon={
-              <IconButton className={classes.icon}>
-                <InfoIcon />
-              </IconButton>
-            }
-          />
+          <Link to="/birdseye/genemodels/chr3">
+            <MiniCircos data={chr3} chr={chromosomes.data[2]} name="chr3" />
+            <GridListTileBar
+              title="Chromosome 3"
+              classes={{
+                root: classes.titleBar,
+                title: classes.title,
+              }}
+              actionIcon={
+                <IconButton className={classes.icon}>
+                  <InfoIcon />
+                </IconButton>
+              }
+            />
+          </Link>
         </GridListTile>
         <GridListTile>
-          <MiniCircos data={chr4} chr={chromosomes.data[3]} name="chr4" />
-          <GridListTileBar
-            title="Chromosome 4"
-            classes={{
-              root: classes.titleBar,
-              title: classes.title,
-            }}
-            actionIcon={
-              <IconButton className={classes.icon}>
-                <InfoIcon />
-              </IconButton>
-            }
-          />
+          <Link to="/birdseye/genemodels/chr4">
+            <MiniCircos data={chr4} chr={chromosomes.data[3]} name="chr4" />
+            <GridListTileBar
+              title="Chromosome 4"
+              classes={{
+                root: classes.titleBar,
+                title: classes.title,
+              }}
+              actionIcon={
+                <IconButton className={classes.icon}>
+                  <InfoIcon />
+                </IconButton>
+              }
+            />
+          </Link>
         </GridListTile>
         <GridListTile>
-          <MiniCircos data={chr5} chr={chromosomes.data[4]} name="chr5" />
-          <GridListTileBar
-            title="Chromosome 5"
-            classes={{
-              root: classes.titleBar,
-              title: classes.title,
-            }}
-            actionIcon={
-              <IconButton className={classes.icon}>
-                <InfoIcon />
-              </IconButton>
-            }
-          />
+          <Link to="/birdseye/genemodels/chr5">
+            <MiniCircos data={chr5} chr={chromosomes.data[4]} name="chr5" />
+            <GridListTileBar
+              title="Chromosome 5"
+              classes={{
+                root: classes.titleBar,
+                title: classes.title,
+              }}
+              actionIcon={
+                <IconButton className={classes.icon}>
+                  <InfoIcon />
+                </IconButton>
+              }
+            />
+          </Link>
         </GridListTile>
         <GridListTile>
-          <MiniCircos data={chr6} chr={chromosomes.data[5]} name="chr6" />
-          <GridListTileBar
-            title="Chromosome 6"
-            classes={{
-              root: classes.titleBar,
-              title: classes.title,
-            }}
-            actionIcon={
-              <IconButton className={classes.icon}>
-                <InfoIcon />
-              </IconButton>
-            }
-          />
+          <Link to="/birdseye/genemodels/chr6">
+            <MiniCircos data={chr6} chr={chromosomes.data[5]} name="chr6" />
+            <GridListTileBar
+              title="Chromosome 6"
+              classes={{
+                root: classes.titleBar,
+                title: classes.title,
+              }}
+              actionIcon={
+                <IconButton className={classes.icon}>
+                  <InfoIcon />
+                </IconButton>
+              }
+            />
+          </Link>
         </GridListTile>
       </GridList>
     </div>

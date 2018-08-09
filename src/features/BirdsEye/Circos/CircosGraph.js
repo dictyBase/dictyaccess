@@ -119,12 +119,13 @@ class CircosGraph extends Component {
     return (
       <div>
         <Grid container spacing={16}>
-          <Grid item xs={8}>
+          <Grid item xs={12} md={12} lg={9}>
             <br />
             <center>
               <ReactSVGPanZoom
                 width={750}
                 height={750}
+                toolbarPosition="left"
                 miniaturePosition="none"
                 background="#fff">
                 <svg width={750} height={750}>
@@ -133,7 +134,7 @@ class CircosGraph extends Component {
               </ReactSVGPanZoom>
             </center>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} md={12} lg={3}>
             <Dropdown dropDownData={dropDownData} />
             <LegendBox>
               <LegendHeader color="info" />
