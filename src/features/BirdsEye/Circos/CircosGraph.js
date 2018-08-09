@@ -7,7 +7,7 @@ import Grid from "@material-ui/core/Grid"
 import LegendBox from "common/components/Legend/LegendBox"
 import LegendHeader from "common/components/Legend/LegendHeader"
 import LegendBody from "common/components/Legend/LegendBody"
-import ImageVerticalGrid from "./ImageVerticalGrid"
+import SvgVerticalGrid from "./SvgVerticalGrid"
 import Dropdown from "common/components/Dropdown"
 
 const dropDownData = [
@@ -111,10 +111,6 @@ class CircosGraph extends Component {
     })
     myCircos.render()
   }
-  handleClick = component => {
-    const { history, match } = this.props
-    history.push(`/birdseye/${match.params.dataset}/${component}`)
-  }
   render() {
     return (
       <div>
@@ -140,10 +136,7 @@ class CircosGraph extends Component {
               <LegendHeader color="info" />
               <LegendBody>{this.props.description}</LegendBody>
             </LegendBox>
-            <ImageVerticalGrid handleClick={this.handleClick} />
-            {/* <svg viewBox="0 0 750 750" width="200" height="200">
-              <use href="#stackChart" />
-            </svg> */}
+            <SvgVerticalGrid />
           </Grid>
         </Grid>
       </div>
