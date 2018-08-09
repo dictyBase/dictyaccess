@@ -34,6 +34,7 @@ const dropDownData = [
 class CircosGraph extends Component {
   componentDidMount() {
     const { data, chr } = this.props
+
     const posStrand = data
       .filter(item => item.attributes.strand === "+")
       .map(d => {
@@ -74,12 +75,25 @@ class CircosGraph extends Component {
         gap: 0,
         labels: {
           display: true,
+          position: "center",
+          size: 30,
+          color: "#000000",
+          radialOffset: -250,
         },
         ticks: {
           display: true,
+          color: "grey",
+          spacing: 100000,
           labels: true,
-          spacing: 1000000,
-          labelDenominator: 1000000,
+          labelSpacing: 10,
+          labelDisplay0: true,
+          labelColor: "#000000",
+          labelFont: "default",
+          majorSpacing: 5,
+          size: {
+            minor: 2,
+            major: 5,
+          },
         },
       },
     )
