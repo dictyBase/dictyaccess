@@ -7,10 +7,8 @@ import Grid from "@material-ui/core/Grid"
 import LegendBox from "common/components/Legend/LegendBox"
 import LegendHeader from "common/components/Legend/LegendHeader"
 import LegendBody from "common/components/Legend/LegendBody"
-import ImageVerticalGrid from "common/components/ImageVerticalGrid"
+import ImageVerticalGrid from "./ImageVerticalGrid"
 import Dropdown from "common/components/Dropdown"
-
-import { imageData } from "common/data/circosImageData"
 
 const dropDownData = [
   {
@@ -73,10 +71,16 @@ class CircosGraph extends Component {
       {
         innerRadius: 290,
         outerRadius: 310,
+        gap: 0,
         labels: {
           display: true,
         },
-        ticks: { display: true, labels: false, spacing: 10000 },
+        ticks: {
+          display: true,
+          labels: true,
+          spacing: 1000000,
+          labelDenominator: 1000000,
+        },
       },
     )
     myCircos.stack("negative-strands", negStrand, {
@@ -135,10 +139,7 @@ class CircosGraph extends Component {
               <LegendHeader color="info" />
               <LegendBody>{this.props.description}</LegendBody>
             </LegendBox>
-            <ImageVerticalGrid
-              imageData={imageData}
-              handleClick={this.handleClick}
-            />
+            <ImageVerticalGrid handleClick={this.handleClick} />
             {/* <svg viewBox="0 0 750 750" width="200" height="200">
               <use href="#stackChart" />
             </svg> */}

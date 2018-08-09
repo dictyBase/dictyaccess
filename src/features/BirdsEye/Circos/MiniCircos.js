@@ -1,20 +1,9 @@
 import React, { Component } from "react"
 import Circos from "circos"
-import { withRouter } from "react-router-dom"
-import { ReactSVGPanZoom } from "react-svg-pan-zoom"
-import Grid from "@material-ui/core/Grid"
 
-import LegendBox from "common/components/Legend/LegendBox"
-import LegendHeader from "common/components/Legend/LegendHeader"
-import LegendBody from "common/components/Legend/LegendBody"
-import ImageVerticalGrid from "common/components/ImageVerticalGrid"
-import Dropdown from "common/components/Dropdown"
-
-import { imageData } from "common/data/circosImageData"
-
-class CircosGraph extends Component {
+class MiniCircos extends Component {
   componentDidMount() {
-    const { data, chr } = this.props
+    const { data, chr, name } = this.props
     const posStrand = data
       .filter(item => item.attributes.strand === "+")
       .map(d => {
@@ -38,7 +27,7 @@ class CircosGraph extends Component {
     let myCircos = new Circos({
       width: 750,
       height: 750,
-      container: "#stackChart",
+      container: `#${name}`,
     })
     myCircos.layout(
       [
@@ -52,6 +41,7 @@ class CircosGraph extends Component {
       {
         innerRadius: 290,
         outerRadius: 310,
+        gap: 0,
         labels: {
           display: true,
         },
@@ -87,14 +77,18 @@ class CircosGraph extends Component {
     myCircos.render()
   }
   render() {
+    const { name } = this.props
+    const reference = `#${name}`
     return (
       <div>
         <svg viewBox="0 0 750 750" width="200" height="200">
-          <g id="stackChart" />
+          <g id={name}>
+            <use href={reference} />
+          </g>
         </svg>
       </div>
     )
   }
 }
 
-export default withRouter(CircosGraph)
+export default MiniCircos

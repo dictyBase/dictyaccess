@@ -58,7 +58,7 @@ const styles = theme => ({
 })
 
 const ImageVerticalGrid = props => {
-  const { classes, imageData, handleClick } = props
+  const { classes } = props
   return (
     <div className={classes.root}>
       <GridList cellHeight={200} cols={2} className={classes.gridList}>
@@ -76,29 +76,86 @@ const ImageVerticalGrid = props => {
             </Typography>
           </ListSubheader>
         </GridListTile>
-        {/* {imageData.map((tile, i) => (
-          // <Link to="/">
-          <GridListTile key={i} onClick={() => handleClick(tile.route)}>
-            <img src={tile.img} alt={tile.title} />
-            <GridListTileBar
-              title={tile.title}
-              classes={{
-                root: classes.titleBar,
-                title: classes.title,
-              }}
-              actionIcon={
-                <IconButton className={classes.icon}>
-                  <InfoIcon />
-                </IconButton>
-              }
-            />
-          </GridListTile>
-          // </Link>
-        ))} */}
         <GridListTile>
-          <MiniCircos data={chr1} chr={chromosomes.data[0]} />
+          <MiniCircos data={chr1} chr={chromosomes.data[0]} name="chr1" />
           <GridListTileBar
             title="Chromosome 1"
+            classes={{
+              root: classes.titleBar,
+              title: classes.title,
+            }}
+            actionIcon={
+              <IconButton className={classes.icon}>
+                <InfoIcon />
+              </IconButton>
+            }
+          />
+        </GridListTile>
+        <GridListTile>
+          <MiniCircos data={chr2} chr={chromosomes.data[1]} name="chr2" />
+          <GridListTileBar
+            title="Chromosome 2"
+            classes={{
+              root: classes.titleBar,
+              title: classes.title,
+            }}
+            actionIcon={
+              <IconButton className={classes.icon}>
+                <InfoIcon />
+              </IconButton>
+            }
+          />
+        </GridListTile>
+
+        <GridListTile>
+          <MiniCircos data={chr3} chr={chromosomes.data[2]} name="chr3" />
+          <GridListTileBar
+            title="Chromosome 3"
+            classes={{
+              root: classes.titleBar,
+              title: classes.title,
+            }}
+            actionIcon={
+              <IconButton className={classes.icon}>
+                <InfoIcon />
+              </IconButton>
+            }
+          />
+        </GridListTile>
+        <GridListTile>
+          <MiniCircos data={chr4} chr={chromosomes.data[3]} name="chr4" />
+          <GridListTileBar
+            title="Chromosome 4"
+            classes={{
+              root: classes.titleBar,
+              title: classes.title,
+            }}
+            actionIcon={
+              <IconButton className={classes.icon}>
+                <InfoIcon />
+              </IconButton>
+            }
+          />
+        </GridListTile>
+        <GridListTile>
+          <MiniCircos data={chr5} chr={chromosomes.data[4]} name="chr5" />
+          <GridListTileBar
+            title="Chromosome 5"
+            classes={{
+              root: classes.titleBar,
+              title: classes.title,
+            }}
+            actionIcon={
+              <IconButton className={classes.icon}>
+                <InfoIcon />
+              </IconButton>
+            }
+          />
+        </GridListTile>
+        <GridListTile>
+          <MiniCircos data={chr6} chr={chromosomes.data[5]} name="chr6" />
+          <GridListTileBar
+            title="Chromosome 6"
             classes={{
               root: classes.titleBar,
               title: classes.title,
