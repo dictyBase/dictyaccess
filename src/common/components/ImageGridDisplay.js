@@ -5,8 +5,6 @@ import { withStyles } from "@material-ui/core/styles"
 import GridList from "@material-ui/core/GridList"
 import GridListTile from "@material-ui/core/GridListTile"
 import GridListTileBar from "@material-ui/core/GridListTileBar"
-import IconButton from "@material-ui/core/IconButton"
-import InfoIcon from "@material-ui/icons/Info"
 
 import MiniCircos from "features/BirdsEye/Circos/MiniCircos"
 import {
@@ -31,9 +29,6 @@ const styles = theme => ({
     width: "90%",
     height: "100%",
   },
-  icon: {
-    color: "rgba(255, 255, 255, 0.54)",
-  },
   subhead: {
     color: "white",
     fontSize: 20,
@@ -45,10 +40,6 @@ const styles = theme => ({
 type Props = {
   /** Material-UI classes */
   classes: Object,
-  /** Array of objects with image data information */
-  imageData: Array<Object>,
-  /** Click handler that accepts component as parameter */
-  handleClick: Function,
 }
 
 const ImageGridDisplay = (props: Props) => {
@@ -56,13 +47,7 @@ const ImageGridDisplay = (props: Props) => {
 
   return (
     <div className={classes.root}>
-      <GridList cellHeight={300} cols={3} className={classes.gridList}>
-        {/* {imageData.map((tile, i) => (
-          <GridListTile key={i} onClick={() => handleClick(tile.route)}>
-            <img src={tile.img} alt={tile.title} />
-            <GridListTileBar title={tile.title} />
-          </GridListTile>
-        ))} */}
+      <GridList cellHeight={270} cols={3} className={classes.gridList}>
         <GridListTile>
           <Link to="/birdseye/genemodels/chr1">
             <center>
@@ -79,11 +64,6 @@ const ImageGridDisplay = (props: Props) => {
                   root: classes.titleBar,
                   title: classes.title,
                 }}
-                actionIcon={
-                  <IconButton className={classes.icon}>
-                    <InfoIcon />
-                  </IconButton>
-                }
               />
             </center>
           </Link>
@@ -104,11 +84,6 @@ const ImageGridDisplay = (props: Props) => {
                   root: classes.titleBar,
                   title: classes.title,
                 }}
-                actionIcon={
-                  <IconButton className={classes.icon}>
-                    <InfoIcon />
-                  </IconButton>
-                }
               />
             </center>
           </Link>
@@ -129,11 +104,6 @@ const ImageGridDisplay = (props: Props) => {
                   root: classes.titleBar,
                   title: classes.title,
                 }}
-                actionIcon={
-                  <IconButton className={classes.icon}>
-                    <InfoIcon />
-                  </IconButton>
-                }
               />
             </center>
           </Link>
@@ -154,11 +124,6 @@ const ImageGridDisplay = (props: Props) => {
                   root: classes.titleBar,
                   title: classes.title,
                 }}
-                actionIcon={
-                  <IconButton className={classes.icon}>
-                    <InfoIcon />
-                  </IconButton>
-                }
               />
             </center>
           </Link>
@@ -179,11 +144,6 @@ const ImageGridDisplay = (props: Props) => {
                   root: classes.titleBar,
                   title: classes.title,
                 }}
-                actionIcon={
-                  <IconButton className={classes.icon}>
-                    <InfoIcon />
-                  </IconButton>
-                }
               />
             </center>
           </Link>
@@ -204,11 +164,6 @@ const ImageGridDisplay = (props: Props) => {
                   root: classes.titleBar,
                   title: classes.title,
                 }}
-                actionIcon={
-                  <IconButton className={classes.icon}>
-                    <InfoIcon />
-                  </IconButton>
-                }
               />
             </center>
           </Link>

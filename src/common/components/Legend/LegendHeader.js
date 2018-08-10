@@ -18,7 +18,7 @@ const LegendHeader = props => {
   return (
     <div className={cardHeaderClasses} {...rest}>
       <center>
-        <InfoIcon style={{ fontSize: 36 }} />
+        <InfoIcon style={{ fontSize: 25 }} />
         <br />
         <Typography
           variant="headline"
