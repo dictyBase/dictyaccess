@@ -78,8 +78,6 @@ class CircosGraph extends Component<Props> {
           labels: true,
           labelSpacing: 10,
           labelDisplay0: true,
-          labelColor: "#000000",
-          labelFont: "default",
           majorSpacing: 5,
           size: {
             minor: 2,
@@ -103,7 +101,7 @@ class CircosGraph extends Component<Props> {
     })
     myCircos.stack("positive-strands", posStrand, {
       innerRadius: 320,
-      outerRadius: 360,
+      outerRadius: 370,
       thickness: 10,
       margin: 0.01 * chr.attributes.length,
       direction: "out",
@@ -121,7 +119,7 @@ class CircosGraph extends Component<Props> {
     console.log("componentDidUpdate")
     console.log("curr: ", this.props)
     console.log("prev: ", prevProps)
-    // window.location.reload()
+    window.location.reload()
   }
 
   render() {
