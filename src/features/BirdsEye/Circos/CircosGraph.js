@@ -61,8 +61,8 @@ class CircosGraph extends Component<Props> {
         },
       ],
       {
-        innerRadius: 290,
-        outerRadius: 310,
+        innerRadius: 280,
+        outerRadius: 300,
         gap: 0,
         labels: {
           display: false,
@@ -77,8 +77,13 @@ class CircosGraph extends Component<Props> {
           spacing: 100000,
           labels: true,
           labelSpacing: 10,
+          labelSuffix: "m",
+          labelDenominator: 1000000,
           labelDisplay0: true,
-          majorSpacing: 5,
+          labelSize: 7,
+          labelColor: "#000000",
+          labelFont: "default",
+          majorSpacing: 1,
           size: {
             minor: 2,
             major: 5,
@@ -87,8 +92,8 @@ class CircosGraph extends Component<Props> {
       },
     )
     myCircos.stack("negative-strands", negStrand, {
-      innerRadius: 240,
-      outerRadius: 280,
+      innerRadius: 230,
+      outerRadius: 270,
       thickness: 10,
       margin: 0.01 * chr.attributes.length,
       direction: "in",
@@ -101,7 +106,7 @@ class CircosGraph extends Component<Props> {
     })
     myCircos.stack("positive-strands", posStrand, {
       innerRadius: 320,
-      outerRadius: 370,
+      outerRadius: 380,
       thickness: 10,
       margin: 0.01 * chr.attributes.length,
       direction: "out",
