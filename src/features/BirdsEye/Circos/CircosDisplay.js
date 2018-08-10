@@ -1,8 +1,10 @@
 // @flow
 import React, { Component } from "react"
 import { withRouter } from "react-router-dom"
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton"
 import { withStyles } from "@material-ui/core/styles"
 import AppBar from "@material-ui/core/AppBar"
+import Grid from "@material-ui/core/Grid"
 import Tabs from "@material-ui/core/Tabs"
 import Tab from "@material-ui/core/Tab"
 import Typography from "@material-ui/core/Typography"
@@ -49,7 +51,7 @@ class CircosDisplay extends Component<Props, State> {
     value: 0,
     isFetching: true,
     chr: "",
-    data: "",
+    genes: "",
     error: "",
     description: "",
   }
@@ -80,7 +82,7 @@ class CircosDisplay extends Component<Props, State> {
       this.setState({
         isFetching: false,
         chr: chrData[0],
-        data: geneData,
+        genes: geneData,
         description: description,
       })
     } catch (error) {
@@ -94,14 +96,56 @@ class CircosDisplay extends Component<Props, State> {
 
   render() {
     const { classes } = this.props
-    const { value, chr, data, description, error, isFetching } = this.state
+    const { value, chr, genes, description, error, isFetching } = this.state
 
     if (error) {
       return <p>Sorry! There was an error loading the items. {error}</p>
     }
 
     if (isFetching) {
-      return <div>Fetching ....</div>
+      return (
+        <div className={classes.root}>
+          <AppBar position="static">
+            <Tabs value={value} onChange={this.handleChange} centered>
+              <Tab label="Global" />
+              <Tab label="Comparative" />
+            </Tabs>
+          </AppBar>
+          {value === 0 && (
+            <TabContainer>
+              <Grid container spacing={16}>
+                <Grid item xs={12} md={12} lg={9}>
+                  <SkeletonTheme color="#d1d1d1">
+                    <Skeleton count={9} />
+                    <br />
+                    <br />
+                    <Skeleton count={9} />
+                    <br />
+                    <br />
+                    <Skeleton count={9} />
+                  </SkeletonTheme>
+                </Grid>
+                <Grid item xs={12} md={12} lg={3}>
+                  <SkeletonTheme color="#d1d1d1">
+                    <Skeleton count={9} />
+                    <br />
+                    <br />
+                    <Skeleton count={9} />
+                    <br />
+                    <br />
+                    <Skeleton count={9} />
+                  </SkeletonTheme>
+                </Grid>
+              </Grid>
+            </TabContainer>
+          )}
+          {value === 1 && (
+            <TabContainer>
+              <center>Work in progress</center>
+            </TabContainer>
+          )}
+        </div>
+      )
     }
 
     return (
@@ -114,7 +158,7 @@ class CircosDisplay extends Component<Props, State> {
         </AppBar>
         {value === 0 && (
           <TabContainer>
-            <CircosGraph chr={chr} data={data} description={description} />
+            <CircosGraph chr={chr} genes={genes} description={description} />
           </TabContainer>
         )}
         {value === 1 && (

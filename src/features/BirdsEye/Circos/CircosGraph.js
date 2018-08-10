@@ -13,7 +13,7 @@ import chrNameExtender from "./utils/chrNameExtender"
 
 type Props = {
   /** Genes data */
-  data: Array<Object>,
+  genes: Array<Object>,
   /** Chromosomes data */
   chr: Array<Object>,
   /** Legend description for the shown graph */
@@ -24,9 +24,9 @@ type Props = {
 
 class CircosGraph extends Component<Props> {
   componentDidMount() {
-    const { data, chr } = this.props
+    const { genes, chr } = this.props
 
-    const posStrand = data
+    const posStrand = genes
       .filter(item => item.attributes.strand === "+")
       .map(d => {
         return {
@@ -36,7 +36,7 @@ class CircosGraph extends Component<Props> {
           strand: d.attributes.strand,
         }
       })
-    const negStrand = data
+    const negStrand = genes
       .filter(item => item.attributes.strand === "-")
       .map(d => {
         return {
@@ -117,7 +117,12 @@ class CircosGraph extends Component<Props> {
     myCircos.render()
   }
 
-  // need to use componentDidUpdate to rerender on route change
+  componentDidUpdate(prevProps) {
+    console.log("componentDidUpdate")
+    console.log("curr: ", this.props)
+    console.log("prev: ", prevProps)
+    // window.location.reload()
+  }
 
   render() {
     const { match } = this.props
