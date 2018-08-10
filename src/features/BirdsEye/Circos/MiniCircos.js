@@ -1,12 +1,30 @@
+// @flow
 import React, { Component } from "react"
 import Circos from "circos"
 
-class MiniCircos extends Component {
+type Props = {
+  /** Gene data */
+  genes: Array<Object>,
+  /** Chromosome data */
+  chr: Object,
+  /** Name of chromosome (i.e. chr1) */
+  name: string,
+  /** Width of scaled SVG */
+  svgWidth: string,
+  /** Height of scaled SVG */
+  svgHeight: string,
+}
+
+/**
+ * This component provides a scaled SVG thumbnail for a Circos graph.
+ */
+
+class MiniCircos extends Component<Props> {
   componentDidMount() {
-    const { data, chr, name } = this.props
-    const posStrand = data
-      .filter(item => item.attributes.strand === "+")
-      .map(d => {
+    const { genes, chr, name } = this.props
+    const posStrand = genes
+      .filter((item: Object) => item.attributes.strand === "+")
+      .map((d: Object) => {
         return {
           block_id: d.attributes.block_id,
           end: d.attributes.end,
@@ -14,9 +32,9 @@ class MiniCircos extends Component {
           strand: d.attributes.strand,
         }
       })
-    const negStrand = data
-      .filter(item => item.attributes.strand === "-")
-      .map(d => {
+    const negStrand = genes
+      .filter((item: Object) => item.attributes.strand === "-")
+      .map((d: Object) => {
         return {
           block_id: d.attributes.block_id,
           end: d.attributes.end,

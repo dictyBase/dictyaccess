@@ -15,12 +15,16 @@ type Props = {
   /** Genes data */
   genes: Array<Object>,
   /** Chromosomes data */
-  chr: Array<Object>,
+  chr: Object,
   /** Legend description for the shown graph */
   description: string,
   /** React Router's match object */
   match: Object,
 }
+
+/**
+ * This is the main Circos component that creates models based on the specified data props.
+ */
 
 class CircosGraph extends Component<Props> {
   componentDidMount() {
@@ -61,8 +65,8 @@ class CircosGraph extends Component<Props> {
         },
       ],
       {
-        innerRadius: 280,
-        outerRadius: 300,
+        innerRadius: 300,
+        outerRadius: 320,
         gap: 0,
         labels: {
           display: false,
@@ -77,13 +81,8 @@ class CircosGraph extends Component<Props> {
           spacing: 100000,
           labels: true,
           labelSpacing: 10,
-          labelSuffix: "m",
-          labelDenominator: 1000000,
           labelDisplay0: true,
-          labelSize: 7,
-          labelColor: "#000000",
-          labelFont: "default",
-          majorSpacing: 1,
+          majorSpacing: 5,
           size: {
             minor: 2,
             major: 5,
@@ -92,8 +91,8 @@ class CircosGraph extends Component<Props> {
       },
     )
     myCircos.stack("negative-strands", negStrand, {
-      innerRadius: 230,
-      outerRadius: 270,
+      innerRadius: 250,
+      outerRadius: 290,
       thickness: 10,
       margin: 0.01 * chr.attributes.length,
       direction: "in",
@@ -105,11 +104,11 @@ class CircosGraph extends Component<Props> {
       logScale: true,
     })
     myCircos.stack("positive-strands", posStrand, {
-      innerRadius: 320,
-      outerRadius: 380,
+      innerRadius: 185,
+      outerRadius: 250,
       thickness: 10,
       margin: 0.01 * chr.attributes.length,
-      direction: "out",
+      direction: "in",
       strokeWidth: 0,
       color: "red",
       tooltipContent: d => {

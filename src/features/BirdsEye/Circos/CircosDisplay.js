@@ -25,7 +25,7 @@ const TabContainer = (props: tabProps) => {
   )
 }
 
-const styles = theme => ({
+const styles = (theme: Object) => ({
   root: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
@@ -44,14 +44,28 @@ type Props = {
 type State = {
   /** Value representing the two tabs. Starts at 0. */
   value: number,
+  /** Boolean representing whether data is being fetched or not */
+  isFetching: boolean,
+  /** Chromosomes data */
+  chr: Object,
+  /** Genes data */
+  genes: Array<Object>,
+  /** Error message if problem fetching data */
+  error: string,
+  /** Description for Circos legend box */
+  description: string,
 }
+
+/**
+ * This is the CircosDisplay container. It fetches the desired data then passes them as props to CircosGraph.
+ */
 
 class CircosDisplay extends Component<Props, State> {
   state = {
     value: 0,
     isFetching: true,
-    chr: "",
-    genes: "",
+    chr: {},
+    genes: [],
     error: "",
     description: "",
   }

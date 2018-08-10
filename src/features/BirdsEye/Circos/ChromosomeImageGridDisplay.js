@@ -17,7 +17,7 @@ import {
 } from "features/BirdsEye/Circos/utils/geneArrays"
 import chromosomes from "common/data/circos/chromosomes.json"
 
-const styles = theme => ({
+const styles = (theme: Object) => ({
   root: {
     display: "flex",
     flexWrap: "wrap",
@@ -42,6 +42,10 @@ type Props = {
   classes: Object,
 }
 
+/**
+ * This is the chromosome image grid display that appears on the main Birdseye Dashboard page.
+ */
+
 const ChromosomeImageGridDisplay = (props: Props) => {
   const { classes } = props
 
@@ -52,7 +56,7 @@ const ChromosomeImageGridDisplay = (props: Props) => {
           <Link to="/birdseye/genemodels/chr1">
             <center>
               <MiniCircos
-                data={chr1}
+                genes={chr1}
                 chr={chromosomes.data[0]}
                 name="chr1"
                 svgWidth="220"
@@ -72,7 +76,7 @@ const ChromosomeImageGridDisplay = (props: Props) => {
           <Link to="/birdseye/genemodels/chr2">
             <center>
               <MiniCircos
-                data={chr2}
+                genes={chr2}
                 chr={chromosomes.data[1]}
                 name="chr2"
                 svgWidth="220"
@@ -92,7 +96,7 @@ const ChromosomeImageGridDisplay = (props: Props) => {
           <Link to="/birdseye/genemodels/chr3">
             <center>
               <MiniCircos
-                data={chr3}
+                genes={chr3}
                 chr={chromosomes.data[2]}
                 name="chr3"
                 svgWidth="220"
@@ -112,7 +116,7 @@ const ChromosomeImageGridDisplay = (props: Props) => {
           <Link to="/birdseye/genemodels/chr4">
             <center>
               <MiniCircos
-                data={chr4}
+                genes={chr4}
                 chr={chromosomes.data[3]}
                 name="chr4"
                 svgWidth="220"
@@ -132,7 +136,7 @@ const ChromosomeImageGridDisplay = (props: Props) => {
           <Link to="/birdseye/genemodels/chr5">
             <center>
               <MiniCircos
-                data={chr5}
+                genes={chr5}
                 chr={chromosomes.data[4]}
                 name="chr5"
                 svgWidth="220"
@@ -152,7 +156,7 @@ const ChromosomeImageGridDisplay = (props: Props) => {
           <Link to="/birdseye/genemodels/chr6">
             <center>
               <MiniCircos
-                data={chr6}
+                genes={chr6}
                 chr={chromosomes.data[5]}
                 name="chr6"
                 svgWidth="220"

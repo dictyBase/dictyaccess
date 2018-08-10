@@ -18,7 +18,7 @@ import {
 } from "features/BirdsEye/Circos/utils/geneArrays"
 import chromosomes from "common/data/circos/chromosomes.json"
 
-const styles = theme => ({
+const styles = (theme: Object) => ({
   root: {
     display: "flex",
     flexWrap: "wrap",
@@ -52,7 +52,16 @@ const styles = theme => ({
   },
 })
 
-const SvgVerticalGrid = props => {
+type Props = {
+  /** Material-UI styling */
+  classes: Object,
+}
+
+/**
+ * The vertical grid of SVG thumbnails that displays next to the Circos graph.
+ */
+
+const SvgVerticalGrid = (props: Props) => {
   const { classes } = props
   return (
     <div className={classes.root}>
@@ -71,7 +80,7 @@ const SvgVerticalGrid = props => {
           <Link to="/birdseye/genemodels/chr1">
             <center>
               <MiniCircos
-                data={chr1}
+                genes={chr1}
                 chr={chromosomes.data[0]}
                 name="chr1"
                 svgWidth="200"
@@ -91,7 +100,7 @@ const SvgVerticalGrid = props => {
           <Link to="/birdseye/genemodels/chr2">
             <center>
               <MiniCircos
-                data={chr2}
+                genes={chr2}
                 chr={chromosomes.data[1]}
                 name="chr2"
                 svgWidth="200"
@@ -112,7 +121,7 @@ const SvgVerticalGrid = props => {
           <Link to="/birdseye/genemodels/chr3">
             <center>
               <MiniCircos
-                data={chr3}
+                genes={chr3}
                 chr={chromosomes.data[2]}
                 name="chr3"
                 svgWidth="200"
@@ -132,7 +141,7 @@ const SvgVerticalGrid = props => {
           <Link to="/birdseye/genemodels/chr4">
             <center>
               <MiniCircos
-                data={chr4}
+                genes={chr4}
                 chr={chromosomes.data[3]}
                 name="chr4"
                 svgWidth="200"
@@ -152,7 +161,7 @@ const SvgVerticalGrid = props => {
           <Link to="/birdseye/genemodels/chr5">
             <center>
               <MiniCircos
-                data={chr5}
+                genes={chr5}
                 chr={chromosomes.data[4]}
                 name="chr5"
                 svgWidth="200"
@@ -172,7 +181,7 @@ const SvgVerticalGrid = props => {
           <Link to="/birdseye/genemodels/chr6">
             <center>
               <MiniCircos
-                data={chr6}
+                genes={chr6}
                 chr={chromosomes.data[5]}
                 name="chr6"
                 svgWidth="200"
