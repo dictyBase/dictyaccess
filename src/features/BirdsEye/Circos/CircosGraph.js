@@ -87,8 +87,8 @@ class CircosGraph extends Component<Props> {
       },
     )
     myCircos.stack("negative-strands", negStrand, {
-      innerRadius: 250,
-      outerRadius: 290,
+      innerRadius: 240,
+      outerRadius: 280,
       thickness: 10,
       margin: 0.01 * chr.attributes.length,
       direction: "in",
