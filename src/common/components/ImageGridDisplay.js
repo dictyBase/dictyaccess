@@ -14,7 +14,7 @@ import {
   chr4,
   chr5,
   chr6,
-} from "features/BirdsEye/Circos/geneArrays"
+} from "features/BirdsEye/Circos/utils/geneArrays"
 import chromosomes from "common/data/circos/chromosomes.json"
 
 const styles = theme => ({

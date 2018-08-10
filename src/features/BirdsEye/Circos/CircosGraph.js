@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from "react"
 import Circos from "circos"
 import { withRouter } from "react-router-dom"
@@ -7,31 +8,41 @@ import Grid from "@material-ui/core/Grid"
 import LegendBox from "common/components/Legend/LegendBox"
 import LegendHeader from "common/components/Legend/LegendHeader"
 import LegendBody from "common/components/Legend/LegendBody"
+// import Dropdown from "common/components/Dropdown"
 import SvgVerticalGrid from "./SvgVerticalGrid"
-import Dropdown from "common/components/Dropdown"
+import chromosomeNameExtender from "./utils/chromosomeNameExtender"
 
-const dropDownData = [
-  {
-    name: "Chr 1",
-  },
-  {
-    name: "Chr 2",
-  },
-  {
-    name: "Chr 3",
-  },
-  {
-    name: "Chr 4",
-  },
-  {
-    name: "Chr 5",
-  },
-  {
-    name: "Chr 6",
-  },
-]
+// const dropDownData = [
+//   {
+//     name: "Chr 1",
+//   },
+//   {
+//     name: "Chr 2",
+//   },
+//   {
+//     name: "Chr 3",
+//   },
+//   {
+//     name: "Chr 4",
+//   },
+//   {
+//     name: "Chr 5",
+//   },
+//   {
+//     name: "Chr 6",
+//   },
+// ]
 
-class CircosGraph extends Component {
+type Props = {
+  /** Genes data */
+  data: Array<Object>,
+  /** Chromosomes data */
+  chr: Array<Object>,
+  /** Legend description for the shown graph */
+  description: string,
+}
+
+class CircosGraph extends Component<Props> {
   componentDidMount() {
     const { data, chr } = this.props
 
@@ -74,11 +85,11 @@ class CircosGraph extends Component {
         outerRadius: 310,
         gap: 0,
         labels: {
-          display: true,
-          position: "center",
-          size: 30,
-          color: "#000000",
-          radialOffset: -250,
+          display: false,
+          // position: "center",
+          // size: 30,
+          // color: "#000000",
+          // radialOffset: -250,
         },
         ticks: {
           display: true,
@@ -126,9 +137,15 @@ class CircosGraph extends Component {
     myCircos.render()
   }
   render() {
+    const { match } = this.props
     return (
       <div>
         <Grid container spacing={16}>
+          <Grid item xs={12} md={12} lg={9}>
+            <center>
+              <h1>{chromosomeNameExtender(match.url.slice(-4))}</h1>
+            </center>
+          </Grid>
           <Grid item xs={12} md={12} lg={9}>
             <br />
             <center>
@@ -145,7 +162,7 @@ class CircosGraph extends Component {
             </center>
           </Grid>
           <Grid item xs={12} md={12} lg={3}>
-            <Dropdown dropDownData={dropDownData} />
+            {/* <Dropdown dropDownData={dropDownData} /> */}
             <LegendBox>
               <LegendHeader color="info" />
               <LegendBody>{this.props.description}</LegendBody>

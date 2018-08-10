@@ -8,7 +8,7 @@ import Tab from "@material-ui/core/Tab"
 import Typography from "@material-ui/core/Typography"
 
 import CircosGraph from "features/BirdsEye/Circos/CircosGraph"
-// import { chr1 } from "./geneArrays"
+// import { chr1 } from "./utils/geneArrays"
 // import chromosomes from "common/data/circos/chromosomes.json"
 
 type tabProps = {

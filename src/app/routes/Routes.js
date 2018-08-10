@@ -20,7 +20,7 @@ import {
   chr4,
   chr5,
   chr6,
-} from "features/BirdsEye/Circos/geneArrays"
+} from "features/BirdsEye/Circos/utils/geneArrays"
 import {
   chr1Description,
   chr2Description,
