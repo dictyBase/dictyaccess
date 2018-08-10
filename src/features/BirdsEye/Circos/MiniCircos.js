@@ -57,8 +57,8 @@ class MiniCircos extends Component<Props> {
         },
       ],
       {
-        innerRadius: 290,
-        outerRadius: 310,
+        innerRadius: 300,
+        outerRadius: 320,
         gap: 0,
       },
     )
@@ -73,11 +73,11 @@ class MiniCircos extends Component<Props> {
       logScale: true,
     })
     myCircos.stack("positive-strands", posStrand, {
-      innerRadius: 320,
-      outerRadius: 360,
+      innerRadius: 185,
+      outerRadius: 250,
       thickness: 10,
       margin: 0.01 * chr.attributes.length,
-      direction: "out",
+      direction: "in",
       strokeWidth: 0,
       color: "red",
       logScale: true,
