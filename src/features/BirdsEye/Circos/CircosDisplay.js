@@ -53,10 +53,6 @@ class CircosDisplay extends Component<Props, State> {
     this.setState({ value })
   }
 
-  handleClick = component => {
-    this.props.history.push(`/birdseye/genemodels/${component}`)
-  }
-
   render() {
     const { classes, data, chr, description } = this.props
     const { value } = this.state
@@ -71,12 +67,7 @@ class CircosDisplay extends Component<Props, State> {
         </AppBar>
         {value === 0 && (
           <TabContainer>
-            <CircosGraph
-              chr={chr}
-              data={data}
-              handleClick={this.handleClick}
-              description={description}
-            />
+            <CircosGraph chr={chr} data={data} description={description} />
           </TabContainer>
         )}
         {value === 1 && (

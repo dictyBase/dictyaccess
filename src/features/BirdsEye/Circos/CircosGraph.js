@@ -136,6 +136,9 @@ class CircosGraph extends Component<Props> {
     })
     myCircos.render()
   }
+
+  // need to use componentDidUpdate to rerender on route change
+
   render() {
     const { match } = this.props
     return (
