@@ -52,9 +52,6 @@ class MiniCircos extends Component {
       direction: "in",
       strokeWidth: 0,
       color: "blue",
-      tooltipContent: d => {
-        return `${d.block_id}:${d.start}-${d.end}`
-      },
       logScale: true,
     })
     myCircos.stack("positive-strands", posStrand, {
@@ -65,9 +62,6 @@ class MiniCircos extends Component {
       direction: "out",
       strokeWidth: 0,
       color: "red",
-      tooltipContent: d => {
-        return `${d.block_id}:${d.start}-${d.end}`
-      },
       logScale: true,
     })
     myCircos.render()
