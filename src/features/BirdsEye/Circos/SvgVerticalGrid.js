@@ -5,8 +5,6 @@ import GridList from "@material-ui/core/GridList"
 import GridListTile from "@material-ui/core/GridListTile"
 import GridListTileBar from "@material-ui/core/GridListTileBar"
 import ListSubheader from "@material-ui/core/ListSubheader"
-import IconButton from "@material-ui/core/IconButton"
-import InfoIcon from "@material-ui/icons/Info"
 import Typography from "@material-ui/core/Typography"
 
 import MiniCircos from "./MiniCircos"
@@ -46,9 +44,6 @@ const styles = theme => ({
     width: "100%",
     height: 480,
   },
-  icon: {
-    color: "rgba(255, 255, 255, 0.54)",
-  },
   subhead: {
     color: "white",
     fontSize: 20,
@@ -61,12 +56,8 @@ const SvgVerticalGrid = props => {
   const { classes } = props
   return (
     <div className={classes.root}>
-      <GridList cellHeight={200} cols={2} className={classes.gridList}>
-        <GridListTile
-          key="Subheader"
-          cols={2}
-          style={{ height: "auto" }}
-          className={classes.headerBar}>
+      <GridList cellHeight={200} cols={1} className={classes.gridList}>
+        <GridListTile style={{ height: "auto" }} className={classes.headerBar}>
           <ListSubheader className={classes.headerBarTitle} component="div">
             <Typography
               variant="headline"
@@ -92,11 +83,6 @@ const SvgVerticalGrid = props => {
                   root: classes.titleBar,
                   title: classes.title,
                 }}
-                actionIcon={
-                  <IconButton className={classes.icon}>
-                    <InfoIcon />
-                  </IconButton>
-                }
               />
             </center>
           </Link>
@@ -117,11 +103,6 @@ const SvgVerticalGrid = props => {
                   root: classes.titleBar,
                   title: classes.title,
                 }}
-                actionIcon={
-                  <IconButton className={classes.icon}>
-                    <InfoIcon />
-                  </IconButton>
-                }
               />
             </center>
           </Link>
@@ -143,11 +124,6 @@ const SvgVerticalGrid = props => {
                   root: classes.titleBar,
                   title: classes.title,
                 }}
-                actionIcon={
-                  <IconButton className={classes.icon}>
-                    <InfoIcon />
-                  </IconButton>
-                }
               />
             </center>
           </Link>
@@ -168,11 +144,6 @@ const SvgVerticalGrid = props => {
                   root: classes.titleBar,
                   title: classes.title,
                 }}
-                actionIcon={
-                  <IconButton className={classes.icon}>
-                    <InfoIcon />
-                  </IconButton>
-                }
               />
             </center>
           </Link>
@@ -193,11 +164,6 @@ const SvgVerticalGrid = props => {
                   root: classes.titleBar,
                   title: classes.title,
                 }}
-                actionIcon={
-                  <IconButton className={classes.icon}>
-                    <InfoIcon />
-                  </IconButton>
-                }
               />
             </center>
           </Link>
@@ -218,11 +184,6 @@ const SvgVerticalGrid = props => {
                   root: classes.titleBar,
                   title: classes.title,
                 }}
-                actionIcon={
-                  <IconButton className={classes.icon}>
-                    <InfoIcon />
-                  </IconButton>
-                }
               />
             </center>
           </Link>
