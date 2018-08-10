@@ -86,7 +86,7 @@ class CircosDisplay extends Component<Props, State> {
         description: description,
       })
     } catch (error) {
-      this.setState({ isFetching: false, error: error })
+      this.setState({ isFetching: false, error: error.message })
     }
   }
 
@@ -99,7 +99,31 @@ class CircosDisplay extends Component<Props, State> {
     const { value, chr, genes, description, error, isFetching } = this.state
 
     if (error) {
-      return <p>Sorry! There was an error loading the items. {error}</p>
+      return (
+        <div className={classes.root}>
+          <AppBar position="static">
+            <Tabs value={value} onChange={this.handleChange} centered>
+              <Tab label="Global" />
+              <Tab label="Comparative" />
+            </Tabs>
+          </AppBar>
+          {value === 0 && (
+            <TabContainer>
+              <center>
+                <p>
+                  <h4>Sorry! There was an error loading the items.</h4>
+                </p>
+                <p>{error}</p>
+              </center>
+            </TabContainer>
+          )}
+          {value === 1 && (
+            <TabContainer>
+              <center>Work in progress</center>
+            </TabContainer>
+          )}
+        </div>
+      )
     }
 
     if (isFetching) {
