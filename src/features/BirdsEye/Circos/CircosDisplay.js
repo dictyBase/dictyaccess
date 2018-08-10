@@ -123,10 +123,16 @@ class CircosDisplay extends Component<Props, State> {
                     <br />
                     <br />
                     <Skeleton count={9} />
+                    <br />
+                    <br />
+                    <Skeleton count={9} />
                   </SkeletonTheme>
                 </Grid>
                 <Grid item xs={12} md={12} lg={3}>
                   <SkeletonTheme color="#d1d1d1">
+                    <Skeleton count={9} />
+                    <br />
+                    <br />
                     <Skeleton count={9} />
                     <br />
                     <br />

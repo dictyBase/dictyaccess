@@ -27,7 +27,11 @@ const Routes = () => {
         component={BirdsEyeDashboard => <Redirect to="/birdseye/genemodels" />}
       />
       <Route exact path="/birdseye/:dataset" component={BirdsEyeDashboard} />
-      <Route exact path="/birdseye/:dataset/:id" component={CircosDisplay} />
+      <Route
+        exact
+        path="/birdseye/:dataset/:id"
+        render={({ location }) => <CircosDisplay key={location.pathname} />}
+      />
       <Route exact path="/genomes" component={GenomeDashboard} />
       <Route exact path="/curation" component={CurationDashboard} />
       <Route exact path="/analytics" component={AnalyticsDashboard} />

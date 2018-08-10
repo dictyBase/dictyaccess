@@ -115,13 +115,6 @@ class CircosGraph extends Component<Props> {
     myCircos.render()
   }
 
-  componentDidUpdate(prevProps) {
-    console.log("componentDidUpdate")
-    console.log("curr: ", this.props)
-    console.log("prev: ", prevProps)
-    window.location.reload()
-  }
-
   render() {
     const { match } = this.props
     return (
