@@ -4,7 +4,7 @@
  * This is a helper function to display the full name of chromosomes.
  */
 
-const chromosomeNameExtender = (id: string) => {
+const chrNameExtender = (id: string) => {
   switch (id) {
     case "chr1":
       return "Chromosome 1"
@@ -23,4 +23,4 @@ const chromosomeNameExtender = (id: string) => {
   }
 }
 
-export default chromosomeNameExtender
+export default chrNameExtender

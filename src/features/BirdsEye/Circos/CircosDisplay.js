@@ -9,6 +9,7 @@ import Typography from "@material-ui/core/Typography"
 
 import CircosGraph from "features/BirdsEye/Circos/CircosGraph"
 import chrNameMapper from "features/BirdsEye/Circos/utils/chrNameMapper"
+import chrNameExtender from "./utils/chrNameExtender"
 
 type tabProps = {
   children: any,
@@ -50,26 +51,38 @@ class CircosDisplay extends Component<Props, State> {
     chr: "",
     data: "",
     error: "",
+    description: "",
   }
 
   async componentDidMount() {
     const { match } = this.props
     // set url for fetching data
-    const chrUrl = `${process.env.REACT_APP_CIRCOS_SERVER}/chromosomes`
-    const genesUrl = `${process.env.REACT_APP_CIRCOS_SERVER}/genes`
+    const chrUrl =
+      "https://raw.githubusercontent.com/dictyBase/migration-data/master/dashboard/chromosomes.json"
+    const genesUrl =
+      "https://raw.githubusercontent.com/dictyBase/migration-data/master/dashboard/genes.json"
     try {
       const chrRes = await fetch(chrUrl)
       const chrJson = await chrRes.json()
       const geneRes = await fetch(genesUrl)
       const geneJson = await geneRes.json()
 
-      const chrData = chrJson.filter(
-        i => i.attributes.name === match.url.slice(-4),
+      const description = `This is a Circos display for ${chrNameExtender(
+        match.params.id,
+      )}. The blue genes represent negative strands, and the red genes represent positive strands.`
+
+      const chrData = chrJson.data.filter(
+        i => i.attributes.name === match.params.id,
       )
-      const geneData = geneJson.filter(
-        item => item.attributes.block_id === chrNameMapper(match.url.slice(-4)),
+      const geneData = geneJson.data.filter(
+        item => item.attributes.block_id === chrNameMapper(match.params.id),
       )
-      this.setState({ isFetching: false, chr: chrData[0], data: geneData })
+      this.setState({
+        isFetching: false,
+        chr: chrData[0],
+        data: geneData,
+        description: description,
+      })
     } catch (error) {
       this.setState({ isFetching: false, error: error })
     }
@@ -80,11 +93,11 @@ class CircosDisplay extends Component<Props, State> {
   }
 
   render() {
-    const { classes, description } = this.props
-    const { value, chr, data, error, isFetching } = this.state
+    const { classes } = this.props
+    const { value, chr, data, description, error, isFetching } = this.state
 
     if (error) {
-      return <p>Sorry! There was an error loading the items: {error.message}</p>
+      return <p>Sorry! There was an error loading the items. {error}</p>
     }
 
     if (isFetching) {

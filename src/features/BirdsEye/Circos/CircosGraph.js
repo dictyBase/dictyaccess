@@ -8,30 +8,8 @@ import Grid from "@material-ui/core/Grid"
 import LegendBox from "common/components/Legend/LegendBox"
 import LegendHeader from "common/components/Legend/LegendHeader"
 import LegendBody from "common/components/Legend/LegendBody"
-// import Dropdown from "common/components/Dropdown"
 import SvgVerticalGrid from "./SvgVerticalGrid"
-import chromosomeNameExtender from "./utils/chromosomeNameExtender"
-
-// const dropDownData = [
-//   {
-//     name: "Chr 1",
-//   },
-//   {
-//     name: "Chr 2",
-//   },
-//   {
-//     name: "Chr 3",
-//   },
-//   {
-//     name: "Chr 4",
-//   },
-//   {
-//     name: "Chr 5",
-//   },
-//   {
-//     name: "Chr 6",
-//   },
-// ]
+import chrNameExtender from "./utils/chrNameExtender"
 
 type Props = {
   /** Genes data */
@@ -40,6 +18,8 @@ type Props = {
   chr: Array<Object>,
   /** Legend description for the shown graph */
   description: string,
+  /** React Router's match object */
+  match: Object,
 }
 
 class CircosGraph extends Component<Props> {
@@ -146,7 +126,7 @@ class CircosGraph extends Component<Props> {
         <Grid container spacing={16}>
           <Grid item xs={12} md={12} lg={9}>
             <center>
-              <h1>{chromosomeNameExtender(match.url.slice(-4))}</h1>
+              <h1>{chrNameExtender(match.params.id)}</h1>
             </center>
           </Grid>
           <Grid item xs={12} md={12} lg={9}>
@@ -165,7 +145,6 @@ class CircosGraph extends Component<Props> {
             </center>
           </Grid>
           <Grid item xs={12} md={12} lg={3}>
-            {/* <Dropdown dropDownData={dropDownData} /> */}
             <LegendBox>
               <LegendHeader color="info" />
               <LegendBody>{this.props.description}</LegendBody>
