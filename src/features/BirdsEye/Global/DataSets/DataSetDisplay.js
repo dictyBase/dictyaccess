@@ -2,7 +2,7 @@
 import React from "react"
 import Grid from "@material-ui/core/Grid"
 
-import ImageGridDisplay from "common/components/ImageGridDisplay"
+import ChromosomeImageGridDisplay from "features/BirdsEye/Circos/ChromosomeImageGridDisplay"
 import Dropdown from "common/components/Dropdown"
 import { dropDownData } from "features/BirdsEye/Global/DataSets/DataSetDropdownMenu"
 
@@ -13,7 +13,7 @@ const DataSetDisplay = () => {
         <Dropdown dropDownData={dropDownData} />
       </Grid>
       <Grid item xs={10}>
-        <ImageGridDisplay />
+        <ChromosomeImageGridDisplay />
       </Grid>
     </Grid>
   )

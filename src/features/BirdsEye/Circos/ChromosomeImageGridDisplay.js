@@ -42,7 +42,7 @@ type Props = {
   classes: Object,
 }
 
-const ImageGridDisplay = (props: Props) => {
+const ChromosomeImageGridDisplay = (props: Props) => {
   const { classes } = props
 
   return (
@@ -173,4 +173,4 @@ const ImageGridDisplay = (props: Props) => {
   )
 }
 
-export default withStyles(styles)(ImageGridDisplay)
+export default withStyles(styles)(ChromosomeImageGridDisplay)
