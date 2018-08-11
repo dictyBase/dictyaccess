@@ -83,9 +83,9 @@ class CircosDisplay extends Component<Props, State> {
       const geneRes = await fetch(genesUrl)
       const geneJson = await geneRes.json()
 
-      const description = `This is a Circos display for ${chrNameExtender(
+      const description = `Circos visualization for canonical gene models of D.discoideum ${chrNameExtender(
         match.params.id,
-      )}. The blue genes represent negative strands, and the red genes represent positive strands.`
+      )}. The blue and red tracks represents genes from negative and positive strands respectively.`
 
       const chrData = chrJson.data.filter(
         i => i.attributes.name === match.params.id,
