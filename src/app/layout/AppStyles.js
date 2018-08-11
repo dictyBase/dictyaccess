@@ -21,6 +21,6 @@ export const Container = styled.div`
 export const MainContentStyle = styled.main`
   flex-grow: 1;
   background-color: #ced4da;
-  padding: 24px;
+  padding: 16px;
   margin-left: 0px;
 `
