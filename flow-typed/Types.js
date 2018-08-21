@@ -9,5 +9,7 @@ class process {
     REACT_APP_BASENAME: string,
     REACT_APP_NAVBAR_JSON: string,
     REACT_APP_FOOTER_JSON: string,
+    REACT_APP_CHROMOSOMES_JSON: string,
+    REACT_APP_GENES_JSON: string,
   }
 }

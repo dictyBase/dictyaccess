@@ -33,6 +33,14 @@ ENV REACT_APP_NAVBAR_JSON ${navbar_json:-https://raw.githubusercontent.com/dicty
 ARG footer_json
 ENV REACT_APP_FOOTER_JSON ${footer_json:-https://raw.githubusercontent.com/dictyBase/migration-data/master/footer/footer.json}
 
+# URL for chromosomes json
+ARG chromosomes_json
+ENV REACT_APP_CHROMOSOMES_JSON ${chromosomes_json:-https://raw.githubusercontent.com/dictyBase/migration-data/master/dashboard/chromosomes.json}
+
+# URL for genes json
+ARG genes_json
+ENV REACT_APP_GENES_JSON ${genes_json:-https://raw.githubusercontent.com/dictyBase/migration-data/master/dashboard/genes.json}
+
 # Setup client keys for third party auth
 ARG client_keys
 ENV CLIENT_KEYS ${client_keys:-https://raw.githubusercontent.com/dictybase-playground/client-keys/master/clientConfig.js}

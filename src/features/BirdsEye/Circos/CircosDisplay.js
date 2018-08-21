@@ -18,9 +18,10 @@ type tabProps = {
 }
 
 const TabContainer = (props: tabProps) => {
+  const { children } = props
   return (
     <Typography component="div" style={{ padding: 8 * 3 }}>
-      {props.children}
+      {children}
     </Typography>
   )
 }
@@ -35,8 +36,6 @@ const styles = (theme: Object) => ({
 type Props = {
   /** Material-UI classes */
   classes: Object,
-  /** React Router history */
-  history: Object,
   /** React Router match object */
   match: Object,
 }
@@ -73,10 +72,8 @@ class CircosDisplay extends Component<Props, State> {
   async componentDidMount() {
     const { match } = this.props
     // set url for fetching data
-    const chrUrl =
-      "https://raw.githubusercontent.com/dictyBase/migration-data/master/dashboard/chromosomes.json"
-    const genesUrl =
-      "https://raw.githubusercontent.com/dictyBase/migration-data/master/dashboard/genes.json"
+    const chrUrl = process.env.REACT_APP_CHROMOSOMES_JSON
+    const genesUrl = process.env.REACT_APP_GENES_JSON
     try {
       const chrRes = await fetch(chrUrl)
       const chrJson = await chrRes.json()
@@ -97,7 +94,7 @@ class CircosDisplay extends Component<Props, State> {
         isFetching: false,
         chr: chrData[0],
         genes: geneData,
-        description: description,
+        description,
       })
     } catch (error) {
       this.setState({ isFetching: false, error: error.message })
