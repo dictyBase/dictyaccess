@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware } from "redux"
 import thunk from "redux-thunk"
 import { connectRouter, routerMiddleware } from "connected-react-router"
+import { composeWithDevTools } from "redux-devtools-extension/developmentOnly"
 import { manageStateStorage } from "dicty-components-redux"
 import rootReducer from "app/reducers/rootReducer"
 import history from "common/utils/routerHistory"
@@ -26,17 +27,21 @@ const permArg = {
   namespace: "auth",
 }
 
+const enhancer = composeWithDevTools(
+  applyMiddleware(
+    routerMiddleware(history),
+    thunk,
+    manageStateStorage(authArg),
+    manageStateStorage(roleArg),
+    manageStateStorage(permArg),
+  ),
+)
+
 const configureStore = initialState => {
   const store = createStore(
     connectRouter(history)(rootReducer),
     initialState,
-    applyMiddleware(
-      routerMiddleware(history),
-      thunk,
-      manageStateStorage(authArg),
-      manageStateStorage(roleArg),
-      manageStateStorage(permArg),
-    ),
+    enhancer,
   )
   return store
 }

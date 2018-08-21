@@ -1,7 +1,7 @@
 // @flow
 import { Component } from "react"
 import { connect } from "react-redux"
-import { oAuthLogin } from "features/Authentication/AuthActions"
+import { oAuthLogin } from "app/actions/authActions"
 
 type Props = {
   oAuthLogin: Function,
@@ -16,12 +16,15 @@ class OauthSignHandler extends Component<Props> {
     }
     this.props.oAuthLogin(event.data)
   }
+
   componentDidMount() {
     window.addEventListener("message", this.onMessage, false)
   }
+
   componentWillUnmount() {
     window.removeEventListener("message", this.onMessage)
   }
+
   render() {
     return null
   }

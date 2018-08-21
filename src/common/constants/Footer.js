@@ -1,88 +1,147 @@
-// @flow
-export const FooterLinks = [
+const footerItems = [
   [
     {
-      header: { description: "Genomes Home", link: "/genomes" },
-      items: []
-    },
-    {
-      header: { description: "Stock Center Home", link: "/stockcenter" },
-      items: []
-    }
-  ],
-  [
-    {
-      header: { description: "Tools Home", link: "/tools" },
-      items: [{ description: "New Genome Browser", link: "/tools/jbrowse" }]
-    }
-  ],
-  [
-    {
-      header: { description: "Explore Home", link: "/explore" },
+      header: { description: "Genomes" },
       items: [
-        { description: "Dicty Art", link: "/explore/art" },
-        { description: "Gallery", link: "/explore/gallery" },
-        { description: "Genome Resources", link: "/explore/resources" },
-        { description: "Genome Statistics", link: "/explore/statistics" },
-        { description: "Learn About Dicty", link: "/explore/learn" },
-        { description: "Teaching Protocols", link: "/explore/teach" },
-        { description: "Useful Links", link: "/explore/links" }
-      ]
-    }
-  ],
-  [
-    {
-      header: { description: "Research Home", link: "/research" },
-      items: [
-        { description: "Anatomy Ontology", link: "/research/ontology" },
-        { description: "Codon Bias Table", link: "/research/codon" },
+        { link: "/", description: "Dictyostelium discoideum" },
         {
-          description: "Nomenclature Guidelines",
-          link: "/research/nomenclature"
+          link: "http://genomes.dictybase.org/purpureum",
+          description: "Dictyostelium purpureum",
         },
-        { description: "Phenotyping", link: "/research/phenotyping" },
-        { description: "Techniques", link: "/research/techniques" }
-      ]
-    }
+        {
+          link: "http://genomes.dictybase.org/fasciculatum",
+          description: "Dictyostelium fasciculatum",
+        },
+        {
+          link: "http://genomes.dictybase.org/pallidum",
+          description: "Polysphondylium pallium",
+        },
+      ],
+    },
   ],
   [
     {
-      header: { description: "Community Home", link: "/community" },
+      header: { description: "Tools" },
       items: [
-        { description: "Cite Us", link: "/citation" },
+        {
+          description: "Genome Browser",
+          link:
+            "http://dictybase.org/tools/jbrowse/?data=data/jbrowse/discoideum&loc=6:1..50011&tracks=reference,gene,transcript",
+        },
+        {
+          description: "Dashboard",
+          link: "/dictyaccess",
+        },
+      ],
+    },
+  ],
+  [
+    {
+      header: { description: "Explore" },
+      items: [
+        { link: "/explore/art", description: "Dicty Art" },
+        { link: "/explore/gallery", description: "Gallery" },
+        {
+          link: "/explore/learn",
+          description: "Learn About Dicty",
+        },
+        {
+          link: "/explore/teach",
+          description: "Teaching Protocols",
+        },
+        { link: "/explore/links", description: "Useful Links" },
+      ],
+    },
+  ],
+  [
+    {
+      header: { description: "Research" },
+      items: [
+        { link: "/research/ontology", description: "Anatomy Ontology" },
+        { link: "/research/codon", description: "Codon Bias Table" },
+        {
+          link: "/research/nomenclature",
+          description: "Nomenclature Guidelines",
+        },
+        { link: "/research/phenotyping", description: "Phenotyping" },
+        { link: "/research/techniques", description: "Techniques" },
+      ],
+    },
+  ],
+  [
+    {
+      header: { description: "Dicty Stock Center" },
+      items: [
+        {
+          description: "Stock Center Home",
+          link: "/stockcenter",
+        },
+        {
+          description: "Order Information",
+          link: "/stockcenter/information/order",
+        },
+        {
+          description: "FAQ",
+          link: "/stockcenter/information/faq",
+        },
+      ],
+    },
+  ],
+  [
+    {
+      header: { description: "Community" },
+      items: [
+        {
+          description: "Cite Us",
+          link: "/community/citation",
+        },
         {
           description: "Dicty Annual Conferences",
-          link: "/community/conference"
+          link: "/community/conference",
         },
-        { description: "Dicty Email Forum", link: "/community/listserv" },
-        { description: "Dicty Labs", link: "/community/labs" },
-        { description: "History", link: "/community/history" },
-        { description: "Jobs", link: "/community/jobs" },
-        { description: "Upcoming Meetings", link: "/community/meetings" }
-      ]
-    }
+        {
+          description: "Dicty Email Forum",
+          link: "/community/listserv",
+        },
+        {
+          description: "Dicty Labs",
+          link: "/community/labs",
+        },
+        {
+          description: "History",
+          link: "/community/history",
+        },
+        {
+          description: "Jobs",
+          link: "/community/jobs",
+        },
+        {
+          description: "Upcoming Meetings",
+          link: "/community/meetings",
+        },
+      ],
+    },
   ],
   [
     {
-      header: { description: "Please Cite:", link: "#" },
+      header: { description: "Please Cite" },
       items: [
-        {
-          description: "dictyBase",
-          link: "http://www.ncbi.nlm.nih.gov/pubmed/23172289"
-        },
+        { description: "dictyBase", link: "" },
         {
           description: "Dicty Stock Center",
-          link: "http://www.ncbi.nlm.nih.gov/pubmed/23494302"
-        }
-      ]
+          link: "/stockcenter",
+        },
+      ],
     },
     {
-      header: { description: "Supported By:", link: "#" },
+      header: { description: "Supported By" },
       items: [
         { description: "NIH", link: "https://www.nih.gov/" },
         { description: "GMOD", link: "http://gmod.org/wiki/Main_Page" },
-        { description: "Gene Ontology", link: "http://geneontology.org/" }
-      ]
-    }
-  ]
+        { description: "Gene Ontology", link: "http://www.geneontology.org/" },
+      ],
+    },
+  ],
 ]
+
+export default footerItems
