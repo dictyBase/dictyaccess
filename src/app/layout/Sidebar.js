@@ -84,7 +84,7 @@ const Sidebar = (props: Props) => {
             <FingerprintIcon />
           </ListItemIcon>
           <StyledLink
-            to="/curation"
+            to="/annotations"
             activeStyle={{
               fontWeight: "bold",
               color: "rgb(183, 28, 28)",
@@ -123,7 +123,7 @@ const Sidebar = (props: Props) => {
             <TrendingUpIcon />
           </ListItemIcon>
           <StyledLink
-            to="/dicty-stock-center"
+            to="/stockcenter"
             activeStyle={{
               fontWeight: "bold",
               color: "#4f5aae",

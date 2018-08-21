@@ -1,27 +1,27 @@
 // @flow
 import React from "react"
 import Grid from "@material-ui/core/Grid"
-import InfoBox from "common/components/InfoBox"
-import Orders from "features/StockCenter/Charts/Orders"
-import StrainsList from "features/StockCenter/Tables/StrainsList"
-import PlasmidsList from "features/StockCenter/Tables/PlasmidsList"
-import LatestStrains from "features/StockCenter/Lists/LatestStrains"
-import LatestPlasmids from "features/StockCenter/Lists/LatestPlasmids"
-import Poll from "@material-ui/icons/Poll"
-import Public from "@material-ui/icons/Public"
-import Whatshot from "@material-ui/icons/Whatshot"
-import LibraryBooks from "@material-ui/icons/LibraryBooks"
-import deepPurple from "@material-ui/core/colors/deepPurple"
-import data from "common/data/data"
+import ComingSoon from "features/ComingSoon"
+// import InfoBox from "common/components/InfoBox"
+// import Orders from "features/StockCenter/Charts/Orders"
+// import StrainsList from "features/StockCenter/Tables/StrainsList"
+// import PlasmidsList from "features/StockCenter/Tables/PlasmidsList"
+// import LatestStrains from "features/StockCenter/Lists/LatestStrains"
+// import LatestPlasmids from "features/StockCenter/Lists/LatestPlasmids"
+// import Poll from "@material-ui/icons/Poll"
+// import Public from "@material-ui/icons/Public"
+// import Whatshot from "@material-ui/icons/Whatshot"
+// import LibraryBooks from "@material-ui/icons/LibraryBooks"
+// import deepPurple from "@material-ui/core/colors/deepPurple"
+// import data from "common/data/data"
 
 /**
  * This is the layout component for the Stock Center dashboard. It uses Material-UI's grid system for width and responsiveness.
  */
 
-const DscDashboard = () => {
-  return (
-    <Grid container spacing={16}>
-      <Grid item xs={12} sm={6} lg={3}>
+const DscDashboard = () => (
+  <Grid container spacing={16}>
+    {/* <Grid item xs={12} sm={6} lg={3}>
         <InfoBox
           Icon={Poll}
           iconBackgroundColor={deepPurple[900]}
@@ -77,9 +77,11 @@ const DscDashboard = () => {
       </Grid>
       <Grid item xs={12} sm={6} md={6} lg={6}>
         <Orders data={data.charts.orders} color={deepPurple[300]} />
-      </Grid>
+      </Grid> */}
+    <Grid item xs={12}>
+      <ComingSoon />
     </Grid>
-  )
-}
+  </Grid>
+)
 
 export default DscDashboard

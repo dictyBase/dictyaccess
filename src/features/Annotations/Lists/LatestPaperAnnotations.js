@@ -10,7 +10,7 @@ type Props = {
   /** The data to pass into this table */
   data: Array<string>,
   /** The Material-UI color palette selected */
-  color: Object
+  color: Object,
 }
 
 /**

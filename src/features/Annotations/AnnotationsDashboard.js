@@ -1,21 +1,21 @@
 // @flow
 import React from "react"
 import Grid from "@material-ui/core/Grid"
-import CuratedPapers from "features/Curation/Charts/CuratedPapers"
-import PapersByYear from "features/Curation/Charts/PapersByYear"
-import LatestNews from "features/Curation/News/LatestNews"
-import LatestPaperAnnotations from "features/Curation/Lists/LatestPaperAnnotations"
-import red from "@material-ui/core/colors/red"
-import data from "common/data/data"
+import ComingSoon from "features/ComingSoon"
+// import CuratedPapers from "features/Curation/Charts/CuratedPapers"
+// import PapersByYear from "features/Curation/Charts/PapersByYear"
+// import LatestNews from "features/Curation/News/LatestNews"
+// import LatestPaperAnnotations from "features/Curation/Lists/LatestPaperAnnotations"
+// import red from "@material-ui/core/colors/red"
+// import data from "common/data/data"
 
 /**
  * This is the layout component for the Curation dashboard. It uses Material-UI's grid system for width and responsiveness.
  */
 
-const CurationDashboard = () => {
-  return (
-    <Grid container spacing={16}>
-      <Grid item xs={12} sm={6} lg={6}>
+const AnnotationsDashboard = () => (
+  <Grid container spacing={16}>
+    {/* <Grid item xs={12} sm={6} lg={6}>
         <CuratedPapers data={data.charts.orders} color={red[600]} />
       </Grid>
       <Grid item xs={12} sm={6} lg={6}>
@@ -29,9 +29,11 @@ const CurationDashboard = () => {
           data={data.annotations.papers}
           color={red[800]}
         />
-      </Grid>
+      </Grid> */}
+    <Grid item xs={12}>
+      <ComingSoon />
     </Grid>
-  )
-}
+  </Grid>
+)
 
-export default CurationDashboard
+export default AnnotationsDashboard

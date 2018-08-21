@@ -3,14 +3,10 @@ import { Link } from "react-router-dom"
 import Button from "@material-ui/core/Button"
 import { PaperStyle } from "common/styles/PageStyles"
 
-/**
- * This is a generic error page for broken routes.
- */
-
-const PageNotFound = () => (
+const ComingSoon = () => (
   <PaperStyle>
-    <h1>Oops...</h1>
-    <h3>This page does not exist.</h3>
+    <h1>Coming Soon!</h1>
+    <h3>We are working hard to bring real data to this page.</h3>
 
     <Link to="/">
       <Button color="primary">Back to Dashboard</Button>
@@ -18,4 +14,4 @@ const PageNotFound = () => (
   </PaperStyle>
 )
 
-export default PageNotFound
+export default ComingSoon

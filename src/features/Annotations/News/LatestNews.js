@@ -6,7 +6,7 @@ type Props = {
   /** The news data to be displayed */
   data: Array<Object>,
   /** The Material-UI color palette selected */
-  color: Object
+  color: Object,
 }
 
 /**

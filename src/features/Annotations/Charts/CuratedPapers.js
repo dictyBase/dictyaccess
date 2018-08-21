@@ -8,40 +8,40 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-  Legend
+  Legend,
 } from "recharts"
 import {
   PaperStyle,
   HeaderStyle,
-  ChartWrapper
+  ChartWrapper,
 } from "common/styles/ChartStyles"
 
 type Props = {
   /** Data array for chart */
   data: Array<Object>,
   /** The Material-UI color palette selected */
-  color: Object
+  color: Object,
 }
 
 /**
- * This is a bar chart that shows the number of papers published by year since 1990.
+ * This is a bar chart that shows the number of curated papers by month.
  */
 
-const PapersByYear = (props: Props) => {
+const CuratedPapers = (props: Props) => {
   return (
     <PaperStyle>
       <HeaderStyle style={{ backgroundColor: props.color }} variant="title">
-        Number of Papers Published By Year
+        Number of Curated Papers
       </HeaderStyle>
       <ChartWrapper>
-        <ResponsiveContainer width="100%">
+        <ResponsiveContainer>
           <BarChart width={730} height={250} data={props.data}>
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="year" />
+            <XAxis dataKey="month" />
             <YAxis />
             <Tooltip />
             <Legend />
-            <Bar dataKey="count" fill="#E57373" />
+            <Bar dataKey="orders" fill="#E57373" />
           </BarChart>
         </ResponsiveContainer>
       </ChartWrapper>
@@ -49,4 +49,4 @@ const PapersByYear = (props: Props) => {
   )
 }
 
-export default PapersByYear
+export default CuratedPapers
