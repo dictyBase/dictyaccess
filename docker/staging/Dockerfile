@@ -43,7 +43,7 @@ ENV REACT_APP_GENES_JSON ${genes_json:-https://raw.githubusercontent.com/dictyBa
 
 # Setup client keys for third party auth
 ARG client_keys
-ENV CLIENT_KEYS ${client_keys:-https://raw.githubusercontent.com/dictybase-playground/client-keys/master/clientConfig.js}
+ENV CLIENT_KEYS ${client_keys:-https://raw.githubusercontent.com/dictybase-playground/client-keys/1.0.0/clientConfig.js}
 
 # Create app directory
 RUN mkdir -p /usr/src/app
