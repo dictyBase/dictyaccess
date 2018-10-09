@@ -1,9 +1,12 @@
 // @flow
 import React, { Component } from "react"
+import { connect } from "react-redux"
 import Grid from "@material-ui/core/Grid"
 import { Login as LoginContainer } from "dicty-components-login"
-import OauthSignHandler from "features/Authentication/OauthSignHandler"
+import ErrorNotification from "./ErrorNotification"
+import OauthSignHandler from "./OauthSignHandler"
 import oauthConfig from "common/utils/oauthConfig"
+import type { MapStateToProps } from "react-redux"
 
 // list of buttons to display
 const buttons = ["orcid", "google", "linkedin"]
@@ -12,9 +15,7 @@ const buttons = ["orcid", "google", "linkedin"]
 const theme = {
   overrides: {
     MuiButton: {
-      // name of the stylesheet
       root: {
-        // name of the rule
         borderRadius: 3,
         color: "white",
         width: "80%",
@@ -26,7 +27,12 @@ const theme = {
   },
 }
 
-type Props = {}
+type Props = {
+  /** Object passed by React-Router */
+  location: Object,
+  /** Auth part of state */
+  auth: Object,
+}
 
 /**
  * Component that displays all of the social login buttons with click handlers for each one
@@ -56,11 +62,20 @@ class Login extends Component<Props> {
     )
   }
   render() {
+    const { auth } = this.props
+    const { state = {} } = this.props.location
+    const { error } = state
     return (
       <Grid container justify="center">
-        <Grid item xs={9} sm={9} md={6} lg={6}>
+        <Grid item>
+          <center>
+            <h1>Log in</h1>
+          </center>
+          {error && <ErrorNotification error={error} />}
+          {auth.error && <ErrorNotification error={auth.error} />}
           <Grid container justify="center">
-            <Grid item xs={9}>
+            <Grid item xs={2} />
+            <Grid item xs={10} style={{ marginBottom: "20px" }}>
               <LoginContainer
                 buttons={buttons}
                 theme={theme}
@@ -75,4 +90,6 @@ class Login extends Component<Props> {
   }
 }
 
-export default Login
+const mapStateToProps: MapStateToProps<*, *, *> = ({ auth }) => ({ auth })
+
+export default connect(mapStateToProps)(Login)

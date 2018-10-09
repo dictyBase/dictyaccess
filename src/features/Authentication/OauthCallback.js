@@ -7,6 +7,19 @@ type Props = {
   match: Object,
 }
 
+// helper function to set redirect URL with basename if included
+const redirectUrlGenerator = (basename: string) => {
+  let url
+  if (basename === "" || basename === "/") {
+    url = `${window.location.origin}`
+  } else if (basename.charAt(0) === "/") {
+    url = `${window.location.origin}${basename}`
+  } else {
+    url = `${window.location.origin}/${basename}`
+  }
+  return url
+}
+
 /**
  * Callback that transfers the user to the login system
  */
@@ -17,7 +30,9 @@ export default class OauthCallback extends Component<Props> {
       {
         query: this.props.location.search,
         provider: this.props.match.params.provider,
-        url: `${window.location.origin}${this.props.location.pathname}`,
+        url: `${redirectUrlGenerator(process.env.REACT_APP_BASENAME)}${
+          this.props.location.pathname
+        }`,
       },
       window.location,
     )
@@ -26,7 +41,7 @@ export default class OauthCallback extends Component<Props> {
   render() {
     return (
       <Grid container justify="center">
-        <Grid item>
+        <Grid item xs={12}>
           <h1>Transferring to login system ........</h1>
         </Grid>
       </Grid>

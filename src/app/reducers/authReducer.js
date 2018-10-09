@@ -41,7 +41,7 @@ const authReducer = (state: Object = {}, action: Object) => {
     case LOGIN_FAILURE:
       return {
         ...state,
-        isFetching: action.payload.isFetching,
+        isFetching: false,
         isAuthenticated: false,
         error: action.payload.error,
         provider: null,
@@ -49,12 +49,12 @@ const authReducer = (state: Object = {}, action: Object) => {
     case LOGOUT_REQUEST:
       return {
         ...state,
-        isFetching: action.payload.isFetching,
+        isFetching: true,
       }
     case LOGOUT_SUCCESS:
       return {
         ...state,
-        isFetching: action.payload.isFetching,
+        isFetching: false,
         isAuthenticated: false,
         provider: null,
         user: null,
@@ -110,7 +110,7 @@ const authReducer = (state: Object = {}, action: Object) => {
         fetchedUserData: {
           ...state.fetchedUserData,
           // merge roles into one array, regardless if they are one or many
-          roles: [].concat(action.payload.json.data),
+          roles: [].concat(action.payload.roles.data),
         },
       }
     case FETCH_NON_AUTH_ROLE_FAILURE:
@@ -131,7 +131,7 @@ const authReducer = (state: Object = {}, action: Object) => {
         user: {
           ...state.user,
           // merge permissions into one array, regardless if they are one or many
-          permissions: [].concat(action.payload.json.data),
+          permissions: [].concat(action.payload.permissions.data),
         },
       }
     case FETCH_PERMISSION_FAILURE:

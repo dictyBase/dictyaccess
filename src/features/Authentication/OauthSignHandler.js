@@ -4,8 +4,11 @@ import { connect } from "react-redux"
 import { oAuthLogin } from "app/actions/authActions"
 
 type Props = {
+  /** Function that handles the oAuth login process */
   oAuthLogin: Function,
 }
+
+/** Sign in handler for the oAuth process */
 
 class OauthSignHandler extends Component<Props> {
   onMessage = event => {
@@ -16,15 +19,12 @@ class OauthSignHandler extends Component<Props> {
     }
     this.props.oAuthLogin(event.data)
   }
-
   componentDidMount() {
     window.addEventListener("message", this.onMessage, false)
   }
-
   componentWillUnmount() {
     window.removeEventListener("message", this.onMessage)
   }
-
   render() {
     return null
   }
