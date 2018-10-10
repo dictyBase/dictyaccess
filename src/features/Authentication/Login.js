@@ -1,6 +1,7 @@
 // @flow
 import React, { Component } from "react"
 import { connect } from "react-redux"
+import { withStyles } from "@material-ui/core/styles"
 import Grid from "@material-ui/core/Grid"
 import { Login as LoginContainer } from "dicty-components-login"
 import ErrorNotification from "./ErrorNotification"
@@ -26,11 +27,25 @@ const theme = {
   },
 }
 
+const styles = theme => ({
+  root: {
+    flexGrow: 1,
+    backgroundColor: theme.palette.background.paper,
+    borderRadius: 2,
+    paddingTop: 16,
+  },
+  login: {
+    marginBottom: "40px",
+  },
+})
+
 type Props = {
   /** Object passed by React-Router */
   location: Object,
   /** Auth part of state */
   auth: Object,
+  /** Material-UI styling */
+  classes: Object,
 }
 
 /**
@@ -61,12 +76,12 @@ class Login extends Component<Props> {
     )
   }
   render() {
-    const { auth } = this.props
+    const { auth, classes } = this.props
     const { state = {} } = this.props.location
     const { error } = state
     return (
       <Grid container justify="center">
-        <Grid item>
+        <Grid item xs={10} lg={6} className={classes.root}>
           <center>
             <h1>Log in</h1>
           </center>
@@ -74,7 +89,7 @@ class Login extends Component<Props> {
           {auth.error && <ErrorNotification error={auth.error} />}
           <Grid container justify="center">
             <Grid item xs={2} />
-            <Grid item xs={10} style={{ marginBottom: "20px" }}>
+            <Grid item xs={10} className={classes.login}>
               <LoginContainer
                 buttons={buttons}
                 theme={theme}
@@ -91,4 +106,4 @@ class Login extends Component<Props> {
 
 const mapStateToProps = ({ auth }) => ({ auth })
 
-export default connect(mapStateToProps)(Login)
+export default connect(mapStateToProps)(withStyles(styles)(Login))
