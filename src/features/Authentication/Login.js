@@ -6,7 +6,6 @@ import { Login as LoginContainer } from "dicty-components-login"
 import ErrorNotification from "./ErrorNotification"
 import OauthSignHandler from "./OauthSignHandler"
 import oauthConfig from "common/utils/oauthConfig"
-import type { MapStateToProps } from "react-redux"
 
 // list of buttons to display
 const buttons = ["orcid", "google", "linkedin"]
@@ -90,6 +89,6 @@ class Login extends Component<Props> {
   }
 }
 
-const mapStateToProps: MapStateToProps<*, *, *> = ({ auth }) => ({ auth })
+const mapStateToProps = ({ auth }) => ({ auth })
 
 export default connect(mapStateToProps)(Login)
