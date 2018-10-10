@@ -99,9 +99,9 @@ export const legendHeaderStyle = {
   primaryCardHeader,
 }
 
-export const legendBodyStyle = {
+export const legendBodyStyle = theme => ({
   cardBody: {
     padding: "0.9375rem 1.875rem",
     flex: "1 1 auto",
   },
-}
+})

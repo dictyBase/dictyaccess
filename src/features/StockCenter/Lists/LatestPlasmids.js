@@ -6,7 +6,7 @@ import ListItem from "@material-ui/core/ListItem"
 import ListItemText from "@material-ui/core/ListItemText"
 import Paper from "@material-ui/core/Paper"
 import Typography from "@material-ui/core/Typography"
-import { ListStyles as styles } from "common/styles/styles"
+import { ListStyles as styles } from "common/styles/ListStyles"
 
 type Props = {
   /** The data to pass into this table */

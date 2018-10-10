@@ -11,7 +11,7 @@ import { renderCustomizedLabel } from "common/utils/renderCustomizedLabel"
 import { withStyles } from "@material-ui/core/styles"
 import Paper from "@material-ui/core/Paper"
 import Typography from "@material-ui/core/Typography"
-import { ChartStyles as styles } from "common/styles/styles"
+import { ChartStyles as styles } from "common/styles/ChartStyles"
 
 type Props = {
   /** Data array for chart */

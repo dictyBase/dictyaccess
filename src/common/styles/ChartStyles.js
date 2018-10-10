@@ -1,3 +1,4 @@
+// default styles used for charts
 export const ChartStyles = theme => ({
   chart: {
     height: "250px",
@@ -15,13 +16,5 @@ export const ChartStyles = theme => ({
   paper: {
     backgroundColor: "#fff",
     height: "100%",
-  },
-})
-
-export const ListStyles = theme => ({
-  header: {
-    fontSize: "20px",
-    color: "#fff",
-    padding: "10px",
   },
 })
