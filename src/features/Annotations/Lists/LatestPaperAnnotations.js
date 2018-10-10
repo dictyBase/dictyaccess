@@ -6,14 +6,7 @@ import ListItem from "@material-ui/core/ListItem"
 import ListItemText from "@material-ui/core/ListItemText"
 import Paper from "@material-ui/core/Paper"
 import Typography from "@material-ui/core/Typography"
-
-const styles = theme => ({
-  header: {
-    fontSize: "20px",
-    color: "#fff",
-    padding: "10px",
-  },
-})
+import { ListStyles as styles } from "common/styles/styles"
 
 type Props = {
   /** The data to pass into this table */

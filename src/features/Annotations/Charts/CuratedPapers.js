@@ -10,17 +10,18 @@ import {
   Tooltip,
   Legend,
 } from "recharts"
-import {
-  PaperStyle,
-  HeaderStyle,
-  ChartWrapper,
-} from "common/styles/ChartStyles"
+import { withStyles } from "@material-ui/core/styles"
+import Paper from "@material-ui/core/Paper"
+import Typography from "@material-ui/core/Typography"
+import { ChartStyles as styles } from "common/styles/styles"
 
 type Props = {
   /** Data array for chart */
   data: Array<Object>,
   /** The Material-UI color palette selected */
   color: Object,
+  /** Material-UI styling */
+  classes: Object,
 }
 
 /**
@@ -28,14 +29,18 @@ type Props = {
  */
 
 const CuratedPapers = (props: Props) => {
+  const { color, classes, data } = props
   return (
-    <PaperStyle>
-      <HeaderStyle style={{ backgroundColor: props.color }} variant="title">
+    <Paper className={classes.paper}>
+      <Typography
+        className={classes.header}
+        style={{ backgroundColor: color }}
+        variant="title">
         Number of Curated Papers
-      </HeaderStyle>
-      <ChartWrapper>
+      </Typography>
+      <div className={classes.chart}>
         <ResponsiveContainer>
-          <BarChart width={730} height={250} data={props.data}>
+          <BarChart width={730} height={250} data={data}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="month" />
             <YAxis />
@@ -44,9 +49,9 @@ const CuratedPapers = (props: Props) => {
             <Bar dataKey="orders" fill="#E57373" />
           </BarChart>
         </ResponsiveContainer>
-      </ChartWrapper>
-    </PaperStyle>
+      </div>
+    </Paper>
   )
 }
 
-export default CuratedPapers
+export default withStyles(styles)(CuratedPapers)

@@ -4,7 +4,6 @@ import Grid from "@material-ui/core/Grid"
 import ComingSoon from "features/ComingSoon"
 import CuratedPapers from "./Charts/CuratedPapers"
 import PapersByYear from "./Charts/PapersByYear"
-import LatestNews from "./News/LatestNews"
 import LatestPaperAnnotations from "./Lists/LatestPaperAnnotations"
 import red from "@material-ui/core/colors/red"
 import data from "common/data/data"
@@ -20,9 +19,6 @@ const AnnotationsDashboard = () => (
     </Grid>
     <Grid item xs={12} sm={6} lg={6}>
       <PapersByYear data={data.charts.papersByYear} color={red[700]} />
-    </Grid>
-    <Grid item xs={12} sm={8} lg={8}>
-      <LatestNews data={data.news} color={red[900]} />
     </Grid>
     <Grid item xs={12} sm={4} lg={4}>
       <LatestPaperAnnotations data={data.annotations.papers} color={red[800]} />

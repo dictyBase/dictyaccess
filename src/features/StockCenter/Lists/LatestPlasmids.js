@@ -1,16 +1,20 @@
 // @flow
 import React from "react"
+import { withStyles } from "@material-ui/core/styles"
 import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 import ListItemText from "@material-ui/core/ListItemText"
 import Paper from "@material-ui/core/Paper"
-import { HeaderStyle } from "common/styles/ListStyles"
+import Typography from "@material-ui/core/Typography"
+import { ListStyles as styles } from "common/styles/styles"
 
 type Props = {
   /** The data to pass into this table */
   data: Array<Object>,
   /** The Material-UI color palette selected */
-  color: Object
+  color: Object,
+  /** Material-UI styling */
+  classes: Object,
 }
 
 /**
@@ -18,13 +22,17 @@ type Props = {
  */
 
 const LatestPlasmids = (props: Props) => {
+  const { color, data, classes } = props
   return (
     <Paper>
-      <HeaderStyle style={{ backgroundColor: props.color }} variant="title">
+      <Typography
+        className={classes.header}
+        style={{ backgroundColor: color }}
+        variant="title">
         Latest Plasmids
-      </HeaderStyle>
+      </Typography>
       <List>
-        {props.data.map(item => (
+        {data.map(item => (
           <ListItem key={item.id}>
             <ListItemText primary={item.id} />
           </ListItem>
@@ -34,4 +42,4 @@ const LatestPlasmids = (props: Props) => {
   )
 }
 
-export default LatestPlasmids
+export default withStyles(styles)(LatestPlasmids)

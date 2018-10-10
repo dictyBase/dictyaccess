@@ -8,18 +8,18 @@ import ListItemText from "@material-ui/core/ListItemText"
 import ListItemIcon from "@material-ui/core/ListItemIcon"
 import Avatar from "@material-ui/core/Avatar"
 import { renderCustomizedLabel } from "common/utils/renderCustomizedLabel"
-import {
-  PaperStyle,
-  HeaderStyle,
-  ChartWrapper,
-  LegendStyle
-} from "common/styles/ChartStyles"
+import { withStyles } from "@material-ui/core/styles"
+import Paper from "@material-ui/core/Paper"
+import Typography from "@material-ui/core/Typography"
+import { ChartStyles as styles } from "common/styles/styles"
 
 type Props = {
-  /** Data array for pie chart */
+  /** Data array for chart */
   data: Array<Object>,
   /** The Material-UI color palette selected */
-  color: Object
+  color: Object,
+  /** Material-UI styling */
+  classes: Object,
 }
 
 /**
@@ -27,14 +27,18 @@ type Props = {
  */
 
 const BrowserUsage = (props: Props) => {
+  const { color, classes, data } = props
   return (
-    <PaperStyle>
-      <HeaderStyle style={{ backgroundColor: props.color }} variant="title">
+    <Paper className={classes.paper}>
+      <Typography
+        className={classes.header}
+        style={{ backgroundColor: color }}
+        variant="title">
         Browser Usage
-      </HeaderStyle>
+      </Typography>
       <Grid container>
         <Grid item xs={12} sm={7} md={7} lg={7}>
-          <ChartWrapper>
+          <div className={classes.chart}>
             <ResponsiveContainer>
               <PieChart>
                 <Pie
@@ -52,12 +56,12 @@ const BrowserUsage = (props: Props) => {
                 </Pie>
               </PieChart>
             </ResponsiveContainer>
-          </ChartWrapper>
+          </div>
         </Grid>
         <Grid item xs={12} sm={5} md={5} lg={5}>
-          <LegendStyle>
+          <div className={classes.legend}>
             <List>
-              {props.data.map(item => (
+              {data.map(item => (
                 <ListItem key={item.name}>
                   <ListItemIcon style={{ backgroundColor: item.color }}>
                     <Avatar>{item.icon}</Avatar>
@@ -66,11 +70,11 @@ const BrowserUsage = (props: Props) => {
                 </ListItem>
               ))}
             </List>
-          </LegendStyle>
+          </div>
         </Grid>
       </Grid>
-    </PaperStyle>
+    </Paper>
   )
 }
 
-export default BrowserUsage
+export default withStyles(styles)(BrowserUsage)
