@@ -1,17 +1,35 @@
 // @flow
 import React from "react"
+import { withStyles } from "@material-ui/core/styles"
+import Table from "@material-ui/core/Table"
 import TableBody from "@material-ui/core/TableBody"
 import TableCell from "@material-ui/core/TableCell"
 import TableHead from "@material-ui/core/TableHead"
 import TableRow from "@material-ui/core/TableRow"
 import Paper from "@material-ui/core/Paper"
-import { HeaderStyle, ResponsiveTable } from "common/styles/TableStyles"
+import Typography from "@material-ui/core/Typography"
+
+const styles = theme => ({
+  header: {
+    fontSize: "20px",
+    color: "#fff",
+    padding: "10px",
+  },
+  table: {
+    display: "block",
+    width: "100%",
+    overflowX: "auto",
+    borderRadius: "4px",
+  },
+})
 
 type Props = {
   /** The data to pass into this table */
   data: Array<Object>,
   /** The Material-UI color palette selected */
-  color: Object
+  color: Object,
+  /** Material-UI styling */
+  classes: Object,
 }
 
 /**
@@ -19,12 +37,16 @@ type Props = {
  */
 
 const ProteinsList = (props: Props) => {
+  const { classes } = props
   return (
     <Paper>
-      <HeaderStyle style={{ backgroundColor: props.color }} variant="title">
+      <Typography
+        className={classes.header}
+        style={{ backgroundColor: props.color }}
+        variant="title">
         List of Proteins
-      </HeaderStyle>
-      <ResponsiveTable>
+      </Typography>
+      <Table className={classes.table}>
         <TableHead>
           <TableRow>
             <TableCell>Protein ID</TableCell>
@@ -39,9 +61,9 @@ const ProteinsList = (props: Props) => {
             </TableRow>
           ))}
         </TableBody>
-      </ResponsiveTable>
+      </Table>
     </Paper>
   )
 }
 
-export default ProteinsList
+export default withStyles(styles)(ProteinsList)
