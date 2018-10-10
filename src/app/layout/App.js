@@ -6,6 +6,7 @@ import { Header, Footer } from "dicty-components-header-footer"
 import { Navbar } from "dicty-components-navbar"
 import Sidebar from "app/layout/Sidebar"
 import Routes from "app/routes/Routes"
+import { withStyles } from "@material-ui/core/styles"
 
 import fetchNavbar from "app/actions/navbarActions"
 import fetchFooter from "app/actions/footerActions"
@@ -16,7 +17,7 @@ import {
   loggedHeaderItems,
   generateLinks,
 } from "common/utils/headerItems"
-import { Container, MainContentStyle } from "./AppStyles"
+import { AppStyles as styles } from "common/styles/AppStyles"
 
 type Props = {
   /** Object representing auth part of state */
@@ -26,25 +27,27 @@ type Props = {
   /** Object representing footer part of state */
   footer: Object,
   /** Action creator to fetch navbar content */
-  fetchNavbarAction: Function,
+  fetchNavbar: Function,
   /** Action creator to fetch footer content */
-  fetchFooterAction: Function,
+  fetchFooter: Function,
+  /** Material-UI styling */
+  classes: Object,
 }
 
 export class App extends Component<Props> {
   componentDidMount() {
-    const { fetchNavbarAction, fetchFooterAction } = this.props
-    fetchNavbarAction()
-    fetchFooterAction()
+    const { fetchNavbar, fetchFooter } = this.props
+    fetchNavbar()
+    fetchFooter()
   }
 
   render() {
-    const { auth, navbar, footer } = this.props
+    const { auth, navbar, footer, classes } = this.props
 
     // if any errors, fall back to old link setup
     if (navbar.error || !navbar.links || footer.error || !footer.links) {
       return (
-        <div>
+        <div className={classes.body}>
           {auth.isAuthenticated ? (
             <Header items={loggedHeaderItems}>
               {items => items.map(generateLinks)}
@@ -55,19 +58,19 @@ export class App extends Component<Props> {
             </Header>
           )}
           <Navbar items={navItems} />
-          <Container>
+          <div className={classes.container}>
             <Sidebar />
-            <MainContentStyle>
+            <main className={classes.mainContent}>
               <Routes />
-            </MainContentStyle>
-          </Container>
+            </main>
+          </div>
           <Footer items={footerItems} />
         </div>
       )
     }
 
     return (
-      <div>
+      <div className={classes.body}>
         {auth.isAuthenticated ? (
           <Header items={loggedHeaderItems}>
             {items => items.map(generateLinks)}
@@ -78,12 +81,12 @@ export class App extends Component<Props> {
           </Header>
         )}
         <Navbar items={navbar.links} />
-        <Container>
+        <div className={classes.container}>
           <Sidebar />
-          <MainContentStyle>
+          <main className={classes.mainContent}>
             <Routes />
-          </MainContentStyle>
-        </Container>
+          </main>
+        </div>
         <Footer items={footer.links} />
       </div>
     )
@@ -92,11 +95,9 @@ export class App extends Component<Props> {
 
 const mapStateToProps = ({ auth, navbar, footer }) => ({ auth, navbar, footer })
 
-// why rename action creator?
-// https://stackoverflow.com/questions/37682705/avoid-no-shadow-eslint-error-with-mapdispatchtoprops/42337137#42337137
 export default withRouter(
   connect(
     mapStateToProps,
-    { fetchNavbarAction: fetchNavbar, fetchFooterAction: fetchFooter },
-  )(App),
+    { fetchNavbar, fetchFooter },
+  )(withStyles(styles)(App)),
 )

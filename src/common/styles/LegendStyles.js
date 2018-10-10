@@ -50,7 +50,7 @@ const primaryCardHeader = {
   ...primaryBoxShadow,
 }
 
-export const legendStyle = {
+export const LegendStyle = theme => ({
   card: {
     border: "0",
     marginBottom: "30px",
@@ -76,9 +76,9 @@ export const legendStyle = {
   cardCarousel: {
     overflow: "hidden",
   },
-}
+})
 
-export const legendHeaderStyle = {
+export const LegendHeaderStyle = theme => ({
   cardHeader: {
     borderRadius: "3px",
     padding: "1rem 15px",
@@ -97,9 +97,9 @@ export const legendHeaderStyle = {
   dangerCardHeader,
   infoCardHeader,
   primaryCardHeader,
-}
+})
 
-export const legendBodyStyle = theme => ({
+export const LegendBodyStyle = theme => ({
   cardBody: {
     padding: "0.9375rem 1.875rem",
     flex: "1 1 auto",

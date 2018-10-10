@@ -1,7 +1,9 @@
 // @flow
 import React from "react"
+import { NavLink } from "react-router-dom"
 import { withStyles } from "@material-ui/core/styles"
 import Drawer from "@material-ui/core/Drawer"
+import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 import ListItemIcon from "@material-ui/core/ListItemIcon"
 import Typography from "@material-ui/core/Typography"
@@ -13,18 +15,31 @@ import GpsFixedIcon from "@material-ui/icons/GpsFixed"
 import PieChartIcon from "@material-ui/icons/PieChart"
 import FormatAlignJustifyIcon from "@material-ui/icons/FormatAlignJustify"
 
-import {
-  StyledLink,
-  ListStyle,
-  // DrawerPaperStyle,
-  DrawerHeaderStyle,
-} from "app/layout/SidebarStyles"
-
 const styles = theme => ({
   drawerPaper: {
     position: "relative",
     width: "240px",
     height: "100%",
+  },
+  header: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "0px 8px",
+    backgroundColor: "#4f5aae",
+    color: "#fff",
+    minHeight: "64px",
+  },
+  list: {
+    backgroundColor: "#eceff1",
+    height: "100%",
+  },
+  navLink: {
+    textDecoration: "none",
+    color: "rgba(0, 0, 0, 0.87)",
+    fontSize: "1rem",
+    fontWeight: 400,
+    lineHeight: "1.5em",
   },
 })
 
@@ -47,91 +62,97 @@ const Sidebar = (props: Props) => {
       classes={{
         paper: classes.drawerPaper,
       }}>
-      <DrawerHeaderStyle>
+      <div className={classes.header}>
         <Typography variant="title" color="inherit">
           DictyAccess
         </Typography>
-      </DrawerHeaderStyle>
-      <ListStyle>
+      </div>
+      <List className={classes.list}>
         <ListItem button>
           <ListItemIcon>
             <GpsFixedIcon />
           </ListItemIcon>
-          <StyledLink
+          <NavLink
+            className={classes.navLink}
             to="/birdseye"
             activeStyle={{
               fontWeight: "bold",
               color: "#011f4b",
             }}>
             Bird's Eye
-          </StyledLink>
+          </NavLink>
         </ListItem>
         <ListItem button>
           <ListItemIcon>
             <InsertChartIcon />
           </ListItemIcon>
-          <StyledLink
+          <NavLink
+            className={classes.navLink}
             to="/genomes"
             activeStyle={{
               fontWeight: "bold",
               color: "rgb(251, 140, 0)",
             }}>
             Genome Stats
-          </StyledLink>
+          </NavLink>
         </ListItem>
         <ListItem button>
           <ListItemIcon>
             <FingerprintIcon />
           </ListItemIcon>
-          <StyledLink
+          <NavLink
+            className={classes.navLink}
             to="/annotations"
             activeStyle={{
               fontWeight: "bold",
               color: "rgb(183, 28, 28)",
             }}>
             Annotations
-          </StyledLink>
+          </NavLink>
         </ListItem>
         <ListItem button>
           <ListItemIcon>
             <FormatAlignJustifyIcon />
           </ListItemIcon>
-          <StyledLink
+          <NavLink
+            className={classes.navLink}
             to="/phylogeny"
             activeStyle={{
               fontWeight: "bold",
               color: "rgb(183, 28, 28)",
             }}>
             Phylogeny
-          </StyledLink>
+          </NavLink>
         </ListItem>
         <ListItem button>
           <ListItemIcon>
             <PieChartIcon />
           </ListItemIcon>
-          <StyledLink
+          <NavLink
+            className={classes.navLink}
             to="/analytics"
             activeStyle={{
               fontWeight: "bold",
               color: "rgb(30, 136, 229)",
             }}>
             Analytics
-          </StyledLink>
+          </NavLink>
         </ListItem>
         <ListItem button>
           <ListItemIcon>
             <TrendingUpIcon />
           </ListItemIcon>
-          <StyledLink
+          <NavLink
+            className={classes.navLink}
             to="/stockcenter"
             activeStyle={{
               fontWeight: "bold",
               color: "#4f5aae",
             }}>
             Dicty Stock Center
-          </StyledLink>
+          </NavLink>
         </ListItem>
-      </ListStyle>
+      </List>
     </Drawer>
   )
 }

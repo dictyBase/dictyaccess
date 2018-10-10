@@ -4,7 +4,7 @@ import { withStyles } from "@material-ui/core/styles"
 import InfoIcon from "@material-ui/icons/Info"
 import Typography from "@material-ui/core/Typography"
 
-import { legendHeaderStyle } from "common/styles/LegendStyles"
+import { LegendHeaderStyle as styles } from "common/styles/LegendStyles"
 
 const LegendHeader = props => {
   const { classes, className, children, color, plainCard, ...rest } = props
@@ -32,4 +32,4 @@ const LegendHeader = props => {
   )
 }
 
-export default withStyles(legendHeaderStyle)(LegendHeader)
+export default withStyles(styles)(LegendHeader)
