@@ -1,8 +1,8 @@
 // @flow
 import React, { Component } from "react"
 import { withRouter } from "react-router-dom"
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton"
 import { withStyles } from "@material-ui/core/styles"
+import CircularProgress from "@material-ui/core/CircularProgress"
 import AppBar from "@material-ui/core/AppBar"
 import Grid from "@material-ui/core/Grid"
 import Tabs from "@material-ui/core/Tabs"
@@ -30,6 +30,10 @@ const styles = (theme: Object) => ({
   root: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
+  },
+  loader: {
+    marginTop: "50px",
+    marginBottom: "50px",
   },
 })
 
@@ -149,33 +153,10 @@ class CircosDisplay extends Component<Props, State> {
           {value === 0 && (
             <TabContainer>
               <Grid container spacing={16}>
-                <Grid item xs={12} md={12} lg={9}>
-                  <SkeletonTheme color="#d1d1d1">
-                    <Skeleton count={9} />
-                    <br />
-                    <br />
-                    <Skeleton count={9} />
-                    <br />
-                    <br />
-                    <Skeleton count={9} />
-                    <br />
-                    <br />
-                    <Skeleton count={9} />
-                  </SkeletonTheme>
-                </Grid>
-                <Grid item xs={12} md={12} lg={3}>
-                  <SkeletonTheme color="#d1d1d1">
-                    <Skeleton count={9} />
-                    <br />
-                    <br />
-                    <Skeleton count={9} />
-                    <br />
-                    <br />
-                    <Skeleton count={9} />
-                    <br />
-                    <br />
-                    <Skeleton count={9} />
-                  </SkeletonTheme>
+                <Grid item xs={12} className={classes.loader}>
+                  <center>
+                    <CircularProgress size={400} thickness={2} />
+                  </center>
                 </Grid>
               </Grid>
             </TabContainer>
