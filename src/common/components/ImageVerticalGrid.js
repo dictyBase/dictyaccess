@@ -22,7 +22,7 @@ const styles = theme => ({
     color: theme.palette.primary,
   },
   headerBar: {
-    backgroundColor: "#011f4b",
+    backgroundColor: "#004080",
   },
   headerBarTitle: {
     color: "white",

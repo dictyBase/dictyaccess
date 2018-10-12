@@ -26,7 +26,7 @@ const styles = theme => ({
     alignItems: "center",
     justifyContent: "center",
     padding: "0px 8px",
-    backgroundColor: "#4f5aae",
+    backgroundColor: "#0059b3",
     color: "#fff",
     minHeight: "64px",
   },
