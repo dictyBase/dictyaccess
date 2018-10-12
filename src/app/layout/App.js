@@ -19,6 +19,11 @@ import {
 } from "common/utils/headerItems"
 import { AppStyles as styles } from "common/styles/AppStyles"
 
+const navTheme = {
+  primary: "#004080",
+  secondary: "#0059b3",
+}
+
 type Props = {
   /** Object representing auth part of state */
   auth: Object,
@@ -57,7 +62,7 @@ export class App extends Component<Props> {
               {items => items.map(generateLinks)}
             </Header>
           )}
-          <Navbar items={navItems} />
+          <Navbar theme={navTheme} items={navItems} />
           <div className={classes.container}>
             <Sidebar />
             <main className={classes.mainContent}>
@@ -80,7 +85,7 @@ export class App extends Component<Props> {
             {items => items.map(generateLinks)}
           </Header>
         )}
-        <Navbar items={navbar.links} />
+        <Navbar theme={navTheme} items={navbar.links} />
         <div className={classes.container}>
           <Sidebar />
           <main className={classes.mainContent}>
