@@ -1,20 +1,9 @@
 {
   "name": "dictyaccess",
-  "version": "0.0.5",
+  "version": "0.0.0-semantically-released",
   "private": true,
   "engines": {
     "node": "10.4.0"
-  },
-  "lint-staged": {
-    "*.{js,jsx,json,css}": [
-      "prettier --no-semi --trailing-comma all --jsx-bracket-same-line true --write",
-      "git add"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "precommit": "lint-staged"
-    }
   },
   "scripts": {
     "start": "react-scripts start",
@@ -26,7 +15,8 @@
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
     "precommit": "lint-staged",
-    "cz": "git-cz"
+    "cz": "git-cz",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "@material-ui/core": "^1.4.3",
@@ -53,7 +43,10 @@
     "typeface-roboto": "0.0.54"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^3.0.1",
+    "@semantic-release/git": "^7.0.5",
     "ajv": "^6.0.0",
+    "commitizen": "^3.0.2",
     "cz-conventional-changelog": "^2.1.0",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.1.1",
@@ -65,11 +58,37 @@
     "prettier": "^1.14.3",
     "react-styleguidist": "^7.3.10",
     "react-test-renderer": "^16.4.2",
-    "recast": "^0.13.0"
+    "recast": "^0.13.0",
+    "semantic-release": "^15.10.3"
+  },
+  "lint-staged": {
+    "*.{js,jsx,json,css}": [
+      "prettier --no-semi --trailing-comma all --jsx-bracket-same-line true --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "release": {
+    "noCi": true,
+    "tagFormat": "${version}",
+    "verifyConditions": [
+      "@semantic-release/changelog",
+      "@semantic-release/git"
+    ],
+    "prepare": [
+      "@semantic-release/changelog"
+    ],
+    "publish": [
+      "@semantic-release/github"
+    ]
   }
 }
