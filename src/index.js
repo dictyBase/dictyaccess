@@ -4,11 +4,12 @@ import { Provider } from "react-redux"
 import { ConnectedRouter } from "connected-react-router"
 import { hydrateStore } from "dicty-components-redux"
 import CssBaseline from "@material-ui/core/CssBaseline"
+import { MuiThemeProvider } from "@material-ui/core/styles"
 import history from "common/utils/routerHistory"
 
 import App from "app/layout/App"
 import configureStore from "app/store/configureStore"
-import registerServiceWorker from "./registerServiceWorker"
+import muiTheme from "common/styles/muiTheme"
 import "typeface-roboto"
 
 // load state from localStorage(if any) to set the initial state for the store
@@ -37,12 +38,11 @@ if (process.env.NODE_ENV === "production") {
 ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <div>
+      <MuiThemeProvider theme={muiTheme}>
         <CssBaseline />
         <App />
-      </div>
+      </MuiThemeProvider>
     </ConnectedRouter>
   </Provider>,
   document.getElementById("root"),
 )
-registerServiceWorker()

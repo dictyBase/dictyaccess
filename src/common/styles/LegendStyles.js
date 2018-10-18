@@ -41,7 +41,7 @@ const warningCardHeader = {
 
 const infoCardHeader = {
   color: "#fff",
-  background: "linear-gradient(60deg, #011f4b, #011f4b)",
+  background: "#004080",
   ...infoBoxShadow,
 }
 const primaryCardHeader = {

@@ -34,6 +34,7 @@ const styles = (theme: Object) => ({
   loader: {
     marginTop: "50px",
     marginBottom: "50px",
+    color: "#004080",
   },
 })
 
@@ -155,7 +156,11 @@ class CircosDisplay extends Component<Props, State> {
               <Grid container spacing={16}>
                 <Grid item xs={12} className={classes.loader}>
                   <center>
-                    <CircularProgress size={400} thickness={2} />
+                    <CircularProgress
+                      size={400}
+                      thickness={2}
+                      color="inherit"
+                    />
                   </center>
                 </Grid>
               </Grid>
