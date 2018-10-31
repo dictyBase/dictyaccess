@@ -1,201 +1,121 @@
 // @flow
 import React, { Component } from "react"
+import { connect } from "react-redux"
 import { withRouter } from "react-router-dom"
 import { withStyles } from "@material-ui/core/styles"
-import CircularProgress from "@material-ui/core/CircularProgress"
-import AppBar from "@material-ui/core/AppBar"
-import Grid from "@material-ui/core/Grid"
-import Tabs from "@material-ui/core/Tabs"
-import Tab from "@material-ui/core/Tab"
-import Typography from "@material-ui/core/Typography"
 
 import CircosGraph from "features/BirdsEye/Circos/CircosGraph"
+import CircosLoader from "./CircosLoader"
+import BirdsEyeTabList from "features/BirdsEye/BirdsEyeTabList"
+import TypographyWrapper from "common/components/TypographyWrapper"
 import chrNameMapper from "features/BirdsEye/Circos/utils/chrNameMapper"
 import chrNameExtender from "./utils/chrNameExtender"
-
-type tabProps = {
-  children: any,
-}
-
-const TabContainer = (props: tabProps) => {
-  const { children } = props
-  return (
-    <Typography component="div" style={{ padding: 8 * 3 }}>
-      {children}
-    </Typography>
-  )
-}
+import { fetchChromosomeData, fetchGeneData } from "app/actions/birdsEyeActions"
+// import { discoideumUrl } from "common/constants/Types"
 
 const styles = (theme: Object) => ({
   root: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
   },
-  loader: {
-    marginTop: "50px",
-    marginBottom: "50px",
-    color: "#004080",
-  },
 })
+
+const chrMap = (chr, id) => chr.data.filter(i => i.attributes.name === id)
+const geneMap = (gene, id) =>
+  gene.data.filter(item => item.attributes.block_id === chrNameMapper(id))
 
 type Props = {
   /** Material-UI classes */
   classes: Object,
   /** React Router match object */
   match: Object,
-}
-
-type State = {
-  /** Value representing the two tabs. Starts at 0. */
-  value: number,
-  /** Boolean representing whether data is being fetched or not */
-  isFetching: boolean,
-  /** Chromosomes data */
-  chr: Object,
-  /** Genes data */
-  genes: Array<Object>,
-  /** Error message if problem fetching data */
-  error: string,
-  /** Description for Circos legend box */
-  description: string,
+  /** The birdseye slice of state */
+  birdseye: Object,
+  /** Action to fetch chromosome data */
+  fetchChromosomeData: Function,
+  /** Action to fetch gene data */
+  fetchGeneData: Function,
 }
 
 /**
  * This is the CircosDisplay container. It fetches the desired data then passes them as props to CircosGraph.
  */
 
-class CircosDisplay extends Component<Props, State> {
-  state = {
-    value: 0,
-    isFetching: true,
-    chr: {},
-    genes: [],
-    error: "",
-    description: "",
-  }
-
-  async componentDidMount() {
-    const { match } = this.props
+class CircosDisplay extends Component<Props> {
+  componentDidMount() {
+    const { fetchChromosomeData, fetchGeneData } = this.props
     // set url for fetching data
     const chrUrl = process.env.REACT_APP_CHROMOSOMES_JSON
     const genesUrl = process.env.REACT_APP_GENES_JSON
-    try {
-      const chrRes = await fetch(chrUrl)
-      const chrJson = await chrRes.json()
-      const geneRes = await fetch(genesUrl)
-      const geneJson = await geneRes.json()
 
-      const description = `Circos visualization for canonical gene models of D.discoideum ${chrNameExtender(
-        match.params.id,
-      )}. The blue and red tracks represents genes from negative and positive strands respectively.`
-
-      const chrData = chrJson.data.filter(
-        i => i.attributes.name === match.params.id,
-      )
-      const geneData = geneJson.data.filter(
-        item => item.attributes.block_id === chrNameMapper(match.params.id),
-      )
-      this.setState({
-        isFetching: false,
-        chr: chrData[0],
-        genes: geneData,
-        description,
-      })
-    } catch (error) {
-      this.setState({ isFetching: false, error: error.message })
-    }
+    fetchChromosomeData(chrUrl)
+    fetchGeneData(genesUrl)
   }
 
-  handleChange = (event, value) => {
-    this.setState({ value })
-  }
+  // turn into HOC!
 
   render() {
-    const { classes } = this.props
-    const { value, chr, genes, description, error, isFetching } = this.state
+    const {
+      birdseye: { isFetching, error, currentTab, chromosomes, genes },
+      classes,
+      match,
+    } = this.props
+
+    const description = `Circos visualization for canonical gene models of D.discoideum ${chrNameExtender(
+      match.params.id,
+    )}. The blue and red tracks represents genes from negative and positive strands respectively.`
 
     if (error) {
       return (
         <div className={classes.root}>
-          <AppBar position="static">
-            <Tabs value={value} onChange={this.handleChange} centered>
-              <Tab label="Global" />
-              <Tab label="Comparative" />
-            </Tabs>
-          </AppBar>
-          {value === 0 && (
-            <TabContainer>
+          <BirdsEyeTabList />
+          {currentTab === 0 && (
+            <TypographyWrapper>
               <center>
                 <p>
                   <h4>Sorry! There was an error loading the items.</h4>
                 </p>
                 <p>{error}</p>
               </center>
-            </TabContainer>
-          )}
-          {value === 1 && (
-            <TabContainer>
-              <center>Work in progress</center>
-            </TabContainer>
+            </TypographyWrapper>
           )}
         </div>
       )
     }
 
     if (isFetching) {
-      return (
-        <div className={classes.root}>
-          <AppBar position="static">
-            <Tabs value={value} onChange={this.handleChange} centered>
-              <Tab label="Global" />
-              <Tab label="Comparative" />
-            </Tabs>
-          </AppBar>
-          {value === 0 && (
-            <TabContainer>
-              <Grid container spacing={16}>
-                <Grid item xs={12} className={classes.loader}>
-                  <center>
-                    <CircularProgress
-                      size={400}
-                      thickness={2}
-                      color="inherit"
-                    />
-                  </center>
-                </Grid>
-              </Grid>
-            </TabContainer>
-          )}
-          {value === 1 && (
-            <TabContainer>
-              <center>Work in progress</center>
-            </TabContainer>
-          )}
-        </div>
-      )
+      return <CircosLoader />
     }
 
     return (
       <div className={classes.root}>
-        <AppBar position="static">
-          <Tabs value={value} onChange={this.handleChange} centered>
-            <Tab label="Global" />
-            <Tab label="Comparative" />
-          </Tabs>
-        </AppBar>
-        {value === 0 && (
-          <TabContainer>
-            <CircosGraph chr={chr} genes={genes} description={description} />
-          </TabContainer>
+        <BirdsEyeTabList />
+        {currentTab === 0 && (
+          <TypographyWrapper>
+            {/* refactor this!!! */}
+            {chromosomes.data &&
+              genes.data && (
+                <CircosGraph
+                  chr={chrMap(chromosomes, match.params.id)[0]}
+                  genes={geneMap(genes, match.params.id)}
+                  description={description}
+                />
+              )}
+          </TypographyWrapper>
         )}
-        {value === 1 && (
-          <TabContainer>
+        {currentTab === 1 && (
+          <TypographyWrapper>
             <center>Work in progress</center>
-          </TabContainer>
+          </TypographyWrapper>
         )}
       </div>
     )
   }
 }
 
-export default withStyles(styles)(withRouter(CircosDisplay))
+const mapStateToProps = ({ birdseye }) => ({ birdseye })
+
+export default connect(
+  mapStateToProps,
+  { fetchChromosomeData, fetchGeneData },
+)(withStyles(styles)(withRouter(CircosDisplay)))

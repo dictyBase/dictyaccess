@@ -2,15 +2,10 @@
 import React from "react"
 import { connect } from "react-redux"
 import { withStyles } from "@material-ui/core/styles"
-import Typography from "@material-ui/core/Typography"
+
+import TypographyWrapper from "common/components/TypographyWrapper"
 import DataSetDisplay from "features/BirdsEye/Global/DataSets/DataSetDisplay"
 import BirdsEyeTabList from "./BirdsEyeTabList"
-
-const TabContainer = ({ children }: any) => (
-  <Typography component="div" style={{ padding: 8 * 3 }}>
-    {children}
-  </Typography>
-)
 
 const styles = theme => ({
   root: {
@@ -33,14 +28,14 @@ const BirdsEyeDashboard = (props: Props) => {
     <div className={classes.root}>
       <BirdsEyeTabList />
       {birdseye.currentTab === 0 && (
-        <TabContainer>
+        <TypographyWrapper>
           <DataSetDisplay />
-        </TabContainer>
+        </TypographyWrapper>
       )}
       {birdseye.currentTab === 1 && (
-        <TabContainer>
+        <TypographyWrapper>
           <center>Work in progress</center>
-        </TabContainer>
+        </TypographyWrapper>
       )}
     </div>
   )
