@@ -36,6 +36,3 @@ export const types = {
 }
 
 export const NAMESPACE = "dictyaccess"
-export const discoideumUrl = `${
-  process.env.REACT_APP_API_SERVER
-}/dashboard/genomes/44689`

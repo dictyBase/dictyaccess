@@ -15,6 +15,14 @@ const {
   CHROMOSOME_DATA_NO_REFETCH,
 } = types
 
+// const genomesUrl = `${
+//   process.env.REACT_APP_API_SERVER
+// }/dashboard/genomes`
+
+// set url for fetching data
+const chrUrl = process.env.REACT_APP_CHROMOSOMES_JSON
+const genesUrl = process.env.REACT_APP_GENES_JSON
+
 /**
  * All of the Redux actions related to the Bird's Eye Dashboard
  */
@@ -92,7 +100,7 @@ const noRefetch = () => ({
   type: CHROMOSOME_DATA_NO_REFETCH,
 })
 
-export const fetchChromosomeData = (url: string) => async (
+export const fetchChromosomeData = () => async (
   dispatch: Function,
   getState: Function,
 ) => {
@@ -101,7 +109,7 @@ export const fetchChromosomeData = (url: string) => async (
   }
   try {
     dispatch(fetchChromosomeDataRequest())
-    const res = await fetch(url, {
+    const res = await fetch(chrUrl, {
       headers: { Accept: "application/json" },
     })
     const json = await res.json()
@@ -110,7 +118,7 @@ export const fetchChromosomeData = (url: string) => async (
     // and that the json doesn't contain an error
     if (res.ok && !json.status) {
       dispatch(fetchChromosomeDataSuccess(json))
-      // await dispatch(fetchGeneData(json.data.relationships.goa.links.related))
+      await dispatch(fetchGeneData(genesUrl))
     } else {
       dispatch(
         fetchChromosomeDataFailure(createErrorObj(json.status, json.title)),

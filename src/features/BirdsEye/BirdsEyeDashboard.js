@@ -8,7 +8,7 @@ import TypographyWrapper from "common/components/TypographyWrapper"
 import DataSetDisplay from "features/BirdsEye/Global/DataSets/DataSetDisplay"
 import BirdsEyeTabList from "./BirdsEyeTabList"
 import CircosLoader from "./Circos/CircosLoader"
-import { fetchChromosomeData, fetchGeneData } from "app/actions/birdsEyeActions"
+import { fetchChromosomeData } from "app/actions/birdsEyeActions"
 
 const styles = theme => ({
   root: {
@@ -22,17 +22,15 @@ type Props = {
   classes: Object,
   /** The birdseye slice of state */
   birdseye: Object,
+  /** Action to fetch chromosome data */
+  fetchChromosomeData: Function,
 }
 
 class BirdsEyeDashboard extends Component<Props> {
   componentDidMount() {
-    const { fetchChromosomeData, fetchGeneData } = this.props
-    // set url for fetching data
-    const chrUrl = process.env.REACT_APP_CHROMOSOMES_JSON
-    const genesUrl = process.env.REACT_APP_GENES_JSON
+    const { fetchChromosomeData } = this.props
 
-    fetchChromosomeData(chrUrl)
-    fetchGeneData(genesUrl)
+    fetchChromosomeData()
   }
 
   render() {
@@ -87,5 +85,5 @@ const mapStateToProps = ({ birdseye }) => ({ birdseye })
 
 export default connect(
   mapStateToProps,
-  { fetchChromosomeData, fetchGeneData },
+  { fetchChromosomeData },
 )(withStyles(styles)(withRouter(BirdsEyeDashboard)))

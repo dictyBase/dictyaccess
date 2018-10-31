@@ -10,8 +10,7 @@ import BirdsEyeTabList from "features/BirdsEye/BirdsEyeTabList"
 import TypographyWrapper from "common/components/TypographyWrapper"
 import chrNameMapper from "features/BirdsEye/Circos/utils/chrNameMapper"
 import chrNameExtender from "./utils/chrNameExtender"
-import { fetchChromosomeData, fetchGeneData } from "app/actions/birdsEyeActions"
-// import { discoideumUrl } from "common/constants/Types"
+import { fetchChromosomeData } from "app/actions/birdsEyeActions"
 
 const styles = (theme: Object) => ({
   root: {
@@ -33,8 +32,6 @@ type Props = {
   birdseye: Object,
   /** Action to fetch chromosome data */
   fetchChromosomeData: Function,
-  /** Action to fetch gene data */
-  fetchGeneData: Function,
 }
 
 /**
@@ -43,13 +40,9 @@ type Props = {
 
 class CircosDisplay extends Component<Props> {
   componentDidMount() {
-    const { fetchChromosomeData, fetchGeneData } = this.props
-    // set url for fetching data
-    const chrUrl = process.env.REACT_APP_CHROMOSOMES_JSON
-    const genesUrl = process.env.REACT_APP_GENES_JSON
+    const { fetchChromosomeData } = this.props
 
-    fetchChromosomeData(chrUrl)
-    fetchGeneData(genesUrl)
+    fetchChromosomeData()
   }
 
   // turn into HOC!
@@ -117,5 +110,5 @@ const mapStateToProps = ({ birdseye }) => ({ birdseye })
 
 export default connect(
   mapStateToProps,
-  { fetchChromosomeData, fetchGeneData },
+  { fetchChromosomeData },
 )(withStyles(styles)(withRouter(CircosDisplay)))
