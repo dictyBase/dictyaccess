@@ -8,6 +8,7 @@ import Sidebar from "app/layout/Sidebar"
 import Routes from "app/routes/Routes"
 import { withStyles } from "@material-ui/core/styles"
 
+import ErrorBoundary from "common/components/ErrorBoundary"
 import fetchNavbar from "app/actions/navbarActions"
 import fetchFooter from "app/actions/footerActions"
 import footerItems from "common/constants/Footer"
@@ -66,7 +67,9 @@ export class App extends Component<Props> {
           <div className={classes.container}>
             <Sidebar />
             <main className={classes.mainContent}>
-              <Routes />
+              <ErrorBoundary>
+                <Routes />
+              </ErrorBoundary>
             </main>
           </div>
           <Footer items={footerItems} />
@@ -89,7 +92,9 @@ export class App extends Component<Props> {
         <div className={classes.container}>
           <Sidebar />
           <main className={classes.mainContent}>
-            <Routes />
+            <ErrorBoundary>
+              <Routes />
+            </ErrorBoundary>
           </main>
         </div>
         <Footer items={footer.links} />

@@ -21,7 +21,7 @@ const {
 
 // set url for fetching data
 const chrUrl = process.env.REACT_APP_CHROMOSOMES_JSON
-const genesUrl = process.env.REACT_APP_GENES_JSON
+const genesUrl = "https://betafunc.dictybase.org/dashboard/genomes/44689/genes"
 
 /**
  * All of the Redux actions related to the Bird's Eye Dashboard
@@ -113,7 +113,6 @@ export const fetchChromosomeData = () => async (
       headers: { Accept: "application/json" },
     })
     const json = await res.json()
-
     // check if res.ok (https://developer.mozilla.org/en-US/docs/Web/API/Response/ok)
     // and that the json doesn't contain an error
     if (res.ok && !json.status) {
@@ -150,6 +149,7 @@ export const fetchGeneData = (url: string) => async (
       headers: { Accept: "application/json" },
     })
     const json = await res.json()
+    console.log(json)
 
     // check if res.ok (https://developer.mozilla.org/en-US/docs/Web/API/Response/ok)
     // and that the json doesn't contain an error
