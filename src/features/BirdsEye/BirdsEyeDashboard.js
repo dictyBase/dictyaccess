@@ -8,6 +8,7 @@ import TypographyWrapper from "common/components/TypographyWrapper"
 import DataSetDisplay from "features/BirdsEye/Global/DataSets/DataSetDisplay"
 import BirdsEyeTabList from "./BirdsEyeTabList"
 import CircosLoader from "./Circos/CircosLoader"
+import ErrorPage from "common/components/ErrorPage"
 import { fetchChromosomeData } from "app/actions/birdsEyeActions"
 
 const styles = theme => ({
@@ -42,21 +43,7 @@ class BirdsEyeDashboard extends Component<Props> {
     } = this.props
 
     if (error) {
-      return (
-        <div className={classes.root}>
-          <BirdsEyeTabList />
-          {currentTab === 0 && (
-            <TypographyWrapper>
-              <center>
-                <p>
-                  <h4>Sorry! There was an error loading the items.</h4>
-                </p>
-                <p>{error}</p>
-              </center>
-            </TypographyWrapper>
-          )}
-        </div>
-      )
+      return <ErrorPage />
     }
 
     if (isFetching) {
