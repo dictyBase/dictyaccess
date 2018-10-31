@@ -112,7 +112,8 @@ class CircosGraph extends Component<Props> {
   }
 
   render() {
-    const { match } = this.props
+    const { match, genes } = this.props
+
     return (
       <div>
         <Grid container spacing={16}>
@@ -141,7 +142,7 @@ class CircosGraph extends Component<Props> {
               <LegendHeader color="info" />
               <LegendBody>{this.props.description}</LegendBody>
             </LegendBox>
-            <SvgVerticalGrid />
+            {genes && <SvgVerticalGrid />}
           </Grid>
         </Grid>
       </div>

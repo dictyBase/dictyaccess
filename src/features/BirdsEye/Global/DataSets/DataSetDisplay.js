@@ -6,13 +6,16 @@ import ChromosomeImageGridDisplay from "features/BirdsEye/Circos/ChromosomeImage
 import Dropdown from "common/components/Dropdown"
 import { dropDownData } from "features/BirdsEye/Global/DataSets/DataSetDropdownMenu"
 
-const DataSetDisplay = () => (
+const DataSetDisplay = ({ chromosomes, genes }) => (
   <Grid container spacing={16}>
     <Grid item xs={2}>
       <Dropdown dropDownData={dropDownData} />
     </Grid>
     <Grid item xs={10}>
-      <ChromosomeImageGridDisplay />
+      {chromosomes.data &&
+        genes.data && (
+          <ChromosomeImageGridDisplay chromosomes={chromosomes} genes={genes} />
+        )}
     </Grid>
   </Grid>
 )

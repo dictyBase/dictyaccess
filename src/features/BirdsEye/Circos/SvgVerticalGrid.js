@@ -1,4 +1,5 @@
 import React from "react"
+import { connect } from "react-redux"
 import { Link } from "react-router-dom"
 import { withStyles } from "@material-ui/core/styles"
 import GridList from "@material-ui/core/GridList"
@@ -8,15 +9,6 @@ import ListSubheader from "@material-ui/core/ListSubheader"
 import Typography from "@material-ui/core/Typography"
 
 import MiniCircos from "./MiniCircos"
-import {
-  chr1,
-  chr2,
-  chr3,
-  chr4,
-  chr5,
-  chr6,
-} from "features/BirdsEye/Circos/utils/geneArrays"
-import chromosomes from "common/data/circos/chromosomes.json"
 
 const styles = (theme: Object) => ({
   root: {
@@ -62,7 +54,11 @@ type Props = {
  */
 
 const SvgVerticalGrid = (props: Props) => {
-  const { classes } = props
+  const {
+    classes,
+    birdseye: { genes, chromosomes },
+  } = props
+
   return (
     <div className={classes.root}>
       <GridList cellHeight={200} cols={1} className={classes.gridList}>
@@ -80,7 +76,9 @@ const SvgVerticalGrid = (props: Props) => {
           <Link to="/birdseye/genemodels/chr1">
             <center>
               <MiniCircos
-                genes={chr1}
+                genes={genes.data.filter(
+                  item => item.attributes.block_id === "DDB0232428",
+                )}
                 chr={chromosomes.data[0]}
                 name="chr1"
                 svgWidth="200"
@@ -100,7 +98,9 @@ const SvgVerticalGrid = (props: Props) => {
           <Link to="/birdseye/genemodels/chr2">
             <center>
               <MiniCircos
-                genes={chr2}
+                genes={genes.data.filter(
+                  item => item.attributes.block_id === "DDB0232429",
+                )}
                 chr={chromosomes.data[1]}
                 name="chr2"
                 svgWidth="200"
@@ -121,7 +121,9 @@ const SvgVerticalGrid = (props: Props) => {
           <Link to="/birdseye/genemodels/chr3">
             <center>
               <MiniCircos
-                genes={chr3}
+                genes={genes.data.filter(
+                  item => item.attributes.block_id === "DDB0232430",
+                )}
                 chr={chromosomes.data[2]}
                 name="chr3"
                 svgWidth="200"
@@ -141,7 +143,9 @@ const SvgVerticalGrid = (props: Props) => {
           <Link to="/birdseye/genemodels/chr4">
             <center>
               <MiniCircos
-                genes={chr4}
+                genes={genes.data.filter(
+                  item => item.attributes.block_id === "DDB0232431",
+                )}
                 chr={chromosomes.data[3]}
                 name="chr4"
                 svgWidth="200"
@@ -161,7 +165,9 @@ const SvgVerticalGrid = (props: Props) => {
           <Link to="/birdseye/genemodels/chr5">
             <center>
               <MiniCircos
-                genes={chr5}
+                genes={genes.data.filter(
+                  item => item.attributes.block_id === "DDB0232432",
+                )}
                 chr={chromosomes.data[4]}
                 name="chr5"
                 svgWidth="200"
@@ -181,7 +187,9 @@ const SvgVerticalGrid = (props: Props) => {
           <Link to="/birdseye/genemodels/chr6">
             <center>
               <MiniCircos
-                genes={chr6}
+                genes={genes.data.filter(
+                  item => item.attributes.block_id === "DDB0232433",
+                )}
                 chr={chromosomes.data[5]}
                 name="chr6"
                 svgWidth="200"
@@ -202,4 +210,9 @@ const SvgVerticalGrid = (props: Props) => {
   )
 }
 
-export default withStyles(styles)(SvgVerticalGrid)
+const mapStateToProps = ({ birdseye }) => ({ birdseye })
+
+export default connect(
+  mapStateToProps,
+  null,
+)(withStyles(styles)(SvgVerticalGrid))
