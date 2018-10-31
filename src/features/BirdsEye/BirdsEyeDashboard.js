@@ -1,19 +1,17 @@
 // @flow
 import React, { Component } from "react"
+import { connect } from "react-redux"
 import { withStyles } from "@material-ui/core/styles"
 import AppBar from "@material-ui/core/AppBar"
 import Tabs from "@material-ui/core/Tabs"
 import Tab from "@material-ui/core/Tab"
 import Typography from "@material-ui/core/Typography"
 import DataSetDisplay from "features/BirdsEye/Global/DataSets/DataSetDisplay"
+import { changeBirdsEyeTab } from "app/actions/birdsEyeActions"
 
-type tabProps = {
-  children: any,
-}
-
-const TabContainer = (props: tabProps) => (
+const TabContainer = ({ children }: any) => (
   <Typography component="div" style={{ padding: 8 * 3 }}>
-    {props.children}
+    {children}
   </Typography>
 )
 
@@ -27,40 +25,39 @@ const styles = theme => ({
 type Props = {
   /** Material-UI classes */
   classes: Object,
+  /** The birdseye slice of state */
+  birdseye: Object,
+  /** Action for changing the tab */
+  changeBirdsEyeTab: Function,
 }
 
-type State = {
-  /** Value representing the two tabs. Starts at 0. */
-  value: number,
-}
+class BirdsEyeDashboard extends Component<Props> {
+  handleChange = (event: SyntheticEvent<>, value: string) => {
+    const { changeBirdsEyeTab } = this.props
 
-class BirdsEyeDashboard extends Component<Props, State> {
-  state = {
-    value: 0,
-  }
-
-  handleChange = (event, value) => {
-    this.setState({ value })
+    changeBirdsEyeTab(value)
   }
 
   render() {
-    const { classes } = this.props
-    const { value } = this.state
+    const { classes, birdseye } = this.props
 
     return (
       <div className={classes.root}>
         <AppBar position="static">
-          <Tabs value={value} onChange={this.handleChange} centered>
+          <Tabs
+            value={birdseye.currentTab}
+            onChange={this.handleChange}
+            centered>
             <Tab label="Global" />
             <Tab label="Comparative" />
           </Tabs>
         </AppBar>
-        {value === 0 && (
+        {birdseye.currentTab === 0 && (
           <TabContainer>
             <DataSetDisplay />
           </TabContainer>
         )}
-        {value === 1 && (
+        {birdseye.currentTab === 1 && (
           <TabContainer>
             <center>Work in progress</center>
           </TabContainer>
@@ -70,4 +67,9 @@ class BirdsEyeDashboard extends Component<Props, State> {
   }
 }
 
-export default withStyles(styles)(BirdsEyeDashboard)
+const mapStateToProps = ({ birdseye }) => ({ birdseye })
+
+export default connect(
+  mapStateToProps,
+  { changeBirdsEyeTab },
+)(withStyles(styles)(BirdsEyeDashboard))
