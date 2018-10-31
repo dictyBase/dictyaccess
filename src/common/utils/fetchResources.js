@@ -26,10 +26,10 @@ if (process.env.REACT_APP_API_SERVER) {
     process.env.REACT_APP_API_SERVER
   }${fetchPermissionByIdBase}`
 } else {
-  fetchUserByIdResource = "http://betaapi.dictybase.local/users"
-  fetchUserByEmailResource = "http://betaapi.dictybase.local/users/email"
-  fetchRoleByIdResource = "http://betaapi.dictybase.local/roles"
-  fetchPermissionByIdResource = "http://betaapi.dictybase.local/permissions"
+  fetchUserByIdResource = "http://betafunc.dictybase.local/users"
+  fetchUserByEmailResource = "http://betafunc.dictybase.local/users/email"
+  fetchRoleByIdResource = "http://betafunc.dictybase.local/roles"
+  fetchPermissionByIdResource = "http://betafunc.dictybase.local/permissions"
 }
 
 if (process.env.REACT_APP_AUTH_SERVER) {

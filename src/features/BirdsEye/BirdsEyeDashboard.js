@@ -11,13 +11,11 @@ type tabProps = {
   children: any,
 }
 
-const TabContainer = (props: tabProps) => {
-  return (
-    <Typography component="div" style={{ padding: 8 * 3 }}>
-      {props.children}
-    </Typography>
-  )
-}
+const TabContainer = (props: tabProps) => (
+  <Typography component="div" style={{ padding: 8 * 3 }}>
+    {props.children}
+  </Typography>
+)
 
 const styles = theme => ({
   root: {

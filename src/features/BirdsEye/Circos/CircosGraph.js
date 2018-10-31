@@ -32,24 +32,20 @@ class CircosGraph extends Component<Props> {
 
     const posStrand = genes
       .filter(item => item.attributes.strand === "+")
-      .map(d => {
-        return {
-          block_id: d.attributes.block_id,
-          end: d.attributes.end,
-          start: d.attributes.start,
-          strand: d.attributes.strand,
-        }
-      })
+      .map(d => ({
+        block_id: d.attributes.block_id,
+        end: d.attributes.end,
+        start: d.attributes.start,
+        strand: d.attributes.strand,
+      }))
     const negStrand = genes
       .filter(item => item.attributes.strand === "-")
-      .map(d => {
-        return {
-          block_id: d.attributes.block_id,
-          end: d.attributes.end,
-          start: d.attributes.start,
-          strand: d.attributes.strand,
-        }
-      })
+      .map(d => ({
+        block_id: d.attributes.block_id,
+        end: d.attributes.end,
+        start: d.attributes.start,
+        strand: d.attributes.strand,
+      }))
     let myCircos = new Circos({
       width: 750,
       height: 750,
@@ -98,9 +94,7 @@ class CircosGraph extends Component<Props> {
       direction: "in",
       strokeWidth: 0,
       color: "blue",
-      tooltipContent: d => {
-        return `${d.block_id}:${d.start}-${d.end}`
-      },
+      tooltipContent: d => `${d.block_id}:${d.start}-${d.end}`,
       logScale: true,
     })
     myCircos.stack("positive-strands", posStrand, {
@@ -111,9 +105,7 @@ class CircosGraph extends Component<Props> {
       direction: "in",
       strokeWidth: 0,
       color: "red",
-      tooltipContent: d => {
-        return `${d.block_id}:${d.start}-${d.end}`
-      },
+      tooltipContent: d => `${d.block_id}:${d.start}-${d.end}`,
       logScale: true,
     })
     myCircos.render()

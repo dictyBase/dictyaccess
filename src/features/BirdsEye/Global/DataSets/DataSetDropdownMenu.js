@@ -5,11 +5,15 @@ export const dropDownData = [
     route: "/birdseye/genemodels",
   },
   {
-    name: "Expressions",
-    route: "/birdseye/expressions",
+    name: "Pseudogene Models",
+    route: "/birdseye/pseudogenemodels",
   },
-  {
-    name: "GWDI Mutants",
-    route: "/birdseye/gwdimutants",
-  },
+  // {
+  //   name: "Expressions",
+  //   route: "/birdseye/expressions",
+  // },
+  // {
+  //   name: "GWDI Mutants",
+  //   route: "/birdseye/gwdimutants",
+  // },
 ]
