@@ -1,114 +1,150 @@
 // @flow
 import React, { Component } from "react"
-import { connect } from "react-redux"
+import Circos from "circos"
 import { withRouter } from "react-router-dom"
-import { withStyles } from "@material-ui/core/styles"
+import { ReactSVGPanZoom } from "react-svg-pan-zoom"
+import Grid from "@material-ui/core/Grid"
 
-import CircosGraph from "features/BirdsEye/Circos/CircosGraph"
-import CircosLoader from "./CircosLoader"
-import BirdsEyeTabList from "features/BirdsEye/BirdsEyeTabList"
-import TypographyWrapper from "common/components/TypographyWrapper"
-import chrNameMapper from "features/BirdsEye/Circos/utils/chrNameMapper"
+import LegendBox from "common/components/Legend/LegendBox"
+import LegendHeader from "common/components/Legend/LegendHeader"
+import LegendBody from "common/components/Legend/LegendBody"
+import SvgVerticalGrid from "./SvgVerticalGrid"
+import CircosPageHeader from "./CircosPageHeader"
 import chrNameExtender from "./utils/chrNameExtender"
-import { fetchChromosomeData } from "app/actions/birdsEyeActions"
-
-const styles = (theme: Object) => ({
-  root: {
-    flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
-  },
-})
-
-const chrMap = (chr, id) => chr.data.filter(i => i.attributes.name === id)
-const geneMap = (gene, id) =>
-  gene.data.filter(item => item.attributes.block_id === chrNameMapper(id))
 
 type Props = {
-  /** Material-UI classes */
-  classes: Object,
-  /** React Router match object */
+  /** Genes data */
+  genes: Array<Object>,
+  /** Chromosomes data */
+  chr: Object,
+  /** Legend description for the shown graph */
+  description: string,
+  /** React Router's match object */
   match: Object,
-  /** The birdseye slice of state */
-  birdseye: Object,
-  /** Action to fetch chromosome data */
-  fetchChromosomeData: Function,
 }
 
 /**
- * This is the CircosDisplay container. It fetches the desired data then passes them as props to CircosGraph.
+ * This is the main Circos component that creates models based on the specified data props.
  */
 
 class CircosDisplay extends Component<Props> {
   componentDidMount() {
-    const { fetchChromosomeData } = this.props
+    const { genes, chr } = this.props
 
-    fetchChromosomeData()
+    const posStrand = genes
+      .filter(item => item.attributes.strand === "+")
+      .map(d => ({
+        block_id: d.attributes.block_id,
+        end: d.attributes.end,
+        start: d.attributes.start,
+        strand: d.attributes.strand,
+      }))
+    const negStrand = genes
+      .filter(item => item.attributes.strand === "-")
+      .map(d => ({
+        block_id: d.attributes.block_id,
+        end: d.attributes.end,
+        start: d.attributes.start,
+        strand: d.attributes.strand,
+      }))
+    let myCircos = new Circos({
+      width: 750,
+      height: 750,
+      container: "#stackChart",
+    })
+    myCircos.layout(
+      [
+        {
+          id: chr.attributes.id,
+          len: chr.attributes.length,
+          label: chr.attributes.name,
+          color: "#85a9e5",
+        },
+      ],
+      {
+        innerRadius: 300,
+        outerRadius: 320,
+        gap: 0,
+        labels: {
+          display: false,
+          // position: "center",
+          // size: 30,
+          // color: "#000000",
+          // radialOffset: -250,
+        },
+        ticks: {
+          display: true,
+          color: "grey",
+          spacing: 100000,
+          labels: true,
+          labelSpacing: 10,
+          labelDisplay0: true,
+          majorSpacing: 5,
+          size: {
+            minor: 2,
+            major: 5,
+          },
+        },
+      },
+    )
+    myCircos.stack("negative-strands", negStrand, {
+      innerRadius: 250,
+      outerRadius: 290,
+      thickness: 10,
+      margin: 0.01 * chr.attributes.length,
+      direction: "in",
+      strokeWidth: 0,
+      color: "blue",
+      tooltipContent: d => `${d.block_id}:${d.start}-${d.end}`,
+      logScale: true,
+    })
+    myCircos.stack("positive-strands", posStrand, {
+      innerRadius: 185,
+      outerRadius: 250,
+      thickness: 10,
+      margin: 0.01 * chr.attributes.length,
+      direction: "in",
+      strokeWidth: 0,
+      color: "red",
+      tooltipContent: d => `${d.block_id}:${d.start}-${d.end}`,
+      logScale: true,
+    })
+    myCircos.render()
   }
 
-  // turn into HOC!
-
   render() {
-    const {
-      birdseye: { isFetching, error, currentTab, chromosomes, genes },
-      classes,
-      match,
-    } = this.props
-
-    const description = `Circos visualization for canonical gene models of D.discoideum ${chrNameExtender(
-      match.params.id,
-    )}. The blue and red tracks represents genes from negative and positive strands respectively.`
-
-    if (error) {
-      return (
-        <div className={classes.root}>
-          <BirdsEyeTabList />
-          {currentTab === 0 && (
-            <TypographyWrapper>
-              <center>
-                <p>
-                  <h4>Sorry! There was an error loading the items.</h4>
-                </p>
-                <p>{error}</p>
-              </center>
-            </TypographyWrapper>
-          )}
-        </div>
-      )
-    }
-
-    if (isFetching) {
-      return <CircosLoader />
-    }
+    const { match, genes } = this.props
 
     return (
-      <div className={classes.root}>
-        <BirdsEyeTabList />
-        {currentTab === 0 && (
-          <TypographyWrapper>
-            {/* refactor this!!! */}
-            {chromosomes.data &&
-              genes.data && (
-                <CircosGraph
-                  chr={chrMap(chromosomes, match.params.id)[0]}
-                  genes={geneMap(genes, match.params.id)}
-                  description={description}
-                />
-              )}
-          </TypographyWrapper>
-        )}
-        {currentTab === 1 && (
-          <TypographyWrapper>
-            <center>Work in progress</center>
-          </TypographyWrapper>
-        )}
+      <div>
+        <Grid container spacing={16}>
+          <CircosPageHeader title={chrNameExtender(match.params.id)} />
+          <Grid item xs={12} md={12} lg={9}>
+            <br />
+            <center>
+              <ReactSVGPanZoom
+                width={750}
+                height={750}
+                toolbarPosition="left"
+                miniaturePosition="none"
+                background="#fff">
+                <svg width={750} height={750}>
+                  <g id="stackChart" />
+                </svg>
+              </ReactSVGPanZoom>
+            </center>
+          </Grid>
+          <Grid item xs={12} md={12} lg={3}>
+            <LegendBox>
+              <LegendHeader color="info" />
+              <LegendBody>{this.props.description}</LegendBody>
+            </LegendBox>
+            {genes && <SvgVerticalGrid />}
+          </Grid>
+        </Grid>
       </div>
     )
   }
 }
 
-const mapStateToProps = ({ birdseye }) => ({ birdseye })
-
-export default connect(
-  mapStateToProps,
-  { fetchChromosomeData },
-)(withStyles(styles)(withRouter(CircosDisplay)))
+export default withRouter(CircosDisplay)

@@ -2,11 +2,11 @@
 export const dropDownData = [
   {
     name: "Gene Models",
-    route: "/birdseye/genemodels",
+    route: "/birdseye/genes",
   },
   {
     name: "Pseudogene Models",
-    route: "/birdseye/pseudogenemodels",
+    route: "/birdseye/pseudogenes",
   },
   // {
   //   name: "Expressions",

@@ -7,7 +7,7 @@ import AnnotationsDashboard from "features/Annotations/AnnotationsDashboard"
 import AnalyticsDashboard from "features/Analytics/AnalyticsDashboard"
 import BirdsEyeDashboard from "features/BirdsEye/BirdsEyeDashboard"
 import PhylogenyDashboard from "features/Phylogeny/PhylogenyDashboard"
-import CircosDisplay from "features/BirdsEye/Circos/CircosDisplay"
+import CircosContainer from "features/BirdsEye/Circos/CircosContainer"
 import Login from "features/Authentication/Login"
 import OauthCallback from "features/Authentication/OauthCallback"
 import AuthLoader from "features/Authentication/AuthLoader"
@@ -19,18 +19,18 @@ const Routes = () => (
     <Route
       exact
       path="/"
-      component={BirdsEyeDashboard => <Redirect to="/birdseye/genemodels" />}
+      component={BirdsEyeDashboard => <Redirect to="/birdseye/genes" />}
     />
     <Route
       exact
       path="/birdseye"
-      component={BirdsEyeDashboard => <Redirect to="/birdseye/genemodels" />}
+      component={BirdsEyeDashboard => <Redirect to="/birdseye/genes" />}
     />
     <Route exact path="/birdseye/:dataset" component={BirdsEyeDashboard} />
     <Route
       exact
       path="/birdseye/:dataset/:id"
-      render={({ location }) => <CircosDisplay key={location.pathname} />}
+      render={({ location }) => <CircosContainer key={location.pathname} />}
     />
     <Route exact path="/genomes" component={GenomeDashboard} />
     <Route exact path="/annotations" component={AnnotationsDashboard} />

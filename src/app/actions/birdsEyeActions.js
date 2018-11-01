@@ -20,8 +20,10 @@ const {
 // }/dashboard/genomes`
 
 // set url for fetching data
+// const chrUrl =
+//   "https://betafunc.dictybase.local/dashboard/genomes/44689/chromosomes"
 const chrUrl = process.env.REACT_APP_CHROMOSOMES_JSON
-const genesUrl = "https://betafunc.dictybase.org/dashboard/genomes/44689/genes"
+const genesUrl = process.env.REACT_APP_GENES_JSON
 
 /**
  * All of the Redux actions related to the Bird's Eye Dashboard
@@ -109,9 +111,8 @@ export const fetchChromosomeData = () => async (
   }
   try {
     dispatch(fetchChromosomeDataRequest())
-    const res = await fetch(chrUrl, {
-      headers: { Accept: "application/json" },
-    })
+    const res = await fetch(chrUrl)
+
     const json = await res.json()
     // check if res.ok (https://developer.mozilla.org/en-US/docs/Web/API/Response/ok)
     // and that the json doesn't contain an error
@@ -145,11 +146,8 @@ export const fetchGeneData = (url: string) => async (
   }
   try {
     dispatch(fetchGeneDataRequest())
-    const res = await fetch(url, {
-      headers: { Accept: "application/json" },
-    })
+    const res = await fetch(url)
     const json = await res.json()
-    console.log(json)
 
     // check if res.ok (https://developer.mozilla.org/en-US/docs/Web/API/Response/ok)
     // and that the json doesn't contain an error
@@ -179,9 +177,7 @@ export const fetchPseudogeneData = (url: string) => async (
   }
   try {
     dispatch(fetchPseudogeneDataRequest())
-    const res = await fetch(url, {
-      headers: { Accept: "application/json" },
-    })
+    const res = await fetch(url)
     const json = await res.json()
 
     // check if res.ok (https://developer.mozilla.org/en-US/docs/Web/API/Response/ok)

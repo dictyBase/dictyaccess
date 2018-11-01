@@ -73,7 +73,7 @@ const SvgVerticalGrid = (props: Props) => {
           </ListSubheader>
         </GridListTile>
         <GridListTile>
-          <Link to="/birdseye/genemodels/chr1">
+          <Link to="/birdseye/genes/chr1">
             <center>
               <MiniCircos
                 genes={genes.data.filter(
@@ -95,7 +95,7 @@ const SvgVerticalGrid = (props: Props) => {
           </Link>
         </GridListTile>
         <GridListTile>
-          <Link to="/birdseye/genemodels/chr2">
+          <Link to="/birdseye/genes/chr2">
             <center>
               <MiniCircos
                 genes={genes.data.filter(
@@ -118,7 +118,7 @@ const SvgVerticalGrid = (props: Props) => {
         </GridListTile>
 
         <GridListTile>
-          <Link to="/birdseye/genemodels/chr3">
+          <Link to="/birdseye/genes/chr3">
             <center>
               <MiniCircos
                 genes={genes.data.filter(
@@ -140,7 +140,7 @@ const SvgVerticalGrid = (props: Props) => {
           </Link>
         </GridListTile>
         <GridListTile>
-          <Link to="/birdseye/genemodels/chr4">
+          <Link to="/birdseye/genes/chr4">
             <center>
               <MiniCircos
                 genes={genes.data.filter(
@@ -162,7 +162,7 @@ const SvgVerticalGrid = (props: Props) => {
           </Link>
         </GridListTile>
         <GridListTile>
-          <Link to="/birdseye/genemodels/chr5">
+          <Link to="/birdseye/genes/chr5">
             <center>
               <MiniCircos
                 genes={genes.data.filter(
@@ -184,7 +184,7 @@ const SvgVerticalGrid = (props: Props) => {
           </Link>
         </GridListTile>
         <GridListTile>
-          <Link to="/birdseye/genemodels/chr6">
+          <Link to="/birdseye/genes/chr6">
             <center>
               <MiniCircos
                 genes={genes.data.filter(
