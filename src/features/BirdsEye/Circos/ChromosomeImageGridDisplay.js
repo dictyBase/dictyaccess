@@ -31,6 +31,10 @@ const styles = (theme: Object) => ({
 type Props = {
   /** Material-UI classes */
   classes: Object,
+  /** Gene data to display */
+  genes: Object,
+  /** Chromosomes data */
+  chromosomes: Object,
 }
 
 /**
