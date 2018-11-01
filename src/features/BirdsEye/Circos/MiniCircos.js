@@ -24,24 +24,20 @@ class MiniCircos extends Component<Props> {
     const { genes, chr, name } = this.props
     const posStrand = genes
       .filter((item: Object) => item.attributes.strand === "+")
-      .map((d: Object) => {
-        return {
-          block_id: d.attributes.block_id,
-          end: d.attributes.end,
-          start: d.attributes.start,
-          strand: d.attributes.strand,
-        }
-      })
+      .map((d: Object) => ({
+        block_id: d.attributes.block_id,
+        end: d.attributes.end,
+        start: d.attributes.start,
+        strand: d.attributes.strand,
+      }))
     const negStrand = genes
       .filter((item: Object) => item.attributes.strand === "-")
-      .map((d: Object) => {
-        return {
-          block_id: d.attributes.block_id,
-          end: d.attributes.end,
-          start: d.attributes.start,
-          strand: d.attributes.strand,
-        }
-      })
+      .map((d: Object) => ({
+        block_id: d.attributes.block_id,
+        end: d.attributes.end,
+        start: d.attributes.start,
+        strand: d.attributes.strand,
+      }))
     let myCircos = new Circos({
       width: 750,
       height: 750,
@@ -50,9 +46,9 @@ class MiniCircos extends Component<Props> {
     myCircos.layout(
       [
         {
-          id: chr.attributes.id,
-          len: chr.attributes.length,
-          label: chr.attributes.name,
+          id: chr[0].attributes.id,
+          len: chr[0].attributes.length,
+          label: chr[0].attributes.name,
           color: "#85a9e5",
         },
       ],
@@ -66,7 +62,7 @@ class MiniCircos extends Component<Props> {
       innerRadius: 250,
       outerRadius: 290,
       thickness: 10,
-      margin: 0.01 * chr.attributes.length,
+      margin: 0.01 * chr[0].attributes.length,
       direction: "in",
       strokeWidth: 0,
       color: "blue",
@@ -76,7 +72,7 @@ class MiniCircos extends Component<Props> {
       innerRadius: 185,
       outerRadius: 250,
       thickness: 10,
-      margin: 0.01 * chr.attributes.length,
+      margin: 0.01 * chr[0].attributes.length,
       direction: "in",
       strokeWidth: 0,
       color: "red",
@@ -86,6 +82,7 @@ class MiniCircos extends Component<Props> {
   }
   render() {
     const { name, svgWidth, svgHeight } = this.props
+
     const reference = `#${name}`
     return (
       <div>

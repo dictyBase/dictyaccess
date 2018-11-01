@@ -7,6 +7,7 @@ import GridListTile from "@material-ui/core/GridListTile"
 import GridListTileBar from "@material-ui/core/GridListTileBar"
 
 import MiniCircos from "features/BirdsEye/Circos/MiniCircos"
+import chrNameExtender from "./utils/chrNameExtender"
 
 const styles = (theme: Object) => ({
   root: {
@@ -44,141 +45,40 @@ type Props = {
 const ChromosomeImageGridDisplay = (props: Props) => {
   const { classes, chromosomes, genes } = props
 
+  const tile = (id, route, title, key) => (
+    <GridListTile key={key}>
+      <Link to={route}>
+        <center>
+          <MiniCircos
+            genes={genes.data.filter(item => item.attributes.block_id === id)}
+            chr={chromosomes.data.filter(item => item.id === id)}
+            name={id}
+            svgWidth="220"
+            svgHeight="220"
+          />
+          <GridListTileBar
+            title={title}
+            classes={{
+              root: classes.titleBar,
+              title: classes.title,
+            }}
+          />
+        </center>
+      </Link>
+    </GridListTile>
+  )
+
   return (
     <div className={classes.root}>
       <GridList cellHeight={270} cols={3} className={classes.gridList}>
-        <GridListTile>
-          <Link to="/birdseye/genes/chr1">
-            <center>
-              <MiniCircos
-                genes={genes.data.filter(
-                  item => item.attributes.block_id === "DDB0232428",
-                )}
-                chr={chromosomes.data[0]}
-                name="chr1"
-                svgWidth="220"
-                svgHeight="220"
-              />
-              <GridListTileBar
-                title="Chromosome 1"
-                classes={{
-                  root: classes.titleBar,
-                  title: classes.title,
-                }}
-              />
-            </center>
-          </Link>
-        </GridListTile>
-        <GridListTile>
-          <Link to="/birdseye/genes/chr2">
-            <center>
-              <MiniCircos
-                genes={genes.data.filter(
-                  item => item.attributes.block_id === "DDB0232429",
-                )}
-                chr={chromosomes.data[1]}
-                name="chr2"
-                svgWidth="220"
-                svgHeight="220"
-              />
-              <GridListTileBar
-                title="Chromosome 2"
-                classes={{
-                  root: classes.titleBar,
-                  title: classes.title,
-                }}
-              />
-            </center>
-          </Link>
-        </GridListTile>
-        <GridListTile>
-          <Link to="/birdseye/genes/chr3">
-            <center>
-              <MiniCircos
-                genes={genes.data.filter(
-                  item => item.attributes.block_id === "DDB0232430",
-                )}
-                chr={chromosomes.data[2]}
-                name="chr3"
-                svgWidth="220"
-                svgHeight="220"
-              />
-              <GridListTileBar
-                title="Chromosome 3"
-                classes={{
-                  root: classes.titleBar,
-                  title: classes.title,
-                }}
-              />
-            </center>
-          </Link>
-        </GridListTile>
-        <GridListTile>
-          <Link to="/birdseye/genes/chr4">
-            <center>
-              <MiniCircos
-                genes={genes.data.filter(
-                  item => item.attributes.block_id === "DDB0232431",
-                )}
-                chr={chromosomes.data[3]}
-                name="chr4"
-                svgWidth="220"
-                svgHeight="220"
-              />
-              <GridListTileBar
-                title="Chromosome 4"
-                classes={{
-                  root: classes.titleBar,
-                  title: classes.title,
-                }}
-              />
-            </center>
-          </Link>
-        </GridListTile>
-        <GridListTile>
-          <Link to="/birdseye/genes/chr5">
-            <center>
-              <MiniCircos
-                genes={genes.data.filter(
-                  item => item.attributes.block_id === "DDB0232432",
-                )}
-                chr={chromosomes.data[4]}
-                name="chr5"
-                svgWidth="220"
-                svgHeight="220"
-              />
-              <GridListTileBar
-                title="Chromosome 5"
-                classes={{
-                  root: classes.titleBar,
-                  title: classes.title,
-                }}
-              />
-            </center>
-          </Link>
-        </GridListTile>
-        <GridListTile>
-          <Link to="/birdseye/genes/chr6">
-            <center>
-              <MiniCircos
-                genes={genes.data.filter(
-                  item => item.attributes.block_id === "DDB0232433",
-                )}
-                chr={chromosomes.data[5]}
-                name="chr6"
-                svgWidth="220"
-                svgHeight="220"
-              />
-              <GridListTileBar
-                title="Chromosome 6"
-                classes={{
-                  root: classes.titleBar,
-                  title: classes.title,
-                }}
-              />
-            </center>
-          </Link>
-        </GridListTile>
+        {chromosomes.data.map((item, i) =>
+          tile(
+            item.id,
+            `/birdseye/genes/${item.attributes.name}`,
+            chrNameExtender(item.attributes.name),
+            i,
+          ),
+        )}
       </GridList>
     </div>
   )

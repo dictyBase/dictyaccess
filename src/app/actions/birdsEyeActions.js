@@ -15,15 +15,11 @@ const {
   CHROMOSOME_DATA_NO_REFETCH,
 } = types
 
-// const genomesUrl = `${
-//   process.env.REACT_APP_API_SERVER
-// }/dashboard/genomes`
-
-// set url for fetching data
-// const chrUrl =
-//   "https://betafunc.dictybase.local/dashboard/genomes/44689/chromosomes"
 const chrUrl = process.env.REACT_APP_CHROMOSOMES_JSON
 const genesUrl = process.env.REACT_APP_GENES_JSON
+const pseudogenesUrl = `${
+  process.env.REACT_APP_API_SERVER
+}/dashboard/genomes/44689/pseudogenes`
 
 /**
  * All of the Redux actions related to the Bird's Eye Dashboard
@@ -119,6 +115,7 @@ export const fetchChromosomeData = () => async (
     if (res.ok && !json.status) {
       dispatch(fetchChromosomeDataSuccess(json))
       await dispatch(fetchGeneData(genesUrl))
+      await dispatch(fetchPseudogeneData(pseudogenesUrl))
     } else {
       dispatch(
         fetchChromosomeDataFailure(createErrorObj(json.status, json.title)),
@@ -153,7 +150,6 @@ export const fetchGeneData = (url: string) => async (
     // and that the json doesn't contain an error
     if (res.ok && !json.status) {
       dispatch(fetchGeneDataSuccess(json))
-      // await dispatch(fetchGoa(json.data.relationships.goa.links.related))
     } else {
       dispatch(fetchGeneDataFailure(createErrorObj(json.status, json.title)))
       if (process.env.NODE_ENV !== "production") {
@@ -184,7 +180,6 @@ export const fetchPseudogeneData = (url: string) => async (
     // and that the json doesn't contain an error
     if (res.ok && !json.status) {
       dispatch(fetchPseudogeneDataSuccess(json))
-      // await dispatch(fetchGoa(json.data.relationships.goa.links.related))
     } else {
       dispatch(
         fetchPseudogeneDataFailure(createErrorObj(json.status, json.title)),
