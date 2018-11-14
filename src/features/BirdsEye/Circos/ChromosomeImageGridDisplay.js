@@ -40,6 +40,7 @@ type Props = {
 
 /**
  * This is the chromosome image grid display that appears on the main Birdseye Dashboard page.
+ * NOTE: THIS COMPONENT IS NO LONGER USED.
  */
 
 const ChromosomeImageGridDisplay = (props: Props) => {

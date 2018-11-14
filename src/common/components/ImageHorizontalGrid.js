@@ -1,4 +1,6 @@
+// @flow
 import React from "react"
+import { Link } from "react-router-dom"
 import { withStyles } from "@material-ui/core/styles"
 import GridList from "@material-ui/core/GridList"
 import GridListTile from "@material-ui/core/GridListTile"
@@ -14,35 +16,38 @@ const styles = theme => ({
     marginBottom: "5px",
   },
   gridList: {
-    flexWrap: "nowrap",
-    // Promote the list into its own layer on Chrome. This costs memory but helps keeping high FPS.
-    transform: "translateZ(0)",
+    width: "90%",
+    height: "100%",
   },
-  title: {
-    color: theme.palette.primary,
-  },
-  titleBar: {
-    background:
-      "linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)",
+  subhead: {
+    color: "white",
+    fontSize: 20,
+    paddingTop: 10,
+    textAlign: "center",
   },
 })
 
-const ImageHorizontalGrid = props => {
-  const { classes, imageData, handleClick } = props
+type Props = {
+  /** Material-UI styling */
+  classes: Object,
+  /** Image data containing title, src, route */
+  imageData: Array<Object>,
+}
+
+const ImageHorizontalGrid = (props: Props) => {
+  const { classes, imageData } = props
 
   return (
     <div className={classes.root}>
-      <GridList className={classes.gridList} cols={6}>
+      <GridList cellHeight={270} cols={3} className={classes.gridList}>
         {imageData.map((tile, i) => (
-          <GridListTile key={i} onClick={() => handleClick(tile.route)}>
-            <img src={tile.img} alt={tile.title} />
-            <GridListTileBar
-              title={tile.title}
-              classes={{
-                root: classes.titleBar,
-                title: classes.title,
-              }}
-            />
+          <GridListTile key={i}>
+            <Link to={tile.route}>
+              <center>
+                <img src={tile.img} alt={tile.title} />
+                <GridListTileBar title={tile.title} />
+              </center>
+            </Link>
           </GridListTile>
         ))}
       </GridList>

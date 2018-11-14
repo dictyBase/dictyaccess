@@ -2,10 +2,11 @@
 import React from "react"
 import Grid from "@material-ui/core/Grid"
 
-import ChromosomeImageGridDisplay from "features/BirdsEye/Circos/ChromosomeImageGridDisplay"
+import ImageHorizontalGrid from "common/components/ImageHorizontalGrid"
 import Dropdown from "common/components/Dropdown"
 // import DataSetButtons from "./DataSetButtons"
 import { dropDownData } from "features/BirdsEye/Global/DataSets/DataSetDropdownMenu"
+import { imageData } from "common/data/chrGeneModels"
 
 type Props = {
   chromosomes: Object,
@@ -19,10 +20,7 @@ const DataSetDisplay = ({ chromosomes, genes }: Props) => (
       {/* <DataSetButtons/> */}
     </Grid>
     <Grid item xs={10}>
-      {chromosomes.data &&
-        genes.data && (
-          <ChromosomeImageGridDisplay chromosomes={chromosomes} genes={genes} />
-        )}
+      <ImageHorizontalGrid imageData={imageData} />
     </Grid>
   </Grid>
 )
