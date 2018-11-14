@@ -52,6 +52,7 @@ type Props = {
 
 /**
  * The vertical grid of SVG thumbnails that displays next to the Circos graph.
+ * NOTE: THIS COMPONENT IS NO LONGER USED, IT IS HERE AS A REFERENCE.
  */
 
 const SvgVerticalGrid = (props: Props) => {

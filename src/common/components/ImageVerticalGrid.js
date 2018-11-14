@@ -1,12 +1,11 @@
+// @flow
 import React from "react"
-// import { Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { withStyles } from "@material-ui/core/styles"
 import GridList from "@material-ui/core/GridList"
 import GridListTile from "@material-ui/core/GridListTile"
 import GridListTileBar from "@material-ui/core/GridListTileBar"
 import ListSubheader from "@material-ui/core/ListSubheader"
-import IconButton from "@material-ui/core/IconButton"
-import InfoIcon from "@material-ui/icons/Info"
 import Typography from "@material-ui/core/Typography"
 
 const styles = theme => ({
@@ -21,15 +20,15 @@ const styles = theme => ({
   title: {
     color: theme.palette.primary,
   },
+  titleBar: {
+    backgroundColor: "rgba(1, 31, 75, 0.7)",
+  },
   headerBar: {
     backgroundColor: "#004080",
   },
   headerBarTitle: {
     color: "white",
     fontSize: 20,
-  },
-  titleBar: {
-    backgroundColor: "rgba(1, 31, 75, 0.7)",
   },
   gridList: {
     width: "100%",
@@ -46,43 +45,46 @@ const styles = theme => ({
   },
 })
 
-const ImageVerticalGrid = props => {
-  const { classes, imageData, handleClick } = props
+type Props = {
+  /** Material-UI styling */
+  classes: Object,
+  /** Image data containing title, src, route */
+  imageData: Array<Object>,
+  /** The title to display at the top of the grid */
+  title: String,
+}
+
+const ImageVerticalGrid = (props: Props) => {
+  const { classes, imageData, title } = props
+
   return (
     <div className={classes.root}>
-      <GridList cellHeight={200} cols={2} className={classes.gridList}>
-        <GridListTile
-          key="Subheader"
-          cols={2}
-          style={{ height: "auto" }}
-          className={classes.headerBar}>
+      <GridList cellHeight={250} cols={1} className={classes.gridList}>
+        <GridListTile style={{ height: "auto" }} className={classes.headerBar}>
           <ListSubheader className={classes.headerBarTitle} component="div">
             <Typography
               variant="headline"
               gutterBottom
               className={classes.subhead}>
-              Other Chromosomes
+              {title}
             </Typography>
           </ListSubheader>
         </GridListTile>
         {imageData.map((tile, i) => (
-          // <Link to="/">
-          <GridListTile key={i} onClick={() => handleClick(tile.route)}>
-            <img src={tile.img} alt={tile.title} />
-            <GridListTileBar
-              title={tile.title}
-              classes={{
-                root: classes.titleBar,
-                title: classes.title,
-              }}
-              actionIcon={
-                <IconButton className={classes.icon}>
-                  <InfoIcon />
-                </IconButton>
-              }
-            />
+          <GridListTile key={i}>
+            <Link to={tile.route}>
+              <center>
+                <img src={tile.img} alt={tile.title} />
+                <GridListTileBar
+                  title={tile.title}
+                  classes={{
+                    root: classes.titleBar,
+                    title: classes.title,
+                  }}
+                />
+              </center>
+            </Link>
           </GridListTile>
-          // </Link>
         ))}
       </GridList>
     </div>

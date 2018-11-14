@@ -8,9 +8,10 @@ import Grid from "@material-ui/core/Grid"
 import LegendBox from "common/components/Legend/LegendBox"
 import LegendHeader from "common/components/Legend/LegendHeader"
 import LegendBody from "common/components/Legend/LegendBody"
-import SvgVerticalGrid from "./SvgVerticalGrid"
+import ImageVerticalGrid from "common/components/ImageVerticalGrid"
 import CircosPageHeader from "./CircosPageHeader"
 import chrNameExtender from "./utils/chrNameExtender"
+import { imageData } from "common/data/chrGeneModels"
 
 type Props = {
   /** Genes data */
@@ -113,7 +114,7 @@ class CircosDisplay extends Component<Props> {
   }
 
   render() {
-    const { match, genes } = this.props
+    const { match } = this.props
 
     return (
       <div>
@@ -139,7 +140,10 @@ class CircosDisplay extends Component<Props> {
               <LegendHeader color="info" />
               <LegendBody>{this.props.description}</LegendBody>
             </LegendBox>
-            {genes && <SvgVerticalGrid />}
+            <ImageVerticalGrid
+              imageData={imageData}
+              title="Other Chromosomes"
+            />
           </Grid>
         </Grid>
       </div>
