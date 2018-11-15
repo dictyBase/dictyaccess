@@ -51,7 +51,7 @@ type Props = {
   /** Image data containing title, src, route */
   imageData: Array<Object>,
   /** The title to display at the top of the grid */
-  title: String,
+  title: string,
 }
 
 const ImageVerticalGrid = (props: Props) => {
