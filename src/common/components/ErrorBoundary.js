@@ -2,9 +2,8 @@ import React, { Component } from "react"
 import Grid from "@material-ui/core/Grid"
 import { withStyles } from "@material-ui/core/styles"
 
-import sadDicty from "images/sad-dicty.png"
+import sadDicty from "common/assets/sad-dicty.png"
 
-// eslint-disable-next-line
 const styles = theme => ({
   gridContainer: {
     marginTop: "33px",

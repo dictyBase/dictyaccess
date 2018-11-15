@@ -6,7 +6,7 @@ import { withStyles } from "@material-ui/core/styles"
 import Grid from "@material-ui/core/Grid"
 import Button from "@material-ui/core/Button"
 import FontAwesome from "react-fontawesome"
-import sadDicty from "images/sad-dicty.png"
+import sadDicty from "common/assets/sad-dicty.png"
 
 const styles = theme => ({
   error400: {
