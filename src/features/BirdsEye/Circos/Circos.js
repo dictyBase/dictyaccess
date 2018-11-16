@@ -18,7 +18,7 @@ type Props = {
     label: string,
   }>,
   /** Configuration object that controls the format of the layout */
-  config: Object,
+  config: ?Object,
   /** Array containing the different tracks and their data/config to display */
   tracks: Array<{
     /** Optional ID used to name the track */

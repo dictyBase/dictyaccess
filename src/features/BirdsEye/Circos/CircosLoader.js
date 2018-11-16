@@ -1,3 +1,4 @@
+// @flow
 import React from "react"
 import { withStyles } from "@material-ui/core/styles"
 import Grid from "@material-ui/core/Grid"
@@ -6,7 +7,7 @@ import CircularProgress from "@material-ui/core/CircularProgress"
 import BirdsEyeTabList from "features/BirdsEye/BirdsEyeTabList"
 import TypographyWrapper from "common/components/TypographyWrapper"
 
-const styles = (theme: Object) => ({
+const styles = theme => ({
   root: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
@@ -18,23 +19,23 @@ const styles = (theme: Object) => ({
   },
 })
 
-const CircosLoader = props => {
-  const { classes } = props
+/** This is the loading component for Circos pages.
+ * It displays a circular progress animation while fetching data.
+ */
 
-  return (
-    <div className={classes.root}>
-      <BirdsEyeTabList />
-      <TypographyWrapper>
-        <Grid container spacing={16}>
-          <Grid item xs={12} className={classes.loader}>
-            <center>
-              <CircularProgress size={350} thickness={2} color="inherit" />
-            </center>
-          </Grid>
+const CircosLoader = ({ classes }: Object) => (
+  <div className={classes.root}>
+    <BirdsEyeTabList />
+    <TypographyWrapper>
+      <Grid container spacing={16}>
+        <Grid item xs={12} className={classes.loader}>
+          <center>
+            <CircularProgress size={300} thickness={2} color="inherit" />
+          </center>
         </Grid>
-      </TypographyWrapper>
-    </div>
-  )
-}
+      </Grid>
+    </TypographyWrapper>
+  </div>
+)
 
 export default withStyles(styles)(CircosLoader)
