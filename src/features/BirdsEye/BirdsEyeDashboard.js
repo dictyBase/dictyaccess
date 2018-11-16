@@ -1,7 +1,6 @@
 // @flow
 import React, { Component } from "react"
 import { connect } from "react-redux"
-import { withRouter } from "react-router-dom"
 import { withStyles } from "@material-ui/core/styles"
 
 import TypographyWrapper from "common/components/TypographyWrapper"
@@ -38,7 +37,7 @@ class BirdsEyeDashboard extends Component<Props> {
     // turn into HOC!
 
     const {
-      birdseye: { isFetching, error, currentTab, chromosomes, genes },
+      birdseye: { isFetching, error, currentTab },
       classes,
     } = this.props
 
@@ -55,7 +54,7 @@ class BirdsEyeDashboard extends Component<Props> {
         <BirdsEyeTabList />
         {currentTab === 0 && (
           <TypographyWrapper>
-            <DataSetDisplay chromosomes={chromosomes} genes={genes} />
+            <DataSetDisplay />
           </TypographyWrapper>
         )}
         {currentTab === 1 && (
@@ -73,4 +72,4 @@ const mapStateToProps = ({ birdseye }) => ({ birdseye })
 export default connect(
   mapStateToProps,
   { fetchChromosomeData },
-)(withStyles(styles)(withRouter(BirdsEyeDashboard)))
+)(withStyles(styles)(BirdsEyeDashboard))

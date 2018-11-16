@@ -11,7 +11,29 @@ import ImageVerticalGrid from "common/components/ImageVerticalGrid"
 import CircosPageHeader from "./CircosPageHeader"
 import chrNameExtender from "./utils/chrNameExtender"
 import dataStrandFilter from "./utils/dataStrandFilter"
-import { imageData } from "common/data/chrGeneModels"
+import { chrPseudogeneModels } from "common/data/chrPseudogeneModels"
+
+const circosConfig = {
+  innerRadius: 300,
+  outerRadius: 320,
+  gap: 0,
+  labels: {
+    display: false,
+  },
+  ticks: {
+    display: true,
+    color: "grey",
+    spacing: 100000,
+    labels: true,
+    labelSpacing: 10,
+    labelDisplay0: true,
+    majorSpacing: 5,
+    size: {
+      minor: 2,
+      major: 5,
+    },
+  },
+}
 
 type Props = {
   /** Pseudogenes data */
@@ -74,27 +96,7 @@ const CircosPseudogenesDisplay = (props: Props) => {
                 color: "#85a9e5",
               },
             ]}
-            config={{
-              innerRadius: 300,
-              outerRadius: 320,
-              gap: 0,
-              labels: {
-                display: false,
-              },
-              ticks: {
-                display: true,
-                color: "grey",
-                spacing: 100000,
-                labels: true,
-                labelSpacing: 10,
-                labelDisplay0: true,
-                majorSpacing: 5,
-                size: {
-                  minor: 2,
-                  major: 5,
-                },
-              },
-            }}
+            config={circosConfig}
             tracks={[
               {
                 type: "stack",
@@ -137,7 +139,10 @@ const CircosPseudogenesDisplay = (props: Props) => {
           <LegendHeader color="info" />
           <LegendBody>{description}</LegendBody>
         </LegendBox>
-        <ImageVerticalGrid imageData={imageData} title="Other Chromosomes" />
+        <ImageVerticalGrid
+          imageData={chrPseudogeneModels}
+          title="Other Chromosomes"
+        />
       </Grid>
     </Grid>
   )

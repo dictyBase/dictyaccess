@@ -1,4 +1,5 @@
 // @flow
+/* eslint-disable react/jsx-no-bind */
 import React from "react"
 import { Route, Switch, Redirect } from "react-router-dom"
 import DscDashboard from "features/StockCenter/DscDashboard"

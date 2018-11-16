@@ -1,11 +1,11 @@
-import chr1 from "common/assets/circos-images/chr1-genes.png"
-import chr2 from "common/assets/circos-images/chr2-genes.png"
-import chr3 from "common/assets/circos-images/chr3-genes.png"
-import chr4 from "common/assets/circos-images/chr4-genes.png"
-import chr5 from "common/assets/circos-images/chr5-genes.png"
-import chr6 from "common/assets/circos-images/chr6-genes.png"
+import chr1 from "common/assets/circos-images/genes/chr1-genes.png"
+import chr2 from "common/assets/circos-images/genes/chr2-genes.png"
+import chr3 from "common/assets/circos-images/genes/chr3-genes.png"
+import chr4 from "common/assets/circos-images/genes/chr4-genes.png"
+import chr5 from "common/assets/circos-images/genes/chr5-genes.png"
+import chr6 from "common/assets/circos-images/genes/chr6-genes.png"
 
-export const imageData = [
+export const chrGeneModels = [
   {
     img: chr1,
     title: "Chromosome 1",

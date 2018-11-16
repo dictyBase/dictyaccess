@@ -11,7 +11,7 @@ import ImageVerticalGrid from "common/components/ImageVerticalGrid"
 import CircosPageHeader from "./CircosPageHeader"
 import chrNameExtender from "./utils/chrNameExtender"
 import dataStrandFilter from "./utils/dataStrandFilter"
-import { imageData } from "common/data/chrGeneModels"
+import { chrGeneModels } from "common/data/chrGeneModels"
 
 /** Main Circos config */
 const circosConfig = {
@@ -138,7 +138,10 @@ const CircosGenesDisplay = (props: Props) => {
           <LegendHeader color="info" />
           <LegendBody>{description}</LegendBody>
         </LegendBox>
-        <ImageVerticalGrid imageData={imageData} title="Other Chromosomes" />
+        <ImageVerticalGrid
+          imageData={chrGeneModels}
+          title="Other Chromosomes"
+        />
       </Grid>
     </Grid>
   )
