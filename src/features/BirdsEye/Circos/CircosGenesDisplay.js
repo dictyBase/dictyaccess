@@ -12,51 +12,89 @@ import CircosPageHeader from "./CircosPageHeader"
 import chrNameExtender from "./utils/chrNameExtender"
 import { imageData } from "common/data/chrGeneModels"
 
+/** Function to filter data by specified strand */
+const dataStrandFilter = (data, strand) =>
+  data.filter(item => item.attributes.strand === strand).map(d => ({
+    block_id: d.attributes.block_id,
+    end: d.attributes.end,
+    start: d.attributes.start,
+    strand: d.attributes.strand,
+  }))
+
+/** Main Circos config */
+const circosConfig = {
+  innerRadius: 300,
+  outerRadius: 320,
+  gap: 0,
+  labels: {
+    display: false,
+  },
+  ticks: {
+    display: true,
+    color: "grey",
+    spacing: 100000,
+    labels: true,
+    labelSpacing: 10,
+    labelDisplay0: true,
+    majorSpacing: 5,
+    size: {
+      minor: 2,
+      major: 5,
+    },
+  },
+}
+
 type Props = {
   /** Genes data */
-  genes: Array<Object>,
+  data: Array<{
+    type: string,
+    id: string,
+    attributes: {
+      block_id: string,
+      end: string,
+      start: string,
+      strand: string,
+    },
+  }>,
   /** Chromosomes data */
-  chr: Object,
-  /** Legend description for the shown graph */
-  description: string,
+  chr: {
+    type: string,
+    id: string,
+    attributes: {
+      end: number,
+      id: string,
+      length: number,
+      name: string,
+      start: number,
+    },
+  },
   /** React Router's match object */
   match: Object,
 }
 
 /**
- * This is the Circos display component that acts as a view layer for an individual chart page.
+ * This is the Circos display component for chromosome genes.
  */
 
-const CircosDisplay = (props: Props) => {
-  const { match, genes, chr, description } = props
+const CircosGenesDisplay = (props: Props) => {
+  const { match, data, chr } = props
 
-  const posStrand = genes
-    .filter(item => item.attributes.strand === "+")
-    .map(d => ({
-      block_id: d.attributes.block_id,
-      end: d.attributes.end,
-      start: d.attributes.start,
-      strand: d.attributes.strand,
-    }))
+  const description = `Circos visualization for canonical gene models of D.discoideum ${chrNameExtender(
+    match.params.id,
+  )}. The blue and red tracks represent genes from negative and positive strands respectively.`
 
-  const negStrand = genes
-    .filter(item => item.attributes.strand === "-")
-    .map(d => ({
-      block_id: d.attributes.block_id,
-      end: d.attributes.end,
-      start: d.attributes.start,
-      strand: d.attributes.strand,
-    }))
+  const posStrand = dataStrandFilter(data, "+")
+  const negStrand = dataStrandFilter(data, "-")
 
   return (
     <Grid container spacing={16}>
-      <CircosPageHeader title={chrNameExtender(match.params.id)} />
+      <CircosPageHeader title={`${chrNameExtender(match.params.id)} Genes`} />
       <Grid item xs={12} md={12} lg={9}>
         <br />
         <center>
           <Circos
             size={750}
-            id="chrGenes"
+            id={`${match.params.dataset}-${match.params.id}`}
             layout={[
               {
                 id: chr.attributes.id,
@@ -65,27 +103,7 @@ const CircosDisplay = (props: Props) => {
                 color: "#85a9e5",
               },
             ]}
-            config={{
-              innerRadius: 300,
-              outerRadius: 320,
-              gap: 0,
-              labels: {
-                display: false,
-              },
-              ticks: {
-                display: true,
-                color: "grey",
-                spacing: 100000,
-                labels: true,
-                labelSpacing: 10,
-                labelDisplay0: true,
-                majorSpacing: 5,
-                size: {
-                  minor: 2,
-                  major: 5,
-                },
-              },
-            }}
+            config={circosConfig}
             tracks={[
               {
                 type: "stack",
@@ -134,4 +152,4 @@ const CircosDisplay = (props: Props) => {
   )
 }
 
-export default withRouter(CircosDisplay)
+export default withRouter(CircosGenesDisplay)

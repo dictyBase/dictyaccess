@@ -4,13 +4,13 @@ import { connect } from "react-redux"
 import { withRouter } from "react-router-dom"
 import { withStyles } from "@material-ui/core/styles"
 
-import CircosDisplay from "features/BirdsEye/Circos/CircosDisplay"
+import CircosGenesDisplay from "features/BirdsEye/Circos/CircosGenesDisplay"
+import CircosPseudogenesDisplay from "features/BirdsEye/Circos/CircosPseudogenesDisplay"
 import CircosLoader from "./CircosLoader"
 import BirdsEyeTabList from "features/BirdsEye/BirdsEyeTabList"
 import TypographyWrapper from "common/components/TypographyWrapper"
 import ErrorPage from "common/components/ErrorPage"
 import chrNameMapper from "features/BirdsEye/Circos/utils/chrNameMapper"
-import chrNameExtender from "./utils/chrNameExtender"
 import { fetchChromosomeData } from "app/actions/birdsEyeActions"
 
 const styles = (theme: Object) => ({
@@ -36,7 +36,8 @@ type Props = {
 }
 
 /**
- * This is the Circos container. It fetches the desired data then passes them as props to CircosDisplay.
+ * This is the Circos container. It fetches the desired data then passes them as props
+ * to the appropriate display component.
  */
 
 class CircosContainer extends Component<Props> {
@@ -50,14 +51,17 @@ class CircosContainer extends Component<Props> {
 
   render() {
     const {
-      birdseye: { isFetching, error, currentTab, chromosomes, genes },
+      birdseye: {
+        isFetching,
+        error,
+        currentTab,
+        chromosomes,
+        genes,
+        pseudogenes,
+      },
       classes,
       match,
     } = this.props
-
-    const description = `Circos visualization for canonical gene models of D.discoideum ${chrNameExtender(
-      match.params.id,
-    )}. The blue and red tracks represents genes from negative and positive strands respectively.`
 
     if (error) {
       return <ErrorPage />
@@ -73,12 +77,18 @@ class CircosContainer extends Component<Props> {
         {currentTab === 0 && (
           <TypographyWrapper>
             {/* refactor this!!! */}
-            {chromosomes.data &&
+            {match.params.dataset === "genes" &&
               genes.data && (
-                <CircosDisplay
+                <CircosGenesDisplay
                   chr={chrMap(chromosomes, match.params.id)[0]}
-                  genes={geneMap(genes, match.params.id)}
-                  description={description}
+                  data={geneMap(genes, match.params.id)}
+                />
+              )}
+            {match.params.dataset === "pseudogenes" &&
+              pseudogenes.data && (
+                <CircosPseudogenesDisplay
+                  chr={chrMap(chromosomes, match.params.id)[0]}
+                  data={geneMap(pseudogenes, match.params.id)}
                 />
               )}
           </TypographyWrapper>
