@@ -15,6 +15,45 @@ import GpsFixedIcon from "@material-ui/icons/GpsFixed"
 import PieChartIcon from "@material-ui/icons/PieChart"
 import FormatAlignJustifyIcon from "@material-ui/icons/FormatAlignJustify"
 
+const links = [
+  {
+    route: "/birdseye",
+    name: "Bird's Eye",
+    color: "#011f4b",
+    icon: GpsFixedIcon,
+  },
+  {
+    route: "/genomes",
+    name: "Genome Stats",
+    color: "rgb(251, 140, 0)",
+    icon: InsertChartIcon,
+  },
+  {
+    route: "/annotations",
+    name: "Annotations",
+    color: "rgb(183, 28, 28)",
+    icon: FingerprintIcon,
+  },
+  {
+    route: "/phylogeny",
+    name: "Phylogeny",
+    color: "rgb(183, 28, 28)",
+    icon: FormatAlignJustifyIcon,
+  },
+  {
+    route: "/analytics",
+    name: "Analytics",
+    color: "rgb(30, 136, 229)",
+    icon: PieChartIcon,
+  },
+  {
+    route: "/stockcenter",
+    name: "Dicty Stock Center",
+    color: "#4f5aae",
+    icon: TrendingUpIcon,
+  },
+]
+
 const styles = theme => ({
   drawerPaper: {
     position: "relative",
@@ -49,11 +88,35 @@ type Props = {
 }
 
 /**
- * This is the Sidebar component. Right now it is a Material-UI Drawer component that is permanently attached to the left side of the page, but responsiveness will be added soon.
+ * This is the Sidebar component. Right now it is a Material-UI Drawer component that
+ * is permanently attached to the left side of the page, but responsiveness will be added soon.
  */
 
 const Sidebar = (props: Props) => {
   const { classes } = props
+
+  const linkList = links.map((item, index) => {
+    const Icon = item.icon
+
+    return (
+      <div key={index}>
+        <ListItem button>
+          <ListItemIcon>
+            <Icon />
+          </ListItemIcon>
+          <NavLink
+            className={classes.navLink}
+            to={item.route}
+            activeStyle={{
+              fontWeight: "bold",
+              color: item.color,
+            }}>
+            {item.name}
+          </NavLink>
+        </ListItem>
+      </div>
+    )
+  })
 
   return (
     <Drawer
@@ -67,92 +130,7 @@ const Sidebar = (props: Props) => {
           DictyAccess
         </Typography>
       </div>
-      <List className={classes.list}>
-        <ListItem button>
-          <ListItemIcon>
-            <GpsFixedIcon />
-          </ListItemIcon>
-          <NavLink
-            className={classes.navLink}
-            to="/birdseye"
-            activeStyle={{
-              fontWeight: "bold",
-              color: "#011f4b",
-            }}>
-            Bird's Eye
-          </NavLink>
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <InsertChartIcon />
-          </ListItemIcon>
-          <NavLink
-            className={classes.navLink}
-            to="/genomes"
-            activeStyle={{
-              fontWeight: "bold",
-              color: "rgb(251, 140, 0)",
-            }}>
-            Genome Stats
-          </NavLink>
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <FingerprintIcon />
-          </ListItemIcon>
-          <NavLink
-            className={classes.navLink}
-            to="/annotations"
-            activeStyle={{
-              fontWeight: "bold",
-              color: "rgb(183, 28, 28)",
-            }}>
-            Annotations
-          </NavLink>
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <FormatAlignJustifyIcon />
-          </ListItemIcon>
-          <NavLink
-            className={classes.navLink}
-            to="/phylogeny"
-            activeStyle={{
-              fontWeight: "bold",
-              color: "rgb(183, 28, 28)",
-            }}>
-            Phylogeny
-          </NavLink>
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <PieChartIcon />
-          </ListItemIcon>
-          <NavLink
-            className={classes.navLink}
-            to="/analytics"
-            activeStyle={{
-              fontWeight: "bold",
-              color: "rgb(30, 136, 229)",
-            }}>
-            Analytics
-          </NavLink>
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <TrendingUpIcon />
-          </ListItemIcon>
-          <NavLink
-            className={classes.navLink}
-            to="/stockcenter"
-            activeStyle={{
-              fontWeight: "bold",
-              color: "#4f5aae",
-            }}>
-            Dicty Stock Center
-          </NavLink>
-        </ListItem>
-      </List>
+      <List className={classes.list}>{linkList}</List>
     </Drawer>
   )
 }
