@@ -1,26 +1,17 @@
 // @flow
+const chrIDs = {
+  chr1: "DDB0232428",
+  chr2: "DDB0232429",
+  chr3: "DDB0232430",
+  chr4: "DDB0232431",
+  chr5: "DDB0232432",
+  chr6: "DDB0232433",
+}
 
 /**
  * This is a helper function to get chromosome IDs based on their names.
  */
 
-const chrNameMapper = (id: string) => {
-  switch (id) {
-    case "chr1":
-      return "DDB0232428"
-    case "chr2":
-      return "DDB0232429"
-    case "chr3":
-      return "DDB0232430"
-    case "chr4":
-      return "DDB0232431"
-    case "chr5":
-      return "DDB0232432"
-    case "chr6":
-      return "DDB0232433"
-    default:
-      return id
-  }
-}
+const chrNameMapper = (id: string) => chrIDs[id]
 
 export default chrNameMapper

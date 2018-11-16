@@ -10,16 +10,8 @@ import LegendBody from "common/components/Legend/LegendBody"
 import ImageVerticalGrid from "common/components/ImageVerticalGrid"
 import CircosPageHeader from "./CircosPageHeader"
 import chrNameExtender from "./utils/chrNameExtender"
+import dataStrandFilter from "./utils/dataStrandFilter"
 import { imageData } from "common/data/chrGeneModels"
-
-/** Function to filter data by specified strand */
-const dataStrandFilter = (data, strand) =>
-  data.filter(item => item.attributes.strand === strand).map(d => ({
-    block_id: d.attributes.block_id,
-    end: d.attributes.end,
-    start: d.attributes.start,
-    strand: d.attributes.strand,
-  }))
 
 /** Main Circos config */
 const circosConfig = {
