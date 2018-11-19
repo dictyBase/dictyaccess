@@ -75,6 +75,7 @@ const CircosPseudogenesDisplay = (props: Props) => {
   )}. The blue and red tracks represent pseudogenes from negative and positive strands respectively.`
 
   const posStrand = dataStrandFilter(data, "+")
+
   const negStrand = dataStrandFilter(data, "-")
 
   return (
@@ -103,15 +104,16 @@ const CircosPseudogenesDisplay = (props: Props) => {
                 id: "negative-strands",
                 data: negStrand,
                 config: {
-                  innerRadius: 250,
-                  outerRadius: 290,
-                  thickness: 10,
+                  innerRadius: 0.7,
+                  outerRadius: 0.99,
+                  thickness: 4,
                   margin: 0.01 * chr.attributes.length,
                   direction: "in",
-                  strokeWidth: 0,
+                  strokeWidth: 1,
+                  strokeColor: "blue",
                   color: "blue",
                   tooltipContent: d => `${d.block_id}:${d.start}-${d.end}`,
-                  logScale: true,
+                  // logScale: true,
                 },
               },
               {
@@ -119,15 +121,16 @@ const CircosPseudogenesDisplay = (props: Props) => {
                 id: "positive-strands",
                 data: posStrand,
                 config: {
-                  innerRadius: 185,
-                  outerRadius: 250,
-                  thickness: 10,
+                  innerRadius: 0.6,
+                  outerRadius: 0.89,
+                  thickness: 4,
                   margin: 0.01 * chr.attributes.length,
                   direction: "in",
-                  strokeWidth: 0,
+                  strokeWidth: 1,
+                  strokeColor: "red",
                   color: "red",
                   tooltipContent: d => `${d.block_id}:${d.start}-${d.end}`,
-                  logScale: true,
+                  // logScale: true,
                 },
               },
             ]}
