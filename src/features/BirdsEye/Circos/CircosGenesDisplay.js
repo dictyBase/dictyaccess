@@ -80,9 +80,9 @@ type Props = {
 const Description = ({ match }: Object) => (
   <div>
     <p>
-      Circos visualization for canonical gene models of D.discoideum{" "}
+      Circos visualization for canonical gene models of <em>D.discoideum</em>{" "}
       {chrNameExtender(match.params.id)}.
-    </p>{" "}
+    </p>
     <ul>
       <li>
         <span style={{ color: "blue" }}>Blue</span> = Negative gene strands

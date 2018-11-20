@@ -17,9 +17,8 @@ const {
 
 const chrUrl = process.env.REACT_APP_CHROMOSOMES_JSON
 const genesUrl = process.env.REACT_APP_GENES_JSON
-const pseudogenesUrl = `${
-  process.env.REACT_APP_API_SERVER
-}/dashboard/genomes/44689/pseudogenes`
+const pseudogenesUrl =
+  "https://betafunc.dictybase.org/dashboard/genomes/44689/pseudogenes"
 
 /**
  * All of the Redux actions related to the Bird's Eye Dashboard
