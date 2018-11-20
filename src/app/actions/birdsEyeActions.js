@@ -17,8 +17,9 @@ const {
 
 const chrUrl = process.env.REACT_APP_CHROMOSOMES_JSON
 const genesUrl = process.env.REACT_APP_GENES_JSON
-const pseudogenesUrl =
-  "https://betafunc.dictybase.org/dashboard/genomes/44689/pseudogenes"
+const pseudogenesUrl = `${
+  process.env.REACT_APP_API_SERVER
+}/dashboard/genomes/44689/pseudogenes`
 
 /**
  * All of the Redux actions related to the Bird's Eye Dashboard
@@ -101,9 +102,9 @@ export const fetchChromosomeData = () => async (
   dispatch: Function,
   getState: Function,
 ) => {
-  if (getState().birdseye.chromosomes.data) {
-    return noRefetch()
-  }
+  // if (getState().birdseye.chromosomes.data) {
+  //   return noRefetch()
+  // }
   try {
     dispatch(fetchChromosomeDataRequest())
     const res = await fetch(chrUrl)

@@ -1,14 +1,11 @@
 // @flow
-import React, { Component } from "react"
+import React from "react"
 import { connect } from "react-redux"
 import { withStyles } from "@material-ui/core/styles"
 
 import TypographyWrapper from "common/components/TypographyWrapper"
 import DataSetDisplay from "features/BirdsEye/Global/DataSets/DataSetDisplay"
 import BirdsEyeTabList from "./BirdsEyeTabList"
-import CircosLoader from "./Circos/CircosLoader"
-import ErrorPage from "common/components/ErrorPage"
-import { fetchChromosomeData } from "app/actions/birdsEyeActions"
 
 const styles = theme => ({
   root: {
@@ -22,54 +19,39 @@ type Props = {
   classes: Object,
   /** The birdseye slice of state */
   birdseye: Object,
-  /** Action to fetch chromosome data */
-  fetchChromosomeData: Function,
 }
 
-class BirdsEyeDashboard extends Component<Props> {
-  componentDidMount() {
-    const { fetchChromosomeData } = this.props
+/**
+ * This is the main Bird's Eye Dashboard component.
+ * It renders at /birdseye
+ */
 
-    fetchChromosomeData()
-  }
+const BirdsEyeDashboard = (props: Props) => {
+  const {
+    birdseye: { currentTab },
+    classes,
+  } = props
 
-  render() {
-    // turn into HOC!
-
-    const {
-      birdseye: { isFetching, error, currentTab },
-      classes,
-    } = this.props
-
-    if (error) {
-      return <ErrorPage />
-    }
-
-    if (isFetching) {
-      return <CircosLoader />
-    }
-
-    return (
-      <div className={classes.root}>
-        <BirdsEyeTabList />
-        {currentTab === 0 && (
-          <TypographyWrapper>
-            <DataSetDisplay />
-          </TypographyWrapper>
-        )}
-        {currentTab === 1 && (
-          <TypographyWrapper>
-            <center>Work in progress</center>
-          </TypographyWrapper>
-        )}
-      </div>
-    )
-  }
+  return (
+    <div className={classes.root}>
+      <BirdsEyeTabList />
+      {currentTab === 0 && (
+        <TypographyWrapper>
+          <DataSetDisplay />
+        </TypographyWrapper>
+      )}
+      {currentTab === 1 && (
+        <TypographyWrapper>
+          <center>Work in progress</center>
+        </TypographyWrapper>
+      )}
+    </div>
+  )
 }
 
 const mapStateToProps = ({ birdseye }) => ({ birdseye })
 
 export default connect(
   mapStateToProps,
-  { fetchChromosomeData },
+  null,
 )(withStyles(styles)(BirdsEyeDashboard))
