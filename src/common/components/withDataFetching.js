@@ -1,14 +1,19 @@
+// @flow
 import React, { Component } from "react"
 import { connect } from "react-redux"
-// import Skeleton from "react-loading-skeleton"
+
+type Props = {
+  error: Object,
+  isFetching: Boolean,
+}
 
 const withDataFetching = (
-  action,
-  key,
-  LoadingComponent,
-  ErrorComponent,
-) => WrappedComponent => {
-  class WithDataFetchingComponent extends Component {
+  action: Function,
+  key: string,
+  LoadingComponent: Object,
+  ErrorComponent: Object,
+) => (WrappedComponent: Object) => {
+  class WithDataFetchingComponent extends Component<Props> {
     componentDidMount() {
       action()
     }
@@ -39,11 +44,10 @@ const withDataFetching = (
         }
 
         return (
-          <div>
+          <center>
             <br />
-            {/* <Skeleton count={10} /> */}
-            Loading...
-          </div>
+            Loading ...
+          </center>
         )
       }
 
@@ -56,6 +60,7 @@ const withDataFetching = (
     data: state[key].data,
   })
 
+  // $FlowFixMe
   return connect(
     mapStateToProps,
     action,
