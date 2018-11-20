@@ -6,7 +6,6 @@ import Grid from "@material-ui/core/Grid"
 import ImageHorizontalGrid from "common/components/ImageHorizontalGrid"
 import DataSetLinks from "./DataSetLinks"
 import { chrGeneModels } from "common/data/chrGeneModels"
-import { chrPseudogeneModels } from "common/data/chrPseudogeneModels"
 
 const DataSetDisplay = ({ match }: Object) => (
   <Grid container spacing={16}>
@@ -16,10 +15,6 @@ const DataSetDisplay = ({ match }: Object) => (
     <Grid item xs={10}>
       {match.params.dataset === "genes" && (
         <ImageHorizontalGrid imageData={chrGeneModels} />
-      )}
-
-      {match.params.dataset === "pseudogenes" && (
-        <ImageHorizontalGrid imageData={chrPseudogeneModels} />
       )}
     </Grid>
   </Grid>

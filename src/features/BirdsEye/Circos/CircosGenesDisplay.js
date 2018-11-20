@@ -38,7 +38,18 @@ const circosConfig = {
 
 type Props = {
   /** Genes data */
-  data: Array<{
+  genes: Array<{
+    type: string,
+    id: string,
+    attributes: {
+      block_id: string,
+      end: string,
+      start: string,
+      strand: string,
+    },
+  }>,
+  /** Pseudogenes data */
+  pseudogenes: Array<{
     type: string,
     id: string,
     attributes: {
@@ -64,23 +75,50 @@ type Props = {
   match: Object,
 }
 
+/** Gene Legend Description component */
+
+const Description = ({ match }: Object) => (
+  <div>
+    <p>
+      Circos visualization for canonical gene models of D.discoideum{" "}
+      {chrNameExtender(match.params.id)}.
+    </p>{" "}
+    <ul>
+      <li>
+        <span style={{ color: "blue" }}>Blue</span> = Negative gene strands
+      </li>
+      <li>
+        <span style={{ color: "red" }}>Red</span> = Positive gene strands
+      </li>
+      <li>
+        <span style={{ color: "indigo" }}>Indigo</span> = Negative pseudogene
+        strands
+      </li>
+      <li>
+        <span style={{ color: "blueviolet" }}>Violet</span> = Positive
+        pseudogene strands
+      </li>
+    </ul>
+  </div>
+)
+
 /**
  * This is the Circos display component for chromosome genes.
  */
 
 const CircosGenesDisplay = (props: Props) => {
-  const { match, data, chr } = props
+  const { match, genes, pseudogenes, chr } = props
 
-  const description = `Circos visualization for canonical gene models of D.discoideum ${chrNameExtender(
-    match.params.id,
-  )}. The blue and red tracks represent genes from negative and positive strands respectively.`
+  const description = <Description match={match} />
 
-  const posStrand = dataStrandFilter(data, "+")
-  const negStrand = dataStrandFilter(data, "-")
+  const posStrand = dataStrandFilter(genes, "+")
+  const negStrand = dataStrandFilter(genes, "-")
+  const pseudogenesNegStrand = dataStrandFilter(pseudogenes, "-")
+  const pseudogenesPosStrand = dataStrandFilter(pseudogenes, "+")
 
   return (
     <Grid container spacing={16}>
-      <CircosPageHeader title={`${chrNameExtender(match.params.id)} Genes`} />
+      <CircosPageHeader title={`${chrNameExtender(match.params.id)}`} />
       <Grid item xs={12} md={12} lg={9}>
         <br />
         <center>
@@ -102,7 +140,7 @@ const CircosGenesDisplay = (props: Props) => {
                 id: "negative-strands",
                 data: negStrand,
                 config: {
-                  innerRadius: 250,
+                  innerRadius: 240,
                   outerRadius: 290,
                   thickness: 10,
                   margin: 0.01 * chr.attributes.length,
@@ -118,8 +156,8 @@ const CircosGenesDisplay = (props: Props) => {
                 id: "positive-strands",
                 data: posStrand,
                 config: {
-                  innerRadius: 185,
-                  outerRadius: 250,
+                  innerRadius: 190,
+                  outerRadius: 240,
                   thickness: 10,
                   margin: 0.01 * chr.attributes.length,
                   direction: "in",
@@ -127,6 +165,38 @@ const CircosGenesDisplay = (props: Props) => {
                   color: "red",
                   tooltipContent: d => `${d.block_id}:${d.start}-${d.end}`,
                   logScale: true,
+                },
+              },
+              {
+                type: "stack",
+                id: "pseudogenes-negative-strands",
+                data: pseudogenesNegStrand,
+                config: {
+                  innerRadius: 150,
+                  outerRadius: 190,
+                  thickness: 10,
+                  margin: 0.0009 * chr.attributes.length,
+                  direction: "in",
+                  strokeWidth: 1,
+                  strokeColor: "indigo",
+                  color: "indigo",
+                  tooltipContent: d => `${d.block_id}:${d.start}-${d.end}`,
+                },
+              },
+              {
+                type: "stack",
+                id: "pseudogenes-positive-strands",
+                data: pseudogenesPosStrand,
+                config: {
+                  innerRadius: 110,
+                  outerRadius: 150,
+                  thickness: 10,
+                  margin: 0.001 * chr.attributes.length,
+                  direction: "in",
+                  strokeWidth: 1,
+                  strokeColor: "blueviolet",
+                  color: "blueviolet",
+                  tooltipContent: d => `${d.block_id}:${d.start}-${d.end}`,
                 },
               },
             ]}

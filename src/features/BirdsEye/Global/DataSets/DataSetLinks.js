@@ -9,10 +9,10 @@ const models = [
     name: "Gene Models",
     route: "/birdseye/genes",
   },
-  {
-    name: "Pseudogene Models",
-    route: "/birdseye/pseudogenes",
-  },
+  // {
+  //   name: "Pseudogene Models",
+  //   route: "/birdseye/pseudogenes",
+  // },
 ]
 
 const styles = theme => ({

@@ -5,7 +5,6 @@ import { withRouter } from "react-router-dom"
 import { withStyles } from "@material-ui/core/styles"
 
 import CircosGenesDisplay from "features/BirdsEye/Circos/CircosGenesDisplay"
-import CircosPseudogenesDisplay from "features/BirdsEye/Circos/CircosPseudogenesDisplay"
 import CircosLoader from "./CircosLoader"
 import BirdsEyeTabList from "features/BirdsEye/BirdsEyeTabList"
 import TypographyWrapper from "common/components/TypographyWrapper"
@@ -78,17 +77,12 @@ class CircosContainer extends Component<Props> {
           <TypographyWrapper>
             {/* refactor this!!! */}
             {match.params.dataset === "genes" &&
-              genes.data && (
+              genes.data &&
+              pseudogenes.data && (
                 <CircosGenesDisplay
                   chr={chrMap(chromosomes, match.params.id)[0]}
-                  data={geneMap(genes, match.params.id)}
-                />
-              )}
-            {match.params.dataset === "pseudogenes" &&
-              pseudogenes.data && (
-                <CircosPseudogenesDisplay
-                  chr={chrMap(chromosomes, match.params.id)[0]}
-                  data={geneMap(pseudogenes, match.params.id)}
+                  genes={geneMap(genes, match.params.id)}
+                  pseudogenes={geneMap(pseudogenes, match.params.id)}
                 />
               )}
           </TypographyWrapper>
