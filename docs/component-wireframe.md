@@ -4,6 +4,6 @@
 
 ![BirdsEyeDashboard wireframe](/docs/wireframes/BirdsEyeDashboard.png)
 
-### CircosDisplay
+### CircosContainer
 
-![CircosDisplay wireframe](/docs/wireframes/CircosDisplay.png)
+![CircosContainer wireframe](/docs/wireframes/CircosContainer.png)
