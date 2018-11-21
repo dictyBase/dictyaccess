@@ -15,6 +15,10 @@ import AuthLoader from "features/Authentication/AuthLoader"
 import Logout from "features/Authentication/Logout"
 import PageNotFound from "features/PageNotFound"
 
+/**
+ * List of routes used with React Router.
+ */
+
 const Routes = () => (
   <Switch>
     <Route

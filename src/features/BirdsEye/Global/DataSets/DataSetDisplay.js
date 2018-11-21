@@ -7,6 +7,10 @@ import ImageHorizontalGrid from "common/components/ImageHorizontalGrid"
 import DataSetLinks from "./DataSetLinks"
 import { chrGeneModels } from "common/data/chrGeneModels"
 
+/**
+ * The display for the Global tab on the Bird's Eye Dashboard.
+ */
+
 const DataSetDisplay = ({ match }: Object) => (
   <Grid container spacing={16}>
     <Grid item xs={2}>

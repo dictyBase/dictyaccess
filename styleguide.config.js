@@ -1,3 +1,5 @@
+/** Need to remove features from ignore list as they are added to our app. */
+
 module.exports = {
   styleguideDir: "docs",
   components: "src/**/*.js",
@@ -11,8 +13,22 @@ module.exports = {
     "src/common/assets/*.png",
     "src/common/constants/*.js",
     "src/common/data/*.js",
+    "src/common/styles/*.js",
     "src/common/utils/*.js",
+    "src/features/Analytics/*.js",
+    "src/features/Analytics/Charts/*.js",
+    "src/features/Annotations/*.js",
+    "src/features/Annotations/Charts/*.js",
+    "src/features/Annotations/Lists/*.js",
     "src/features/BirdsEye/Circos/utils/*.js",
+    "src/features/Genomes/*.js",
+    "src/features/Genomes/Charts/*.js",
+    "src/features/Genomes/Tables/*.js",
+    "src/features/Phylogeny/*.js",
+    "src/features/StockCenter/*.js",
+    "src/features/StockCenter/Charts/*.js",
+    "src/features/StockCenter/Lists/*.js",
+    "src/features/StockCenter/Tables/*.js",
     "src/index.js",
     "src/registerServiceWorker.js",
     "src/setupTests.js",

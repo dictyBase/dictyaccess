@@ -62,7 +62,8 @@ type Props = {
 }
 
 /**
- * General error handling page
+ * General error handling page.
+ * It displays different messages based on HTTP status code.
  */
 
 export const ErrorPage = (props: Props) => {

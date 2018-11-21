@@ -4,6 +4,10 @@ import { withStyles } from "@material-ui/core/styles"
 
 import { LegendBodyStyle as styles } from "common/styles/LegendStyles"
 
+/**
+ * Main body content used inside of LegendBox
+ */
+
 const LegendBody = props => {
   const { classes, className, children, ...rest } = props
   const cardBodyClasses = classNames({

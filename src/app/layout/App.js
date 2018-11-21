@@ -40,6 +40,11 @@ type Props = {
   classes: Object,
 }
 
+/**
+ * This is the main App component.
+ * It is responsible for the main layout of the entire application.
+ */
+
 export class App extends Component<Props> {
   componentDidMount() {
     const { fetchNavbar, fetchFooter } = this.props

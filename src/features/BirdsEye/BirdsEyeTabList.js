@@ -16,7 +16,7 @@ type Props = {
 // convert this to functional component!
 
 /**
- * This contains the tabs on the top of the Bird's Eye Dashboard.
+ * This contains the tabs at the top of the Bird's Eye Dashboard.
  */
 
 class BirdsEyeTabList extends Component<Props> {

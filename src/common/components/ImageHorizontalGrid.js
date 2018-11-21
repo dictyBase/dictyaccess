@@ -41,6 +41,11 @@ type Props = {
   }>,
 }
 
+/**
+ * Reusable horizontal image grid component.
+ * Accepts imageData as a prop, then maps through this.
+ */
+
 const ImageHorizontalGrid = (props: Props) => {
   const { classes, imageData } = props
 

@@ -9,10 +9,6 @@ const models = [
     name: "Gene Models",
     route: "/birdseye/genes",
   },
-  // {
-  //   name: "Pseudogene Models",
-  //   route: "/birdseye/pseudogenes",
-  // },
 ]
 
 const styles = theme => ({
@@ -35,6 +31,10 @@ const styles = theme => ({
     color: "#020202",
   },
 })
+
+/**
+ * The set of links for the different gene model displays.
+ */
 
 const DataSetLinks = ({ classes }) => {
   const linkList = models.map((item, index) => (

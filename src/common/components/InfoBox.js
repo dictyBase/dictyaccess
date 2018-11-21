@@ -55,6 +55,10 @@ type Props = {
   classes: Object,
 }
 
+/**
+ * Reusable Material-UI based InfoBox component
+ */
+
 const InfoBox = (props: Props) => {
   const {
     title,

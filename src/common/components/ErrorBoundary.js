@@ -22,6 +22,11 @@ const styles = theme => ({
   },
 })
 
+/**
+ * This is an ErrorBoundary wrapper that catches any
+ * JavaScript errors and provides a fallback UI.
+ */
+
 class ErrorBoundary extends Component {
   state = { error: null, errorInfo: null }
 

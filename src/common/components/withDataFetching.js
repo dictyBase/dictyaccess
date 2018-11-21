@@ -7,6 +7,10 @@ type Props = {
   isFetching: Boolean,
 }
 
+/**
+ * HOC used to handle data fetching, loading and error displays.
+ */
+
 const withDataFetching = (
   action: Function,
   key: string,
