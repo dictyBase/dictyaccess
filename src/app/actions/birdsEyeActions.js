@@ -15,7 +15,6 @@ const {
   CHROMOSOME_DATA_NO_REFETCH,
 } = types
 
-const chrUrl = process.env.REACT_APP_CHROMOSOMES_JSON
 const apiUrl = `${process.env.REACT_APP_API_SERVER}/dashboard/genomes/44689`
 
 /**
@@ -104,7 +103,7 @@ export const fetchChromosomeData = () => async (
   // }
   try {
     dispatch(fetchChromosomeDataRequest())
-    const res = await fetch(chrUrl)
+    const res = await fetch(`${apiUrl}/chromosomes`)
 
     const json = await res.json()
     // check if res.ok (https://developer.mozilla.org/en-US/docs/Web/API/Response/ok)

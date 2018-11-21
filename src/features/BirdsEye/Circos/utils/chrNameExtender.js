@@ -1,11 +1,11 @@
 // @flow
 const chrNames = {
-  chr1: "Chromosome 1",
-  chr2: "Chromosome 2",
-  chr3: "Chromosome 3",
-  chr4: "Chromosome 4",
-  chr5: "Chromosome 5",
-  chr6: "Chromosome 6",
+  "1": "Chromosome 1",
+  "2": "Chromosome 2",
+  "3": "Chromosome 3",
+  "4": "Chromosome 4",
+  "5": "Chromosome 5",
+  "6": "Chromosome 6",
 }
 
 /**
