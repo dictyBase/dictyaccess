@@ -29,10 +29,6 @@ ENV REACT_APP_FOOTER_JSON ${footer_json:-https://raw.githubusercontent.com/dicty
 ARG chromosomes_json
 ENV REACT_APP_CHROMOSOMES_JSON ${chromosomes_json:-https://raw.githubusercontent.com/dictyBase/migration-data/master/dashboard/chromosomes.json}
 
-# URL for genes json
-ARG genes_json
-ENV REACT_APP_GENES_JSON ${genes_json:-https://raw.githubusercontent.com/dictyBase/migration-data/master/dashboard/genes.json}
-
 # base path for React Router
 ARG basename
 ENV REACT_APP_BASENAME ${basename:-dictyaccess}
