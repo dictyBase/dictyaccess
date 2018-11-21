@@ -54,15 +54,18 @@ const CircosContainer = (props: Props) => {
 
   if (currentTab === 1) {
     return (
-      <TypographyWrapper>
-        <center>Work in progress</center>
-      </TypographyWrapper>
+      <div className={classes.root}>
+        <BirdsEyeTabList />
+        <TypographyWrapper>
+          <center>Work in progress</center>
+        </TypographyWrapper>
+      </div>
     )
   }
 
   return (
     <div className={classes.root}>
-      <BirdsEyeTabList />
+      <BirdsEyeTabList birdseye={props.birdseye} />
       <TypographyWrapper>
         {match.params.dataset === "genes" && (
           <CircosGenesDisplay
