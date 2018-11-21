@@ -16,10 +16,7 @@ const {
 } = types
 
 const chrUrl = process.env.REACT_APP_CHROMOSOMES_JSON
-const genesUrl = process.env.REACT_APP_GENES_JSON
-const pseudogenesUrl = `${
-  process.env.REACT_APP_API_SERVER
-}/dashboard/genomes/44689/pseudogenes`
+const apiUrl = `${process.env.REACT_APP_API_SERVER}/dashboard/genomes/44689`
 
 /**
  * All of the Redux actions related to the Bird's Eye Dashboard
@@ -114,8 +111,8 @@ export const fetchChromosomeData = () => async (
     // and that the json doesn't contain an error
     if (res.ok && !json.status) {
       dispatch(fetchChromosomeDataSuccess(json))
-      await dispatch(fetchGeneData(genesUrl))
-      await dispatch(fetchPseudogeneData(pseudogenesUrl))
+      await dispatch(fetchGeneData(`${apiUrl}/genes`))
+      await dispatch(fetchPseudogeneData(`${apiUrl}/pseudogenes`))
     } else {
       dispatch(
         fetchChromosomeDataFailure(createErrorObj(json.status, json.title)),

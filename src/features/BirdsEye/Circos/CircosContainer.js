@@ -65,7 +65,7 @@ const CircosContainer = (props: Props) => {
 
   return (
     <div className={classes.root}>
-      <BirdsEyeTabList birdseye={props.birdseye} />
+      <BirdsEyeTabList />
       <TypographyWrapper>
         {match.params.dataset === "genes" && (
           <CircosGenesDisplay
