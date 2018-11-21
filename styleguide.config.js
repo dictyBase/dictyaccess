@@ -1,3 +1,20 @@
 module.exports = {
-    components: "src/features/**/*.js"
+  styleguideDir: "docs",
+  components: "src/**/*.js",
+  ignore: [
+    "**/*.test.{js,jsx,ts,tsx}",
+    "**/*Actions.js",
+    "**/*Constants.js",
+    "**/*Reducer.js",
+    "**/*Store.js",
+    "**/*Styles.js",
+    "src/common/assets/*.png",
+    "src/common/constants/*.js",
+    "src/common/data/*.js",
+    "src/common/utils/*.js",
+    "src/features/BirdsEye/Circos/utils/*.js",
+    "src/index.js",
+    "src/registerServiceWorker.js",
+    "src/setupTests.js",
+  ],
 }
