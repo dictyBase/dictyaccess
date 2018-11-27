@@ -5,6 +5,7 @@ import { connect } from "react-redux"
 type Props = {
   error: Object,
   isFetching: Boolean,
+  action: Function,
 }
 
 /**
@@ -19,6 +20,8 @@ const withDataFetching = (
 ) => (WrappedComponent: Object) => {
   class WithDataFetchingComponent extends Component<Props> {
     componentDidMount() {
+      const { action } = this.props
+
       action()
     }
 
@@ -64,10 +67,9 @@ const withDataFetching = (
     data: state[key].data,
   })
 
-  // $FlowFixMe
   return connect(
     mapStateToProps,
-    action,
+    { action },
   )(WithDataFetchingComponent)
 }
 
