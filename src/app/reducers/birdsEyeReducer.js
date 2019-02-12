@@ -9,6 +9,9 @@ const {
   FETCH_GENE_DATA_REQUEST,
   FETCH_GENE_DATA_FAILURE,
   FETCH_GENE_DATA_SUCCESS,
+  FETCH_SEQ_DATA_REQUEST,
+  FETCH_SEQ_DATA_FAILURE,
+  FETCH_SEQ_DATA_SUCCESS,
   FETCH_PSEUDOGENE_DATA_REQUEST,
   FETCH_PSEUDOGENE_DATA_FAILURE,
   FETCH_PSEUDOGENE_DATA_SUCCESS,
@@ -24,6 +27,7 @@ const initialState = {
   chromosomes: [],
   genes: [],
   pseudogenes: [],
+  sequence: [],
 }
 
 const summaryReducer = (
@@ -33,6 +37,7 @@ const summaryReducer = (
   switch (action.type) {
     case FETCH_CHROMOSOME_DATA_REQUEST:
     case FETCH_GENE_DATA_REQUEST:
+    case FETCH_SEQ_DATA_REQUEST:
     case FETCH_PSEUDOGENE_DATA_REQUEST:
       return {
         ...state,
@@ -50,6 +55,12 @@ const summaryReducer = (
         genes: action.payload.data,
         isFetching: false,
       }
+    case FETCH_SEQ_DATA_SUCCESS:
+      return {
+        ...state,
+        sequence: action.payload.data,
+        isFetching: false,
+      }
     case FETCH_PSEUDOGENE_DATA_SUCCESS:
       return {
         ...state,
@@ -58,6 +69,7 @@ const summaryReducer = (
       }
     case FETCH_CHROMOSOME_DATA_FAILURE:
     case FETCH_GENE_DATA_FAILURE:
+    case FETCH_SEQ_DATA_FAILURE:
     case FETCH_PSEUDOGENE_DATA_FAILURE:
       return {
         ...state,
