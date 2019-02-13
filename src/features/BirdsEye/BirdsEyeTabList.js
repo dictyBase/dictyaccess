@@ -1,6 +1,7 @@
 // @flow
 import React, { Component } from "react"
 import { connect } from "react-redux"
+import { Link } from "react-router-dom"
 import AppBar from "@material-ui/core/AppBar"
 import Tabs from "@material-ui/core/Tabs"
 import Tab from "@material-ui/core/Tab"
@@ -36,8 +37,17 @@ class BirdsEyeTabList extends Component<Props> {
             value={birdseye.currentTab}
             onChange={this.handleChange}
             centered>
-            <Tab label="Global" />
-            <Tab label="Comparative" />
+            <Tab label="Global" component={Link} to="/birdseye/genes" />
+            <Tab
+              label="Comparative"
+              component={Link}
+              to="/birdseye/comparative"
+            />
+            <Tab
+              label="Spatial Expression"
+              component={Link}
+              to="/birdseye/spatial-expression"
+            />
           </Tabs>
         </AppBar>
       </div>

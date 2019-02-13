@@ -11,6 +11,7 @@ import ImageVerticalGrid from "common/components/ImageVerticalGrid"
 import CircosPageHeader from "./CircosPageHeader"
 import chrNameExtender from "./utils/chrNameExtender"
 import { chrGeneModels } from "common/data/chrGeneModels"
+import dataStrandFilter from "./utils/dataStrandFilter"
 
 /** Main Circos config */
 const circosConfig = {
@@ -53,6 +54,17 @@ type Props = {
       end: string,
       start: string,
       value: string,
+    },
+  }>,
+  /** Genes data */
+  genes: Array<{
+    type: string,
+    id: string,
+    attributes: {
+      block_id: string,
+      end: string,
+      start: string,
+      strand: string,
     },
   }>,
   /** Chromosomes data */
@@ -104,7 +116,7 @@ const Description = ({ match }: Object) => (
  */
 
 const CircosSeqDisplay = (props: Props) => {
-  const { match, sequence, chr } = props
+  const { match, sequence, genes, chr } = props
 
   const description = <Description match={match} />
 
@@ -115,6 +127,8 @@ const CircosSeqDisplay = (props: Props) => {
   const hour16 = hourFilter(sequence, "16")
   const hour20 = hourFilter(sequence, "20")
   const hour24 = hourFilter(sequence, "24")
+  const posStrand = dataStrandFilter(genes, "+")
+  const negStrand = dataStrandFilter(genes, "-")
 
   return (
     <Grid container spacing={16}>
@@ -136,12 +150,44 @@ const CircosSeqDisplay = (props: Props) => {
             config={circosConfig}
             tracks={[
               {
+                type: "stack",
+                id: "negative-strands",
+                data: negStrand,
+                config: {
+                  innerRadius: 0.89,
+                  outerRadius: 0.99,
+                  thickness: 10,
+                  margin: 500,
+                  direction: "in",
+                  strokeWidth: 0,
+                  color: "blue",
+                  tooltipContent: d => `${d.block_id}:${d.start}-${d.end}`,
+                  logScale: true,
+                },
+              },
+              {
+                type: "stack",
+                id: "positive-strands",
+                data: posStrand,
+                config: {
+                  innerRadius: 0.78,
+                  outerRadius: 0.88,
+                  thickness: 10,
+                  margin: 500,
+                  direction: "in",
+                  strokeWidth: 0,
+                  color: "red",
+                  tooltipContent: d => `${d.block_id}:${d.start}-${d.end}`,
+                  logScale: true,
+                },
+              },
+              {
                 type: "line",
                 id: "hour-0",
                 data: hour0,
                 config: {
-                  innerRadius: 0.89,
-                  outerRadius: 0.99,
+                  innerRadius: 0.67,
+                  outerRadius: 0.77,
                   maxGap: 1000000,
                   color: "#222222",
                   axes: [
@@ -163,8 +209,8 @@ const CircosSeqDisplay = (props: Props) => {
                 id: "hour-8",
                 data: hour8,
                 config: {
-                  innerRadius: 0.78,
-                  outerRadius: 0.88,
+                  innerRadius: 0.56,
+                  outerRadius: 0.66,
                   maxGap: 1000000,
                   color: "#222222",
                   axes: [
@@ -186,8 +232,8 @@ const CircosSeqDisplay = (props: Props) => {
                 id: "hour-24",
                 data: hour24,
                 config: {
-                  innerRadius: 0.67,
-                  outerRadius: 0.77,
+                  innerRadius: 0.45,
+                  outerRadius: 0.55,
                   maxGap: 1000000,
                   color: "#222222",
                   axes: [
@@ -215,7 +261,7 @@ const CircosSeqDisplay = (props: Props) => {
         </LegendBox>
         <ImageVerticalGrid
           imageData={chrGeneModels}
-          title="Other Chromosomes"
+          title="Other Chromosomes (updated soon)"
         />
       </Grid>
     </Grid>

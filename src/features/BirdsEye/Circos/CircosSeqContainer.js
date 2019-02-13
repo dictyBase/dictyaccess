@@ -4,7 +4,7 @@ import { connect } from "react-redux"
 import { withRouter } from "react-router-dom"
 import { withStyles } from "@material-ui/core/styles"
 
-import CircosGenesDisplay from "features/BirdsEye/Circos/CircosGenesDisplay"
+import CircosSeqDisplay from "./CircosSeqDisplay"
 import CircosLoader from "./CircosLoader"
 import BirdsEyeTabList from "features/BirdsEye/BirdsEyeTabList"
 import TypographyWrapper from "common/components/TypographyWrapper"
@@ -24,6 +24,8 @@ const styles = (theme: Object) => ({
 const chrMap = (chr, id) => chr.data.filter(i => i.attributes.name === id)
 const geneMap = (gene, id) =>
   gene.data.filter(item => item.attributes.block_id === chrNameMapper(id))
+const seqMap = (sequence, id) =>
+  sequence.data.filter(item => item.attributes.chromosome === chrNameMapper(id))
 
 type Props = {
   /** Material-UI classes */
@@ -41,14 +43,14 @@ type Props = {
  * them as props to the appropriate display component.
  */
 
-const CircosContainer = (props: Props) => {
+const CircosSeqContainer = (props: Props) => {
   const {
-    birdseye: { chromosomes, genes, pseudogenes, sequence },
+    birdseye: { chromosomes, genes, sequence },
     classes,
     match,
   } = props
 
-  if (!genes.data || !pseudogenes.data || !sequence.data) {
+  if (!genes.data || !sequence.data) {
     return <CircosLoader />
   }
 
@@ -56,10 +58,10 @@ const CircosContainer = (props: Props) => {
     <div className={classes.root}>
       <BirdsEyeTabList />
       <TypographyWrapper>
-        <CircosGenesDisplay
+        <CircosSeqDisplay
           chr={chrMap(chromosomes, match.params.id)[0]}
           genes={geneMap(genes, match.params.id)}
-          pseudogenes={geneMap(pseudogenes, match.params.id)}
+          sequence={seqMap(sequence, match.params.id)}
         />
       </TypographyWrapper>
     </div>
@@ -71,7 +73,7 @@ const mapStateToProps = ({ birdseye }) => ({ birdseye })
 const ConnectedCircosContainer = connect(
   mapStateToProps,
   null,
-)(withStyles(styles)(withRouter(CircosContainer)))
+)(withStyles(styles)(withRouter(CircosSeqContainer)))
 
 export default withDataFetching(
   fetchChromosomeData,

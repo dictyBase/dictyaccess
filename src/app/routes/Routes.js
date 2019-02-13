@@ -14,6 +14,9 @@ import OauthCallback from "features/Authentication/OauthCallback"
 import AuthLoader from "features/Authentication/AuthLoader"
 import Logout from "features/Authentication/Logout"
 import PageNotFound from "features/PageNotFound"
+import BirdsEyeComparative from "features/BirdsEye/BirdsEyeComparative"
+import BirdsEyeSpatialExpression from "features/BirdsEye/BirdsEyeSpatialExpression"
+import CircosSeqContainer from "features/BirdsEye/Circos/CircosSeqContainer"
 
 /**
  * List of routes used with React Router.
@@ -31,11 +34,22 @@ const Routes = () => (
       path="/birdseye"
       component={BirdsEyeDashboard => <Redirect to="/birdseye/genes" />}
     />
-    <Route exact path="/birdseye/:dataset" component={BirdsEyeDashboard} />
+    <Route exact path="/birdseye/genes" component={BirdsEyeDashboard} />
     <Route
       exact
-      path="/birdseye/:dataset/:id"
+      path="/birdseye/genes/:id"
       render={({ location }) => <CircosContainer key={location.pathname} />}
+    />
+    <Route exact path="/birdseye/comparative" component={BirdsEyeComparative} />
+    <Route
+      exact
+      path="/birdseye/spatial-expression"
+      component={BirdsEyeSpatialExpression}
+    />
+    <Route
+      exact
+      path="/birdseye/spatial-expression/:id"
+      render={({ location }) => <CircosSeqContainer key={location.pathname} />}
     />
     <Route exact path="/genomes" component={GenomeDashboard} />
     <Route exact path="/annotations" component={AnnotationsDashboard} />
