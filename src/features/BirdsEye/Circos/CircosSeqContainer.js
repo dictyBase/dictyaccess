@@ -45,12 +45,12 @@ type Props = {
 
 const CircosSeqContainer = (props: Props) => {
   const {
-    birdseye: { chromosomes, genes, sequence },
+    birdseye: { chromosomes, genes, sequence, spatial },
     classes,
     match,
   } = props
 
-  if (!genes.data || !sequence.data) {
+  if (!genes.data || !sequence.data || !spatial.data) {
     return <CircosLoader />
   }
 
@@ -62,6 +62,7 @@ const CircosSeqContainer = (props: Props) => {
           chr={chrMap(chromosomes, match.params.id)[0]}
           genes={geneMap(genes, match.params.id)}
           sequence={seqMap(sequence, match.params.id)}
+          spatial={geneMap(spatial, match.params.id)}
         />
       </TypographyWrapper>
     </div>

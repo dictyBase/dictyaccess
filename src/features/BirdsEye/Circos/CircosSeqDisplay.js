@@ -36,14 +36,6 @@ const circosConfig = {
   },
 }
 
-const hourFilter = (data: Array<Object>, hour: string) =>
-  data.filter(item => item.attributes.hour === hour).map(d => ({
-    block_id: d.attributes.chromosome,
-    position:
-      (parseInt(d.attributes.start, 10) + parseInt(d.attributes.end, 10)) / 2,
-    value: parseInt(d.attributes.value, 10),
-  }))
-
 type Props = {
   /** Sequence data */
   sequence: Array<{
@@ -79,6 +71,17 @@ type Props = {
       start: number,
     },
   },
+  /** Spatial expression data */
+  spatial: Array<{
+    type: string,
+    id: string,
+    attributes: {
+      block_id: string,
+      end: string,
+      start: string,
+      strand: string,
+    },
+  }>,
   /** React Router's match object */
   match: Object,
 }
@@ -115,17 +118,33 @@ const Description = ({ match }: Object) => (
  * This is the Circos display component for RNAseq.
  */
 
+const scatterFilter = (data: Array<Object>) =>
+  data.map(d => ({
+    block_id: d.attributes.block_id,
+    position:
+      (parseInt(d.attributes.start, 10) + parseInt(d.attributes.end, 10)) / 2,
+    value: d.attributes.start,
+  }))
+
+const hourFilter = (data: Array<Object>, hour: string) =>
+  data.filter(item => item.attributes.hour === hour).map(d => ({
+    block_id: d.attributes.chromosome,
+    start: parseInt(d.attributes.start, 10),
+    end: parseInt(d.attributes.end, 10),
+    value: parseInt(d.attributes.value, 10),
+  }))
+
 const CircosSeqDisplay = (props: Props) => {
-  const { match, sequence, genes, chr } = props
+  const { match, sequence, genes, chr, spatial } = props
 
   const description = <Description match={match} />
 
   const hour0 = hourFilter(sequence, "0")
-  const hour4 = hourFilter(sequence, "4")
+  // const hour4 = hourFilter(sequence, "4")
   const hour8 = hourFilter(sequence, "8")
-  const hour12 = hourFilter(sequence, "12")
-  const hour16 = hourFilter(sequence, "16")
-  const hour20 = hourFilter(sequence, "20")
+  // const hour12 = hourFilter(sequence, "12")
+  // const hour16 = hourFilter(sequence, "16")
+  // const hour20 = hourFilter(sequence, "20")
   const hour24 = hourFilter(sequence, "24")
   const posStrand = dataStrandFilter(genes, "+")
   const negStrand = dataStrandFilter(genes, "-")
@@ -182,20 +201,13 @@ const CircosSeqDisplay = (props: Props) => {
                 },
               },
               {
-                type: "line",
+                type: "histogram",
                 id: "hour-0",
                 data: hour0,
                 config: {
                   innerRadius: 0.67,
                   outerRadius: 0.77,
-                  maxGap: 1000000,
                   color: "#222222",
-                  axes: [
-                    {
-                      position: 0.006,
-                      color: "#f44336",
-                    },
-                  ],
                   backgrounds: [
                     {
                       color: "#b1ddb5",
@@ -205,7 +217,7 @@ const CircosSeqDisplay = (props: Props) => {
                 },
               },
               {
-                type: "line",
+                type: "histogram",
                 id: "hour-8",
                 data: hour8,
                 config: {
@@ -213,12 +225,6 @@ const CircosSeqDisplay = (props: Props) => {
                   outerRadius: 0.66,
                   maxGap: 1000000,
                   color: "#222222",
-                  axes: [
-                    {
-                      position: 0.006,
-                      color: "#f44336",
-                    },
-                  ],
                   backgrounds: [
                     {
                       color: "#b1ddb5",
@@ -228,7 +234,7 @@ const CircosSeqDisplay = (props: Props) => {
                 },
               },
               {
-                type: "line",
+                type: "histogram",
                 id: "hour-24",
                 data: hour24,
                 config: {
@@ -236,18 +242,28 @@ const CircosSeqDisplay = (props: Props) => {
                   outerRadius: 0.55,
                   maxGap: 1000000,
                   color: "#222222",
-                  axes: [
-                    {
-                      position: 0.006,
-                      color: "#f44336",
-                    },
-                  ],
                   backgrounds: [
                     {
                       color: "#b1ddb5",
                     },
                   ],
                   tooltipContent: null,
+                },
+              },
+              {
+                type: "scatter",
+                id: "spatial",
+                data: scatterFilter(spatial),
+                config: {
+                  innerRadius: 0.4,
+                  outerRadius: 0.44,
+                  thickness: 10,
+                  margin: 500,
+                  direction: "center",
+                  strokeWidth: 0,
+                  color: "red",
+                  tooltipContent: d => `${d.block_id}:${d.start}-${d.end}`,
+                  logScale: true,
                 },
               },
             ]}

@@ -15,6 +15,9 @@ const {
   FETCH_PSEUDOGENE_DATA_REQUEST,
   FETCH_PSEUDOGENE_DATA_FAILURE,
   FETCH_PSEUDOGENE_DATA_SUCCESS,
+  FETCH_SPATIAL_EXPRESSION_DATA_REQUEST,
+  FETCH_SPATIAL_EXPRESSION_DATA_FAILURE,
+  FETCH_SPATIAL_EXPRESSION_DATA_SUCCESS,
   CHROMOSOME_DATA_NO_REFETCH,
 } = types
 
@@ -28,6 +31,7 @@ const initialState = {
   genes: [],
   pseudogenes: [],
   sequence: [],
+  spatial: [],
 }
 
 const summaryReducer = (
@@ -39,6 +43,7 @@ const summaryReducer = (
     case FETCH_GENE_DATA_REQUEST:
     case FETCH_SEQ_DATA_REQUEST:
     case FETCH_PSEUDOGENE_DATA_REQUEST:
+    case FETCH_SPATIAL_EXPRESSION_DATA_REQUEST:
       return {
         ...state,
         isFetching: true,
@@ -67,10 +72,17 @@ const summaryReducer = (
         pseudogenes: action.payload.data,
         isFetching: false,
       }
+    case FETCH_SPATIAL_EXPRESSION_DATA_SUCCESS:
+      return {
+        ...state,
+        spatial: action.payload.data,
+        isFetching: false,
+      }
     case FETCH_CHROMOSOME_DATA_FAILURE:
     case FETCH_GENE_DATA_FAILURE:
     case FETCH_SEQ_DATA_FAILURE:
     case FETCH_PSEUDOGENE_DATA_FAILURE:
+    case FETCH_SPATIAL_EXPRESSION_DATA_FAILURE:
       return {
         ...state,
         isFetching: false,

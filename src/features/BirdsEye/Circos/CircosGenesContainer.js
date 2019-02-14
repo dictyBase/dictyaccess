@@ -41,14 +41,14 @@ type Props = {
  * them as props to the appropriate display component.
  */
 
-const CircosContainer = (props: Props) => {
+const CircosGenesContainer = (props: Props) => {
   const {
-    birdseye: { chromosomes, genes, pseudogenes, sequence },
+    birdseye: { chromosomes, genes, pseudogenes },
     classes,
     match,
   } = props
 
-  if (!genes.data || !pseudogenes.data || !sequence.data) {
+  if (!genes.data || !pseudogenes.data) {
     return <CircosLoader />
   }
 
@@ -68,14 +68,14 @@ const CircosContainer = (props: Props) => {
 
 const mapStateToProps = ({ birdseye }) => ({ birdseye })
 
-const ConnectedCircosContainer = connect(
+const ConnectedCircosGenesContainer = connect(
   mapStateToProps,
   null,
-)(withStyles(styles)(withRouter(CircosContainer)))
+)(withStyles(styles)(withRouter(CircosGenesContainer)))
 
 export default withDataFetching(
   fetchChromosomeData,
   "birdseye",
   CircosLoader,
   ErrorPage,
-)(ConnectedCircosContainer)
+)(ConnectedCircosGenesContainer)

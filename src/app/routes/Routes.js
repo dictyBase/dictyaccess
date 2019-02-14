@@ -8,7 +8,7 @@ import AnnotationsDashboard from "features/Annotations/AnnotationsDashboard"
 import AnalyticsDashboard from "features/Analytics/AnalyticsDashboard"
 import BirdsEyeDashboard from "features/BirdsEye/BirdsEyeDashboard"
 import PhylogenyDashboard from "features/Phylogeny/PhylogenyDashboard"
-import CircosContainer from "features/BirdsEye/Circos/CircosContainer"
+import CircosGenesContainer from "features/BirdsEye/Circos/CircosGenesContainer"
 import Login from "features/Authentication/Login"
 import OauthCallback from "features/Authentication/OauthCallback"
 import AuthLoader from "features/Authentication/AuthLoader"
@@ -38,7 +38,9 @@ const Routes = () => (
     <Route
       exact
       path="/birdseye/genes/:id"
-      render={({ location }) => <CircosContainer key={location.pathname} />}
+      render={({ location }) => (
+        <CircosGenesContainer key={location.pathname} />
+      )}
     />
     <Route exact path="/birdseye/comparative" component={BirdsEyeComparative} />
     <Route
