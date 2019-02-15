@@ -15,7 +15,7 @@ import dataStrandFilter from "./utils/dataStrandFilter"
 
 /** Main Circos config */
 const circosConfig = {
-  innerRadius: 300,
+  innerRadius: 310,
   outerRadius: 320,
   gap: 0,
   labels: {
@@ -123,7 +123,14 @@ const scatterFilter = (data: Array<Object>) =>
     block_id: d.attributes.block_id,
     position:
       (parseInt(d.attributes.start, 10) + parseInt(d.attributes.end, 10)) / 2,
+    start: d.attributes.start,
+    end: d.attributes.end,
     value: d.attributes.start,
+    id: d.id,
+    protein: d.attributes.protein,
+    rna: d.attributes.rna,
+    name: d.attributes.gene_name,
+    term: d.attributes.anatomy_term,
   }))
 
 const hourFilter = (data: Array<Object>, hour: string) =>
@@ -139,15 +146,17 @@ const CircosSeqDisplay = (props: Props) => {
 
   const description = <Description match={match} />
 
-  const hour0 = hourFilter(sequence, "0")
+  // const hour0 = hourFilter(sequence, "0")
   // const hour4 = hourFilter(sequence, "4")
-  const hour8 = hourFilter(sequence, "8")
+  // const hour8 = hourFilter(sequence, "8")
   // const hour12 = hourFilter(sequence, "12")
   // const hour16 = hourFilter(sequence, "16")
-  // const hour20 = hourFilter(sequence, "20")
+  const hour20 = hourFilter(sequence, "20")
   const hour24 = hourFilter(sequence, "24")
   const posStrand = dataStrandFilter(genes, "+")
   const negStrand = dataStrandFilter(genes, "-")
+  const proteinFilter = scatterFilter(spatial).filter(d => d.protein === true)
+  const rnaFilter = scatterFilter(spatial).filter(d => d.rna === true)
 
   return (
     <Grid container spacing={16}>
@@ -170,8 +179,8 @@ const CircosSeqDisplay = (props: Props) => {
             tracks={[
               {
                 type: "stack",
-                id: "negative-strands",
-                data: negStrand,
+                id: "positive-strands",
+                data: posStrand,
                 config: {
                   innerRadius: 0.89,
                   outerRadius: 0.99,
@@ -179,15 +188,15 @@ const CircosSeqDisplay = (props: Props) => {
                   margin: 500,
                   direction: "in",
                   strokeWidth: 0,
-                  color: "blue",
-                  tooltipContent: d => `${d.block_id}:${d.start}-${d.end}`,
+                  color: "red",
+                  tooltipContent: d => `${d.id} - coords:${d.start}-${d.end}`,
                   logScale: true,
                 },
               },
               {
                 type: "stack",
-                id: "positive-strands",
-                data: posStrand,
+                id: "negative-strands",
+                data: negStrand,
                 config: {
                   innerRadius: 0.78,
                   outerRadius: 0.88,
@@ -195,42 +204,70 @@ const CircosSeqDisplay = (props: Props) => {
                   margin: 500,
                   direction: "in",
                   strokeWidth: 0,
-                  color: "red",
-                  tooltipContent: d => `${d.block_id}:${d.start}-${d.end}`,
+                  color: "blue",
+                  tooltipContent: d => `${d.id} - coords:${d.start}-${d.end}`,
+                  logScale: true,
+                },
+              },
+              {
+                type: "scatter",
+                id: "spatial-protein",
+                data: proteinFilter,
+                config: {
+                  innerRadius: 0.75,
+                  outerRadius: 0.77,
+                  size: 10,
+                  strokeColor: "#191560",
+                  strokeWidth: 0,
+                  color: "#191560",
+                  shape: "triangle",
+                  backgrounds: [
+                    {
+                      color: "#ebe97a",
+                      opacity: 0.4,
+                    },
+                  ],
+                  tooltipContent: d =>
+                    `${d.name} (${d.id}) - ${d.term} - protein`,
+                  logScale: true,
+                },
+              },
+              {
+                type: "scatter",
+                id: "spatial-rna",
+                data: rnaFilter,
+                config: {
+                  innerRadius: 0.72,
+                  outerRadius: 0.74,
+                  size: 10,
+                  strokeColor: "#4b3c8e",
+                  strokeWidth: 0,
+                  color: "#4b3c8e",
+                  shape: "triangle",
+                  backgrounds: [
+                    {
+                      color: "#ebe97a",
+                      opacity: 0.4,
+                    },
+                  ],
+                  tooltipContent: d => `${d.name} (${d.id}) - ${d.term} - RNA`,
                   logScale: true,
                 },
               },
               {
                 type: "histogram",
-                id: "hour-0",
-                data: hour0,
+                id: "hour-20",
+                data: hour20,
                 config: {
-                  innerRadius: 0.67,
-                  outerRadius: 0.77,
+                  innerRadius: 0.61,
+                  outerRadius: 0.71,
                   color: "#222222",
                   backgrounds: [
                     {
-                      color: "#b1ddb5",
+                      color: "#efefef",
                     },
                   ],
-                  tooltipContent: null,
-                },
-              },
-              {
-                type: "histogram",
-                id: "hour-8",
-                data: hour8,
-                config: {
-                  innerRadius: 0.56,
-                  outerRadius: 0.66,
-                  maxGap: 1000000,
-                  color: "#222222",
-                  backgrounds: [
-                    {
-                      color: "#b1ddb5",
-                    },
-                  ],
-                  tooltipContent: null,
+                  tooltipContent: d => `${d.start}-${d.end}`,
                 },
               },
               {
@@ -238,32 +275,16 @@ const CircosSeqDisplay = (props: Props) => {
                 id: "hour-24",
                 data: hour24,
                 config: {
-                  innerRadius: 0.45,
-                  outerRadius: 0.55,
+                  innerRadius: 0.5,
+                  outerRadius: 0.6,
                   maxGap: 1000000,
                   color: "#222222",
                   backgrounds: [
                     {
-                      color: "#b1ddb5",
+                      color: "#efefef",
                     },
                   ],
-                  tooltipContent: null,
-                },
-              },
-              {
-                type: "scatter",
-                id: "spatial",
-                data: scatterFilter(spatial),
-                config: {
-                  innerRadius: 0.4,
-                  outerRadius: 0.44,
-                  thickness: 10,
-                  margin: 500,
-                  direction: "center",
-                  strokeWidth: 0,
-                  color: "red",
-                  tooltipContent: d => `${d.block_id}:${d.start}-${d.end}`,
-                  logScale: true,
+                  tooltipContent: d => `${d.start}-${d.end}`,
                 },
               },
             ]}
