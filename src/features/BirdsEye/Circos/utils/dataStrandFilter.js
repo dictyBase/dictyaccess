@@ -7,6 +7,7 @@ const dataStrandFilter = (data: Array<Object>, strand: string) =>
     end: d.attributes.end,
     start: d.attributes.start,
     strand: d.attributes.strand,
+    id: d.id,
   }))
 
 export default dataStrandFilter
