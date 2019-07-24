@@ -9,6 +9,7 @@ import LegendHeader from "common/components/Legend/LegendHeader"
 import LegendBody from "common/components/Legend/LegendBody"
 import ImageVerticalGrid from "common/components/ImageVerticalGrid"
 import CircosPageHeader from "./CircosPageHeader"
+import CircosSeqLegend from "./CircosSeqLegend"
 import chrNameExtender from "./utils/chrNameExtender"
 import { chrGeneModels } from "common/data/chrGeneModels"
 import dataStrandFilter from "./utils/dataStrandFilter"
@@ -86,34 +87,6 @@ type Props = {
   match: Object,
 }
 
-/** Gene Legend Description component */
-
-const Description = ({ match }: Object) => (
-  <div>
-    <p>
-      {/* Circos visualization for RNA sequences of <em>D.discoideum</em>{" "}
-      {chrNameExtender(match.params.id)}. */}
-      Description coming later
-    </p>
-    {/* <ul>
-      <li>
-        <span style={{ color: "blue" }}>Blue</span> = Negative gene strands
-      </li>
-      <li>
-        <span style={{ color: "red" }}>Red</span> = Positive gene strands
-      </li>
-      <li>
-        <span style={{ color: "indigo" }}>Indigo</span> = Negative pseudogene
-        strands
-      </li>
-      <li>
-        <span style={{ color: "blueviolet" }}>Violet</span> = Positive
-        pseudogene strands
-      </li>
-    </ul> */}
-  </div>
-)
-
 /**
  * This is the Circos display component for RNAseq.
  */
@@ -143,8 +116,6 @@ const hourFilter = (data: Array<Object>, hour: string) =>
 
 const CircosSeqDisplay = (props: Props) => {
   const { match, sequence, genes, chr, spatial } = props
-
-  const description = <Description match={match} />
 
   // const hour0 = hourFilter(sequence, "0")
   // const hour4 = hourFilter(sequence, "4")
@@ -294,7 +265,9 @@ const CircosSeqDisplay = (props: Props) => {
       <Grid item xs={12} md={12} lg={3}>
         <LegendBox>
           <LegendHeader color="info" />
-          <LegendBody>{description}</LegendBody>
+          <LegendBody>
+            <CircosSeqLegend id={match.params.id} />
+          </LegendBody>
         </LegendBox>
         <ImageVerticalGrid
           imageData={chrGeneModels}
