@@ -27,8 +27,8 @@
     "dicty-components-login": "github:dictyBase/dicty-components-login#v1.4.0",
     "dicty-components-navbar": "github:dictyBase/dicty-components-navbar#v0.2.0",
     "dicty-components-redux": "github:dictybase-playground/dicty-components-redux#v2.3.0",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-fontawesome": "^1.6.1",
     "react-ga": "^2.5.3",
     "react-redux": "^5.0.7",
@@ -38,9 +38,8 @@
     "react-svg-pan-zoom": "^2.16.1",
     "recharts": "^1.1.0",
     "redux": "^4.0.0",
-    "redux-devtools-extension": "^2.13.5",
     "redux-thunk": "^2.3.0",
-    "typeface-roboto": "0.0.54"
+    "typeface-roboto": "0.0.75"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^3.0.1",
@@ -52,14 +51,13 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "flow-bin": "^0.82.0",
     "husky": "^1.1.1",
-    "jest": "^23.5.0",
-    "jest-enzyme": "^7.0.0",
     "lint-staged": "^7.2.0",
     "prettier": "^1.14.3",
     "react-styleguidist": "^7.3.10",
-    "react-test-renderer": "^16.4.2",
+    "react-test-renderer": "^16.8.6",
     "recast": "^0.13.0",
-    "semantic-release": "^15.10.3"
+    "redux-devtools-extension": "^2.13.5",
+    "semantic-release": "^15.13.19"
   },
   "lint-staged": {
     "*.{js,jsx,json,css}": [
