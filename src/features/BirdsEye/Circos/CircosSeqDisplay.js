@@ -11,7 +11,7 @@ import ImageVerticalGrid from "common/components/ImageVerticalGrid"
 import CircosPageHeader from "./CircosPageHeader"
 import CircosSeqLegend from "./CircosSeqLegend"
 import chrNameExtender from "./utils/chrNameExtender"
-import { chrGeneModels } from "common/data/chrGeneModels"
+import { chrSpatialExpression } from "common/data/chrSpatialExpression"
 import dataStrandFilter from "./utils/dataStrandFilter"
 
 /** Main Circos config */
@@ -200,7 +200,6 @@ const CircosSeqDisplay = (props: Props) => {
                   ],
                   tooltipContent: d =>
                     `${d.name} (${d.id}) - ${d.term} - protein`,
-                  logScale: true,
                 },
               },
               {
@@ -222,7 +221,6 @@ const CircosSeqDisplay = (props: Props) => {
                     },
                   ],
                   tooltipContent: d => `${d.name} (${d.id}) - ${d.term} - RNA`,
-                  logScale: true,
                 },
               },
               {
@@ -270,8 +268,8 @@ const CircosSeqDisplay = (props: Props) => {
           </LegendBody>
         </LegendBox>
         <ImageVerticalGrid
-          imageData={chrGeneModels}
-          title="Other Chromosomes (updated soon)"
+          imageData={chrSpatialExpression}
+          title="Other Chromosomes"
         />
       </Grid>
     </Grid>

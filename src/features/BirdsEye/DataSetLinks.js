@@ -4,13 +4,6 @@ import { NavLink } from "react-router-dom"
 import { withStyles } from "@material-ui/core/styles"
 import Grid from "@material-ui/core/Grid"
 
-const models = [
-  {
-    name: "Gene Models",
-    route: "/birdseye/genes",
-  },
-]
-
 const styles = theme => ({
   button: {
     marginBottom: "5px",
@@ -23,9 +16,6 @@ const styles = theme => ({
       color: "#333232",
     },
   },
-  grid: {
-    padding: "8px 16px 8px 16px",
-  },
   link: {
     textDecoration: "none",
     color: "#020202",
@@ -36,7 +26,7 @@ const styles = theme => ({
  * The set of links for the different gene model displays.
  */
 
-const DataSetLinks = ({ classes }) => {
+const DataSetLinks = ({ classes, models }) => {
   const linkList = models.map((item, index) => (
     <div key={index} className={classes.button}>
       <NavLink
@@ -44,7 +34,7 @@ const DataSetLinks = ({ classes }) => {
         to={item.route}
         activeStyle={{
           fontWeight: "bold",
-          fontSize: "20px",
+          fontSize: "18px",
           color: "#011f4b",
         }}>
         {item.name}
@@ -53,7 +43,7 @@ const DataSetLinks = ({ classes }) => {
   ))
 
   return (
-    <Grid container justify="center" className={classes.grid}>
+    <Grid container justify="center" spacing={8}>
       <Grid item xs={12}>
         {linkList}
       </Grid>

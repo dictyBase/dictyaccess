@@ -16,6 +16,13 @@ const styles = theme => ({
   },
 })
 
+const models = [
+  {
+    name: "Gene Models",
+    route: "/birdseye/genes",
+  },
+]
+
 type Props = {
   /** Material-UI classes */
   classes: Object,
@@ -39,7 +46,7 @@ const BirdsEyeDashboard = (props: Props) => {
       <BirdsEyeTabList />
       <Grid container spacing={16}>
         <Grid item xs={2}>
-          <DataSetLinks />
+          <DataSetLinks models={models} />
         </Grid>
         <Grid item xs={10}>
           <ImageHorizontalGrid imageData={chrGeneModels} />

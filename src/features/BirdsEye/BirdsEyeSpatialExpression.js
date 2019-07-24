@@ -1,12 +1,12 @@
 // @flow
 import React from "react"
 import { connect } from "react-redux"
-import { Link } from "react-router-dom"
 import { withStyles } from "@material-ui/core/styles"
 import Grid from "@material-ui/core/Grid"
-
+import ImageHorizontalGrid from "common/components/ImageHorizontalGrid"
+import DataSetLinks from "features/BirdsEye/DataSetLinks"
 import BirdsEyeTabList from "./BirdsEyeTabList"
-// import DataSetLinks from "features/BirdsEye/Global/DataSets/DataSetLinks"
+import { chrSpatialExpression } from "common/data/chrSpatialExpression"
 
 const styles = theme => ({
   root: {
@@ -14,6 +14,13 @@ const styles = theme => ({
     backgroundColor: theme.palette.background.paper,
   },
 })
+
+const models = [
+  {
+    name: "Spatial Expression Models",
+    route: "/birdseye/spatial-expression",
+  },
+]
 
 type Props = {
   /** Material-UI classes */
@@ -32,31 +39,15 @@ const BirdsEyeSpatialExpression = (props: Props) => {
   return (
     <div className={classes.root}>
       <BirdsEyeTabList />
-      <Grid container spacing={16}>
-        {/* <Grid item xs={2}>
-          <DataSetLinks />
-        </Grid> */}
-        <Grid item xs={12}>
+      <Grid container spacing={8}>
+        <Grid item xs={2}>
+          <DataSetLinks models={models} />
+        </Grid>
+        <Grid item xs={10}>
           <br />
           <br />
           <center>
-            Thumbnails coming soon...
-            <br />
-            <br />
-            Check mockups here:
-            <br />
-            <br />
-            <Link to="/birdseye/spatial-expression/1">chr1</Link>
-            <br />
-            <Link to="/birdseye/spatial-expression/2">chr2</Link>
-            <br />
-            <Link to="/birdseye/spatial-expression/3">chr3</Link>
-            <br />
-            <Link to="/birdseye/spatial-expression/4">chr4</Link>
-            <br />
-            <Link to="/birdseye/spatial-expression/5">chr5</Link>
-            <br />
-            <Link to="/birdseye/spatial-expression/6">chr6</Link>
+            <ImageHorizontalGrid imageData={chrSpatialExpression} />
           </center>
         </Grid>
       </Grid>
