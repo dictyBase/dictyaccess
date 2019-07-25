@@ -162,6 +162,11 @@ const CircosSeqDisplay = (props: Props) => {
                   color: "red",
                   tooltipContent: d => `${d.id} - coords:${d.start}-${d.end}`,
                   logScale: true,
+                  events: {
+                    "click.open": (datum, index, nodes, event) => {
+                      window.open(`/genes/${datum.block_id}`)
+                    },
+                  },
                 },
               },
               {
@@ -178,6 +183,11 @@ const CircosSeqDisplay = (props: Props) => {
                   color: "blue",
                   tooltipContent: d => `${d.id} - coords:${d.start}-${d.end}`,
                   logScale: true,
+                  events: {
+                    "click.open": (datum, index, nodes, event) => {
+                      window.open(`/genes/${datum.block_id}`)
+                    },
+                  },
                 },
               },
               {

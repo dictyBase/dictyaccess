@@ -149,6 +149,11 @@ const CircosGenesDisplay = (props: Props) => {
                   color: "blue",
                   tooltipContent: d => `${d.block_id}:${d.start}-${d.end}`,
                   logScale: true,
+                  events: {
+                    "click.open": (datum, index, nodes, event) => {
+                      window.open(`/genes/${datum.block_id}`)
+                    },
+                  },
                 },
               },
               {
@@ -165,6 +170,11 @@ const CircosGenesDisplay = (props: Props) => {
                   color: "red",
                   tooltipContent: d => `${d.block_id}:${d.start}-${d.end}`,
                   logScale: true,
+                  events: {
+                    "click.open": (datum, index, nodes, event) => {
+                      window.open(`/genes/${datum.block_id}`)
+                    },
+                  },
                 },
               },
               {
