@@ -143,7 +143,7 @@ const CircosSeqDisplay = (props: Props) => {
                 id: chr.attributes.id,
                 len: chr.attributes.length,
                 label: chr.attributes.name,
-                color: "#85a9e5",
+                color: "#708090",
               },
             ]}
             config={circosConfig}
@@ -194,7 +194,7 @@ const CircosSeqDisplay = (props: Props) => {
                   shape: "triangle",
                   backgrounds: [
                     {
-                      color: "#ebe97a",
+                      color: "#90EE90",
                       opacity: 0.4,
                     },
                   ],
@@ -216,7 +216,7 @@ const CircosSeqDisplay = (props: Props) => {
                   shape: "triangle",
                   backgrounds: [
                     {
-                      color: "#ebe97a",
+                      color: "#3CB371",
                       opacity: 0.4,
                     },
                   ],

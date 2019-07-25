@@ -130,7 +130,7 @@ const CircosGenesDisplay = (props: Props) => {
                 id: chr.attributes.id,
                 len: chr.attributes.length,
                 label: chr.attributes.name,
-                color: "#85a9e5",
+                color: "#708090",
               },
             ]}
             config={circosConfig}
