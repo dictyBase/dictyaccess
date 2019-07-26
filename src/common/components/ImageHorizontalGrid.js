@@ -54,6 +54,8 @@ const ImageHorizontalGrid = (props: Props) => {
 
   const getGridListCols = () => {
     switch (width) {
+      case "xs":
+        return 1
       case "sm":
         return 1
       case "md":
