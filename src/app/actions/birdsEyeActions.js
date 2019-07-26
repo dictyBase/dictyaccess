@@ -162,7 +162,6 @@ export const fetchChromosomeData = () => async (
     // and that the json doesn't contain an error
     if (res.ok && !json.status) {
       dispatch(fetchChromosomeDataSuccess(json))
-      await dispatch(changeBirdsEyeTab(2))
       await dispatch(fetchGeneData(`${apiUrl}/genes`))
       await dispatch(fetchPseudogeneData(`${apiUrl}/pseudogenes`))
       await dispatch(fetchSeqData(`${process.env.REACT_APP_SEQ_JSON}`))

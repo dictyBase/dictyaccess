@@ -23,7 +23,6 @@ type Props = {
 class BirdsEyeTabList extends Component<Props> {
   handleChange = (event: SyntheticEvent<>, value: string) => {
     const { changeBirdsEyeTab } = this.props
-
     changeBirdsEyeTab(value)
   }
 
@@ -38,11 +37,11 @@ class BirdsEyeTabList extends Component<Props> {
             onChange={this.handleChange}
             centered>
             <Tab label="Global" component={Link} to="/birdseye/genes" />
-            <Tab
+            {/* <Tab
               label="Comparative"
               component={Link}
               to="/birdseye/comparative"
-            />
+            /> */}
             <Tab
               label="Spatial Expression"
               component={Link}
