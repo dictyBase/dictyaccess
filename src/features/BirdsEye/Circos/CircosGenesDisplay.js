@@ -151,7 +151,7 @@ const CircosGenesDisplay = (props: Props) => {
                   logScale: true,
                   events: {
                     "click.open": (datum, index, nodes, event) => {
-                      window.open(`/genes/${datum.id}`)
+                      window.open(`/gene/${datum.id}`)
                     },
                   },
                 },
@@ -172,7 +172,7 @@ const CircosGenesDisplay = (props: Props) => {
                   logScale: true,
                   events: {
                     "click.open": (datum, index, nodes, event) => {
-                      window.open(`/genes/${datum.id}`)
+                      window.open(`/gene/${datum.id}`)
                     },
                   },
                 },
