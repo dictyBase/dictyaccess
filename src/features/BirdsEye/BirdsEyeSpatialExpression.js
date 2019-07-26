@@ -55,6 +55,7 @@ const BirdsEyeSpatialExpression = (props: Props) => {
           </center>
         </Grid>
       </Grid>
+      <br /> <br />
     </div>
   )
 }

@@ -56,6 +56,7 @@ const BirdsEyeDashboard = (props: Props) => {
           <ImageHorizontalGrid imageData={chrGeneModels} />
         </Grid>
       </Grid>
+      <br /> <br />
     </div>
   )
 }
