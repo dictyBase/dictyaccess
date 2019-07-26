@@ -6,7 +6,7 @@ import Grid from "@material-ui/core/Grid"
 
 import BirdsEyeTabList from "./BirdsEyeTabList"
 import ImageHorizontalGrid from "common/components/ImageHorizontalGrid"
-import DataSetLinks from "features/BirdsEye/DataSetLinks"
+// import DataSetLinks from "features/BirdsEye/DataSetLinks"
 import { chrGeneModels } from "common/data/chrGeneModels"
 
 const styles = theme => ({
@@ -14,14 +14,17 @@ const styles = theme => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
   },
+  dataSet: {
+    textAlign: "center",
+  },
 })
 
-const models = [
-  {
-    name: "Gene Models",
-    route: "/birdseye/genes",
-  },
-]
+// const models = [
+//   {
+//     name: "Gene Models",
+//     route: "/birdseye/genes",
+//   },
+// ]
 
 type Props = {
   /** Material-UI classes */
@@ -45,10 +48,11 @@ const BirdsEyeDashboard = (props: Props) => {
     <div className={classes.root}>
       <BirdsEyeTabList />
       <Grid container spacing={16}>
-        <Grid item xs={2}>
-          <DataSetLinks models={models} />
+        <Grid item xs={12} className={classes.dataSet}>
+          {/* <DataSetLinks models={models} /> */}
+          <h2>Gene Models</h2>
         </Grid>
-        <Grid item xs={10}>
+        <Grid item xs={12}>
           <ImageHorizontalGrid imageData={chrGeneModels} />
         </Grid>
       </Grid>
