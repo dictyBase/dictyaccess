@@ -164,7 +164,7 @@ const CircosSeqDisplay = (props: Props) => {
                   logScale: true,
                   events: {
                     "click.open": (datum, index, nodes, event) => {
-                      window.open(`/genes/${datum.block_id}`)
+                      window.open(`/genes/${datum.id}`)
                     },
                   },
                 },
@@ -185,7 +185,7 @@ const CircosSeqDisplay = (props: Props) => {
                   logScale: true,
                   events: {
                     "click.open": (datum, index, nodes, event) => {
-                      window.open(`/genes/${datum.block_id}`)
+                      window.open(`/genes/${datum.id}`)
                     },
                   },
                 },
@@ -210,6 +210,11 @@ const CircosSeqDisplay = (props: Props) => {
                   ],
                   tooltipContent: d =>
                     `${d.name} (${d.id}) - ${d.term} - protein`,
+                  events: {
+                    "click.open": (datum, index, nodes, event) => {
+                      window.open(`/genes/${datum.id}`)
+                    },
+                  },
                 },
               },
               {
@@ -231,6 +236,11 @@ const CircosSeqDisplay = (props: Props) => {
                     },
                   ],
                   tooltipContent: d => `${d.name} (${d.id}) - ${d.term} - RNA`,
+                  events: {
+                    "click.open": (datum, index, nodes, event) => {
+                      window.open(`/genes/${datum.id}`)
+                    },
+                  },
                 },
               },
               {
