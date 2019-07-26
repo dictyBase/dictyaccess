@@ -7,7 +7,7 @@ import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 import ListItemIcon from "@material-ui/core/ListItemIcon"
 import Typography from "@material-ui/core/Typography"
-
+import Hidden from "@material-ui/core/Hidden"
 import TrendingUpIcon from "@material-ui/icons/TrendingUp"
 import FingerprintIcon from "@material-ui/icons/Fingerprint"
 import InsertChartIcon from "@material-ui/icons/InsertChart"
@@ -119,19 +119,21 @@ const Sidebar = (props: Props) => {
   })
 
   return (
-    <Drawer
-      variant="persistent"
-      open
-      classes={{
-        paper: classes.drawerPaper,
-      }}>
-      <div className={classes.header}>
-        <Typography variant="title" color="inherit">
-          DictyAccess
-        </Typography>
-      </div>
-      <List className={classes.list}>{linkList}</List>
-    </Drawer>
+    <Hidden smDown>
+      <Drawer
+        variant="persistent"
+        open
+        classes={{
+          paper: classes.drawerPaper,
+        }}>
+        <div className={classes.header}>
+          <Typography variant="title" color="inherit">
+            DictyAccess
+          </Typography>
+        </div>
+        <List className={classes.list}>{linkList}</List>
+      </Drawer>
+    </Hidden>
   )
 }
 
