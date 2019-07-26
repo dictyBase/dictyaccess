@@ -18,13 +18,16 @@ const CircosSeqLegend = ({ id }: string) => (
         <span style={{ color: "blue" }}>Blue</span> = Negative gene strands
       </li>
       <li>
-        <span style={{ color: "#4b3c8e", backgroundColor: "#ebe97a" }}>
-          Yellow Background
+        <span style={{ color: "#191560", backgroundColor: "#90EE90" }}>
+          Light Green Background
         </span>{" "}
-        <ul>
-          <li>Outer = Protein</li>
-          <li>Inner = RNA Expression</li>
-        </ul>
+        = Protein
+      </li>
+      <li>
+        <span style={{ color: "#4b3c8e", backgroundColor: "#3CB371" }}>
+          Dark Green Background
+        </span>{" "}
+        = RNA Expression
       </li>
       <li>
         <span style={{ color: "#222222", backgroundColor: "#efefef" }}>
