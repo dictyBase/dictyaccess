@@ -10,7 +10,7 @@ import BirdsEyeTabList from "features/BirdsEye/BirdsEyeTabList"
 import TypographyWrapper from "common/components/TypographyWrapper"
 import ErrorPage from "common/components/ErrorPage"
 import withDataFetching from "common/components/withDataFetching"
-import chrNameMapper from "features/BirdsEye/Circos/utils/chrNameMapper"
+// import chrNameMapper from "features/BirdsEye/Circos/utils/chrNameMapper"
 import { fetchChromosomeData } from "app/actions/birdsEyeActions"
 
 const styles = (theme: Object) => ({
@@ -23,7 +23,7 @@ const styles = (theme: Object) => ({
 // functions to filter data for individual chromosome
 const chrMap = (chr, id) => chr.data.filter(i => i.attributes.name === id)
 const geneMap = (gene, id) =>
-  gene.data.filter(item => item.attributes.block_id === chrNameMapper(id))
+  gene.data.filter(item => item.attributes.block_id === id)
 
 type Props = {
   /** Material-UI classes */

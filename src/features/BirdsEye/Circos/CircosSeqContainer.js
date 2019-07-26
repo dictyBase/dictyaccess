@@ -23,6 +23,8 @@ const styles = (theme: Object) => ({
 // functions to filter data for individual chromosome
 const chrMap = (chr, id) => chr.data.filter(i => i.attributes.name === id)
 const geneMap = (gene, id) =>
+  gene.data.filter(item => item.attributes.block_id === id)
+const spatialMap = (gene, id) =>
   gene.data.filter(item => item.attributes.block_id === chrNameMapper(id))
 const seqMap = (sequence, id) =>
   sequence.data.filter(item => item.attributes.chromosome === chrNameMapper(id))
@@ -62,7 +64,7 @@ const CircosSeqContainer = (props: Props) => {
           chr={chrMap(chromosomes, match.params.id)[0]}
           genes={geneMap(genes, match.params.id)}
           sequence={seqMap(sequence, match.params.id)}
-          spatial={geneMap(spatial, match.params.id)}
+          spatial={spatialMap(spatial, match.params.id)}
         />
       </TypographyWrapper>
     </div>
