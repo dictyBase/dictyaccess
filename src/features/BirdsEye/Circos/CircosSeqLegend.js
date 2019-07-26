@@ -19,24 +19,23 @@ const CircosSeqLegend = ({ id }: string) => (
       </li>
       <li>
         <span style={{ color: "#191560", backgroundColor: "#90EE90" }}>
-          Light Green Background
+          Light Green
         </span>{" "}
-        = Protein
+        = Protein spatial expression
       </li>
       <li>
         <span style={{ color: "#4b3c8e", backgroundColor: "#3CB371" }}>
-          Dark Green Background
+          Dark Green
         </span>{" "}
-        = RNA Expression
+        = RNA spatial expression
       </li>
       <li>
-        <span style={{ color: "#222222", backgroundColor: "#efefef" }}>
-          Grey Background
-        </span>
-        <ul>
-          <li>Outer = 20 hours development</li>
-          <li>Inner = 24 hours development</li>
-        </ul>
+        <span style={{ color: "black" }}>Black Outer</span> = RNAseq 20 hours
+        dev.
+      </li>
+      <li>
+        <span style={{ color: "black" }}>Black Inner</span> = RNAseq all time
+        points combined
       </li>
     </ul>
   </div>
