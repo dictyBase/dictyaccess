@@ -118,10 +118,10 @@ const CircosGenesDisplay = (props: Props) => {
 
   return (
     <Grid container spacing={16}>
-      <CircosPageHeader title={`${chrNameExtender(match.params.id)}`} />
       <Grid item xs={12} md={12} lg={9}>
-        <br />
         <center>
+          <CircosPageHeader title={`${chrNameExtender(match.params.id)}`} />
+          <br />
           <Circos
             size={750}
             id={`${match.params.dataset}-${match.params.id}`}
