@@ -18,7 +18,7 @@ const CircosSeqLegend = ({ id }: string) => (
         <span style={{ color: "blue" }}>Blue</span> = Negative gene strands
       </li>
       <li>
-        <span style={{ color: "#90EE90" }}>Light Green</span> = Protein spatial
+        <span style={{ color: "#88e388" }}>Light Green</span> = Protein spatial
         expression
       </li>
       <li>
