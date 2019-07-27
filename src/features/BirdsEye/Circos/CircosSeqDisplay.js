@@ -117,12 +117,12 @@ const hourFilter = (data: Array<Object>, hour: string) =>
 const CircosSeqDisplay = (props: Props) => {
   const { match, sequence, genes, chr, spatial } = props
 
-  // const hour0 = hourFilter(sequence, "0")
+  const hour0 = hourFilter(sequence, "0")
   // const hour4 = hourFilter(sequence, "4")
   // const hour8 = hourFilter(sequence, "8")
   // const hour12 = hourFilter(sequence, "12")
   // const hour16 = hourFilter(sequence, "16")
-  const hour20 = hourFilter(sequence, "20")
+  // const hour20 = hourFilter(sequence, "20")
   const hour24 = hourFilter(sequence, "24")
   const posStrand = dataStrandFilter(genes, "+")
   const negStrand = dataStrandFilter(genes, "-")
@@ -245,8 +245,8 @@ const CircosSeqDisplay = (props: Props) => {
               },
               {
                 type: "histogram",
-                id: "hour-20",
-                data: hour20,
+                id: "hour-0",
+                data: hour0,
                 config: {
                   innerRadius: 0.61,
                   outerRadius: 0.71,
