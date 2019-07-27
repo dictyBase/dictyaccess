@@ -41,7 +41,7 @@ const BirdsEyeSpatialExpression = (props: Props) => {
 
   return (
     <div className={classes.root}>
-      <BirdsEyeTabList />
+      <BirdsEyeTabList value={1} />
       <Grid container spacing={8}>
         <Grid item xs={12} className={classes.dataSet}>
           {/* <DataSetLinks models={models} /> */}

@@ -46,7 +46,7 @@ const BirdsEyeDashboard = (props: Props) => {
 
   return (
     <div className={classes.root}>
-      <BirdsEyeTabList />
+      <BirdsEyeTabList value={0} />
       <Grid container spacing={16}>
         <Grid item xs={12} className={classes.dataSet}>
           {/* <DataSetLinks models={models} /> */}

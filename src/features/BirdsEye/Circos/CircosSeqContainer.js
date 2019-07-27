@@ -58,7 +58,7 @@ const CircosSeqContainer = (props: Props) => {
 
   return (
     <div className={classes.root}>
-      <BirdsEyeTabList />
+      <BirdsEyeTabList value={1} />
       <TypographyWrapper>
         <CircosSeqDisplay
           chr={chrMap(chromosomes, match.params.id)[0]}

@@ -54,7 +54,7 @@ const CircosGenesContainer = (props: Props) => {
 
   return (
     <div className={classes.root}>
-      <BirdsEyeTabList />
+      <BirdsEyeTabList value={0} />
       <TypographyWrapper>
         <CircosGenesDisplay
           chr={chrMap(chromosomes, match.params.id)[0]}
