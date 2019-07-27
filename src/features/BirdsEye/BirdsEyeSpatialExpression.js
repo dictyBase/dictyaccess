@@ -48,8 +48,6 @@ const BirdsEyeSpatialExpression = (props: Props) => {
           <h2>Gene Models with Spatial Expressions</h2>
         </Grid>
         <Grid item xs={12}>
-          <br />
-          <br />
           <center>
             <ImageHorizontalGrid imageData={chrSpatialExpression} />
           </center>

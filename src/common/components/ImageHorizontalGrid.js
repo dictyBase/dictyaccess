@@ -20,11 +20,8 @@ const styles = theme => ({
     width: "90%",
     height: "100%",
   },
-  subhead: {
-    color: "white",
-    fontSize: 20,
-    paddingTop: 10,
-    textAlign: "center",
+  titlebar: {
+    opacity: 0.8,
   },
 })
 
@@ -76,7 +73,10 @@ const ImageHorizontalGrid = (props: Props) => {
             <Link to={tile.route}>
               <center>
                 <img src={tile.img} alt={tile.title} />
-                <GridListTileBar title={tile.title} />
+                <GridListTileBar
+                  className={classes.titlebar}
+                  title={tile.title}
+                />
               </center>
             </Link>
           </GridListTile>
