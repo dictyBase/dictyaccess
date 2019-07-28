@@ -127,7 +127,12 @@ const CircosSeqDisplay = (props: Props) => {
   const posStrand = dataStrandFilter(genes, "+")
   const negStrand = dataStrandFilter(genes, "-")
   const proteinFilter = scatterFilter(spatial).filter(d => d.protein === true)
+  const proteinEndValue = Math.max.apply(
+    Math,
+    proteinFilter.map(item => item.value),
+  )
   const rnaFilter = scatterFilter(spatial).filter(d => d.rna === true)
+  const rnaEndValue = Math.max.apply(Math, rnaFilter.map(item => item.value))
 
   return (
     <Grid container spacing={16}>
@@ -207,7 +212,7 @@ const CircosSeqDisplay = (props: Props) => {
                       color: "#90EE90",
                       opacity: 0.4,
                       start: 0,
-                      end: 6000000,
+                      end: proteinEndValue + 1,
                     },
                   ],
                   tooltipContent: d =>
@@ -236,7 +241,7 @@ const CircosSeqDisplay = (props: Props) => {
                       color: "#3CB371",
                       opacity: 0.4,
                       start: 0,
-                      end: 6000000,
+                      end: rnaEndValue + 1,
                     },
                   ],
                   tooltipContent: d => `${d.name} (${d.id}) - ${d.term} - RNA`,
