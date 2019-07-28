@@ -206,6 +206,8 @@ const CircosSeqDisplay = (props: Props) => {
                     {
                       color: "#90EE90",
                       opacity: 0.4,
+                      start: 0,
+                      end: 6000000,
                     },
                   ],
                   tooltipContent: d =>
@@ -233,6 +235,8 @@ const CircosSeqDisplay = (props: Props) => {
                     {
                       color: "#3CB371",
                       opacity: 0.4,
+                      start: 0,
+                      end: 6000000,
                     },
                   ],
                   tooltipContent: d => `${d.name} (${d.id}) - ${d.term} - RNA`,
