@@ -52,13 +52,15 @@ const CircosSeqContainer = (props: Props) => {
     match,
   } = props
 
-  if (!genes.data || !sequence.data || !spatial.data) {
-    return <CircosLoader />
+  const data = genes.data && sequence.data && spatial.data
+
+  if (!data) {
+    return <CircosLoader currentTab={1} />
   }
 
   return (
     <div className={classes.root}>
-      <BirdsEyeTabList value={1} />
+      <BirdsEyeTabList currentTab={1} />
       <TypographyWrapper>
         <CircosSeqDisplay
           chr={chrMap(chromosomes, match.params.id)[0]}

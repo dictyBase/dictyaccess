@@ -9,7 +9,7 @@ import { changeBirdsEyeTab } from "app/actions/birdsEyeActions"
 
 type Props = {
   /** The number index of the active tab **/
-  value: number,
+  currentTab: number,
   /** Action for changing the tab */
   changeBirdsEyeTab: Function,
 }
@@ -25,11 +25,11 @@ class BirdsEyeTabList extends Component<Props> {
   }
 
   render() {
-    const { value } = this.props
+    const { currentTab } = this.props
 
     return (
       <AppBar position="static">
-        <Tabs value={value} onChange={this.handleChange} centered>
+        <Tabs value={currentTab} onChange={this.handleChange} centered>
           <Tab label="Global" component={Link} to="/birdseye/genes" />
           {/* <Tab
               label="Comparative"

@@ -48,13 +48,15 @@ const CircosGenesContainer = (props: Props) => {
     match,
   } = props
 
-  if (!genes.data || !pseudogenes.data) {
-    return <CircosLoader />
+  const data = genes.data && pseudogenes.data
+
+  if (!data) {
+    return <CircosLoader currentTab={0} />
   }
 
   return (
     <div className={classes.root}>
-      <BirdsEyeTabList value={0} />
+      <BirdsEyeTabList currentTab={0} />
       <TypographyWrapper>
         <CircosGenesDisplay
           chr={chrMap(chromosomes, match.params.id)[0]}

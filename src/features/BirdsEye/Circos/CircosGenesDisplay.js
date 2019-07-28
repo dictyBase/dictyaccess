@@ -124,7 +124,7 @@ const CircosGenesDisplay = (props: Props) => {
           <br />
           <Circos
             size={750}
-            id={`${match.params.dataset}-${match.params.id}`}
+            id={`genes-${match.params.id}`}
             layout={[
               {
                 id: chr.attributes.id,

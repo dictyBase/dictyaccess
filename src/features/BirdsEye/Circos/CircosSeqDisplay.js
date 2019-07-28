@@ -137,7 +137,7 @@ const CircosSeqDisplay = (props: Props) => {
           <br />
           <Circos
             size={750}
-            id={`${match.params.dataset}-${match.params.id}`}
+            id={`spatial-expression-${match.params.id}`}
             layout={[
               {
                 id: chr.attributes.id,
