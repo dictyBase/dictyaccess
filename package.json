@@ -39,6 +39,7 @@
     "react-svg-pan-zoom": "^2.16.1",
     "recharts": "^1.1.0",
     "redux": "^4.0.0",
+    "redux-devtools-extension": "^2.13.5",
     "redux-thunk": "^2.3.0",
     "typeface-roboto": "0.0.75"
   },
@@ -57,7 +58,6 @@
     "react-styleguidist": "^7.3.10",
     "react-test-renderer": "^16.8.6",
     "recast": "^0.13.0",
-    "redux-devtools-extension": "^2.13.5",
     "semantic-release": "^15.13.19"
   },
   "lint-staged": {

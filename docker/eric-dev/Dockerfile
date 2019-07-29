@@ -54,10 +54,8 @@ ADD $CLIENT_KEYS /usr/src/app/src/common/utils/clientConfig.js
 
 # Use same node path
 ENV NODE_PATH src
-ENV NODE_ENV production
 
-# standard install/build commands
-RUN npm install && npm run build
+RUN npm ci && npm run build
 
 FROM dictybase/static-server:1.0.0
 RUN mkdir /www
