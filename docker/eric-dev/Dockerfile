@@ -34,10 +34,6 @@ ENV REACT_APP_SEQ_JSON ${seq_json:-https://raw.githubusercontent.com/dictyBase/m
 ARG mid_culminant_json
 ENV REACT_APP_MID_CULMINANT_JSON ${mid_culminant_json:-https://raw.githubusercontent.com/dictyBase/migration-data/master/dashboard/spatial-expression/mid_culminant.json}
 
-# Setup client keys for third party auth
-ARG client_keys
-ENV CLIENT_KEYS ${client_keys:-https://raw.githubusercontent.com/dictybase-playground/client-keys/2.0.0/clientConfig.eric.js}
-
 # Use same node path
 ENV NODE_PATH src
 
@@ -55,7 +51,7 @@ ADD src src
 ADD public public
 
 # overwrite the client key file
-ADD $CLIENT_KEYS /usr/src/app/src/common/utils/clientConfig.js
+ADD https://raw.githubusercontent.com/dictybase-playground/client-keys/2.0.0/clientConfig.eric.js /usr/src/app/src/common/utils/clientConfig.js
 
 RUN npm run build
 

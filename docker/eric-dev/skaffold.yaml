@@ -3,15 +3,19 @@ kind: Config
 build:
   local: {}
   tagPolicy:
-    gitCommit: {}
+    envTemplate:
+      template: "{{.IMAGE_NAME}}:{{.IMAGE_TAG}}"
   artifacts:
     - image: dictybase/dictyaccess
       docker:
         dockerfile: docker/eric-dev/Dockerfile
-# deploy:
-#   helm:
-#     releases:
-#       - name: dictyaccess
-#         chartPath: dictybase/dictyaccess
-#         remote: true
-#         namespace: dictybase
+deploy:
+  helm:
+    releases:
+      - name: dictyaccess
+        chartPath: dictybase/dictyaccess
+        remote: true
+        namespace: dictybase
+        setValueTemplates:
+          image.repository: "{{.IMAGE_NAME}}"
+          image.tag: "{{.IMAGE_TAG}}"
