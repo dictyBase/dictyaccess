@@ -56,7 +56,7 @@ ADD $CLIENT_KEYS /usr/src/app/src/common/utils/clientConfig.js
 COPY package*.json ./
 
 RUN npm ci
-RUN npm build
+RUN npm run build
 
 FROM dictybase/static-server:1.0.0
 RUN mkdir /www
