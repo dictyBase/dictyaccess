@@ -37,7 +37,7 @@ type Props = {
  */
 
 const GenesList = (props: Props) => {
-  const { classes } = props
+  const { classes, data } = props
 
   return (
     <Paper>
@@ -55,7 +55,7 @@ const GenesList = (props: Props) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {props.data.map(item => (
+          {data.map(item => (
             <TableRow key={item.id}>
               <TableCell>{item.name}</TableCell>
               <TableCell>{item.id}</TableCell>
