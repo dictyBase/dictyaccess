@@ -60,6 +60,7 @@ ADD $CLIENT_KEYS /usr/src/app/src/common/utils/clientConfig.js
 
 # Use same node path
 ENV NODE_PATH src
+ENV CI true
 
 # standard install/build commands
 RUN npm ci && npm run test && npm run build
