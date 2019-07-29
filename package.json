@@ -1,6 +1,7 @@
 {
   "name": "dictyaccess",
   "version": "0.0.0-semantically-released",
+  "homepage": "/dictyaccess",
   "private": true,
   "engines": {
     "node": "10.16.0"

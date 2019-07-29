@@ -43,13 +43,7 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 # copy only necessary files
-COPY package-lock.json ./
-
-# package.json have to be modified later on, so 
-ADD package.json package-dev.json
-# create new package.json with relative path
-RUN jq '. + {"homepage": "/dictyaccess"}' package-dev.json > package.json \
-  && rm package-dev.json
+COPY package*.json ./
 
 # add necessary folders
 ADD src src
@@ -60,6 +54,7 @@ ADD $CLIENT_KEYS /usr/src/app/src/common/utils/clientConfig.js
 
 # Use same node path
 ENV NODE_PATH src
+ENV NODE_ENV production
 
 # standard install/build commands
 RUN npm install && npm run build
