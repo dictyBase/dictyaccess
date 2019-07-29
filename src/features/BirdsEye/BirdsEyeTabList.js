@@ -31,11 +31,11 @@ class BirdsEyeTabList extends Component<Props> {
       <AppBar position="static">
         <Tabs value={currentTab} onChange={this.handleChange} centered>
           <Tab label="Global" component={Link} to="/birdseye/genes" />
-          <Tab
-            label="Comparative"
-            component={Link}
-            to="/birdseye/comparative"
-          />
+          {/* <Tab
+              label="Comparative"
+              component={Link}
+              to="/birdseye/comparative"
+            /> */}
           <Tab
             label="Spatial Expression"
             component={Link}
