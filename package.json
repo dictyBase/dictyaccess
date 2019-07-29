@@ -14,7 +14,6 @@
     "flow": "flow",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
-    "precommit": "lint-staged",
     "cz": "git-cz",
     "semantic-release": "semantic-release",
     "local-ci-eric": "zsh ./docker/eric-dev/local-ci.sh"
