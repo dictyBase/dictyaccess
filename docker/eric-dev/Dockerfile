@@ -63,7 +63,7 @@ ENV NODE_PATH src
 ENV CI true
 
 # standard install/build commands
-RUN npm ci && npm run test && npm run build
+RUN npm ci && npm run build
 
 FROM dictybase/static-server:1.0.0
 RUN mkdir /www
