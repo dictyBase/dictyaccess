@@ -45,6 +45,11 @@ ENV NODE_PATH src
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
+# copy only necessary files
+COPY package*.json /usr/src/app/
+
+RUN npm ci
+
 # add necessary folders
 ADD src src
 ADD public public
@@ -52,10 +57,6 @@ ADD public public
 # overwrite the client key file
 ADD $CLIENT_KEYS /usr/src/app/src/common/utils/clientConfig.js
 
-# copy only necessary files
-COPY package*.json ./
-
-RUN npm ci
 RUN npm run build
 
 FROM dictybase/static-server:1.0.0
