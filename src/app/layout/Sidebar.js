@@ -47,7 +47,7 @@ const links = [
   //   icon: PieChartIcon,
   // },
   {
-    route: "/",
+    route: "#",
     name: "Dicty Stock Center",
     color: "#4f5aae",
     icon: TrendingUpIcon,
