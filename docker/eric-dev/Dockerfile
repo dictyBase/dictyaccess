@@ -62,7 +62,7 @@ ADD $CLIENT_KEYS /usr/src/app/src/common/utils/clientConfig.js
 ENV NODE_PATH src
 
 # standard install/build commands
-RUN npm ci && npm run build
+RUN npm ci && npm run test && npm run build
 
 FROM dictybase/static-server:1.0.0
 RUN mkdir /www
