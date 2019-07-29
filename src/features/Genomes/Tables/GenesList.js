@@ -38,6 +38,7 @@ type Props = {
 
 const GenesList = (props: Props) => {
   const { classes } = props
+
   return (
     <Paper>
       <Typography
