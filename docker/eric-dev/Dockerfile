@@ -34,6 +34,10 @@ ENV REACT_APP_SEQ_JSON ${seq_json:-https://raw.githubusercontent.com/dictyBase/m
 ARG mid_culminant_json
 ENV REACT_APP_MID_CULMINANT_JSON ${mid_culminant_json:-https://raw.githubusercontent.com/dictyBase/migration-data/master/dashboard/spatial-expression/mid_culminant.json}
 
+# Setup client keys for third party auth
+ARG client_keys
+ENV CLIENT_KEYS ${client_keys:-https://raw.githubusercontent.com/dictybase-playground/client-keys/2.0.0/clientConfig.eric.js}
+
 # Create app directory
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
@@ -52,13 +56,13 @@ ADD src src
 ADD public public
 
 # overwrite the client key file
-ADD https://raw.githubusercontent.com/dictybase-playground/client-keys/2.0.0/clientConfig.eric.js /usr/src/app/src/common/utils/clientConfig.js
+ADD $CLIENT_KEYS /usr/src/app/src/common/utils/clientConfig.js
 
 # Use same node path
 ENV NODE_PATH src
 
 # standard install/build commands
-RUN npm install && npm run build
+RUN npm ci && npm run build
 
 FROM dictybase/static-server:1.0.0
 RUN mkdir /www

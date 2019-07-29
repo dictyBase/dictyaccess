@@ -16,7 +16,8 @@
     "styleguide:build": "styleguidist build",
     "precommit": "lint-staged",
     "cz": "git-cz",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "local-ci-eric": "zsh ./docker/eric-dev/local-ci.sh"
   },
   "dependencies": {
     "@material-ui/core": "^1.4.3",
