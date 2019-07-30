@@ -17,8 +17,7 @@ import {
   faSignOutAlt,
 } from "@fortawesome/free-solid-svg-icons"
 import ErrorBoundary from "common/components/ErrorBoundary"
-import fetchNavbar from "app/actions/navbarActions"
-import fetchFooter from "app/actions/footerActions"
+import fetchNavbarAndFooter from "app/actions/navbarActions"
 import footerItems from "common/constants/Footer"
 import navItems from "common/constants/Navbar"
 import {
@@ -40,10 +39,8 @@ type Props = {
   navbar: Object,
   /** Object representing footer part of state */
   footer: Object,
-  /** Action creator to fetch navbar content */
-  fetchNavbar: Function,
-  /** Action creator to fetch footer content */
-  fetchFooter: Function,
+  /** Action creator to fetch navbar and footer content */
+  fetchNavbarAndFooter: Function,
   /** Material-UI styling */
   classes: Object,
 }
@@ -64,16 +61,15 @@ library.add(
 
 export class App extends Component<Props> {
   componentDidMount() {
-    const { fetchNavbar, fetchFooter } = this.props
-    fetchNavbar()
-    fetchFooter()
+    const { fetchNavbarAndFooter } = this.props
+    fetchNavbarAndFooter()
   }
 
   render() {
     const { auth, navbar, footer, classes } = this.props
 
     // if any errors, fall back to old link setup
-    if (navbar.error || !navbar.links || footer.error || !footer.links) {
+    if (!navbar.links || !footer.links) {
       return (
         <div className={classes.body}>
           {auth.isAuthenticated ? (
@@ -130,6 +126,6 @@ const mapStateToProps = ({ auth, navbar, footer }) => ({ auth, navbar, footer })
 export default withRouter(
   connect(
     mapStateToProps,
-    { fetchNavbar, fetchFooter },
+    { fetchNavbarAndFooter },
   )(withStyles(styles)(App)),
 )
