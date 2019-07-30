@@ -150,9 +150,9 @@ export const fetchChromosomeData = () => async (
   dispatch: Function,
   getState: Function,
 ) => {
-  // if (getState().birdseye.chromosomes.data) {
-  //   return noRefetch()
-  // }
+  if (getState().birdseye.chromosomes.data) {
+    return noRefetch()
+  }
   try {
     dispatch(fetchChromosomeDataRequest())
     const res = await fetch(`${apiUrl}/chromosomes`)
