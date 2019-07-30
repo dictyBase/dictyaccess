@@ -55,7 +55,7 @@ const CircosGenesContainer = (props: Props) => {
   if (!data) {
     return <CircosLoader currentTab={0} />
   }
-  console.log(genes.data)
+
   return (
     <div className={classes.root}>
       <BirdsEyeTabList currentTab={0} />

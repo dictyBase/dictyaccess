@@ -42,14 +42,12 @@ ENV REACT_APP_MID_CULMINANT_JSON ${mid_culminant_json:-https://raw.githubusercon
 ARG spatial_json
 ENV REACT_APP_SPATIAL_JSON ${spatial_json:-https://raw.githubusercontent.com/dictyBase/migration-data/master/dashboard/spatial-expression/combined.json}
 
-# Use same node path
-ENV NODE_PATH src
-
 # Create app directory
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 # copy only necessary files
+COPY jsconfig.json /usr/src/app/
 COPY package*.json /usr/src/app/
 
 RUN npm ci

@@ -36,27 +36,25 @@
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.4",
+    "react-scripts": "^3.0.1",
     "react-svg-pan-zoom": "^2.16.1",
-    "recharts": "^1.1.0",
     "redux": "^4.0.0",
     "redux-devtools-extension": "^2.13.5",
     "redux-thunk": "^2.3.0",
     "typeface-roboto": "0.0.75"
   },
   "devDependencies": {
-    "@semantic-release/changelog": "^3.0.1",
-    "@semantic-release/git": "^7.0.5",
+    "@semantic-release/git": "^7.0.16",
     "ajv": "^6.0.0",
-    "commitizen": "^3.0.2",
+    "commitizen": "^4.0.3",
     "cz-conventional-changelog": "^2.1.0",
-    "enzyme": "^3.7.0",
-    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "flow-bin": "^0.82.0",
     "husky": "^3.0.2",
-    "lint-staged": "^7.2.0",
-    "prettier": "^1.14.3",
-    "react-styleguidist": "^7.3.10",
+    "lint-staged": "^9.2.1",
+    "prettier": "^1.18.2",
+    "react-styleguidist": "^9.1.13",
     "react-test-renderer": "^16.8.6",
     "recast": "^0.13.0",
     "semantic-release": "^15.13.19"
@@ -81,14 +79,22 @@
     "noCi": true,
     "tagFormat": "${version}",
     "verifyConditions": [
-      "@semantic-release/changelog",
       "@semantic-release/git"
-    ],
-    "prepare": [
-      "@semantic-release/changelog"
     ],
     "publish": [
       "@semantic-release/github"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
     ]
   }
 }
