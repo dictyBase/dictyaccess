@@ -118,19 +118,19 @@ const CircosGenesDisplay = (props: Props) => {
 
   return (
     <Grid container spacing={16}>
-      <CircosPageHeader title={`${chrNameExtender(match.params.id)}`} />
       <Grid item xs={12} md={12} lg={9}>
-        <br />
         <center>
+          <CircosPageHeader title={`${chrNameExtender(match.params.id)}`} />
+          <br />
           <Circos
             size={750}
-            id={`${match.params.dataset}-${match.params.id}`}
+            id={`genes-${match.params.id}`}
             layout={[
               {
                 id: chr.attributes.id,
                 len: chr.attributes.length,
                 label: chr.attributes.name,
-                color: "#85a9e5",
+                color: "#708090",
               },
             ]}
             config={circosConfig}
@@ -149,6 +149,11 @@ const CircosGenesDisplay = (props: Props) => {
                   color: "blue",
                   tooltipContent: d => `${d.block_id}:${d.start}-${d.end}`,
                   logScale: true,
+                  events: {
+                    "click.open": (datum, index, nodes, event) => {
+                      window.open(`/gene/${datum.id}`)
+                    },
+                  },
                 },
               },
               {
@@ -165,6 +170,11 @@ const CircosGenesDisplay = (props: Props) => {
                   color: "red",
                   tooltipContent: d => `${d.block_id}:${d.start}-${d.end}`,
                   logScale: true,
+                  events: {
+                    "click.open": (datum, index, nodes, event) => {
+                      window.open(`/gene/${datum.id}`)
+                    },
+                  },
                 },
               },
               {

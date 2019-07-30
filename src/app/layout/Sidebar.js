@@ -7,13 +7,13 @@ import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 import ListItemIcon from "@material-ui/core/ListItemIcon"
 import Typography from "@material-ui/core/Typography"
-
+import Hidden from "@material-ui/core/Hidden"
 import TrendingUpIcon from "@material-ui/icons/TrendingUp"
-import FingerprintIcon from "@material-ui/icons/Fingerprint"
-import InsertChartIcon from "@material-ui/icons/InsertChart"
 import GpsFixedIcon from "@material-ui/icons/GpsFixed"
-import PieChartIcon from "@material-ui/icons/PieChart"
-import FormatAlignJustifyIcon from "@material-ui/icons/FormatAlignJustify"
+// import FingerprintIcon from "@material-ui/icons/Fingerprint"
+// import InsertChartIcon from "@material-ui/icons/InsertChart"
+// import PieChartIcon from "@material-ui/icons/PieChart"
+// import FormatAlignJustifyIcon from "@material-ui/icons/FormatAlignJustify"
 
 const links = [
   {
@@ -22,35 +22,36 @@ const links = [
     color: "#011f4b",
     icon: GpsFixedIcon,
   },
+  // {
+  //   route: "/genomes",
+  //   name: "Genome Stats",
+  //   color: "rgb(251, 140, 0)",
+  //   icon: InsertChartIcon,
+  // },
+  // {
+  //   route: "/annotations",
+  //   name: "Annotations",
+  //   color: "rgb(183, 28, 28)",
+  //   icon: FingerprintIcon,
+  // },
+  // {
+  //   route: "/phylogeny",
+  //   name: "Phylogeny",
+  //   color: "rgb(183, 28, 28)",
+  //   icon: FormatAlignJustifyIcon,
+  // },
+  // {
+  //   route: "/analytics",
+  //   name: "Analytics",
+  //   color: "rgb(30, 136, 229)",
+  //   icon: PieChartIcon,
+  // },
   {
-    route: "/genomes",
-    name: "Genome Stats",
-    color: "rgb(251, 140, 0)",
-    icon: InsertChartIcon,
-  },
-  {
-    route: "/annotations",
-    name: "Annotations",
-    color: "rgb(183, 28, 28)",
-    icon: FingerprintIcon,
-  },
-  {
-    route: "/phylogeny",
-    name: "Phylogeny",
-    color: "rgb(183, 28, 28)",
-    icon: FormatAlignJustifyIcon,
-  },
-  {
-    route: "/analytics",
-    name: "Analytics",
-    color: "rgb(30, 136, 229)",
-    icon: PieChartIcon,
-  },
-  {
-    route: "/stockcenter",
+    route: "#",
     name: "Dicty Stock Center",
     color: "#4f5aae",
     icon: TrendingUpIcon,
+    inactive: true,
   },
 ]
 
@@ -111,7 +112,10 @@ const Sidebar = (props: Props) => {
               fontWeight: "bold",
               color: item.color,
             }}>
-            {item.name}
+            <span style={{ color: `${item.inactive ? "#708090" : "#000000"}` }}>
+              {item.name}
+            </span>
+            {/* {item.name} */}
           </NavLink>
         </ListItem>
       </div>
@@ -119,19 +123,21 @@ const Sidebar = (props: Props) => {
   })
 
   return (
-    <Drawer
-      variant="persistent"
-      open
-      classes={{
-        paper: classes.drawerPaper,
-      }}>
-      <div className={classes.header}>
-        <Typography variant="title" color="inherit">
-          DictyAccess
-        </Typography>
-      </div>
-      <List className={classes.list}>{linkList}</List>
-    </Drawer>
+    <Hidden smDown>
+      <Drawer
+        variant="persistent"
+        open
+        classes={{
+          paper: classes.drawerPaper,
+        }}>
+        <div className={classes.header}>
+          <Typography variant="title" color="inherit">
+            DictyAccess
+          </Typography>
+        </div>
+        <List className={classes.list}>{linkList}</List>
+      </Drawer>
+    </Hidden>
   )
 }
 

@@ -14,5 +14,9 @@ class process {
     REACT_APP_BASENAME: string,
     REACT_APP_NAVBAR_JSON: string,
     REACT_APP_FOOTER_JSON: string,
+    REACT_APP_SEQ_JSON: string,
+    REACT_APP_MID_CULMINANT_JSON: string,
+    REACT_APP_SPATIAL_JSON: string,
+    NODE_ENV: string,
   }
 }

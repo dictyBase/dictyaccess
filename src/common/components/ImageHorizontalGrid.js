@@ -5,6 +5,7 @@ import { withStyles } from "@material-ui/core/styles"
 import GridList from "@material-ui/core/GridList"
 import GridListTile from "@material-ui/core/GridListTile"
 import GridListTileBar from "@material-ui/core/GridListTileBar"
+import withWidth from "@material-ui/core/withWidth"
 
 const styles = theme => ({
   root: {
@@ -19,11 +20,8 @@ const styles = theme => ({
     width: "90%",
     height: "100%",
   },
-  subhead: {
-    color: "white",
-    fontSize: 20,
-    paddingTop: 10,
-    textAlign: "center",
+  titlebar: {
+    opacity: 0.8,
   },
 })
 
@@ -39,6 +37,8 @@ type Props = {
     /** Alt tag for image, also acts as tile bar title */
     title: string,
   }>,
+  /** Width of page provided by Material-UI WithWidth HOC */
+  width: "xs" | "sm" | "md" | "lg" | "xl",
 }
 
 /**
@@ -47,17 +47,36 @@ type Props = {
  */
 
 const ImageHorizontalGrid = (props: Props) => {
-  const { classes, imageData } = props
+  const { classes, imageData, width } = props
+
+  const getGridListCols = () => {
+    switch (width) {
+      case "xs":
+        return 1
+      case "sm":
+        return 1
+      case "md":
+        return 2
+      default:
+        return 3
+    }
+  }
 
   return (
     <div className={classes.root}>
-      <GridList cellHeight={270} cols={3} className={classes.gridList}>
+      <GridList
+        cellHeight={270}
+        cols={getGridListCols()}
+        className={classes.gridList}>
         {imageData.map((tile, i) => (
           <GridListTile key={i}>
             <Link to={tile.route}>
               <center>
                 <img src={tile.img} alt={tile.title} />
-                <GridListTileBar title={tile.title} />
+                <GridListTileBar
+                  className={classes.titlebar}
+                  title={tile.title}
+                />
               </center>
             </Link>
           </GridListTile>
@@ -67,4 +86,4 @@ const ImageHorizontalGrid = (props: Props) => {
   )
 }
 
-export default withStyles(styles)(ImageHorizontalGrid)
+export default withStyles(styles)(withWidth()(ImageHorizontalGrid))

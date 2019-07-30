@@ -19,13 +19,20 @@ const styles = theme => ({
   },
 })
 
+type Props = {
+  /** Material-UI styling */
+  classes: Object,
+  /** The current active tab index */
+  currentTab: number,
+}
+
 /** This is the loading component for Circos pages.
  * It displays a circular progress animation while fetching data.
  */
 
-const CircosLoader = ({ classes }: Object) => (
+const CircosLoader = ({ classes, currentTab }: Props) => (
   <div className={classes.root}>
-    <BirdsEyeTabList />
+    <BirdsEyeTabList currentTab={currentTab} />
     <TypographyWrapper>
       <Grid container spacing={16}>
         <Grid item xs={12} className={classes.loader}>

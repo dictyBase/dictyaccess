@@ -1,9 +1,9 @@
 import { createStore, applyMiddleware } from "redux"
 import thunk from "redux-thunk"
-import { connectRouter, routerMiddleware } from "connected-react-router"
+import { routerMiddleware } from "connected-react-router"
 import { composeWithDevTools } from "redux-devtools-extension/developmentOnly"
 import { manageStateStorage } from "dicty-components-redux"
-import rootReducer from "app/reducers/rootReducer"
+import createRootReducer from "app/reducers/rootReducer"
 import history from "common/utils/routerHistory"
 import { types } from "common/constants/Types"
 
@@ -37,13 +37,7 @@ const enhancer = composeWithDevTools(
   ),
 )
 
-const configureStore = initialState => {
-  const store = createStore(
-    connectRouter(history)(rootReducer),
-    initialState,
-    enhancer,
-  )
-  return store
-}
+const configureStore = initialState =>
+  createStore(createRootReducer(history), initialState, enhancer)
 
 export default configureStore

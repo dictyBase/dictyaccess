@@ -37,7 +37,8 @@ type Props = {
  */
 
 const MostUsedGenes = (props: Props) => {
-  const { classes } = props
+  const { classes, data } = props
+
   return (
     <Paper>
       <Typography
@@ -55,7 +56,7 @@ const MostUsedGenes = (props: Props) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {props.data.map(item => (
+          {data.map(item => (
             <TableRow key={item.id}>
               <TableCell>{item.descriptor}</TableCell>
               <TableCell>{item.names}</TableCell>

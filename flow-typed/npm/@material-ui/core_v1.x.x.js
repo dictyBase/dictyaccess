@@ -1,5 +1,5 @@
-// flow-typed signature: 4abbcc6fcdb63574a8fe4fc5fe9ea869
-// flow-typed version: 4dffdd0740/@material-ui/core_v1.x.x/flow_>=v0.58.x
+// flow-typed signature: 7f4ed3158f80af22993df4f72464484d
+// flow-typed version: 73f12a8a19/@material-ui/core_v1.x.x/flow_>=v0.58.x <=v0.88.x
 
 declare module "@material-ui/core/AppBar/AppBar" {
   import type { ComponentType, Node } from "react"

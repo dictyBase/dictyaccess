@@ -1,10 +1,11 @@
 {
   "name": "dictyaccess",
   "version": "0.0.0-semantically-released",
+  "homepage": "/dictyaccess",
   "private": true,
   "homepage": "/dictyaccess",
   "engines": {
-    "node": "10.4.0"
+    "node": "10.16.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -15,52 +16,49 @@
     "flow": "flow",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
-    "precommit": "lint-staged",
     "cz": "git-cz",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "local-ci-eric": "IMAGE_TAG=$(git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||' -e 's~/~-~')-$(git rev-parse --short HEAD) skaffold run -f docker/eric-dev/skaffold.yaml",
+    "local-ci-staging": "IMAGE_TAG=staging-$(git rev-parse --short HEAD) skaffold run -f docker/staging/skaffold.yaml"
   },
   "dependencies": {
     "@material-ui/core": "^1.4.3",
     "@material-ui/icons": "^1.1.0",
     "circos": "https://github.com/dictybase-playground/circosJS/tarball/master",
-    "connected-react-router": "^4.4.1",
+    "connected-react-router": "^6.5.2",
     "dicty-components-header-footer": "github:dictyBase/dicty-components-header-footer#v7.0.0",
     "dicty-components-login": "github:dictyBase/dicty-components-login#v1.4.0",
     "dicty-components-navbar": "github:dictyBase/dicty-components-navbar#v0.2.0",
     "dicty-components-redux": "github:dictybase-playground/dicty-components-redux#v2.3.0",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-fontawesome": "^1.6.1",
-    "react-ga": "^2.5.3",
-    "react-redux": "^5.0.7",
-    "react-router": "^4.3.1",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.4",
+    "react-ga": "^2.6.0",
+    "react-redux": "^7.1.0",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "^3.0.1",
     "react-svg-pan-zoom": "^2.16.1",
-    "recharts": "^1.1.0",
-    "redux": "^4.0.0",
-    "redux-devtools-extension": "^2.13.5",
+    "redux": "^4.0.4",
+    "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
-    "typeface-roboto": "0.0.54"
+    "typeface-roboto": "0.0.75"
   },
   "devDependencies": {
-    "@semantic-release/changelog": "^3.0.1",
-    "@semantic-release/git": "^7.0.5",
+    "@semantic-release/git": "^7.0.16",
     "ajv": "^6.0.0",
-    "commitizen": "^3.0.2",
+    "commitizen": "^4.0.3",
     "cz-conventional-changelog": "^2.1.0",
-    "enzyme": "^3.7.0",
-    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "flow-bin": "^0.82.0",
-    "husky": "^1.1.1",
-    "jest": "^23.5.0",
-    "jest-enzyme": "^7.0.0",
-    "lint-staged": "^7.2.0",
-    "prettier": "^1.14.3",
-    "react-styleguidist": "^7.3.10",
-    "react-test-renderer": "^16.4.2",
+    "husky": "^3.0.2",
+    "lint-staged": "^9.2.1",
+    "prettier": "^1.18.2",
+    "react-styleguidist": "^9.1.13",
+    "react-test-renderer": "^16.8.6",
     "recast": "^0.13.0",
-    "semantic-release": "^15.10.3"
+    "semantic-release": "^15.13.19"
   },
   "lint-staged": {
     "*.{js,jsx,json,css}": [
@@ -70,7 +68,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && CI=true npm test"
     }
   },
   "config": {
@@ -82,14 +80,22 @@
     "noCi": true,
     "tagFormat": "${version}",
     "verifyConditions": [
-      "@semantic-release/changelog",
       "@semantic-release/git"
-    ],
-    "prepare": [
-      "@semantic-release/changelog"
     ],
     "publish": [
       "@semantic-release/github"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
     ]
   }
 }

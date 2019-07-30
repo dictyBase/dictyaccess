@@ -4,7 +4,7 @@ import { connect } from "react-redux"
 import { withRouter } from "react-router-dom"
 import { withStyles } from "@material-ui/core/styles"
 
-import CircosGenesDisplay from "features/BirdsEye/Circos/CircosGenesDisplay"
+import CircosSeqDisplay from "./CircosSeqDisplay"
 import CircosLoader from "./CircosLoader"
 import BirdsEyeTabList from "features/BirdsEye/BirdsEyeTabList"
 import TypographyWrapper from "common/components/TypographyWrapper"
@@ -22,8 +22,16 @@ const styles = (theme: Object) => ({
 
 // functions to filter data for individual chromosome
 const chrMap = (chr, id) => chr.data.filter(i => i.attributes.name === id)
-const geneMap = (gene, id) =>
-  gene.data.filter(item => item.attributes.block_id === chrNameMapper(id))
+const geneMap = (genes, id) =>
+  genes.data.filter(
+    item => chrNameMapper(item.attributes.block_id) === chrNameMapper(id),
+  )
+const spatialMap = (genes, id) =>
+  genes.data.filter(
+    item => chrNameMapper(item.attributes.block_id) === chrNameMapper(id),
+  )
+const seqMap = (sequence, id) =>
+  sequence.data.filter(item => item.attributes.chromosome === chrNameMapper(id))
 
 type Props = {
   /** Material-UI classes */
@@ -41,39 +49,29 @@ type Props = {
  * them as props to the appropriate display component.
  */
 
-const CircosContainer = (props: Props) => {
+const CircosSeqContainer = (props: Props) => {
   const {
-    birdseye: { currentTab, chromosomes, genes, pseudogenes },
+    birdseye: { chromosomes, genes, sequence, spatial },
     classes,
     match,
   } = props
 
-  if (!genes.data || !pseudogenes.data) {
-    return <CircosLoader />
-  }
+  const data = genes.data && sequence.data && spatial.data
 
-  if (currentTab === 1) {
-    return (
-      <div className={classes.root}>
-        <BirdsEyeTabList />
-        <TypographyWrapper>
-          <center>Work in progress</center>
-        </TypographyWrapper>
-      </div>
-    )
+  if (!data) {
+    return <CircosLoader currentTab={1} />
   }
 
   return (
     <div className={classes.root}>
-      <BirdsEyeTabList />
+      <BirdsEyeTabList currentTab={1} />
       <TypographyWrapper>
-        {match.params.dataset === "genes" && (
-          <CircosGenesDisplay
-            chr={chrMap(chromosomes, match.params.id)[0]}
-            genes={geneMap(genes, match.params.id)}
-            pseudogenes={geneMap(pseudogenes, match.params.id)}
-          />
-        )}
+        <CircosSeqDisplay
+          chr={chrMap(chromosomes, match.params.id)[0]}
+          genes={geneMap(genes, match.params.id)}
+          sequence={seqMap(sequence, match.params.id)}
+          spatial={spatialMap(spatial, match.params.id)}
+        />
       </TypographyWrapper>
     </div>
   )
@@ -84,7 +82,7 @@ const mapStateToProps = ({ birdseye }) => ({ birdseye })
 const ConnectedCircosContainer = connect(
   mapStateToProps,
   null,
-)(withStyles(styles)(withRouter(CircosContainer)))
+)(withStyles(styles)(withRouter(CircosSeqContainer)))
 
 export default withDataFetching(
   fetchChromosomeData,
