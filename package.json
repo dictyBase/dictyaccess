@@ -3,7 +3,6 @@
   "version": "0.0.0-semantically-released",
   "homepage": "/dictyaccess",
   "private": true,
-  "homepage": "/dictyaccess",
   "engines": {
     "node": "10.16.0"
   },
