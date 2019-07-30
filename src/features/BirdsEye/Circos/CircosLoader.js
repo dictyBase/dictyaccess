@@ -23,7 +23,7 @@ type Props = {
   /** Material-UI styling */
   classes: Object,
   /** The current active tab index */
-  currentTab: string,
+  currentTab: number,
 }
 
 /** This is the loading component for Circos pages.

@@ -38,7 +38,7 @@ type Props = {
     title: string,
   }>,
   /** Width of page provided by Material-UI WithWidth HOC */
-  width: string,
+  width: "xs" | "sm" | "md" | "lg" | "xl",
 }
 
 /**
@@ -86,4 +86,4 @@ const ImageHorizontalGrid = (props: Props) => {
   )
 }
 
-export default withWidth()(withStyles(styles)(ImageHorizontalGrid))
+export default withStyles(styles)(withWidth()(ImageHorizontalGrid))
