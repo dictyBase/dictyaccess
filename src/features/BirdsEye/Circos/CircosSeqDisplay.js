@@ -10,7 +10,6 @@ import ImageVerticalGrid from "common/components/ImageVerticalGrid"
 import CircosPageHeader from "./CircosPageHeader"
 import CircosSeqLegend from "./CircosSeqLegend"
 import chrNameExtender from "./utils/chrNameExtender"
-// import chrNameMapper from "features/BirdsEye/Circos/utils/chrNameMapper"
 import { chrSpatialExpression } from "common/data/chrSpatialExpression"
 import dataStrandFilter from "./utils/dataStrandFilter"
 

@@ -22,10 +22,14 @@ const styles = (theme: Object) => ({
 
 // functions to filter data for individual chromosome
 const chrMap = (chr, id) => chr.data.filter(i => i.attributes.name === id)
-const geneMap = (gene, id) =>
-  gene.data.filter(item => item.attributes.block_id === id)
-const spatialMap = (gene, id) =>
-  gene.data.filter(item => item.attributes.block_id === chrNameMapper(id))
+const geneMap = (genes, id) =>
+  genes.data.filter(
+    item => chrNameMapper(item.attributes.block_id) === chrNameMapper(id),
+  )
+const spatialMap = (genes, id) =>
+  genes.data.filter(
+    item => chrNameMapper(item.attributes.block_id) === chrNameMapper(id),
+  )
 const seqMap = (sequence, id) =>
   sequence.data.filter(item => item.attributes.chromosome === chrNameMapper(id))
 
