@@ -11,22 +11,6 @@ import oauthConfig from "common/utils/oauthConfig"
 // list of buttons to display
 const buttons = ["orcid", "google", "linkedin"]
 
-// custom theme for styling the buttons
-const theme = {
-  overrides: {
-    MuiButton: {
-      root: {
-        borderRadius: 3,
-        color: "white",
-        width: "80%",
-        justifyContent: "start",
-        minHeight: "55px",
-        marginBottom: "5px",
-      },
-    },
-  },
-}
-
 const styles = theme => ({
   root: {
     flexGrow: 1,
@@ -90,11 +74,7 @@ class Login extends Component<Props> {
           <Grid container justify="center">
             <Grid item xs={2} />
             <Grid item xs={10} className={classes.login}>
-              <LoginContainer
-                buttons={buttons}
-                theme={theme}
-                onClick={this.handleClick}
-              />
+              <LoginContainer buttons={buttons} onClick={this.handleClick} />
               <OauthSignHandler />
             </Grid>
           </Grid>

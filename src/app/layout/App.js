@@ -7,7 +7,15 @@ import { Navbar } from "dicty-components-navbar"
 import Sidebar from "app/layout/Sidebar"
 import Routes from "app/routes/Routes"
 import { withStyles } from "@material-ui/core/styles"
-
+import { library } from "@fortawesome/fontawesome-svg-core"
+import {
+  faDownload,
+  faExclamationCircle,
+  faInfoCircle,
+  faPlus,
+  faSignInAlt,
+  faSignOutAlt,
+} from "@fortawesome/free-solid-svg-icons"
 import ErrorBoundary from "common/components/ErrorBoundary"
 import fetchNavbar from "app/actions/navbarActions"
 import fetchFooter from "app/actions/footerActions"
@@ -39,6 +47,15 @@ type Props = {
   /** Material-UI styling */
   classes: Object,
 }
+
+library.add(
+  faDownload,
+  faExclamationCircle,
+  faInfoCircle,
+  faPlus,
+  faSignInAlt,
+  faSignOutAlt,
+)
 
 /**
  * This is the main App component.
