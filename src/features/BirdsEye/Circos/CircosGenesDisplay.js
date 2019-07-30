@@ -117,7 +117,7 @@ const CircosGenesDisplay = (props: Props) => {
   const pseudogenesPosStrand = dataStrandFilter(pseudogenes, "+")
 
   return (
-    <Grid container spacing={16}>
+    <Grid container spacing={2}>
       <Grid item xs={12} md={12} lg={9}>
         <center>
           <CircosPageHeader title={`${chrNameExtender(match.params.id)}`} />

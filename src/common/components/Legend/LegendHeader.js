@@ -25,7 +25,7 @@ const LegendHeader = props => {
         <InfoIcon style={{ fontSize: 25 }} />
         <br />
         <Typography
-          variant="headline"
+          variant="h5"
           gutterBottom
           style={{ color: "white", fontSize: 20 }}>
           Legend

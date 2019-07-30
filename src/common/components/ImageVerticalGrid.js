@@ -74,10 +74,7 @@ const ImageVerticalGrid = (props: Props) => {
       <GridList cellHeight={250} cols={1} className={classes.gridList}>
         <GridListTile style={{ height: "auto" }} className={classes.headerBar}>
           <ListSubheader className={classes.headerBarTitle} component="div">
-            <Typography
-              variant="headline"
-              gutterBottom
-              className={classes.subhead}>
+            <Typography variant="h5" gutterBottom className={classes.subhead}>
               {title}
             </Typography>
           </ListSubheader>

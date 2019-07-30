@@ -106,12 +106,14 @@ const scatterFilter = (data: Array<Object>) =>
   }))
 
 const hourFilter = (data: Array<Object>, hour: string) =>
-  data.filter(item => item.attributes.hour === hour).map(d => ({
-    block_id: d.attributes.chromosome,
-    start: parseInt(d.attributes.start, 10),
-    end: parseInt(d.attributes.end, 10),
-    value: parseInt(d.attributes.value, 10),
-  }))
+  data
+    .filter(item => item.attributes.hour === hour)
+    .map(d => ({
+      block_id: d.attributes.chromosome,
+      start: parseInt(d.attributes.start, 10),
+      end: parseInt(d.attributes.end, 10),
+      value: parseInt(d.attributes.value, 10),
+    }))
 
 const CircosSeqDisplay = (props: Props) => {
   const { match, sequence, genes, chr, spatial } = props
@@ -134,7 +136,7 @@ const CircosSeqDisplay = (props: Props) => {
   const rnaEndValue = Math.max.apply(Math, rnaFilter.map(item => item.value))
 
   return (
-    <Grid container spacing={16}>
+    <Grid container spacing={2}>
       <Grid item lg={9}>
         <center>
           <CircosPageHeader title={`${chrNameExtender(match.params.id)}`} />

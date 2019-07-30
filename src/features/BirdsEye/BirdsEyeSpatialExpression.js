@@ -42,7 +42,7 @@ const BirdsEyeSpatialExpression = (props: Props) => {
   return (
     <div className={classes.root}>
       <BirdsEyeTabList currentTab={1} />
-      <Grid container spacing={8}>
+      <Grid container spacing={1}>
         <Grid item xs={12} className={classes.dataSet}>
           {/* <DataSetLinks models={models} /> */}
           <h2>Gene Models with Spatial Expressions</h2>

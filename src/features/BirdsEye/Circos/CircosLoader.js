@@ -34,7 +34,7 @@ const CircosLoader = ({ classes, currentTab }: Props) => (
   <div className={classes.root}>
     <BirdsEyeTabList currentTab={currentTab} />
     <TypographyWrapper>
-      <Grid container spacing={16}>
+      <Grid container spacing={2}>
         <Grid item xs={12} className={classes.loader}>
           <center>
             <CircularProgress size={300} thickness={2} color="inherit" />
