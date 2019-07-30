@@ -166,9 +166,7 @@ export const fetchChromosomeData = () => async (
       await dispatch(fetchPseudogeneData(`${apiUrl}/pseudogenes`))
       await dispatch(fetchSeqData(`${process.env.REACT_APP_SEQ_JSON}`))
       await dispatch(
-        fetchSpatialExpressionData(
-          `${process.env.REACT_APP_MID_CULMINANT_JSON}`,
-        ),
+        fetchSpatialExpressionData(`${process.env.REACT_APP_SPATIAL_JSON}`),
       )
     } else {
       dispatch(
