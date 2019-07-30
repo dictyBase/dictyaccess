@@ -39,6 +39,9 @@ ENV REACT_APP_SEQ_JSON ${seq_json:-https://raw.githubusercontent.com/dictyBase/m
 ARG mid_culminant_json
 ENV REACT_APP_MID_CULMINANT_JSON ${mid_culminant_json:-https://raw.githubusercontent.com/dictyBase/migration-data/master/dashboard/spatial-expression/mid_culminant.json}
 
+ARG spatial_json
+ENV REACT_APP_SPATIAL_JSON ${spatial_json:-https://raw.githubusercontent.com/dictyBase/migration-data/master/dashboard/spatial-expression/combined.json}
+
 # Setup client keys for third party auth
 ARG client_keys
 ENV CLIENT_KEYS ${client_keys:-https://raw.githubusercontent.com/dictybase-playground/client-keys/1.0.0/clientConfig.js}
