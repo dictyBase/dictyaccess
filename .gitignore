@@ -16,7 +16,6 @@
 .env.test.local
 .env.production.local
 clientConfig.js
-/skaffold.yaml
 
 npm-debug.log*
 yarn-debug.log*
