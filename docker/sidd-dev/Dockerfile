@@ -4,9 +4,20 @@
 FROM dictybase/frontend-builder:devsidd
 LABEL maintainer "Siddhartha Basu <siddhartha-basu@northwestern.edu>"
 
+# base path for React Router
+ARG basename
+ENV REACT_APP_BASENAME ${basename:-dictyaccess}
+
+ARG mid_culminant_json
+ENV REACT_APP_MID_CULMINANT_JSON ${mid_culminant_json:-https://raw.githubusercontent.com/dictyBase/migration-data/master/dashboard/spatial-expression/mid_culminant.json}
+
+ARG spatial_json
+ENV REACT_APP_SPATIAL_JSON ${spatial_json:-https://raw.githubusercontent.com/dictyBase/migration-data/master/dashboard/spatial-expression/combined.json}
+
 # Create app directory
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
+
 
 # copy only necessary files
 COPY package-lock.json ./
