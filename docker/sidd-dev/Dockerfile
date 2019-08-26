@@ -1,12 +1,12 @@
-# It's a multi stage build https://docs.docker.com/develop/develop-images/multistage-build/#stop-at-a-specific-build-stage
-# The first one build single file js for the web app
-# The second one copies the file and server with a golang static web server
 FROM dictybase/frontend-builder:devsidd
 LABEL maintainer "Siddhartha Basu <siddhartha-basu@northwestern.edu>"
 
 # base path for React Router
 ARG basename
 ENV REACT_APP_BASENAME ${basename:-dictyaccess}
+
+ARG seq_json
+ENV REACT_APP_SEQ_JSON ${seq_json:-https://raw.githubusercontent.com/dictyBase/migration-data/master/dashboard/sequence/combined.json}
 
 ARG mid_culminant_json
 ENV REACT_APP_MID_CULMINANT_JSON ${mid_culminant_json:-https://raw.githubusercontent.com/dictyBase/migration-data/master/dashboard/spatial-expression/mid_culminant.json}
@@ -18,11 +18,9 @@ ENV REACT_APP_SPATIAL_JSON ${spatial_json:-https://raw.githubusercontent.com/dic
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-
 # copy only necessary files
-COPY package-lock.json ./
+COPY package*.json ./
 COPY jsconfig.json ./
-COPY package.json ./
 
 RUN npm ci
 
@@ -30,9 +28,9 @@ RUN npm ci
 ADD src src
 ADD public public
 
+# overwrite the client key file
 ADD $CLIENT_KEYS /usr/src/app/src/common/utils/clientConfig.js
 
-# standard install/build commands
 RUN npm run build
 
 FROM dictybase/static-server:1.0.0

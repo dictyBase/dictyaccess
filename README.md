@@ -26,6 +26,7 @@ This is the DictyAccess data visualization dashboard application. It has six dif
   - [Running the application(dev version)](#running-the-application-dev-version)
   - [Application Structure](#application-structure)
 - [Deployment](#deployment)
+- [Developers](#developers)
 
 # Development
 
@@ -112,3 +113,8 @@ The application is deployed by [building a Docker
 image](https://docs.docker.com/engine/reference/commandline/build/) and running
 it through [Kubernetes](https://k8s.io). More detailed information about the deployment process for DSC
 and all Dicty software can be found [here](https://github.com/dictyBase/Migration/blob/master/deploy.md).
+
+# Developers
+
+<a href="https://sourcerer.io/wildlifehexagon"><img src="https://sourcerer.io/assets/avatar/wildlifehexagon" height="80px" alt="Sourcerer"></a>
+<a href="https://sourcerer.io/cybersiddhu"><img src="https://sourcerer.io/assets/avatar/cybersiddhu" height="80px" alt="Sourcerer"></a>
