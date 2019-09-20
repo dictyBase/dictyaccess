@@ -1,15 +1,15 @@
+[![License](https://img.shields.io/badge/License-BSD%202--Clause-blue.svg)](LICENSE)
+
 ## Master branch
 
-[![Build Status](https://travis-ci.org/dictybase/dictyaccess.svg?branch=master)](https://travis-ci.org/dictybase/dictyaccess)
-[![Dependency Status](https://david-dm.org/dictybase/dictyaccess/master.svg?style=flat-square)](https://david-dm.org/dictybase/dictyaccess/master)
-[![devDependency Status](https://david-dm.org/dictybase/dictyaccess/master/dev-status.svg?style=flat-square)](https://david-dm.org/dictybase/dictyaccess/master?type=dev)
+[![Dependency Status](https://david-dm.org/dictyBase/dictyaccess/master.svg?style=flat-square)](https://david-dm.org/dictyBase/dictyaccess/master)
+[![devDependency Status](https://david-dm.org/dictyBase/dictyaccess/master/dev-status.svg?style=flat-square)](https://david-dm.org/dictyBase/dictyaccess/master?type=dev)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 ## Develop branch
 
-[![Build Status](https://travis-ci.org/dictybase/dictyaccess.svg?branch=develop)](https://travis-ci.org/dictybase/dictyaccess)
-[![Dependency Status](https://david-dm.org/dictybase/dictyaccess/develop.svg?style=flat-square)](https://david-dm.org/dictybase/dictyaccess/develop)
-[![devDependency Status](https://david-dm.org/dictybase/dictyaccess/develop/dev-status.svg?style=flat-square)](https://david-dm.org/dictybase/dictyaccess/develop?type=dev)
+[![Dependency Status](https://david-dm.org/dictyBase/dictyaccess/develop.svg?style=flat-square)](https://david-dm.org/dictyBase/dictyaccess/develop)
+[![devDependency Status](https://david-dm.org/dictyBase/dictyaccess/develop/dev-status.svg?style=flat-square)](https://david-dm.org/dictyBase/dictyaccess/develop?type=dev)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 ## DictyAccess
