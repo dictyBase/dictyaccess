@@ -21,7 +21,7 @@ const {
   CHROMOSOME_DATA_NO_REFETCH,
 } = types
 
-const apiUrl = `${process.env.REACT_APP_API_SERVER}/dashboard/genomes/44689`
+const apiUrl = `${process.env.REACT_APP_FUNC_SERVER}/dashboard/genomes/44689`
 
 /**
  * All of the Redux actions related to the Bird's Eye Dashboard
