@@ -26,7 +26,7 @@
 [![Funding](https://badgen.net/badge/NIGMS/Rex%20L%20Chisholm,dictyBase/yellow?list=|)](https://projectreporter.nih.gov/project_info_description.cfm?aid=9476993)
 [![Funding](https://badgen.net/badge/NIGMS/Rex%20L%20Chisholm,DSC/yellow?list=|)](https://projectreporter.nih.gov/project_info_description.cfm?aid=9438930)
 
-This is the [dictyAccess](https://eric.dictybase.dev/dictyaccess) data visualization dashboard application.
+This is the [dictyAccess](https://testdb.dictybase.org/dictyaccess) data visualization dashboard application.
 
 ## Cloud Native Development
 
