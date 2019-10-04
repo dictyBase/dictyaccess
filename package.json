@@ -39,7 +39,7 @@
     "react-ga": "^2.6.0",
     "react-redux": "^7.1.0",
     "react-router": "^5.0.1",
-    "react-router-dom": "^5.0.1",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "^3.0.1",
     "react-svg-pan-zoom": "^2.16.1",
     "redux": "^4.0.4",
