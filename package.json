@@ -49,18 +49,18 @@
     "typeface-roboto": "0.0.75"
   },
   "devDependencies": {
-    "@semantic-release/git": "^7.0.17",
+    "@semantic-release/git": "^7.0.18",
     "commitizen": "^4.0.3",
     "cz-conventional-changelog": "^3.0.2",
     "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-adapter-react-16": "^1.15.1",
     "flow-bin": "^0.111.1",
     "husky": "^3.0.9",
     "jss": "^9.8.7",
-    "lint-staged": "^9.2.1",
+    "lint-staged": "^9.4.2",
     "prettier": "^1.18.2",
     "react-styleguidist": "^10.2.0",
-    "react-test-renderer": "^16.8.6",
+    "react-test-renderer": "^16.11.0",
     "semantic-release": "^15.13.30"
   },
   "lint-staged": {
