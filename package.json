@@ -56,7 +56,7 @@
     "flow-bin": "^0.111.3",
     "husky": "^3.0.9",
     "jss": "^9.8.7",
-    "lint-staged": "^9.4.3",
+    "lint-staged": "^9.5.0",
     "prettier": "^1.19.1",
     "react-styleguidist": "^10.2.0",
     "react-test-renderer": "^16.12.0",
