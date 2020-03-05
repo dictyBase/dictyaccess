@@ -35,7 +35,7 @@
     "dicty-components-navbar": "github:dictyBase/dicty-components-navbar#2.0.0",
     "dicty-components-redux": "github:dictybase-playground/dicty-components-redux#v2.3.0",
     "react": "^16.11.0",
-    "react-dom": "^16.11.0",
+    "react-dom": "^16.13.0",
     "react-ga": "^2.7.0",
     "react-redux": "^7.2.0",
     "react-router": "^5.1.2",
