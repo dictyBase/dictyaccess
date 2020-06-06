@@ -55,7 +55,7 @@
     "enzyme-adapter-react-16": "^1.15.2",
     "flow-bin": "^0.125.1",
     "husky": "^4.2.5",
-    "jss": "^10.0.4",
+    "jss": "^10.2.0",
     "lint-staged": "^10.2.7",
     "prettier": "^2.0.5",
     "react-styleguidist": "^11.0.8",
