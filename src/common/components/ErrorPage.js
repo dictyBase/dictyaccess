@@ -8,7 +8,7 @@ import Button from "@material-ui/core/Button"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import sadDicty from "common/assets/sad-dicty.png"
 
-const styles = theme => ({
+const styles = (theme) => ({
   error400: {
     backgroundColor: "#eff8fb",
     textAlign: "center",

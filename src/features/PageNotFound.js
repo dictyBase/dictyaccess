@@ -4,7 +4,7 @@ import { withStyles } from "@material-ui/core/styles"
 import Button from "@material-ui/core/Button"
 import Paper from "@material-ui/core/Paper"
 
-const styles = theme => ({
+const styles = (theme) => ({
   paper: {
     textAlign: "center",
     height: "400px",
@@ -16,7 +16,7 @@ const styles = theme => ({
  * This is a generic error page for broken routes.
  */
 
-const PageNotFound = props => {
+const PageNotFound = (props) => {
   const { classes } = props
   return (
     <Paper className={classes.paper}>

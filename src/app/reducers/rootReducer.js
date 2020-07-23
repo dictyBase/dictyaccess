@@ -7,7 +7,7 @@ import navbarReducer from "app/reducers/navbarReducer"
 
 // root reducer created to be used in store by combining all individual reducers
 
-export default history =>
+export default (history) =>
   combineReducers({
     router: connectRouter(history),
     auth: authReducer,

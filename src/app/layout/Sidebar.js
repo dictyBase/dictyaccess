@@ -55,7 +55,7 @@ const links = [
   },
 ]
 
-const styles = theme => ({
+const styles = (theme) => ({
   drawerPaper: {
     position: "relative",
     width: "240px",

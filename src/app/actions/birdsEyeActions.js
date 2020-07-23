@@ -42,7 +42,7 @@ const fetchChromosomeDataSuccess = (data: Array<Object>) => ({
   },
 })
 
-const fetchChromosomeDataFailure = error => ({
+const fetchChromosomeDataFailure = (error) => ({
   type: FETCH_CHROMOSOME_DATA_FAILURE,
   payload: {
     isFetching: false,
@@ -65,7 +65,7 @@ const fetchGeneDataSuccess = (data: Array<Object>) => ({
   },
 })
 
-const fetchGeneDataFailure = error => ({
+const fetchGeneDataFailure = (error) => ({
   type: FETCH_GENE_DATA_FAILURE,
   payload: {
     isFetching: false,
@@ -88,7 +88,7 @@ const fetchPseudogeneDataSuccess = (data: Array<Object>) => ({
   },
 })
 
-const fetchPseudogeneDataFailure = error => ({
+const fetchPseudogeneDataFailure = (error) => ({
   type: FETCH_PSEUDOGENE_DATA_FAILURE,
   payload: {
     isFetching: false,
@@ -111,7 +111,7 @@ const fetchSeqDataSuccess = (data: Array<Object>) => ({
   },
 })
 
-const fetchSeqDataFailure = error => ({
+const fetchSeqDataFailure = (error) => ({
   type: FETCH_SEQ_DATA_FAILURE,
   payload: {
     isFetching: false,
@@ -134,7 +134,7 @@ const fetchSpatialExpressionDataSuccess = (data: Array<Object>) => ({
   },
 })
 
-const fetchSpatialExpressionDataFailure = error => ({
+const fetchSpatialExpressionDataFailure = (error) => ({
   type: FETCH_SPATIAL_EXPRESSION_DATA_FAILURE,
   payload: {
     isFetching: false,

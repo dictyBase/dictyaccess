@@ -1,5 +1,5 @@
 // default styles used for charts
-export const ChartStyles = theme => ({
+export const ChartStyles = (theme) => ({
   chart: {
     height: "250px",
     padding: "10px 15px 0px 0px",

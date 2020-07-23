@@ -3,7 +3,7 @@ import React from "react"
 import Paper from "@material-ui/core/Paper"
 import { withStyles } from "@material-ui/core/styles"
 
-const styles = theme => ({
+const styles = (theme) => ({
   content: {
     padding: "5px 10px",
     marginLeft: "90px",

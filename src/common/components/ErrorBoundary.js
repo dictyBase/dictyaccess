@@ -4,7 +4,7 @@ import { withStyles } from "@material-ui/core/styles"
 
 import sadDicty from "common/assets/sad-dicty.png"
 
-const styles = theme => ({
+const styles = (theme) => ({
   gridContainer: {
     marginTop: "33px",
   },

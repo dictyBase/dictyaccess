@@ -8,7 +8,7 @@ import GridListTileBar from "@material-ui/core/GridListTileBar"
 import ListSubheader from "@material-ui/core/ListSubheader"
 import Typography from "@material-ui/core/Typography"
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     display: "flex",
     flexWrap: "wrap",

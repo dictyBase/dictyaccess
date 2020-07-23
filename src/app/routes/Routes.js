@@ -27,12 +27,12 @@ const Routes = () => (
     <Route
       exact
       path="/"
-      component={BirdsEyeDashboard => <Redirect to="/birdseye/genes" />}
+      component={(BirdsEyeDashboard) => <Redirect to="/birdseye/genes" />}
     />
     <Route
       exact
       path="/birdseye"
-      component={BirdsEyeDashboard => <Redirect to="/birdseye/genes" />}
+      component={(BirdsEyeDashboard) => <Redirect to="/birdseye/genes" />}
     />
     <Route exact path="/birdseye/genes" component={BirdsEyeDashboard} />
     <Route

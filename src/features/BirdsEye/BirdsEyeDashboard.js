@@ -9,7 +9,7 @@ import ImageHorizontalGrid from "common/components/ImageHorizontalGrid"
 // import DataSetLinks from "features/BirdsEye/DataSetLinks"
 import { chrGeneModels } from "common/data/chrGeneModels"
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,

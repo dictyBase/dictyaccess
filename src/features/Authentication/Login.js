@@ -11,7 +11,7 @@ import oauthConfig from "common/utils/oauthConfig"
 // list of buttons to display
 const buttons = ["orcid", "google", "linkedin"]
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
@@ -42,12 +42,12 @@ class Login extends Component<Props> {
     let url = `${config.authorizationEndpoint}?client_id=${config.clientId}`
     url += `&scope=${config.scopes.join(config.scopeDelimiter)}`
     if (config.requiredUrlParams) {
-      config.requiredUrlParams.forEach(element => {
+      config.requiredUrlParams.forEach((element) => {
         url += `&${element[0]}=${element[1]}`
       })
     }
     if (config.optionalUrlParams) {
-      config.optionalUrlParams.forEach(element => {
+      config.optionalUrlParams.forEach((element) => {
         url += `&${element[0]}=${element[1]}`
       })
     }

@@ -8,7 +8,7 @@ import ImageHorizontalGrid from "common/components/ImageHorizontalGrid"
 import BirdsEyeTabList from "./BirdsEyeTabList"
 import { chrSpatialExpression } from "common/data/chrSpatialExpression"
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,

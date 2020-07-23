@@ -32,7 +32,7 @@ const LatestPlasmids = (props: Props) => {
         Latest Plasmids
       </Typography>
       <List>
-        {data.map(item => (
+        {data.map((item) => (
           <ListItem key={item.id}>
             <ListItemText primary={item.id} />
           </ListItem>

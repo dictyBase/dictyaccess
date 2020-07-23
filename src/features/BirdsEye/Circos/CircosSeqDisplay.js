@@ -91,7 +91,7 @@ type Props = {
  */
 
 const scatterFilter = (data: Array<Object>) =>
-  data.map(d => ({
+  data.map((d) => ({
     block_id: d.attributes.block_id,
     position:
       (parseInt(d.attributes.start, 10) + parseInt(d.attributes.end, 10)) / 2,
@@ -107,8 +107,8 @@ const scatterFilter = (data: Array<Object>) =>
 
 const hourFilter = (data: Array<Object>, hour: string) =>
   data
-    .filter(item => item.attributes.hour === hour)
-    .map(d => ({
+    .filter((item) => item.attributes.hour === hour)
+    .map((d) => ({
       block_id: d.attributes.chromosome,
       start: parseInt(d.attributes.start, 10),
       end: parseInt(d.attributes.end, 10),
@@ -127,13 +127,16 @@ const CircosSeqDisplay = (props: Props) => {
   const hour24 = hourFilter(sequence, "24")
   const posStrand = dataStrandFilter(genes, "+")
   const negStrand = dataStrandFilter(genes, "-")
-  const proteinFilter = scatterFilter(spatial).filter(d => d.protein === true)
+  const proteinFilter = scatterFilter(spatial).filter((d) => d.protein === true)
   const proteinEndValue = Math.max.apply(
     Math,
-    proteinFilter.map(item => item.value),
+    proteinFilter.map((item) => item.value),
   )
-  const rnaFilter = scatterFilter(spatial).filter(d => d.rna === true)
-  const rnaEndValue = Math.max.apply(Math, rnaFilter.map(item => item.value))
+  const rnaFilter = scatterFilter(spatial).filter((d) => d.rna === true)
+  const rnaEndValue = Math.max.apply(
+    Math,
+    rnaFilter.map((item) => item.value),
+  )
 
   return (
     <Grid container spacing={2}>
@@ -166,7 +169,7 @@ const CircosSeqDisplay = (props: Props) => {
                   direction: "in",
                   strokeWidth: 0,
                   color: "red",
-                  tooltipContent: d => `${d.id} - coords:${d.start}-${d.end}`,
+                  tooltipContent: (d) => `${d.id} - coords:${d.start}-${d.end}`,
                   logScale: true,
                   events: {
                     "click.open": (datum, index, nodes, event) => {
@@ -187,7 +190,7 @@ const CircosSeqDisplay = (props: Props) => {
                   direction: "in",
                   strokeWidth: 0,
                   color: "blue",
-                  tooltipContent: d => `${d.id} - coords:${d.start}-${d.end}`,
+                  tooltipContent: (d) => `${d.id} - coords:${d.start}-${d.end}`,
                   logScale: true,
                   events: {
                     "click.open": (datum, index, nodes, event) => {
@@ -216,7 +219,7 @@ const CircosSeqDisplay = (props: Props) => {
                       end: proteinEndValue + 1,
                     },
                   ],
-                  tooltipContent: d =>
+                  tooltipContent: (d) =>
                     `${d.name} (${d.id}) - ${d.term} - protein`,
                   events: {
                     "click.open": (datum, index, nodes, event) => {
@@ -245,7 +248,8 @@ const CircosSeqDisplay = (props: Props) => {
                       end: rnaEndValue + 1,
                     },
                   ],
-                  tooltipContent: d => `${d.name} (${d.id}) - ${d.term} - RNA`,
+                  tooltipContent: (d) =>
+                    `${d.name} (${d.id}) - ${d.term} - RNA`,
                   events: {
                     "click.open": (datum, index, nodes, event) => {
                       window.open(`/gene/${datum.id}`)
@@ -266,7 +270,7 @@ const CircosSeqDisplay = (props: Props) => {
                       color: "#efefef",
                     },
                   ],
-                  tooltipContent: d => `${d.start}-${d.end}`,
+                  tooltipContent: (d) => `${d.start}-${d.end}`,
                 },
               },
               {
@@ -283,7 +287,7 @@ const CircosSeqDisplay = (props: Props) => {
                       color: "#efefef",
                     },
                   ],
-                  tooltipContent: d => `${d.start}-${d.end}`,
+                  tooltipContent: (d) => `${d.start}-${d.end}`,
                 },
               },
             ]}

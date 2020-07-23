@@ -32,7 +32,7 @@ const LatestStrains = (props: Props) => {
         Latest Strains
       </Typography>
       <List>
-        {data.map(item => (
+        {data.map((item) => (
           <ListItem key={item.id}>
             <ListItemText key={item.id} primary={item.id} />
           </ListItem>

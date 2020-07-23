@@ -74,11 +74,11 @@ export class App extends Component<Props> {
         <div className={classes.body}>
           {auth.isAuthenticated ? (
             <Header items={loggedHeaderItems}>
-              {items => items.map(generateLinks)}
+              {(items) => items.map(generateLinks)}
             </Header>
           ) : (
             <Header items={headerItems}>
-              {items => items.map(generateLinks)}
+              {(items) => items.map(generateLinks)}
             </Header>
           )}
           <Navbar theme={navTheme} items={navItems} />
@@ -99,11 +99,11 @@ export class App extends Component<Props> {
       <div className={classes.body}>
         {auth.isAuthenticated ? (
           <Header items={loggedHeaderItems}>
-            {items => items.map(generateLinks)}
+            {(items) => items.map(generateLinks)}
           </Header>
         ) : (
           <Header items={headerItems}>
-            {items => items.map(generateLinks)}
+            {(items) => items.map(generateLinks)}
           </Header>
         )}
         <Navbar theme={navTheme} items={navbar.links} />
@@ -124,8 +124,5 @@ export class App extends Component<Props> {
 const mapStateToProps = ({ auth, navbar, footer }) => ({ auth, navbar, footer })
 
 export default withRouter(
-  connect(
-    mapStateToProps,
-    { fetchNavbarAndFooter },
-  )(withStyles(styles)(App)),
+  connect(mapStateToProps, { fetchNavbarAndFooter })(withStyles(styles)(App)),
 )

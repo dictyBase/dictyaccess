@@ -9,7 +9,7 @@ import TableRow from "@material-ui/core/TableRow"
 import Paper from "@material-ui/core/Paper"
 import Typography from "@material-ui/core/Typography"
 
-const styles = theme => ({
+const styles = (theme) => ({
   header: {
     fontSize: "20px",
     color: "#fff",
@@ -54,7 +54,7 @@ const ProteinsList = (props: Props) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {props.data.map(item => (
+          {props.data.map((item) => (
             <TableRow key={item.id}>
               <TableCell>{item.id}</TableCell>
               <TableCell>{item.length}</TableCell>

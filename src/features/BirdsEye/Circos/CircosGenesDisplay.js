@@ -147,7 +147,7 @@ const CircosGenesDisplay = (props: Props) => {
                   direction: "in",
                   strokeWidth: 0,
                   color: "blue",
-                  tooltipContent: d => `${d.block_id}:${d.start}-${d.end}`,
+                  tooltipContent: (d) => `${d.block_id}:${d.start}-${d.end}`,
                   logScale: true,
                   events: {
                     "click.open": (datum, index, nodes, event) => {
@@ -168,7 +168,7 @@ const CircosGenesDisplay = (props: Props) => {
                   direction: "in",
                   strokeWidth: 0,
                   color: "red",
-                  tooltipContent: d => `${d.block_id}:${d.start}-${d.end}`,
+                  tooltipContent: (d) => `${d.block_id}:${d.start}-${d.end}`,
                   logScale: true,
                   events: {
                     "click.open": (datum, index, nodes, event) => {
@@ -190,7 +190,7 @@ const CircosGenesDisplay = (props: Props) => {
                   strokeWidth: 1,
                   strokeColor: "indigo",
                   color: "indigo",
-                  tooltipContent: d => `${d.block_id}:${d.start}-${d.end}`,
+                  tooltipContent: (d) => `${d.block_id}:${d.start}-${d.end}`,
                 },
               },
               {
@@ -206,7 +206,7 @@ const CircosGenesDisplay = (props: Props) => {
                   strokeWidth: 1,
                   strokeColor: "blueviolet",
                   color: "blueviolet",
-                  tooltipContent: d => `${d.block_id}:${d.start}-${d.end}`,
+                  tooltipContent: (d) => `${d.block_id}:${d.start}-${d.end}`,
                 },
               },
             ]}

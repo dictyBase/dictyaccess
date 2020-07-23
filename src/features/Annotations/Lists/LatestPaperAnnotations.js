@@ -32,7 +32,7 @@ const LatestPaperAnnotations = (props: Props) => {
         Latest Annotations
       </Typography>
       <List>
-        {props.data.map(item => (
+        {props.data.map((item) => (
           <ListItem key={item}>
             <ListItemText primary={item} />
           </ListItem>

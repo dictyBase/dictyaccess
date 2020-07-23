@@ -9,7 +9,7 @@ import { LegendStyle as styles } from "common/styles/LegendStyles"
  * Should be used as wrapper for LegendHeader and LegendBody.
  */
 
-const LegendBox = props => {
+const LegendBox = (props) => {
   const { classes, className, children, plain, carousel, ...rest } = props
   const cardClasses = classNames({
     [classes.card]: true,

@@ -50,7 +50,7 @@ const BrowserUsage = (props: Props) => {
                   data={props.data}
                   dataKey="value"
                   fill="#8884d8">
-                  {props.data.map(item => (
+                  {props.data.map((item) => (
                     <Cell key={item.name} fill={item.color} />
                   ))}
                 </Pie>
@@ -61,7 +61,7 @@ const BrowserUsage = (props: Props) => {
         <Grid item xs={12} sm={5} md={5} lg={5}>
           <div className={classes.legend}>
             <List>
-              {data.map(item => (
+              {data.map((item) => (
                 <ListItem key={item.name}>
                   <ListItemIcon style={{ backgroundColor: item.color }}>
                     <Avatar>{item.icon}</Avatar>

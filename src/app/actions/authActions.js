@@ -138,7 +138,7 @@ const fetchNonAuthRoleSuccess = (json: Object) => ({
   },
 })
 
-const fetchNonAuthRoleFailure = error => ({
+const fetchNonAuthRoleFailure = (error) => ({
   type: FETCH_NON_AUTH_ROLE_FAILURE,
   payload: {
     error,
@@ -160,7 +160,7 @@ const fetchPermissionSuccess = (json: Object) => ({
   },
 })
 
-const fetchPermissionFailure = error => ({
+const fetchPermissionFailure = (error) => ({
   type: FETCH_PERMISSION_FAILURE,
   payload: {
     error,

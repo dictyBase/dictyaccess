@@ -1,5 +1,5 @@
 // default styles used for lists
-export const ListStyles = theme => ({
+export const ListStyles = (theme) => ({
   header: {
     fontSize: "20px",
     color: "#fff",

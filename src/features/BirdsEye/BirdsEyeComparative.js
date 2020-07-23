@@ -7,7 +7,7 @@ import Grid from "@material-ui/core/Grid"
 import BirdsEyeTabList from "./BirdsEyeTabList"
 // import DataSetLinks from "features/BirdsEye/Global/DataSets/DataSetLinks"
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,

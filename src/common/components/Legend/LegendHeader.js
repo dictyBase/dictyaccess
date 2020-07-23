@@ -10,7 +10,7 @@ import { LegendHeaderStyle as styles } from "common/styles/LegendStyles"
  * Header used inside of LegendBox
  */
 
-const LegendHeader = props => {
+const LegendHeader = (props) => {
   const { classes, className, children, color, plainCard, ...rest } = props
   const cardHeaderClasses = classNames({
     [classes.cardHeader]: true,

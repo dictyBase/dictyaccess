@@ -61,16 +61,13 @@ const withDataFetching = (
       return <WrappedComponent {...this.props} />
     }
   }
-  const mapStateToProps = state => ({
+  const mapStateToProps = (state) => ({
     error: state[key].error,
     isFetching: state[key].isFetching,
     data: state[key].data,
   })
 
-  return connect(
-    mapStateToProps,
-    { action },
-  )(WithDataFetchingComponent)
+  return connect(mapStateToProps, { action })(WithDataFetchingComponent)
 }
 
 export default withDataFetching

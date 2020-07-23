@@ -25,7 +25,7 @@ const fetchFooterSuccess = (json: Object) => ({
   },
 })
 
-const fetchFooterFailure = error => ({
+const fetchFooterFailure = (error) => ({
   type: FETCH_FOOTER_FAILURE,
   payload: {
     error,
@@ -39,8 +39,8 @@ export const fetchFooter = () => async (dispatch: Function) => {
     const res = await fetch(footerJson)
     const json = await res.json()
     if (res.ok) {
-      const footerArr = json.data.map(item => {
-        const menuItemsArr = item.attributes.items.map(c => ({
+      const footerArr = json.data.map((item) => {
+        const menuItemsArr = item.attributes.items.map((c) => ({
           description: c.label,
           link: c.link,
         }))

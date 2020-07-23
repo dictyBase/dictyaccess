@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom"
 import { withStyles } from "@material-ui/core/styles"
 import Grid from "@material-ui/core/Grid"
 
-const styles = theme => ({
+const styles = (theme) => ({
   button: {
     marginBottom: "5px",
     padding: "10px",

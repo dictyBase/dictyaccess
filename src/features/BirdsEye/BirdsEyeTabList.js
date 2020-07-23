@@ -49,7 +49,4 @@ class BirdsEyeTabList extends Component<Props> {
 
 const mapStateToProps = ({ birdseye }) => ({ birdseye })
 
-export default connect(
-  mapStateToProps,
-  { changeBirdsEyeTab },
-)(BirdsEyeTabList)
+export default connect(mapStateToProps, { changeBirdsEyeTab })(BirdsEyeTabList)

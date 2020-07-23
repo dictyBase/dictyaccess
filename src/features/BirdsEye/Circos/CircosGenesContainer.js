@@ -21,10 +21,10 @@ const styles = (theme: Object) => ({
 })
 
 // functions to filter data for individual chromosome
-const chrMap = (chr, id) => chr.data.filter(i => i.attributes.name === id)
+const chrMap = (chr, id) => chr.data.filter((i) => i.attributes.name === id)
 const geneMap = (genes, id) =>
   genes.data.filter(
-    item => chrNameMapper(item.attributes.block_id) === chrNameMapper(id),
+    (item) => chrNameMapper(item.attributes.block_id) === chrNameMapper(id),
   )
 
 type Props = {

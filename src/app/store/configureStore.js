@@ -37,7 +37,7 @@ const enhancer = composeWithDevTools(
   ),
 )
 
-const configureStore = initialState =>
+const configureStore = (initialState) =>
   createStore(createRootReducer(history), initialState, enhancer)
 
 export default configureStore

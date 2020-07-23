@@ -8,7 +8,7 @@ import { LegendBodyStyle as styles } from "common/styles/LegendStyles"
  * Main body content used inside of LegendBox
  */
 
-const LegendBody = props => {
+const LegendBody = (props) => {
   const { classes, className, children, ...rest } = props
   const cardBodyClasses = classNames({
     [classes.cardBody]: true,

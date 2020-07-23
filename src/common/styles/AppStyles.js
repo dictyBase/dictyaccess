@@ -1,4 +1,4 @@
-export const AppStyles = theme => ({
+export const AppStyles = (theme) => ({
   container: {
     marginRight: "auto",
     marginLeft: "auto",
