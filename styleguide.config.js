@@ -1,8 +1,9 @@
 /** Need to remove features from ignore list as they are added to our app. */
 
 module.exports = {
-  styleguideDir: "docs",
+  styleguideDir: "styleguide",
   components: "src/**/*.js",
+  title: "dictyBase DictyAccess",
   ignore: [
     "**/*.test.{js,jsx,ts,tsx}",
     "**/*Actions.js",
