@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.js": "/dictyaccess/build/main.df95fe36.js",
+    "runtime-main.js": "/dictyaccess/build/bundle.e4600816.js",
+    "static/css/2.7b171300.chunk.css": "/dictyaccess/static/css/2.7b171300.chunk.css",
+    "build/2.aec2c836.js": "/dictyaccess/build/2.aec2c836.js",
+    "build/2.aec2c836.js.LICENSE.txt": "/dictyaccess/build/2.aec2c836.js.LICENSE.txt",
+    "index.html": "/dictyaccess/index.html",
+    "precache-manifest.e1c0f852f7d8ae0872e5730fdad6a239.js": "/dictyaccess/precache-manifest.e1c0f852f7d8ae0872e5730fdad6a239.js",
+    "service-worker.js": "/dictyaccess/service-worker.js",
+    "static/css/2.7b171300.chunk.css.map": "/dictyaccess/static/css/2.7b171300.chunk.css.map",
+    "static/media/academicons.min.css": "/dictyaccess/static/media/academicons.ea3755c3.eot",
+    "static/media/chr1-genes.png": "/dictyaccess/static/media/chr1-genes.494b977a.png",
+    "static/media/chr1-spatial.png": "/dictyaccess/static/media/chr1-spatial.8f979ff5.png",
+    "static/media/chr2-genes.png": "/dictyaccess/static/media/chr2-genes.6f00f51d.png",
+    "static/media/chr2-spatial.png": "/dictyaccess/static/media/chr2-spatial.6246f268.png",
+    "static/media/chr3-genes.png": "/dictyaccess/static/media/chr3-genes.7f709fa1.png",
+    "static/media/chr3-spatial.png": "/dictyaccess/static/media/chr3-spatial.06c5c2ec.png",
+    "static/media/chr4-genes.png": "/dictyaccess/static/media/chr4-genes.d1990965.png",
+    "static/media/chr4-spatial.png": "/dictyaccess/static/media/chr4-spatial.089608c9.png",
+    "static/media/chr5-genes.png": "/dictyaccess/static/media/chr5-genes.634acffd.png",
+    "static/media/chr5-spatial.png": "/dictyaccess/static/media/chr5-spatial.fddd4065.png",
+    "static/media/chr6-genes.png": "/dictyaccess/static/media/chr6-genes.95e52f30.png",
+    "static/media/chr6-spatial.png": "/dictyaccess/static/media/chr6-spatial.470b15bb.png",
+    "static/media/logo.png": "/dictyaccess/static/media/logo.4eeedc37.png",
+    "static/media/index.css": "/dictyaccess/static/media/roboto-latin-900italic.ebf6d164.woff2"
+  },
+  "entrypoints": [
+    "build/bundle.e4600816.js",
+    "static/css/2.7b171300.chunk.css",
+    "build/2.aec2c836.js",
+    "build/main.df95fe36.js"
+  ]
+}
