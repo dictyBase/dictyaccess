@@ -55,6 +55,10 @@
   "devDependencies": {
     "@apollo/react-testing": "^4.0.0",
     "@semantic-release/git": "^9.0.0",
+    "@types/jest": "^26.0.10",
+    "@types/node": "^14.6.0",
+    "@types/react": "^16.9.46",
+    "@types/react-dom": "^16.9.8",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.3",
     "eslint-config-prettier": "^6.11.0",
@@ -66,7 +70,8 @@
     "prettier": "^2.0.5",
     "react-styleguidist": "^11.0.8",
     "react-test-renderer": "^16.13.1",
-    "semantic-release": "^17.1.1"
+    "semantic-release": "^17.1.1",
+    "typescript": "^3.9.7"
   },
   "lint-staged": {
     "*.{js,jsx,json,css}": [
