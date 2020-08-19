@@ -1,4 +1,3 @@
-// @flow
 import React from "react"
 import { withStyles } from "@material-ui/core/styles"
 import Table from "@material-ui/core/Table"
@@ -23,20 +22,11 @@ const styles = (theme) => ({
   },
 })
 
-type Props = {
-  /** The data to pass into this table */
-  data: Array<Object>,
-  /** The Material-UI color palette selected */
-  color: Object,
-  /** Material-UI styling */
-  classes: Object,
-}
-
 /**
  * This is a table that shows a list of genes.
  */
 
-const GenesList = (props: Props) => {
+const GenesList = (props) => {
   const { classes, data } = props
 
   return (

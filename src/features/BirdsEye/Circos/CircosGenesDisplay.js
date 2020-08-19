@@ -1,4 +1,3 @@
-// @flow
 import React from "react"
 import Circos from "./Circos"
 import { withRouter } from "react-router-dom"
@@ -36,48 +35,48 @@ const circosConfig = {
   },
 }
 
-type Props = {
-  /** Genes data */
-  genes: Array<{
-    type: string,
-    id: string,
-    attributes: {
-      block_id: string,
-      end: string,
-      start: string,
-      strand: string,
-    },
-  }>,
-  /** Pseudogenes data */
-  pseudogenes: Array<{
-    type: string,
-    id: string,
-    attributes: {
-      block_id: string,
-      end: string,
-      start: string,
-      strand: string,
-    },
-  }>,
-  /** Chromosomes data */
-  chr: {
-    type: string,
-    id: string,
-    attributes: {
-      end: number,
-      id: string,
-      length: number,
-      name: string,
-      start: number,
-    },
-  },
-  /** React Router's match object */
-  match: Object,
-}
+// type Props = {
+//   /** Genes data */
+//   genes: Array<{
+//     type: string,
+//     id: string,
+//     attributes: {
+//       block_id: string,
+//       end: string,
+//       start: string,
+//       strand: string,
+//     },
+//   }>,
+//   /** Pseudogenes data */
+//   pseudogenes: Array<{
+//     type: string,
+//     id: string,
+//     attributes: {
+//       block_id: string,
+//       end: string,
+//       start: string,
+//       strand: string,
+//     },
+//   }>,
+//   /** Chromosomes data */
+//   chr: {
+//     type: string,
+//     id: string,
+//     attributes: {
+//       end: number,
+//       id: string,
+//       length: number,
+//       name: string,
+//       start: number,
+//     },
+//   },
+//   /** React Router's match object */
+//   match: Object,
+// }
 
 /** Gene Legend Description component */
 
-const Description = ({ match }: Object) => (
+const Description = ({ match }) => (
   <div>
     <p>
       Circos visualization for canonical gene models of <em>D.discoideum</em>{" "}
@@ -106,7 +105,7 @@ const Description = ({ match }: Object) => (
  * This is the Circos display component for chromosome genes.
  */
 
-const CircosGenesDisplay = (props: Props) => {
+const CircosGenesDisplay = (props) => {
   const { match, genes, pseudogenes, chr } = props
 
   const description = <Description match={match} />

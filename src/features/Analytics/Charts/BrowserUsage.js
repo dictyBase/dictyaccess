@@ -1,4 +1,3 @@
-// @flow
 import React from "react"
 import { ResponsiveContainer, PieChart, Pie, Cell } from "recharts"
 import Grid from "@material-ui/core/Grid"
@@ -13,20 +12,11 @@ import Paper from "@material-ui/core/Paper"
 import Typography from "@material-ui/core/Typography"
 import { ChartStyles as styles } from "common/styles/ChartStyles"
 
-type Props = {
-  /** Data array for chart */
-  data: Array<Object>,
-  /** The Material-UI color palette selected */
-  color: Object,
-  /** Material-UI styling */
-  classes: Object,
-}
-
 /**
  * This is a Browser Usage chart that showcases what browsers are used by Stock Center visitors.
  */
 
-const BrowserUsage = (props: Props) => {
+const BrowserUsage = (props) => {
   const { color, classes, data } = props
   return (
     <Paper className={classes.paper}>

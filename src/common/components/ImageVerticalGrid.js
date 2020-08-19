@@ -1,4 +1,3 @@
-// @flow
 import React from "react"
 import { Link } from "react-router-dom"
 import { withStyles } from "@material-ui/core/styles"
@@ -45,28 +44,12 @@ const styles = (theme) => ({
   },
 })
 
-type Props = {
-  /** Material-UI styling */
-  classes: Object,
-  /** Image data containing title, src, route */
-  imageData: Array<{
-    /** The route where this image link should go */
-    route: string,
-    /** The src link for image */
-    img: string,
-    /** Alt tag for image, also acts as tile bar title */
-    title: string,
-  }>,
-  /** The title to display at the top of the grid */
-  title: string,
-}
-
 /**
  * Reusable vertical image grid component.
  * Accepts imageData as a prop, then maps through this.
  */
 
-const ImageVerticalGrid = (props: Props) => {
+const ImageVerticalGrid = (props) => {
   const { classes, imageData, title } = props
 
   return (

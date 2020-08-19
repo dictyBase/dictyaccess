@@ -1,4 +1,3 @@
-// @flow
 import React from "react"
 import { connect } from "react-redux"
 import { withRouter } from "react-router-dom"
@@ -13,7 +12,7 @@ import withDataFetching from "common/components/withDataFetching"
 import chrNameMapper from "features/BirdsEye/Circos/utils/chrNameMapper"
 import { fetchChromosomeData } from "app/actions/birdsEyeActions"
 
-const styles = (theme: Object) => ({
+const styles = (theme) => ({
   root: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
@@ -35,23 +34,12 @@ const seqMap = (sequence, id) =>
     (item) => item.attributes.chromosome === chrNameMapper(id),
   )
 
-type Props = {
-  /** Material-UI classes */
-  classes: Object,
-  /** React Router match object */
-  match: Object,
-  /** The birdseye slice of state */
-  birdseye: Object,
-  /** Action to fetch chromosome data */
-  fetchChromosomeData: Function,
-}
-
 /**
  * This is the Circos container. It fetches the desired data via HOC then passes
  * them as props to the appropriate display component.
  */
 
-const CircosSeqContainer = (props: Props) => {
+const CircosSeqContainer = (props) => {
   const {
     birdseye: { chromosomes, genes, sequence, spatial },
     classes,

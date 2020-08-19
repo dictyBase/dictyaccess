@@ -1,4 +1,3 @@
-// @flow
 import React from "react"
 import {
   BarChart,
@@ -15,20 +14,11 @@ import Paper from "@material-ui/core/Paper"
 import Typography from "@material-ui/core/Typography"
 import { ChartStyles as styles } from "common/styles/ChartStyles"
 
-type Props = {
-  /** Data array for chart */
-  data: Array<Object>,
-  /** The Material-UI color palette selected */
-  color: Object,
-  /** Material-UI styling */
-  classes: Object,
-}
-
 /**
  * This is a bar chart that shows the number of papers published by year since 1990.
  */
 
-const PapersByYear = (props: Props) => {
+const PapersByYear = (props) => {
   const { color, classes, data } = props
   return (
     <Paper className={classes.paper}>

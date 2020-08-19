@@ -1,4 +1,3 @@
-// @flow
 import React, { Component } from "react"
 import { connect } from "react-redux"
 import { Link } from "react-router-dom"
@@ -7,19 +6,12 @@ import Tabs from "@material-ui/core/Tabs"
 import Tab from "@material-ui/core/Tab"
 import { changeBirdsEyeTab } from "app/actions/birdsEyeActions"
 
-type Props = {
-  /** The number index of the active tab **/
-  currentTab: number,
-  /** Action for changing the tab */
-  changeBirdsEyeTab: Function,
-}
-
 /**
  * This contains the tabs at the top of the Bird's Eye Dashboard.
  */
 
-class BirdsEyeTabList extends Component<Props> {
-  handleChange = (event: SyntheticEvent<>, value: string) => {
+class BirdsEyeTabList extends Component {
+  handleChange = (event, value) => {
     const { changeBirdsEyeTab } = this.props
     changeBirdsEyeTab(value)
   }

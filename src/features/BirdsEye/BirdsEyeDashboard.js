@@ -1,4 +1,3 @@
-// @flow
 import React from "react"
 import { connect } from "react-redux"
 import { withStyles } from "@material-ui/core/styles"
@@ -26,19 +25,12 @@ const styles = (theme) => ({
 //   },
 // ]
 
-type Props = {
-  /** Material-UI classes */
-  classes: Object,
-  /** The birdseye slice of state */
-  birdseye: Object,
-}
-
 /**
  * This is the main Bird's Eye Dashboard component.
  * It renders at /birdseye
  */
 
-const BirdsEyeDashboard = (props: Props) => {
+const BirdsEyeDashboard = (props) => {
   const {
     // birdseye: { currentTab },
     classes,

@@ -1,4 +1,3 @@
-// @flow
 import React from "react"
 import ExpandMore from "@material-ui/icons/ExpandMore"
 import ExpandLess from "@material-ui/icons/ExpandLess"

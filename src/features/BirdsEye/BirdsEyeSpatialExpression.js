@@ -1,4 +1,3 @@
-// @flow
 import React from "react"
 import { connect } from "react-redux"
 import { withStyles } from "@material-ui/core/styles"
@@ -25,18 +24,11 @@ const styles = (theme) => ({
 //   },
 // ]
 
-type Props = {
-  /** Material-UI classes */
-  classes: Object,
-  /** The birdseye slice of state */
-  birdseye: Object,
-}
-
 /**
  * This is the Spatial Expression tab display for the Bird's Eye dashboard.
  */
 
-const BirdsEyeSpatialExpression = (props: Props) => {
+const BirdsEyeSpatialExpression = (props) => {
   const { classes } = props
 
   return (

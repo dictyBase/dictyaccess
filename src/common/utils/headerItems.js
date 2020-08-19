@@ -1,10 +1,9 @@
-// @flow
 import { HeaderLink } from "dicty-components-header-footer"
 import { Link } from "react-router-dom"
 import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-const generateLinks = (link: Object, i: string) =>
+const generateLinks = (link, i) =>
   link.isRouter ? (
     <Link
       style={{

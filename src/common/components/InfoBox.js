@@ -1,4 +1,3 @@
-// @flow
 import React from "react"
 import Paper from "@material-ui/core/Paper"
 import { withStyles } from "@material-ui/core/styles"
@@ -40,26 +39,11 @@ const styles = (theme) => ({
   },
 })
 
-type Props = {
-  /** The title of the info box (i.e. Strains) */
-  title: string,
-  /** The value to display (i.e. a number) */
-  value: string,
-  /** The material-ui icon */
-  Icon: string,
-  /** The background color of the icon container. Can be passed as string or Material-UI object (i.e. deepPurple[300]) */
-  iconBackgroundColor?: string | Object,
-  /** The background color of the text area in the info box. Can be passed as string or Material-UI object (i.e. deepPurple[300]) */
-  textBackgroundColor?: string | Object,
-  /** Material-UI styling */
-  classes: Object,
-}
-
 /**
  * Reusable Material-UI based InfoBox component
  */
 
-const InfoBox = (props: Props) => {
+const InfoBox = (props) => {
   const {
     title,
     value,

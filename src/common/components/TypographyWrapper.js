@@ -1,4 +1,3 @@
-// @flow
 import React from "react"
 import Typography from "@material-ui/core/Typography"
 
@@ -7,7 +6,7 @@ import Typography from "@material-ui/core/Typography"
  * Material-UI styling.
  */
 
-const TypographyWrapper = ({ children }: any) => (
+const TypographyWrapper = ({ children }) => (
   <Typography component="div" style={{ padding: 8 * 3 }}>
     {children}
   </Typography>

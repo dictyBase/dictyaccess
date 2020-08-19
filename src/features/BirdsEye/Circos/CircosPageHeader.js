@@ -1,15 +1,9 @@
-// @flow
 import React from "react"
 import Grid from "@material-ui/core/Grid"
 
-type Props = {
-  /** The title used as the page header */
-  title: string,
-}
-
 /** This is the header used on Circos pages. */
 
-const CircosPageHeader = (props: Props) => {
+const CircosPageHeader = (props) => {
   const { title } = props
 
   return (

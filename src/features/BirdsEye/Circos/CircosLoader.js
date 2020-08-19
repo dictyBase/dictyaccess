@@ -1,4 +1,3 @@
-// @flow
 import React from "react"
 import { withStyles } from "@material-ui/core/styles"
 import Grid from "@material-ui/core/Grid"
@@ -19,18 +18,11 @@ const styles = (theme) => ({
   },
 })
 
-type Props = {
-  /** Material-UI styling */
-  classes: Object,
-  /** The current active tab index */
-  currentTab: number,
-}
-
 /** This is the loading component for Circos pages.
  * It displays a circular progress animation while fetching data.
  */
 
-const CircosLoader = ({ classes, currentTab }: Props) => (
+const CircosLoader = ({ classes, currentTab }) => (
   <div className={classes.root}>
     <BirdsEyeTabList currentTab={currentTab} />
     <TypographyWrapper>

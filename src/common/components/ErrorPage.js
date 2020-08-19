@@ -1,4 +1,3 @@
-// @flow
 import React from "react"
 import { connect } from "react-redux"
 import { Link } from "react-router-dom"
@@ -54,19 +53,12 @@ const styles = (theme) => ({
   },
 })
 
-type Props = {
-  /** Material-UI styling */
-  classes: Object,
-  /** The birdseye object in the state */
-  birdseye: Object,
-}
-
 /**
  * General error handling page.
  * It displays different messages based on HTTP status code.
  */
 
-export const ErrorPage = (props: Props) => {
+export const ErrorPage = (props) => {
   const { birdseye, classes } = props
 
   let errorStatus = 0

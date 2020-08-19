@@ -1,4 +1,3 @@
-// @flow
 import React from "react"
 import { NavLink } from "react-router-dom"
 import { withStyles } from "@material-ui/core/styles"
@@ -83,17 +82,12 @@ const styles = (theme) => ({
   },
 })
 
-type Props = {
-  /** Material-UI property for customizing CSS */
-  classes: Object,
-}
-
 /**
  * This is the Sidebar component. Right now it is a Material-UI Drawer component that
  * is permanently attached to the left side of the page, but responsiveness will be added soon.
  */
 
-const Sidebar = (props: Props) => {
+const Sidebar = (props) => {
   const { classes } = props
 
   const linkList = links.map((item, index) => {

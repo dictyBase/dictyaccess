@@ -1,15 +1,9 @@
-// @flow
 import React from "react"
 import chrNameExtender from "./utils/chrNameExtender"
 
-type Props = {
-  /** match.params.id value */
-  id: string,
-}
-
 /** Circos RNA Sequences Description */
 
-const CircosSeqLegend = ({ id }: Props) => (
+const CircosSeqLegend = ({ id }) => (
   <div>
     <p>
       Circos visualization for RNA sequences of <em>D.discoideum</em>{" "}

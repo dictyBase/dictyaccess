@@ -1,7 +1,5 @@
-// @flow
 import React, { Component } from "react"
 import { withRouter } from "react-router-dom"
-import { connect } from "react-redux"
 import { Header, Footer } from "dicty-components-header-footer"
 import { Navbar } from "dicty-components-navbar"
 import Sidebar from "app/layout/Sidebar"
@@ -17,9 +15,6 @@ import {
   faSignOutAlt,
 } from "@fortawesome/free-solid-svg-icons"
 import ErrorBoundary from "common/components/ErrorBoundary"
-import fetchNavbarAndFooter from "app/actions/navbarActions"
-import footerItems from "common/constants/Footer"
-import navItems from "common/constants/Navbar"
 import {
   headerItems,
   loggedHeaderItems,
@@ -30,19 +25,6 @@ import { AppStyles as styles } from "common/styles/AppStyles"
 const navTheme = {
   primary: "#004080",
   secondary: "#0059b3",
-}
-
-type Props = {
-  /** Object representing auth part of state */
-  auth: Object,
-  /** Object representing navbar part of state */
-  navbar: Object,
-  /** Object representing footer part of state */
-  footer: Object,
-  /** Action creator to fetch navbar and footer content */
-  fetchNavbarAndFooter: Function,
-  /** Material-UI styling */
-  classes: Object,
 }
 
 library.add(
@@ -121,8 +103,4 @@ export class App extends Component<Props> {
   }
 }
 
-const mapStateToProps = ({ auth, navbar, footer }) => ({ auth, navbar, footer })
-
-export default withRouter(
-  connect(mapStateToProps, { fetchNavbarAndFooter })(withStyles(styles)(App)),
-)
+export default withRouter(withStyles(styles)(App))

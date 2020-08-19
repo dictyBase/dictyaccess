@@ -34,7 +34,7 @@ const fetchChromosomeDataRequest = () => ({
   },
 })
 
-const fetchChromosomeDataSuccess = (data: Array<Object>) => ({
+const fetchChromosomeDataSuccess = (data) => ({
   type: FETCH_CHROMOSOME_DATA_SUCCESS,
   payload: {
     isFetching: false,
@@ -57,7 +57,7 @@ const fetchGeneDataRequest = () => ({
   },
 })
 
-const fetchGeneDataSuccess = (data: Array<Object>) => ({
+const fetchGeneDataSuccess = (data) => ({
   type: FETCH_GENE_DATA_SUCCESS,
   payload: {
     isFetching: false,
@@ -80,7 +80,7 @@ const fetchPseudogeneDataRequest = () => ({
   },
 })
 
-const fetchPseudogeneDataSuccess = (data: Array<Object>) => ({
+const fetchPseudogeneDataSuccess = (data) => ({
   type: FETCH_PSEUDOGENE_DATA_SUCCESS,
   payload: {
     isFetching: false,
@@ -103,7 +103,7 @@ const fetchSeqDataRequest = () => ({
   },
 })
 
-const fetchSeqDataSuccess = (data: Array<Object>) => ({
+const fetchSeqDataSuccess = (data) => ({
   type: FETCH_SEQ_DATA_SUCCESS,
   payload: {
     isFetching: false,
@@ -126,7 +126,7 @@ const fetchSpatialExpressionDataRequest = () => ({
   },
 })
 
-const fetchSpatialExpressionDataSuccess = (data: Array<Object>) => ({
+const fetchSpatialExpressionDataSuccess = (data) => ({
   type: FETCH_SPATIAL_EXPRESSION_DATA_SUCCESS,
   payload: {
     isFetching: false,
@@ -146,10 +146,7 @@ const noRefetch = () => ({
   type: CHROMOSOME_DATA_NO_REFETCH,
 })
 
-export const fetchChromosomeData = () => async (
-  dispatch: Function,
-  getState: Function,
-) => {
+export const fetchChromosomeData = () => async (dispatch, getState) => {
   if (getState().birdseye.chromosomes.data) {
     return noRefetch()
   }
@@ -186,10 +183,7 @@ export const fetchChromosomeData = () => async (
   }
 }
 
-export const fetchGeneData = (url: string) => async (
-  dispatch: Function,
-  getState: Function,
-) => {
+export const fetchGeneData = (url) => async (dispatch, getState) => {
   if (getState().birdseye.genes.data) {
     return noRefetch()
   }
@@ -214,10 +208,7 @@ export const fetchGeneData = (url: string) => async (
   }
 }
 
-export const fetchSeqData = (url: string) => async (
-  dispatch: Function,
-  getState: Function,
-) => {
+export const fetchSeqData = (url) => async (dispatch, getState) => {
   if (getState().birdseye.sequence.data) {
     return noRefetch()
   }
@@ -242,10 +233,7 @@ export const fetchSeqData = (url: string) => async (
   }
 }
 
-export const fetchPseudogeneData = (url: string) => async (
-  dispatch: Function,
-  getState: Function,
-) => {
+export const fetchPseudogeneData = (url) => async (dispatch, getState) => {
   if (getState().birdseye.pseudogenes.data) {
     return noRefetch()
   }
@@ -274,9 +262,9 @@ export const fetchPseudogeneData = (url: string) => async (
   }
 }
 
-export const fetchSpatialExpressionData = (url: string) => async (
-  dispatch: Function,
-  getState: Function,
+export const fetchSpatialExpressionData = (url) => async (
+  dispatch,
+  getState,
 ) => {
   if (getState().birdseye.spatial.data) {
     return noRefetch()
@@ -310,7 +298,7 @@ export const fetchSpatialExpressionData = (url: string) => async (
   }
 }
 
-export const changeBirdsEyeTab = (tab: string) => ({
+export const changeBirdsEyeTab = (tab) => ({
   type: CHANGE_BIRDS_EYE_TAB,
   payload: {
     tab,

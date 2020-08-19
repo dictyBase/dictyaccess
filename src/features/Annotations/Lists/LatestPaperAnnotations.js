@@ -1,4 +1,3 @@
-// @flow
 import React from "react"
 import { withStyles } from "@material-ui/core/styles"
 import List from "@material-ui/core/List"
@@ -8,20 +7,11 @@ import Paper from "@material-ui/core/Paper"
 import Typography from "@material-ui/core/Typography"
 import { ListStyles as styles } from "common/styles/ListStyles"
 
-type Props = {
-  /** The data to pass into this table */
-  data: Array<string>,
-  /** The Material-UI color palette selected */
-  color: Object,
-  /** Material-UI styling */
-  classes: Object,
-}
-
 /**
  * This shows the most recent annotations for genes and papers.
  */
 
-const LatestPaperAnnotations = (props: Props) => {
+const LatestPaperAnnotations = (props) => {
   const { classes } = props
   return (
     <Paper>

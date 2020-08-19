@@ -1,4 +1,3 @@
-// @flow
 import React from "react"
 import { Link } from "react-router-dom"
 import { withStyles } from "@material-ui/core/styles"
@@ -25,30 +24,12 @@ const styles = (theme) => ({
   },
 })
 
-type Props = {
-  /** Material-UI styling */
-  classes: Object,
-  /** Image data containing title, src, route */
-  imageData: Array<{
-    /** The route where this image link should go */
-    route: string,
-    /** The src link for image */
-    img: string,
-    /** Alt tag for image, also acts as tile bar title */
-    title: string,
-  }>,
-  /** Width of page provided by Material-UI WithWidth HOC */
-  width: "xs" | "sm" | "md" | "lg" | "xl",
-}
-
 /**
  * Reusable horizontal image grid component.
  * Accepts imageData as a prop, then maps through this.
  */
 
-const ImageHorizontalGrid = (props: Props) => {
-  const { classes, imageData, width } = props
-
+const ImageHorizontalGrid = ({ classes, imageData, width }) => {
   const getGridListCols = () => {
     switch (width) {
       case "xs":

@@ -1,4 +1,3 @@
-// @flow
 import React from "react"
 import { connect } from "react-redux"
 import { withStyles } from "@material-ui/core/styles"
@@ -14,18 +13,11 @@ const styles = (theme) => ({
   },
 })
 
-type Props = {
-  /** Material-UI classes */
-  classes: Object,
-  /** The birdseye slice of state */
-  birdseye: Object,
-}
-
 /**
  * This is the Comparative tab display for the Bird's Eye dashboard.
  */
 
-const BirdsEyeComparative = (props: Props) => {
+const BirdsEyeComparative = (props) => {
   const { classes } = props
 
   return (

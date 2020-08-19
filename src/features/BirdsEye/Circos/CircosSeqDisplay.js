@@ -1,4 +1,3 @@
-// @flow
 import React from "react"
 import Circos from "./Circos"
 import { withRouter } from "react-router-dom"
@@ -36,61 +35,61 @@ const circosConfig = {
   },
 }
 
-type Props = {
-  /** Sequence data */
-  sequence: Array<{
-    type: string,
-    id: string,
-    attributes: {
-      chromosome: string,
-      end: string,
-      start: string,
-      value: string,
-    },
-  }>,
-  /** Genes data */
-  genes: Array<{
-    type: string,
-    id: string,
-    attributes: {
-      block_id: string,
-      end: string,
-      start: string,
-      strand: string,
-    },
-  }>,
-  /** Chromosomes data */
-  chr: {
-    type: string,
-    id: string,
-    attributes: {
-      end: number,
-      id: string,
-      length: number,
-      name: string,
-      start: number,
-    },
-  },
-  /** Spatial expression data */
-  spatial: Array<{
-    type: string,
-    id: string,
-    attributes: {
-      block_id: string,
-      end: string,
-      start: string,
-      strand: string,
-    },
-  }>,
-  /** React Router's match object */
-  match: Object,
-}
+// type Props = {
+//   /** Sequence data */
+//   sequence: Array<{
+//     type: string,
+//     id: string,
+//     attributes: {
+//       chromosome: string,
+//       end: string,
+//       start: string,
+//       value: string,
+//     },
+//   }>,
+//   /** Genes data */
+//   genes: Array<{
+//     type: string,
+//     id: string,
+//     attributes: {
+//       block_id: string,
+//       end: string,
+//       start: string,
+//       strand: string,
+//     },
+//   }>,
+//   /** Chromosomes data */
+//   chr: {
+//     type: string,
+//     id: string,
+//     attributes: {
+//       end: number,
+//       id: string,
+//       length: number,
+//       name: string,
+//       start: number,
+//     },
+//   },
+//   /** Spatial expression data */
+//   spatial: Array<{
+//     type: string,
+//     id: string,
+//     attributes: {
+//       block_id: string,
+//       end: string,
+//       start: string,
+//       strand: string,
+//     },
+//   }>,
+//   /** React Router's match object */
+//   match: Object,
+// }
 
 /**
  * This is the Circos display component for RNAseq.
  */
 
-const scatterFilter = (data: Array<Object>) =>
+const scatterFilter = (data) =>
   data.map((d) => ({
     block_id: d.attributes.block_id,
     position:
@@ -105,7 +104,7 @@ const scatterFilter = (data: Array<Object>) =>
     term: d.attributes.anatomy_term,
   }))
 
-const hourFilter = (data: Array<Object>, hour: string) =>
+const hourFilter = (data, hour) =>
   data
     .filter((item) => item.attributes.hour === hour)
     .map((d) => ({
@@ -115,7 +114,7 @@ const hourFilter = (data: Array<Object>, hour: string) =>
       value: parseInt(d.attributes.value, 10),
     }))
 
-const CircosSeqDisplay = (props: Props) => {
+const CircosSeqDisplay = (props) => {
   const { match, sequence, genes, chr, spatial } = props
 
   const hour0 = hourFilter(sequence, "0")

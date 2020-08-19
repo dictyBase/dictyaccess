@@ -1,4 +1,3 @@
-// @flow
 const chrNames = {
   "1": "Chromosome 1",
   "2": "Chromosome 2",
@@ -12,6 +11,6 @@ const chrNames = {
  * This is a helper function to display the full name of chromosomes.
  */
 
-const chrNameExtender = (id: string) => chrNames[id]
+const chrNameExtender = (id) => chrNames[id]
 
 export default chrNameExtender
