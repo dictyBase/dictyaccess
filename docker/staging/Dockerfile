@@ -15,23 +15,20 @@ ENV REACT_APP_MID_CULMINANT_JSON ${mid_culminant_json:-https://raw.githubusercon
 ARG spatial_json
 ENV REACT_APP_SPATIAL_JSON ${spatial_json:-https://raw.githubusercontent.com/dictyBase/migration-data/master/dashboard/spatial-expression/combined.json}
 
-# Create app directory
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-# copy only necessary files
 COPY package.json ./
-COPY jsconfig.json ./
+COPY tsconfig.json ./
 COPY yarn.lock ./
 
 RUN yarn install
 
-# add necessary folders
 ADD src src
 ADD public public
 
 # overwrite the client key file
-ADD $CLIENT_KEYS /usr/src/app/src/common/utils/clientConfig.js
+ADD $CLIENT_KEYS /usr/src/app/src/common/utils/clientConfig.ts
 
 RUN yarn build
 
