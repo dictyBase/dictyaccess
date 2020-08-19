@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "/dictyaccess/build/main.df95fe36.js",
+    "main.js": "/dictyaccess/build/main.ebf6fbf9.js",
     "runtime-main.js": "/dictyaccess/build/bundle.e4600816.js",
-    "static/css/2.7b171300.chunk.css": "/dictyaccess/static/css/2.7b171300.chunk.css",
-    "build/2.c6e5436a.js": "/dictyaccess/build/2.c6e5436a.js",
-    "build/2.c6e5436a.js.LICENSE.txt": "/dictyaccess/build/2.c6e5436a.js.LICENSE.txt",
+    "static/css/2.e2526409.chunk.css": "/dictyaccess/static/css/2.e2526409.chunk.css",
+    "build/2.8bbcfc95.js": "/dictyaccess/build/2.8bbcfc95.js",
+    "build/2.8bbcfc95.js.LICENSE.txt": "/dictyaccess/build/2.8bbcfc95.js.LICENSE.txt",
     "index.html": "/dictyaccess/index.html",
-    "precache-manifest.e346a138699c4949047145756357ff2e.js": "/dictyaccess/precache-manifest.e346a138699c4949047145756357ff2e.js",
+    "precache-manifest.3db766c1f5ac1a759fd0f133f7ffb142.js": "/dictyaccess/precache-manifest.3db766c1f5ac1a759fd0f133f7ffb142.js",
     "service-worker.js": "/dictyaccess/service-worker.js",
-    "static/css/2.7b171300.chunk.css.map": "/dictyaccess/static/css/2.7b171300.chunk.css.map",
+    "static/css/2.e2526409.chunk.css.map": "/dictyaccess/static/css/2.e2526409.chunk.css.map",
     "static/media/academicons.min.css": "/dictyaccess/static/media/academicons.ea3755c3.eot",
     "static/media/chr1-genes.png": "/dictyaccess/static/media/chr1-genes.494b977a.png",
     "static/media/chr1-spatial.png": "/dictyaccess/static/media/chr1-spatial.8f979ff5.png",
@@ -21,14 +21,12 @@
     "static/media/chr5-genes.png": "/dictyaccess/static/media/chr5-genes.634acffd.png",
     "static/media/chr5-spatial.png": "/dictyaccess/static/media/chr5-spatial.fddd4065.png",
     "static/media/chr6-genes.png": "/dictyaccess/static/media/chr6-genes.95e52f30.png",
-    "static/media/chr6-spatial.png": "/dictyaccess/static/media/chr6-spatial.470b15bb.png",
-    "static/media/logo.png": "/dictyaccess/static/media/logo.4eeedc37.png",
-    "static/media/index.css": "/dictyaccess/static/media/roboto-latin-900italic.ebf6d164.woff2"
+    "static/media/chr6-spatial.png": "/dictyaccess/static/media/chr6-spatial.470b15bb.png"
   },
   "entrypoints": [
     "build/bundle.e4600816.js",
-    "static/css/2.7b171300.chunk.css",
-    "build/2.c6e5436a.js",
-    "build/main.df95fe36.js"
+    "static/css/2.e2526409.chunk.css",
+    "build/2.8bbcfc95.js",
+    "build/main.ebf6fbf9.js"
   ]
 }
