@@ -1,9 +1,14 @@
 import React from "react"
+import { Provider } from "react-redux"
+import { BrowserRouter } from "react-router-dom"
 import { ApolloProvider } from "@apollo/react-hooks"
 import { ApolloClient } from "apollo-client"
 import { InMemoryCache } from "apollo-cache-inmemory"
 import { createHttpLink } from "apollo-link-http"
-import { BrowserRouter } from "react-router-dom"
+import { createStore } from "redux"
+import rootReducer from "./mockReducers"
+
+const store = createStore(rootReducer)
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
@@ -19,7 +24,9 @@ const client = new ApolloClient({
 
 const Wrapper = ({ children }: any) => (
   <ApolloProvider client={client}>
-    <BrowserRouter>{children}</BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>{children}</BrowserRouter>
+    </Provider>
   </ApolloProvider>
 )
 

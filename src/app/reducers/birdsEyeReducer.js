@@ -1,4 +1,3 @@
-// @flow
 import { types } from "common/constants/Types"
 
 const {
