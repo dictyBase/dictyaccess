@@ -2,30 +2,35 @@ import { HeaderLink } from "dicty-components-header-footer"
 import { Link } from "react-router-dom"
 import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { IconProp } from "@fortawesome/fontawesome-svg-core"
 
-const generateLinks = (link, i) =>
+type LinkIconProps = {
+  link: LinkProps
+}
+
+type LinkProps = {
+  isRouter?: boolean
+  text: string
+  icon: IconProp
+  url: string
+}
+
+const LinkIcon = ({ link }: LinkIconProps) => (
+  <div style={{ textAlign: "center" }}>
+    <FontAwesomeIcon icon={link.icon} size="2x" />
+    <br />
+    {link.text}
+  </div>
+)
+
+const generateLinks = (link: LinkProps, i: number) =>
   link.isRouter ? (
-    <Link
-      style={{
-        color: "#15317e",
-        padding: "15px",
-        textDecoration: "none",
-      }}
-      key={i}
-      to={link.url}>
-      <center>
-        <FontAwesomeIcon icon={link.icon} size="2x" />
-        <br />
-        {link.text}
-      </center>
+    <Link style={{ padding: "15px" }} key={i} to={link.url}>
+      <LinkIcon link={link} />
     </Link>
   ) : (
     <HeaderLink key={i} href={link.url}>
-      <center>
-        <FontAwesomeIcon icon={link.icon} size="2x" />
-        <br />
-        {link.text}
-      </center>
+      <LinkIcon link={link} />
     </HeaderLink>
   )
 

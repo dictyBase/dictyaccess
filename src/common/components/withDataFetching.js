@@ -8,7 +8,7 @@ import { connect } from "react-redux"
 const withDataFetching = (action, key, LoadingComponent, ErrorComponent) => (
   WrappedComponent,
 ) => {
-  class WithDataFetchingComponent extends Component<Props> {
+  class WithDataFetchingComponent extends Component {
     componentDidMount() {
       const { action } = this.props
 

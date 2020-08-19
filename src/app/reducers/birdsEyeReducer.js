@@ -34,10 +34,7 @@ const initialState = {
   spatial: [],
 }
 
-const summaryReducer = (
-  state: Object = initialState,
-  action: { type: string, payload: Object },
-) => {
+const summaryReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_CHROMOSOME_DATA_REQUEST:
     case FETCH_GENE_DATA_REQUEST:
