@@ -44,11 +44,11 @@ inside your cluster.
 In order for this application to work locally, you will need to configure the list of
 login providers.
 
-- Copy the provided sample [clientConfig.sample.js](src/common/utils/clientConfig.sample.js) file
-  to **clientConfig.js** in the same folder.
+- Copy the provided sample [clientConfig.sample.ts](src/common/utils/clientConfig.sample.ts) file
+  to **clientConfig.ts** in the same folder.
 - Add any provider names and their corresponding client IDs.
 - All providers should have a matching counterpart in the
-  [oauthConfig.js](src/common/utils/oauthConfig.js) file. Fill up all of the
+  [oauthConfig.js](src/common/utils/oauthConfig.ts) file. Fill up all of the
   configuration parameters for every new provider in that file.
 
 After setting up the login providers, you can run `npm install` and `npm start` as usual.
@@ -60,34 +60,14 @@ on `pre-commit` and run [Skaffold](https://github.com/GoogleContainerTools/skaff
 This app requires the following services to be running:
 
 - [dashfn](https://github.com/dictybase-playground/kubeless-gofn/tree/master/dashboard) (`REACT_APP_FUNC_SERVER`)
-- [modware-user](https://github.com/dictyBase/modware-user) (`REACT_APP_API_SERVER` - used for login)
-- [authserver](https://github.com/dictyBase/authserver) (`REACT_APP_AUTH_SERVER`)
+- [graphql-server](https://github.com/dictyBase/graphql-server)
 
-It also relies on the navbar, footer and dashboard JSON files found in the
-[migration-data](https://github.com/dictyBase/migration-data) repository. An example
-of the necessary environmental variables can be found [here](.env.development).
+For auth/login purposes:
 
-## Semantic Versioning
-
-This app has been set up to use [semantic-release](https://github.com/semantic-release/semantic-release)
-and [commitizen](https://github.com/commitizen/cz-cli). After adding a new commit
-(`git add ...`), use `npm run cz` and follow the prompts to categorize and provide
-more details about your commit. Once complete, push your changes to whatever branch
-you are working on.
-
-When you are ready to push to prod, you can use `semantic-release` to automate the
-release process:
-
-- Merge your changes into `master`
-- Run `npx semantic-release`
-
-**Important:** you MUST have an env variable stored for `GH_TOKEN` or `GITHUB_TOKEN`
-that contains a GitHub [personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/).
-You can either pass this in manually when you run the script (i.e. `GH_TOKEN=XXX npx semantic-release`)
-or you can [store your env variable locally](https://www.schrodinger.com/kb/1842).
-
-This will look at your most recent commits since the last `git tag` and automatically
-determine the appropriate version number for your release.
+- [graphql-authserver](https://github.com/dictyBase/graphql-authserver)
+- [modware-auth](https://github.com/dictyBase/modware-auth)
+- [modware-identity](https://github.com/dictyBase/modware-identity)
+- [modware-user](https://github.com/dictyBase/modware-user)
 
 ## Active Developers
 
