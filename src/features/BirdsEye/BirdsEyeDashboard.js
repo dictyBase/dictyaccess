@@ -1,4 +1,5 @@
 import React from "react"
+import { Helmet } from "react-helmet"
 import { connect } from "react-redux"
 import { withStyles } from "@material-ui/core/styles"
 import Grid from "@material-ui/core/Grid"
@@ -38,6 +39,13 @@ const BirdsEyeDashboard = (props) => {
 
   return (
     <div className={classes.root}>
+      <Helmet>
+        <title>DictyAccess Bird's Eye Dashboard - dictyBase</title>
+        <meta
+          name="description"
+          content="Bird's Eye Dashboard for Gene Models at dictyBase"
+        />
+      </Helmet>
       <BirdsEyeTabList currentTab={0} />
       <Grid container spacing={2}>
         <Grid item xs={12} className={classes.dataSet}>
