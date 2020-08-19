@@ -21,11 +21,16 @@
     "local-ci-sidd": "IMAGE_TAG=$(git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||' -e 's~/~-~')-$(git rev-parse --short HEAD) skaffold run -p devsidd"
   },
   "dependencies": {
+    "@apollo/react-hooks": "^4.0.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
+    "apollo-cache-inmemory": "^1.6.6",
+    "apollo-client": "^2.6.10",
+    "apollo-link-context": "^1.0.20",
+    "apollo-link-http": "^1.5.17",
     "circos": "https://github.com/dictybase-playground/circosJS/tarball/master",
     "classnames": "^2.2.6",
     "connected-react-router": "^6.5.2",
@@ -33,6 +38,7 @@
     "dicty-components-login": "github:dictyBase/dicty-components-login#3.0.1",
     "dicty-components-navbar": "github:dictyBase/dicty-components-navbar#2.0.0",
     "dicty-components-redux": "github:dictybase-playground/dicty-components-redux#v2.3.0",
+    "graphql-tag": "^2.11.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-ga": "^3.1.2",
@@ -47,6 +53,7 @@
     "typeface-roboto": "0.0.75"
   },
   "devDependencies": {
+    "@apollo/react-testing": "^4.0.0",
     "@semantic-release/git": "^9.0.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.3",
