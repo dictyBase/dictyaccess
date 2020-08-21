@@ -1,7 +1,7 @@
 import { combineReducers } from "redux"
 import birdsEyeReducer from "../reducers/birdsEyeReducer"
 
-export default (history) =>
+export default (history: any) =>
   combineReducers({
     birdseye: birdsEyeReducer,
   })
