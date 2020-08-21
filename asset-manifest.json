@@ -1,15 +1,9 @@
 {
   "files": {
-    "main.js": "/dictyaccess/build/main.ebf6fbf9.js",
-    "runtime-main.js": "/dictyaccess/build/bundle.e4600816.js",
-    "static/css/2.e2526409.chunk.css": "/dictyaccess/static/css/2.e2526409.chunk.css",
-    "build/2.8bbcfc95.js": "/dictyaccess/build/2.8bbcfc95.js",
-    "build/2.8bbcfc95.js.LICENSE.txt": "/dictyaccess/build/2.8bbcfc95.js.LICENSE.txt",
+    "build/0.354e1ec8.js": "/dictyaccess/build/0.354e1ec8.js",
+    "main.js": "/dictyaccess/build/main.79f8a0dd.js",
+    "runtime-main.js": "/dictyaccess/build/bundle.105de5e2.js",
     "index.html": "/dictyaccess/index.html",
-    "precache-manifest.3db766c1f5ac1a759fd0f133f7ffb142.js": "/dictyaccess/precache-manifest.3db766c1f5ac1a759fd0f133f7ffb142.js",
-    "service-worker.js": "/dictyaccess/service-worker.js",
-    "static/css/2.e2526409.chunk.css.map": "/dictyaccess/static/css/2.e2526409.chunk.css.map",
-    "static/media/academicons.min.css": "/dictyaccess/static/media/academicons.ea3755c3.eot",
     "static/media/chr1-genes.png": "/dictyaccess/static/media/chr1-genes.494b977a.png",
     "static/media/chr1-spatial.png": "/dictyaccess/static/media/chr1-spatial.8f979ff5.png",
     "static/media/chr2-genes.png": "/dictyaccess/static/media/chr2-genes.6f00f51d.png",
@@ -24,9 +18,8 @@
     "static/media/chr6-spatial.png": "/dictyaccess/static/media/chr6-spatial.470b15bb.png"
   },
   "entrypoints": [
-    "build/bundle.e4600816.js",
-    "static/css/2.e2526409.chunk.css",
-    "build/2.8bbcfc95.js",
-    "build/main.ebf6fbf9.js"
+    "build/bundle.105de5e2.js",
+    "build/0.354e1ec8.js",
+    "build/main.79f8a0dd.js"
   ]
 }
