@@ -13,6 +13,7 @@
     "test-coverage": "react-scripts test --env=jsdom-fourteen --coverage",
     "test-coverage-watch": "react-scripts test --env=jsdom-fourteen --coverage --watchAll",
     "eject": "react-scripts eject",
+    "tsc": "tsc",
     "lint": "eslint --ext .jsx,.js src/",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
