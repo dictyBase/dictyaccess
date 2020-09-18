@@ -30,7 +30,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: dictybase/dictyaccess:staging-${{ steps.type.outputs.id }
+          tags: dictybase/dictyaccess:staging-${{ steps.type.outputs.id }}
           build-args: |
             func_server=https://betafunc.dictybase.org
             graphql_server=https://betagraphql.dictybase.org
