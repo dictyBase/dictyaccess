@@ -63,7 +63,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: dictybase/dictyaccess:ericdev-develop-${{ steps.type.outputs.id }
+          tags: dictybase/dictyaccess:ericdev-develop-${{ steps.type.outputs.id }}
           build-args: |
             func_server=https://ericfunc.dictybase.dev
             graphql_server=https://ericgraphql.dictybase.dev
@@ -75,7 +75,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: dictybase/dictyaccess:devsidd-develop-${{ steps.type.outputs.id }
+          tags: dictybase/dictyaccess:devsidd-develop-${{ steps.type.outputs.id }}
           build-args: |
             func_server=https://siddfunc.dictybase.dev
             graphql_server=https://siddgraphql.dictybase.dev
