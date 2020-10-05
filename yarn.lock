@@ -12834,13 +12834,13 @@ react-styleguidist@^11.1.0:
     webpack-dev-server "^3.11.0"
     webpack-merge "^4.2.2"
 
-react-svg-pan-zoom@^2.16.1:
-  version "2.18.0"
-  resolved "https://registry.yarnpkg.com/react-svg-pan-zoom/-/react-svg-pan-zoom-2.18.0.tgz#1f033d9db1c82b9bb494e2196237276f694e7ac9"
-  integrity sha1-HwM9nbHIK5u0lOIZYjcnb2lOesk=
+react-svg-pan-zoom@^3.8.0:
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/react-svg-pan-zoom/-/react-svg-pan-zoom-3.8.0.tgz#5724c71d257a07233c9cc511a5c6498d80bb397a"
+  integrity sha512-s92QDFJuRrp784aQZKX8qxukMY/85IpOXO5Bjbn1G/CoNapdHCRVAHynPP6Ea9cyMmycSmu6paPqUIAW3i5s9Q==
   dependencies:
-    prop-types "^15.6.2"
-    transformation-matrix "^1.12.0"
+    prop-types "^15.7.2"
+    transformation-matrix "^2.2.0"
 
 react-test-renderer@^16.13.1:
   version "16.13.1"
@@ -14927,10 +14927,10 @@ tr46@^1.0.1:
   dependencies:
     punycode "^2.1.0"
 
-transformation-matrix@^1.12.0:
-  version "1.15.3"
-  resolved "https://registry.yarnpkg.com/transformation-matrix/-/transformation-matrix-1.15.3.tgz#f47e42f7fbfe6869f2b662fb1518af08b36f360c"
-  integrity sha512-ThJH58GNFKhCw3gIoOtwf3tNwuYjbyEeiGdeq4mNMYWdJctnI896KUqn6PVt7jmNVepqa1bcKQtnMB1HtjsDMA==
+transformation-matrix@^2.2.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/transformation-matrix/-/transformation-matrix-2.4.0.tgz#9a63865c6f939c4abc4924d260242611101a5ee2"
+  integrity sha512-cZyijcvmC+ms5M5dw5IzU7A27lKLR7SrRKtopdMK4KZ+cfTzOOKS2iT3vqFPOiKMM9cb81MyAQMxF/cihTbThA==
 
 traverse@~0.6.6:
   version "0.6.6"
