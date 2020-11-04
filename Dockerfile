@@ -15,6 +15,12 @@ ENV CLIENT_KEYS ${client_keys}
 ARG basename
 ENV REACT_APP_BASENAME ${basename:-dictyaccess}
 
+ARG deploy_env
+ENV DEPLOY_ENV ${deploy_env}
+
+ARG alt_graphql_server
+ENV REACT_APP_ALT_GRAPHQL_SERVER ${alt_graphql_server:-https://betagraphql.dictycr.org}
+
 ARG seq_json
 ENV REACT_APP_SEQ_JSON ${seq_json:-https://raw.githubusercontent.com/dictyBase/migration-data/master/dashboard/sequence/combined.json}
 
