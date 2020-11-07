@@ -35,7 +35,7 @@
     "dicty-hooks": "dictyBase/dicty-hooks#1.1.1",
     "fontsource-roboto": "^3.0.3",
     "graphql": "^15.4.0",
-    "jwt-decode": "^3.0.0",
+    "jwt-decode": "^3.1.1",
     "react": "^16.14.0",
     "react-dom": "^16.13.1",
     "react-ga": "^3.2.0",
