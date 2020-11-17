@@ -4,7 +4,7 @@
   "homepage": "/dictyaccess",
   "private": true,
   "engines": {
-    "node": "12.x"
+    "node": ">= 14"
   },
   "scripts": {
     "start": "react-scripts start",
