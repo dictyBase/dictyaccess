@@ -26,7 +26,10 @@
       "profile": "http://cybersiddhu.github.com/",
       "contributions": [
         "code",
-        "maintenance"
+        "maintenance",
+        "bug",
+        "content",
+        "doc"
       ]
     }
   ],
