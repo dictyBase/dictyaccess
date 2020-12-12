@@ -33,7 +33,7 @@
     "dicty-components-login": "github:dictyBase/dicty-components-login#3.0.1",
     "dicty-components-navbar": "github:dictyBase/dicty-components-navbar#2.0.0",
     "dicty-hooks": "dictyBase/dicty-hooks#1.1.1",
-    "fontsource-roboto": "^3.0.3",
+    "fontsource-roboto": "^3.1.5",
     "graphql": "^15.4.0",
     "jwt-decode": "^3.1.2",
     "react": "^16.14.0",
