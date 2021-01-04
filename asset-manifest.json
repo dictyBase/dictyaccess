@@ -1,6 +1,6 @@
 {
   "files": {
-    "build/0.643c9fbd.js": "/dictyaccess/build/0.643c9fbd.js",
+    "build/0.6c980f5e.js": "/dictyaccess/build/0.6c980f5e.js",
     "main.js": "/dictyaccess/build/main.88072268.js",
     "runtime-main.js": "/dictyaccess/build/bundle.105de5e2.js",
     "index.html": "/dictyaccess/index.html",
@@ -19,7 +19,7 @@
   },
   "entrypoints": [
     "build/bundle.105de5e2.js",
-    "build/0.643c9fbd.js",
+    "build/0.6c980f5e.js",
     "build/main.88072268.js"
   ]
 }
