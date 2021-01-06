@@ -58,7 +58,7 @@ const styles = (theme) => ({
  * It displays different messages based on HTTP status code.
  */
 
-export const ErrorPage = (props) => {
+const ErrorPage = (props) => {
   const { birdseye, classes } = props
 
   let errorStatus = 0
@@ -162,4 +162,5 @@ export const ErrorPage = (props) => {
 
 const mapStateToProps = ({ birdseye }) => ({ birdseye })
 
+export { ErrorPage }
 export default withStyles(styles)(connect(mapStateToProps)(ErrorPage))
