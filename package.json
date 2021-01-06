@@ -82,7 +82,8 @@
       "!src/common/utils/icons.ts",
       "!src/app/styleguide/*.{ts,tsx}",
       "!src/common/styles/*.{js,jsx,ts,tsx}"
-    ]
+    ],
+    "resetMocks": false
   },
   "lint-staged": {
     "*.{js,jsx,json,css}": [
