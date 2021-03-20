@@ -67,7 +67,7 @@
     "husky": "5",
     "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
-    "react-styleguidist": "^11.1.5",
+    "react-styleguidist": "^11.1.6",
     "react-test-renderer": "^16.14.0",
     "semantic-release": "^17.4.2",
     "typescript": "^4.2.3"
