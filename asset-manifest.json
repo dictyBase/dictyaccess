@@ -1,25 +1,25 @@
 {
   "files": {
-    "build/0.6c980f5e.js": "/dictyaccess/build/0.6c980f5e.js",
-    "main.js": "/dictyaccess/build/main.88072268.js",
+    "main.js": "/dictyaccess/build/main.63523c0b.js",
     "runtime-main.js": "/dictyaccess/build/bundle.105de5e2.js",
+    "vendors~main.js": "/dictyaccess/build/vendors~main.f71d37e2.js",
     "index.html": "/dictyaccess/index.html",
-    "static/media/chr1-genes.png": "/dictyaccess/static/media/chr1-genes.494b977a.png",
-    "static/media/chr1-spatial.png": "/dictyaccess/static/media/chr1-spatial.8f979ff5.png",
-    "static/media/chr2-genes.png": "/dictyaccess/static/media/chr2-genes.6f00f51d.png",
-    "static/media/chr2-spatial.png": "/dictyaccess/static/media/chr2-spatial.6246f268.png",
-    "static/media/chr3-genes.png": "/dictyaccess/static/media/chr3-genes.7f709fa1.png",
-    "static/media/chr3-spatial.png": "/dictyaccess/static/media/chr3-spatial.06c5c2ec.png",
-    "static/media/chr4-genes.png": "/dictyaccess/static/media/chr4-genes.d1990965.png",
-    "static/media/chr4-spatial.png": "/dictyaccess/static/media/chr4-spatial.089608c9.png",
-    "static/media/chr5-genes.png": "/dictyaccess/static/media/chr5-genes.634acffd.png",
-    "static/media/chr5-spatial.png": "/dictyaccess/static/media/chr5-spatial.fddd4065.png",
-    "static/media/chr6-genes.png": "/dictyaccess/static/media/chr6-genes.95e52f30.png",
-    "static/media/chr6-spatial.png": "/dictyaccess/static/media/chr6-spatial.470b15bb.png"
+    "static/media/chr1-genes.png": "/dictyaccess/static/media/chr1-genes.6eb5c7e6.png",
+    "static/media/chr1-spatial.png": "/dictyaccess/static/media/chr1-spatial.73bdd9a8.png",
+    "static/media/chr2-genes.png": "/dictyaccess/static/media/chr2-genes.b84d8fb3.png",
+    "static/media/chr2-spatial.png": "/dictyaccess/static/media/chr2-spatial.934d3d15.png",
+    "static/media/chr3-genes.png": "/dictyaccess/static/media/chr3-genes.8163c93d.png",
+    "static/media/chr3-spatial.png": "/dictyaccess/static/media/chr3-spatial.c8fb4a94.png",
+    "static/media/chr4-genes.png": "/dictyaccess/static/media/chr4-genes.5f6ea06e.png",
+    "static/media/chr4-spatial.png": "/dictyaccess/static/media/chr4-spatial.95577fd6.png",
+    "static/media/chr5-genes.png": "/dictyaccess/static/media/chr5-genes.41e4afa5.png",
+    "static/media/chr5-spatial.png": "/dictyaccess/static/media/chr5-spatial.3cbf5aeb.png",
+    "static/media/chr6-genes.png": "/dictyaccess/static/media/chr6-genes.21426fdf.png",
+    "static/media/chr6-spatial.png": "/dictyaccess/static/media/chr6-spatial.0907946b.png"
   },
   "entrypoints": [
     "build/bundle.105de5e2.js",
-    "build/0.6c980f5e.js",
-    "build/main.88072268.js"
+    "build/vendors~main.f71d37e2.js",
+    "build/main.63523c0b.js"
   ]
 }
