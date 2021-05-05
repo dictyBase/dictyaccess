@@ -29,10 +29,10 @@
     "circos": "https://github.com/dictybase-playground/circosJS/tarball/master",
     "classnames": "^2.3.1",
     "connected-react-router": "^6.5.2",
-    "dicty-components-header-footer": "github:dictyBase/dicty-components-header-footer#10.2.1",
+    "dicty-components-header-footer": "dictybase/dicty-components-header-footer#11.0.0",
     "dicty-components-login": "github:dictyBase/dicty-components-login#3.1.1",
     "dicty-components-navbar": "github:dictyBase/dicty-components-navbar#2.0.0",
-    "dicty-hooks": "dictyBase/dicty-hooks#2.0.0",
+    "dicty-hooks": "dictybase/dicty-hooks#3.0.0",
     "fontsource-roboto": "^3.1.5",
     "graphql": "^15.5.0",
     "jwt-decode": "^3.1.2",
@@ -50,6 +50,7 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
+    "@material-ui/styles": "^4.11.4",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/commit-analyzer": "^8.0.1",
     "@semantic-release/git": "^9.0.0",
@@ -69,6 +70,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-jest-dom": "^3.8.1",
     "eslint-plugin-prettier": "^3.4.0",
+    "history": "4.7.2",
     "husky": "6",
     "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
