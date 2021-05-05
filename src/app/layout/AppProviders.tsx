@@ -5,7 +5,7 @@ import { ApolloProvider } from "@apollo/client"
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles"
 import configureStore from "app/store/configureStore"
 import history from "common/utils/routerHistory"
-import useApolloClient from "common/hooks/useApolloClient"
+import useCreateApolloClient from "common/hooks/useCreateApolloClient"
 
 const store = configureStore({})
 
@@ -40,7 +40,7 @@ const muiTheme = createMuiTheme({
 })
 
 const AppProviders = ({ children }: { children: React.ReactNode }) => {
-  const client = useApolloClient()
+  const client = useCreateApolloClient()
 
   return (
     <ApolloProvider client={client}>

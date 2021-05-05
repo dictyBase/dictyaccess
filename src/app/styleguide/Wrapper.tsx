@@ -3,7 +3,7 @@ import { Provider } from "react-redux"
 import { BrowserRouter } from "react-router-dom"
 import { ApolloProvider } from "@apollo/client"
 import { createStore } from "redux"
-import useApolloClient from "common/hooks/useApolloClient"
+import useCreateApolloClient from "common/hooks/useCreateApolloClient"
 import rootReducer from "./mockReducers"
 
 const store = createStore(rootReducer)
@@ -12,7 +12,7 @@ const store = createStore(rootReducer)
  */
 
 const Wrapper = ({ children }: { children: React.ReactNode }) => {
-  const client = useApolloClient()
+  const client = useCreateApolloClient()
 
   return (
     <ApolloProvider client={client}>
