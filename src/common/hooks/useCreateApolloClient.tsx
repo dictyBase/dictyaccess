@@ -24,7 +24,7 @@ const getGraphQLServer = (url: string, deployEnv: string, origin: string) => {
   return url
 }
 
-const useApolloClient = () => {
+const useCreateApolloClient = () => {
   const authLink = setContext((request, { headers }) => {
     const mutation = isMutation(request.operationName || "")
     return {
@@ -57,4 +57,4 @@ const useApolloClient = () => {
 }
 
 export { isMutation, getGraphQLServer }
-export default useApolloClient
+export default useCreateApolloClient
