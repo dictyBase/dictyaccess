@@ -1,6 +1,7 @@
 import { ApolloClient, InMemoryCache, createHttpLink } from "@apollo/client"
 import { setContext } from "@apollo/client/link/context"
-import { mutationList } from "common/graphql/mutation"
+
+const mutationList = ["Logout"]
 
 const isMutation = (value: string) => {
   if (mutationList.includes(value)) {
