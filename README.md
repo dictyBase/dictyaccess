@@ -1,7 +1,9 @@
 # dictyaccess
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![License](https://img.shields.io/badge/License-BSD%202--Clause-blue.svg)](LICENSE)  
@@ -10,7 +12,7 @@
 [![codecov](https://codecov.io/gh/dictyBase/dictyaccess/branch/develop/graph/badge.svg)](https://codecov.io/gh/dictyBase/dictyaccess)
 [![Maintainability](https://badgen.net/codeclimate/maintainability/dictyBase/dictyaccess)](https://codeclimate.com/github/dictyBase/dictyaccess)  
 ![Last commit](https://badgen.net/github/last-commit/dictyBase/dictyaccess/develop)  
-[![Funding](https://badgen.net/badge/Funding/Rex%20L%20Chisholm,dictyBase,DCR/yellow?list=|)](https://projectreporter.nih.gov/project_info_description.cfm?aid=10024726&icde=0)
+[![Funding](https://badgen.net/badge/Funding/Rex%20L%20Chisholm,dictyBase,DCR/yellow?list=|)](https://reporter.nih.gov/project-details/10024726)
 
 This is the [dictyAccess](https://dictycr.org/dictyaccess) data visualization dashboard application.
 
@@ -64,6 +66,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
