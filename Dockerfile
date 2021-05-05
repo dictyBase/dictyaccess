@@ -1,4 +1,4 @@
-FROM dictybase/frontend-builder:14.15.0
+FROM dictybase/frontend-builder:14.16.1
 
 ARG func_server
 ENV REACT_APP_FUNC_SERVER ${func_server}
