@@ -66,7 +66,7 @@ const useStyles = makeStyles({
 })
 
 type Action = {
-  type: string
+  type: ActionType.UPDATE_TOKEN
   payload: {
     provider: string
     token: string
@@ -106,7 +106,10 @@ const getTokenIntervalDelayInMS = (token: string) => {
 
 const App = () => {
   const [skip, setSkip] = React.useState(false)
-  const [{ isAuthenticated, token }, dispatch] = useAuthStore()
+  const {
+    state: { token, isAuthenticated },
+    dispatch,
+  } = useAuthStore()
   const navbar = useFetch<NavbarItems>(navbarURL, navbarItems)
   const footer = useFetch<FooterItems>(footerURL, footerLinks)
   const classes = useStyles()
