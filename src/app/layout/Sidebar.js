@@ -125,7 +125,7 @@ const Sidebar = (props) => {
           paper: classes.drawerPaper,
         }}>
         <div className={classes.header}>
-          <Typography variant="h6" color="inherit">
+          <Typography variant="h3" color="inherit">
             DictyAccess
           </Typography>
         </div>
