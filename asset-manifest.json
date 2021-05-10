@@ -2,7 +2,7 @@
   "files": {
     "main.js": "/dictyaccess/build/main.beb65b91.js",
     "runtime-main.js": "/dictyaccess/build/bundle.105de5e2.js",
-    "vendors~main.js": "/dictyaccess/build/vendors~main.79610420.js",
+    "vendors~main.js": "/dictyaccess/build/vendors~main.043e4ed0.js",
     "index.html": "/dictyaccess/index.html",
     "static/media/chr1-genes.png": "/dictyaccess/static/media/chr1-genes.6eb5c7e6.png",
     "static/media/chr1-spatial.png": "/dictyaccess/static/media/chr1-spatial.73bdd9a8.png",
@@ -19,7 +19,7 @@
   },
   "entrypoints": [
     "build/bundle.105de5e2.js",
-    "build/vendors~main.79610420.js",
+    "build/vendors~main.043e4ed0.js",
     "build/main.beb65b91.js"
   ]
 }
